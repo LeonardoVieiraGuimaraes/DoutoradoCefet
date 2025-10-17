@@ -1,0 +1,19 @@
+Nesta seção, apresentamos e discutimos os resultados obtidos com a aplicação dos quatro algoritmos de agrupamento (KMeans, Fuzzy C-Means, Gustafson-Kessel e Agglomerativo) nos conjuntos de dados Adult e Dry Bean. São analisadas as métricas quantitativas, as visualizações e as principais observações para cada cenário, destacando as vantagens, limitações e particularidades de cada abordagem em contextos binário e multiclasse.
+
+\input{ElementosTextuais/resultadoDiscussao/BaseDadosPreProcessamento.tex}
+
+\input{ElementosTextuais/resultadoDiscussao/SelecaoNumeroClusterMetodoCotovelo.tex}
+
+Para garantir robustez estatística e avaliar a estabilidade dos resultados, cada experimento foi repetido 30 vezes, variando a semente aleatória (seed) utilizada tanto na divisão dos dados quanto na inicialização dos algoritmos de agrupamento (KMeans, Fuzzy C-Means, Gustafson-Kessel e Agglomerativo). Essa abordagem permite analisar a consistência das métricas obtidas e identificar possíveis variações decorrentes da aleatoriedade do processo de agrupamento e da separação dos conjuntos de treino e teste. Os valores apresentados nas tabelas e gráficos correspondem às médias e desvios padrão dessas repetições, fornecendo uma avaliação mais confiável e comparável do desempenho de cada método.
+
+\input{ElementosTextuais/resultadoDiscussao/Setup1KMeans.tex}
+
+\input{ElementosTextuais/resultadoDiscussao/Setup2FuzzyCMeans.tex}
+
+\input{ElementosTextuais/resultadoDiscussao/Setup3Agglomerative.tex}
+
+
+
+
+
+

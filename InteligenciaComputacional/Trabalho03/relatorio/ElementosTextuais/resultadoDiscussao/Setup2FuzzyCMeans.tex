@@ -1,0 +1,49 @@
+\subsection{Setup 2 - Fuzzy C-Means: Resultados nos Datasets Adult e Dry Bean}
+
+Neste setup, apresentamos os resultados do Fuzzy C-Means supervisionado nos conjuntos Adult e Dry Bean, ambos balanceados e pré-processados. O número de clusters foi definido conforme o método do cotovelo.
+
+\subsubsection{Adult (Balanceado)}
+
+No dataset Adult, o Fuzzy C-Means obteve acurácia média de 0.7259 e desvio padrão de 0.0034. A Figura~\ref{fig:cmeans_adult_balance_confusion_matrix} apresenta a matriz de confusão média, permitindo avaliar o desempenho do agrupamento em cada classe. A separação dos clusters e seus centros pode ser visualizada na Figura~\ref{fig:cmeans_adult_balance_clusters_pca}, baseada em PCA. O gráfico de acurácia por repetição, apresentado na Figura~\ref{fig:cmeans_adult_balance_accuracy_repetitions}, ilustra a variação dos resultados ao longo das execuções.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_adult_balance_confusion_matrix_media_percent.png}
+    \caption{Matriz de confusão (Fuzzy C-Means - Adult Balanceado)}
+    \label{fig:cmeans_adult_balance_confusion_matrix}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_adult_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (Fuzzy C-Means - Adult Balanceado)}
+    \label{fig:cmeans_adult_balance_clusters_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_adult_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (Fuzzy C-Means - Adult Balanceado)}
+    \label{fig:cmeans_adult_balance_accuracy_repetitions}
+\end{figure}
+
+\subsubsection{Dry Bean (Balanceado)}
+
+No conjunto Dry Bean, o Fuzzy C-Means apresentou acurácia média de 0.8424 e desvio padrão de 0.0205. A Figura~\ref{fig:cmeans_drybean_balance_confusion_matrix} mostra a matriz de confusão média, enquanto a separação dos clusters e seus centros é ilustrada pela projeção PCA (Figura~\ref{fig:cmeans_drybean_balance_clusters_pca}). O gráfico de acurácia por repetição (Figura~\ref{fig:cmeans_drybean_balance_accuracy_repetitions}) também está incluído para análise da estabilidade dos resultados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_drybean_balance_confusion_matrix_media_percent.png}
+    \caption{Matriz de confusão (Fuzzy C-Means - Dry Bean Balanceado)}
+    \label{fig:cmeans_drybean_balance_confusion_matrix}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_drybean_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (Fuzzy C-Means - Dry Bean Balanceado)}
+    \label{fig:cmeans_drybean_balance_clusters_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/cmeans_drybean_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (Fuzzy C-Means - Dry Bean Balanceado)}
+    \label{fig:cmeans_drybean_balance_accuracy_repetitions}
+\end{figure}

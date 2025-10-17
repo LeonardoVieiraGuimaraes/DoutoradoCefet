@@ -1,0 +1,25 @@
+# Dependências básicas
+numpy
+pandas
+matplotlib
+seaborn
+
+# Machine Learning
+scikit-learn
+
+# Processamento de dados
+openpyxl
+xlrd
+
+# Jupyter
+nbconvert
+jupyter
+
+# Datasets UCI
+# ucimlrep  # Removido pois não existe no PyPI
+
+# Fuzzy (para outros trabalhos)
+scikit-fuzzy
+
+# Utilitários
+tqdm

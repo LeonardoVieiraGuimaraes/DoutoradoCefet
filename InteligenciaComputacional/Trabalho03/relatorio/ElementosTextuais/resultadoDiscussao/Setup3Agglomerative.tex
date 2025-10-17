@@ -1,0 +1,49 @@
+\subsection{Setup 3 - Agglomerative: Resultados nos Datasets Adult e Dry Bean}
+
+Neste setup, apresentamos os resultados do Agglomerative Clustering supervisionado nos conjuntos Adult e Dry Bean, ambos balanceados e pré-processados. O número de clusters foi definido conforme o método do cotovelo.
+
+\subsubsection{Adult (Balanceado)}
+
+No dataset Adult, o Agglomerative obteve acurácia média de 0.6932 e desvio padrão de 0.0148. A Figura~\ref{fig:agglo_adult_balance_confusion_matrix} mostra a matriz de confusão média, permitindo avaliar o desempenho do agrupamento em cada classe. A separação dos clusters e seus centros pode ser visualizada na Figura~\ref{fig:agglo_adult_balance_clusters_pca}, baseada em PCA. O gráfico de acurácia por repetição (Figura~\ref{fig:agglo_adult_balance_accuracy_repetitions}) também está incluído para análise da estabilidade dos resultados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_adult_balance_confusion_matrix.png}
+    \caption{Matriz de confusão (Agglomerative - Adult Balanceado)}
+    \label{fig:agglo_adult_balance_confusion_matrix}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_adult_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (Agglomerative - Adult Balanceado)}
+    \label{fig:agglo_adult_balance_clusters_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_adult_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (Agglomerative - Adult Balanceado)}
+    \label{fig:agglo_adult_balance_accuracy_repetitions}
+\end{figure}
+
+\subsubsection{Dry Bean (Balanceado)}
+
+No conjunto Dry Bean, o Agglomerative apresentou acurácia média de 0.6125 e desvio padrão de 0.0112. A Figura~\ref{fig:agglo_drybean_balance_confusion_matrix} mostra a matriz de confusão média, enquanto a separação dos clusters e seus centros é ilustrada pela projeção PCA (Figura~\ref{fig:agglo_drybean_balance_clusters_pca}). O gráfico de acurácia por repetição (Figura~\ref{fig:agglo_drybean_balance_accuracy_repetitions}) também está incluído para análise da estabilidade dos resultados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_drybean_balance_confusion_matrix.png}
+    \caption{Matriz de confusão (Agglomerative - Dry Bean Balanceado)}
+    \label{fig:agglo_drybean_balance_confusion_matrix}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_drybean_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (Agglomerative - Dry Bean Balanceado)}
+    \label{fig:agglo_drybean_balance_clusters_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/agglo_drybean_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (Agglomerative - Dry Bean Balanceado)}
+    \label{fig:agglo_drybean_balance_accuracy_repetitions}
+\end{figure}

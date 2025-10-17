@@ -1,0 +1,6 @@
+PyPDF2
+pytesseract
+pdf2image
+Pillow  # Substitua 'PIL' por 'Pillow', que é o pacote correto
+numpy
+matplotlib

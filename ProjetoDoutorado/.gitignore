@@ -1,0 +1,535 @@
+# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,python
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+#  and can be added to the global gitignore or merged into this file.  For a more nuclear
+#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
+#.idea/
+
+### Python Patch ###
+# Poetry local configuration file - https://python-poetry.org/docs/configuration/#local-configuration
+poetry.toml
+
+# ruff
+.ruff_cache/
+
+# LSP config files
+pyrightconfig.json
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python
+
+# Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
+<<<<<<< HEAD:codificacao/.gitignore
+# ignore all files in the data directory except small files
+data/*
+# allow specific small files (uncomment if needed)
+# !data/small_file.csv
+# ignore large CSV files
+*.csv
+# ignore log files
+*.log
+=======
+# ignore all files in the data directory
+data/*
+# ignore all files in codificacao/data directory
+codificacao/data/
+
+# Ignore LaTeX build files in PropostaProjeto subfolders
+# Ignorar arquivos LaTeX gerados em todas as subpastas de PropostaProjeto
+PropostaProjeto/**/**/*.aux
+PropostaProjeto/**/**/*.bbl
+PropostaProjeto/**/**/*.blg
+PropostaProjeto/**/**/*.brf
+PropostaProjeto/**/**/*.fls
+PropostaProjeto/**/**/*.fdb_latexmk
+PropostaProjeto/**/**/*.synctex.gz
+PropostaProjeto/**/**/*.toc
+PropostaProjeto/**/**/*.lof
+PropostaProjeto/**/**/*.lot
+PropostaProjeto/**/**/*.out
+PropostaProjeto/**/**/*.log
+PropostaProjeto/**/**/*.nav
+PropostaProjeto/**/**/*.snm
+PropostaProjeto/**/**/*.vrb
+PropostaProjeto/**/**/*.xdv
+PropostaProjeto/**/**/*.ilg
+PropostaProjeto/**/**/*.ind
+PropostaProjeto/**/**/*.idx
+PropostaProjeto/**/**/*.glg
+PropostaProjeto/**/**/*.glo
+PropostaProjeto/**/**/*.gls
+PropostaProjeto/**/**/*.acn
+PropostaProjeto/**/**/*.acr
+PropostaProjeto/**/**/*.alg
+PropostaProjeto/**/**/*.ist
+PropostaProjeto/**/**/*.dvi
+PropostaProjeto/**/**/*.ps
+PropostaProjeto/**/**/*.pdf
+PropostaProjeto/**/**/*.run.xml
+PropostaProjeto/**/**/*.bcf
+PropostaProjeto/**/**/*.cut
+PropostaProjeto/**/**/*.loa
+PropostaProjeto/**/**/*.thm
+PropostaProjeto/**/**/*.tdo
+PropostaProjeto/**/**/*.upa
+PropostaProjeto/**/**/*.upb
+PropostaProjeto/**/**/*.spl
+PropostaProjeto/**/**/*.cb
+PropostaProjeto/**/**/*.cb2
+PropostaProjeto/**/**/*.synctex
+PropostaProjeto/**/**/*.synctex(busy)
+PropostaProjeto/**/**/*.synctex.gz(busy)
+PropostaProjeto/Figuras/*
+
+### LaTeX ###
+# LaTeX intermediate and output files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.out
+*.log
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.ilg
+*.ind
+*.idx
+*.glg
+*.glo
+*.gls
+*.acn
+*.acr
+*.alg
+*.ist
+*.dvi
+*.ps
+*.pdf
+*.run.xml
+*.bcf
+*.cut
+*.loa
+*.thm
+*.tdo
+*.upa
+*.upb
+*.spl
+*.cb
+*.cb2
+*.synctex
+*.synctex(busy)
+*.synctex.gz(busy)
+*.nav
+*.snm
+*.vrb
+*.fdb_latexmk
+*.fls
+*.blg
+*.bbl
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.xdy
+*.pdfsync
+*.out.ps
+*.out.pdf
+*.out.dvi
+*.out.log
+*.out.toc
+*.out.aux
+*.out.bbl
+*.out.blg
+*.out.fls
+*.out.fdb_latexmk
+*.out.synctex.gz
+*.out.nav
+*.out.snm
+*.out.vrb
+*.out.run.xml
+*.out.bcf
+*.out.cut
+*.out.loa
+*.out.thm
+*.out.tdo
+*.out.upa
+*.out.upb
+*.out.spl
+*.out.cb
+*.out.cb2
+*.out.synctex
+*.out.synctex(busy)
+*.out.synctex.gz(busy)
+*.out.xdy
+*.out.pdfsync
+*.out.ps
+*.out.pdf
+*.out.dvi
+*.out.log
+*.out.toc
+*.out.aux
+*.out.bbl
+*.out.blg
+*.out.fls
+*.out.fdb_latexmk
+*.out.synctex.gz
+*.out.nav
+*.out.snm
+*.out.vrb
+*.out.run.xml
+*.out.bcf
+*.out.cut
+*.out.loa
+*.out.thm
+*.out.tdo
+*.out.upa
+*.out.upb
+*.out.spl
+*.out.cb
+*.out.cb2
+*.out.synctex
+*.out.synctex(busy)
+*.out.synctex.gz(busy)
+*.out.xdy
+*.out.pdfsync
+*.out.ps
+*.out.pdf
+*.out.dvi
+*.out.log
+*.out.toc
+*.out.aux
+*.out.bbl
+*.out.blg
+*.out.fls
+*.out.fdb_latexmk
+*.out.synctex.gz
+*.out.nav
+*.out.snm
+*.out.vrb
+*.out.run.xml
+*.out.bcf
+*.out.cut
+*.out.loa
+*.out.thm
+*.out.tdo
+*.out.upa
+*.out.upb
+*.out.spl
+*.out.cb
+*.out.cb2
+*.out.synctex
+*.out.synctex(busy)
+*.out.synctex.gz(busy)
+*.out.xdy
+*.out.pdfsync
+*.out.ps
+*.out.pdf
+*.out.dvi
+*.out.log
+*.out.toc
+*.out.aux
+*.out.bbl
+*.out.blg
+*.out.fls
+*.out.fdb_latexmk
+*.out.synctex.gz
+*.out.nav
+*.out.snm
+*.out.vrb
+*.out.run.xml
+*.out.bcf
+*.out.cut
+*.out.loa
+*.out.thm
+*.out.tdo
+*.out.upa
+*.out.upb
+*.out.spl
+*.out.cb
+*.out.cb2
+*.out.synctex
+*.out.synctex(busy)
+*.out.synctex.gz(busy)
+*.out.xdy
+*.out.pdfsync
+*.out.ps
+*.out.pdf
+*.out.dvi
+*.out.log
+*.out.toc
+*.out.aux
+*.out.bbl
+*.out.blg
+*.out.fls
+*.out.fdb_latexmk
+*.out.synctex.gz
+*.out.nav
+*.out.snm
+*.out.vrb
+*.out.run.xml
+*.out.bcf
+*.out.cut
+*.out.loa
+*.out.thm
+*.out.tdo
+*.out.upa
+*.out.upb
+*.out.spl
+*.out.cb
+*.out.cb2
+*.out.synctex
+*.out.synctex(busy)
+*.out.synctex.gz(busy)
+*.out.xdy
+*.out.pdfsync
+
+# Ignorar arquivos LaTeX gerados e temporários
+*.aux
+*.log
+*.toc
+*.out
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.pdf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.bcf
+*.run.xml
+*.thm
+*.dvi
+*.ps
+*.blx.bib
+*.bak
+## NÃO ignore os arquivos-fonte principais do projeto LaTeX
+# Remova as linhas abaixo para garantir que os arquivos necessários para a execução estejam versionados
+>>>>>>> 1a35b49a89ba4efcc547e828044e724e08de0568:.gitignore

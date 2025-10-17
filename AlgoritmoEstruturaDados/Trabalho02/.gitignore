@@ -1,0 +1,176 @@
+# ============================================================================
+# Git Ignore - Trabalho 02 - Árvores Binárias
+# Data: 10/07/2025
+# ============================================================================
+
+# =============
+# LATEX FILES
+# =============
+
+# Arquivos auxiliares do LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.idx
+*.ilg
+*.ind
+*.loa
+*.nav
+*.snm
+*.vrb
+*.end
+
+# Arquivos de backup do LaTeX
+*.bak
+*~
+*.backup
+
+# Arquivos temporários do editor
+.*.swp
+.*.swo
+*~
+
+# Arquivos de cache do latexmk
+.latexmkrc
+latexmkrc
+
+# =================
+# JUPYTER NOTEBOOK
+# =================
+
+# Checkpoints do Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Arquivos temporários do Jupyter
+.jupyter/
+
+# ================
+# PYTHON FILES
+# ================
+
+# Bytecode / Compiled Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =================
+# VS CODE FILES
+# =================
+
+# Configurações do VS Code (manter algumas, ignorar outras)
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# ===============
+# SISTEMA FILES
+# ===============
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Linux
+*~
+.nfs*
+
+# ================
+# ARQUIVOS GRANDES
+# ================
+
+# Arquivos de dados grandes (se houver)
+*.csv
+*.xlsx
+*.db
+*.sqlite
+
+# ===================
+# ARQUIVOS TEMPORÁRIOS
+# ===================
+
+# Logs gerais
+*.log
+logs/
+
+# Arquivos de backup
+backup/
+bak/
+
+# ==================
+# MANTER NO CONTROLE
+# ==================
+
+# IMPORTANTE: Os seguintes arquivos DEVEM estar no Git:
+# - *.tex (arquivos LaTeX fonte)
+# - *.ipynb (notebooks Jupyter)
+# - *.md (documentação)
+# - *.png, *.jpg, *.pdf (imagens finais/resultados)
+# - *.txt (dados importantes e tabelas)
+# - *.py (scripts Python)
+# - requirements.txt
+# - README.md
+
+# ======================
+# IGNORAR TEMPORARIAMENTE
+# ======================
+
+# Descomente as linhas abaixo se quiser ignorar temporariamente:
+# *.pdf
+# dados/
+# graficos/
+
+# ================
+# PASTA ESPECÍFICA
+# ================
+
+# Ignorar arquivos específicos do relatório LaTeX
+relatorio/*.aux
+relatorio/*.log
+relatorio/*.out
+relatorio/*.toc
+relatorio/*.fls
+relatorio/*.fdb_latexmk
+relatorio/*.synctex.gz
+
+# Manter apenas o PDF final e arquivos fonte
+!relatorio/relatorio.pdf
+!relatorio/relatorio.tex
+!relatorio/dados/
+!relatorio/imagens/

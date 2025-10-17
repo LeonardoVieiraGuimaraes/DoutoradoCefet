@@ -1,0 +1,52 @@
+\chapter{Caracterização do Problema}
+\label{chap:Problema}
+
+Sistemas neuro-fuzzy evolutivos têm se destacado como uma abordagem inovadora e promissora para o tratamento de problemas complexos e dinâmicos, como a detecção de fraudes em sistemas de gestão agropecuária. Ao combinar a capacidade de adaptação dos sistemas evolutivos com o poder de representação e interpretação dos sistemas fuzzy e a aprendizagem automática das redes neurais, esses modelos são capazes de lidar com grandes volumes de dados, incertezas, ambiguidades e padrões em constante transformação. No contexto do setor agropecuário brasileiro, caracterizado por operações descentralizadas, diversidade de atores e alta variabilidade temporal, a aplicação de sistemas neuro-fuzzy evolutivos permite identificar padrões irregulares e antecipar práticas fraudulentas de forma adaptativa e eficiente. Dessa forma, o desenvolvimento e a implementação de métodos baseados em neuro-fuzzy evolutivo tornam-se essenciais para garantir a integridade, a transparência e a segurança dos processos de emissão de Guias de Trânsito Animal (GTAs) e demais operações do setor, promovendo maior confiança e sustentabilidade para toda a cadeia produtiva.
+
+\section{Contexto e Justificativa}
+
+Os sistemas inteligentes evolutivos têm emergido como uma abordagem promissora para problemas que envolvem fluxos contínuos de dados em ambientes dinâmicos e não-estacionários. Inicialmente tratados por Kasabov e Song \cite{kasabov-2002} e Angelov e Filev \cite{angelov-2004b}, esses sistemas possuem a característica fundamental de adaptar simultaneamente sua estrutura e parâmetros à medida que novas amostras são disponibilizadas. No contexto de detecção de fraudes, essa capacidade adaptativa é especialmente relevante, uma vez que os padrões fraudulentos tendem a evoluir constantemente para evadir sistemas de detecção.
+
+A incorporação de métodos de pertinência fuzzy em sistemas evolutivos oferece vantagens significativas para o tratamento de dados agropecuários, que frequentemente apresentam incertezas, imprecisões e características ambíguas. As funções de pertinência fuzzy permitem modelar adequadamente situações onde os limites entre comportamentos normais e fraudulentos não são claramente definidos, proporcionando uma representação mais natural e interpretável dos padrões identificados. Os trabalhos de Lughofer \cite{Lughofer2011} e Skrjanc et al. \cite{Skrjanc2019a} demonstram a eficácia dessa abordagem em diferentes domínios de aplicação.
+
+O setor agropecuário brasileiro apresenta particularidades que tornam a detecção de fraudes um desafio complexo. A natureza distribuída das operações, a diversidade de atores envolvidos e a variabilidade temporal dos dados criam um ambiente propício para a evolução de esquemas fraudulentos. Operações como CIRA, Rei do Gado, Boi na Linha e Cacus evidenciaram não apenas a magnitude dos prejuízos (superiores a R\$ 1,4 bilhão), mas também a sofisticação crescente dos métodos utilizados.
+
+\section{Problema de Pesquisa e Lacunas Identificadas}
+
+Apesar dos avanços significativos em sistemas inteligentes evolutivos, existem lacunas importantes quando se considera sua aplicação específica para detecção de fraudes em sistemas agropecuários:
+
+\begin{enumerate}
+\item \textbf{Adaptação a Dados Esparsos:} Sistemas agropecuários frequentemente apresentam dados com alta esparsidade temporal e espacial, desafiando algoritmos evolutivos tradicionais que assumem fluxos contínuos uniformes.
+
+\item \textbf{Interpretabilidade em Contexto Regulatório:} A necessidade de explicar decisões para auditores e reguladores requer modelos com alta interpretabilidade, característica nem sempre preservada em sistemas adaptativos complexos.
+
+\item \textbf{Detecção de Drift Conceitual:} Fraudes evoluem rapidamente, criando conceitos drifts que sistemas existentes podem não detectar adequadamente, especialmente quando as mudanças são graduais e sutis.
+
+\item \textbf{Integração de Métodos de Pertinência Fuzzy:} A incorporação eficiente de funções de pertinência fuzzy em sistemas evolutivos adaptativos para modelagem de incertezas e ambiguidades em dados agropecuários permanece um desafio técnico significativo.
+
+\item \textbf{Eficiência Computacional:} A necessidade de processamento em tempo real em sistemas de grande escala demanda algoritmos computacionalmente eficientes, equilibrando adaptabilidade e performance.
+\end{enumerate}
+
+O objeto de interesse deste estudo é a criação de um modelo inteligente para a detecção e prevenção de fraudes nos sistemas de gerenciamento do setor agropecuário, com foco na emissão de GTAs e nas transações relacionadas à movimentação de gado. As fraudes identificadas, como a inserção de dados falsos ou a distorção de informações para a emissão de GTAs, representam um risco significativo para a saúde pública, comprometem a eficácia da fiscalização sanitária e afetam a competitividade do setor agropecuário. Portanto, o trabalho visa desenvolver uma solução que permita a identificação de padrões irregulares e a prevenção de fraudes no sistema.
+
+\section{Dimensões do Problema}
+
+Podemos citar alguns pontos que podemos analisar: 
+
+\begin{enumerate}
+\item \textbf{Análise do Sistema e suas vulnerabilidades:} O trabalho começa com uma análise detalhada dos sistemas de gerenciamento do setor agropecuário, com ênfase nas funcionalidades e na estrutura do sistema, especialmente no que se refere à emissão das GTAs e à movimentação de animais. A partir desta análise, serão identificadas as vulnerabilidades e os pontos críticos que permitem a ocorrência de fraudes.
+
+\item \textbf{Fraudes no Setor Agropecuário:} O estudo abordará as fraudes identificadas em operações anteriores. Através dessas investigações, será possível identificar os tipos de fraudes mais recorrentes e como elas afetam o sistema de defesa agropecuária.
+
+\item \textbf{Aplicação de Modelos Inteligentes para Detecção de Fraudes:} Um dos principais focos do estudo será a proposição de modelos de sistemas inteligentes para detectar padrões irregulares e prever fraudes no sistema. A literatura existente, que utiliza modelos como aprendizado supervisionado, não supervisionado, aprendizado por reforço e grafos de conhecimento, servirá como base para a adaptação do modelo às particularidades do setor agropecuário.
+
+\item \textbf{Validação do Modelo com Dados Reais:} A validação do modelo inteligente será feita utilizando dados reais de sistemas de gerenciamento do setor agropecuário, coletados ao longo dos anos. O estudo contará com uma base de dados crescente que atualmente possui uma estrutura de 8.298.490 registros de GTAs, especificamente de movimentações dentro de Minas Gerais, coletados até maio de 2025. Esses dados, especialmente as informações contidas nas GTAs com variáveis como origem, destino, quantidade de animais, finalidade e meio de transporte, servirão como base para a análise dos padrões de movimentação de bovinos e para a detecção de possíveis fraudes. A validação do modelo será um passo crucial para garantir que a solução proposta seja eficaz e aplicável no contexto prático.
+
+\item \textbf{Impacto e Benefícios da Implementação de Modelos Inteligentes:} O estudo avaliará os impactos da implementação de modelos inteligentes para a detecção de fraudes no setor agropecuário. Serão discutidos os benefícios esperados, como o aumento da transparência, a melhoria na fiscalização sanitária e o fortalecimento da competitividade do mercado agropecuário brasileiro. A utilização de tecnologias inteligentes poderá reduzir as fraudes, melhorar a precisão das informações e garantir maior confiança no sistema de defesa agropecuária.
+
+\item \textbf{Desafios e Perspectivas Futuras:} A pesquisa também abordará os desafios relacionados à adaptação de sistemas neuro-fuzzy evolutivos aos dados reais disponíveis, como a alta dimensionalidade, a presença de ruídos, a esparsidade temporal e a heterogeneidade das informações. Entre os principais desafios estão o ajuste dinâmico das regras e funções de pertinência diante de padrões que mudam ao longo do tempo, a necessidade de mecanismos eficientes para detecção de outliers e drifts conceituais, e a integração de múltiplas fontes de dados para enriquecer o processo de aprendizagem adaptativa. Além disso, o trabalho discutirá as perspectivas futuras para o aprimoramento desses modelos, considerando o uso de dados em tempo real, a automação do ajuste de parâmetros e a incorporação de técnicas de explicabilidade para garantir transparência e confiança nos resultados gerados.
+\end{enumerate}
+
+
+Ressalta-se que a abordagem neuro-fuzzy evolutiva proposta neste projeto é especialmente adequada para superar desafios como a adaptação a dados esparsos, a detecção de drifts conceituais e a necessidade de interpretabilidade, aspectos críticos para a detecção de fraudes em dados reais de GTAs. Dessa forma, este trabalho visa contribuir significativamente para o enfrentamento de um problema crítico no setor agropecuário, que é a fraude nos sistemas de gerenciamento, afetando a transparência, a eficiência da fiscalização sanitária e a competitividade do mercado. Ao propor um modelo inteligente para a detecção e prevenção dessas fraudes, o estudo busca proporcionar uma solução inovadora e eficaz para instituições de defesa agropecuária, fortalecendo a integridade do sistema e promovendo a sustentabilidade do setor. A pesquisa também se alinha com as tendências tecnológicas atuais e pode servir como referência para outras instituições e contextos.
+

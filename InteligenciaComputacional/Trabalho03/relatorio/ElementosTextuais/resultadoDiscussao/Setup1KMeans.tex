@@ -1,0 +1,50 @@
+\subsection{Setup 1 - KMeans: Resultados nos Datasets Adult e Dry Bean}
+
+Neste setup, apresentamos os resultados do KMeans supervisionado nos conjuntos Adult e Dry Bean, ambos balanceados e pré-processados. Para cada base, o número de clusters foi definido conforme o método do cotovelo.
+
+\subsubsection{Adult (Balanceado)}
+
+No dataset Adult, o KMeans obteve acurácia média de 0.7117 e desvio padrão de 0.2883. A Figura~\ref{fig:kmeans_adult_balance_confusion_matrix_media} mostra a matriz de confusão média, permitindo analisar o desempenho do agrupamento em cada classe. A separação dos clusters e seus centros pode ser visualizada na Figura~\ref{fig:kmeans_adult_pca}, que utiliza a projeção PCA dos dados. O gráfico de acurácia por repetição, apresentado na Figura~\ref{fig:kmeans_adult_balance_accuracy_repetitions}, ilustra a variação dos resultados ao longo das execuções.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_adult_balance_confusion_matrix_media_percent.png}
+    \caption{Matriz de confusão média (KMeans - Adult Balanceado)}
+    \label{fig:kmeans_adult_balance_confusion_matrix_media}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_adult_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (KMeans - Adult Balanceado)}
+    \label{fig:kmeans_adult_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_adult_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (KMeans - Adult Balanceado)}
+    \label{fig:kmeans_adult_balance_accuracy_repetitions}
+\end{figure}
+
+\subsubsection{Dry Bean (Balanceado)}
+
+No conjunto Dry Bean, o KMeans apresentou acurácia média de 0.7537 e desvio padrão de 0.2840. A Figura~\ref{fig:kmeans_drybean_balance_confusion_matrix_media} exibe a matriz de confusão média, enquanto a separação dos clusters e seus centros é ilustrada pela projeção PCA (Figura~\ref{fig:kmeans_drybean_balance_clusters_pca}). O gráfico de acurácia por repetição (Figura~\ref{fig:kmeans_drybean_balance_accuracy_repetitions}) também está incluído para análise da estabilidade dos resultados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_drybean_balance_confusion_matrix_media_percent.png}
+    \caption{Matriz de confusão média (KMeans - Dry Bean Balanceado)}
+    \label{fig:kmeans_drybean_balance_confusion_matrix_media}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_drybean_balance_clusters_pca.png}
+    \caption{Visualização PCA dos clusters e centros (KMeans - Dry Bean Balanceado)}
+    \label{fig:kmeans_drybean_balance_clusters_pca}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{../src/img/kmeans_drybean_balance_accuracy_repetitions.png}
+    \caption{Acurácia por repetição (KMeans - Dry Bean Balanceado)}
+    \label{fig:kmeans_drybean_balance_accuracy_repetitions}
+\end{figure}
+

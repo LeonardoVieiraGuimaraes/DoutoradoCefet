@@ -1,0 +1,19 @@
+\subsection{Seleção do Número de Clusters: Método do Cotovelo}
+
+A escolha do número de clusters ($k$) foi feita pelo \textbf{método do cotovelo} \cite{thorndike1953belongs}, que consiste em analisar o gráfico de uma métrica de agrupamento para diferentes valores de $k$ e identificar o ponto onde a redução dessa métrica passa a ser menos acentuada. Esse ponto, chamado de "cotovelo", indica o valor mais adequado de clusters para representar a estrutura dos dados.
+
+No conjunto \textbf{Adult}, o cotovelo foi observado em $k=8$ (Figura~\ref{fig:elbow_adult}), sugerindo a presença de subgrupos além das duas classes reais. Para o \textbf{Dry Bean}, o cotovelo ocorreu em $k=7$ (Figura~\ref{fig:elbow_drybean}), valor alinhado ao número de cultivares.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{../src/img/kmeans_adult_elbow.png}
+    \caption{Curva do método do cotovelo para o dataset Adult balanceado. O "cotovelo" ocorre em $k=8$.}
+    \label{fig:elbow_adult}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\linewidth]{../src/img/kmeans_drybean_balance_elbow.png}
+    \caption{Curva do método do cotovelo para o dataset Dry Bean balanceado. O "cotovelo" ocorre em $k=7$.}
+    \label{fig:elbow_drybean}
+\end{figure}

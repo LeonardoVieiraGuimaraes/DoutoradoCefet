@@ -1,0 +1,99 @@
+================================================================================
+RESUMO FINAL DOS EXPERIMENTOS - TRABALHO 02
+================================================================================
+Objetivo: Comparar desempenho de BST e AVL em diferentes cenários
+Data de entrega: 15/07/2025
+Implementação: Python com estruturas de dados completas
+================================================================================
+
+1. DADOS PARA O GRÁFICO 3.A.III (BST - INSERÇÕES ORDENADAS):
+──────────────────────────────────────────────────
+ Tamanho (n) │  Comparações │ Complexidade
+──────────────────────────────────────────────────
+       1,000 │       1000.0 │     ≈ 1.00×n
+       2,000 │       2000.0 │     ≈ 1.00×n
+       3,000 │       3000.0 │     ≈ 1.00×n
+       4,000 │       4000.0 │     ≈ 1.00×n
+       5,000 │       5000.0 │     ≈ 1.00×n
+       6,000 │       6000.0 │     ≈ 1.00×n
+       7,000 │       7000.0 │     ≈ 1.00×n
+       8,000 │       8000.0 │     ≈ 1.00×n
+       9,000 │       9000.0 │     ≈ 1.00×n
+      10,000 │      10000.0 │     ≈ 1.00×n
+
+2. DADOS PARA O GRÁFICO 3.B.III (AVL - INSERÇÕES ALEATÓRIAS):
+────────────────────────────────────────────────────────────
+ Tamanho (n) │  Comparações │  log₂(n) │ Eficiência
+────────────────────────────────────────────────────────────
+       1,000 │         10.1 │     10.0 │ 1.01×log₂(n)
+       2,000 │         11.5 │     11.0 │ 1.05×log₂(n)
+       3,000 │         11.7 │     11.6 │ 1.01×log₂(n)
+       4,000 │         12.0 │     12.0 │ 1.00×log₂(n)
+       5,000 │         12.5 │     12.3 │ 1.02×log₂(n)
+       6,000 │         12.7 │     12.6 │ 1.01×log₂(n)
+       7,000 │         12.8 │     12.8 │ 1.00×log₂(n)
+       8,000 │         13.2 │     13.0 │ 1.02×log₂(n)
+       9,000 │         12.7 │     13.1 │ 0.97×log₂(n)
+      10,000 │         13.6 │     13.3 │ 1.02×log₂(n)
+
+3. DADOS COMPARATIVOS COMPLETOS - TODOS OS EXPERIMENTOS:
+────────────────────────────────────────────────────────────────────────────────
+ Tamanho │  BST-Ord │  BST-Alea │  AVL-Ord │  AVL-Alea │   Melhor
+────────────────────────────────────────────────────────────────────────────────
+   1,000 │   1000.0 │       8.4 │     10.0 │      10.1 │ BST-Alea
+   2,000 │   2000.0 │       8.8 │     11.0 │      11.5 │ BST-Alea
+   3,000 │   3000.0 │       9.1 │     12.0 │      11.7 │ BST-Alea
+   4,000 │   4000.0 │       8.1 │     12.0 │      12.0 │ BST-Alea
+   5,000 │   5000.0 │      10.7 │     13.0 │      12.5 │ BST-Alea
+   6,000 │   6000.0 │      16.1 │     13.0 │      12.7 │ AVL-Alea
+   7,000 │   7000.0 │      16.4 │     13.0 │      12.8 │ AVL-Alea
+   8,000 │   8000.0 │      16.4 │     13.0 │      13.2 │  AVL-Ord
+   9,000 │   9000.0 │      19.4 │     14.0 │      12.7 │ AVL-Alea
+  10,000 │  10000.0 │      15.9 │     14.0 │      13.6 │ AVL-Alea
+
+4. ANÁLISE ESTATÍSTICA DETALHADA:
+────────────────────────────────────────────────────────────
+Experimento          │                             Estatísticas
+────────────────────────────────────────────────────────────
+BST Ordenados        │ Média:  5500.0 │ DP: 2872.28 │ Min: 1000.0 │ Max: 10000.0
+BST Aleatórios       │ Média:    12.9 │ DP:   4.07 │ Min:    8.1 │ Max:   19.4
+AVL Ordenados        │ Média:    12.5 │ DP:   1.20 │ Min:   10.0 │ Max:   14.0
+AVL Aleatórios       │ Média:    12.3 │ DP:   0.95 │ Min:   10.1 │ Max:   13.6
+
+5. ANÁLISE DE EFICIÊNCIA RELATIVA:
+──────────────────────────────────────────────────────────────────────
+Melhoria percentual da AVL em relação à BST:
+ Tamanho │  AVL vs BST-Ord │  AVL vs BST-Alea │      Observação
+──────────────────────────────────────────────────────────────────────
+   1,000 │          99.0% │          -20.2% │       Dramática
+   2,000 │          99.4% │          -30.7% │       Dramática
+   3,000 │          99.6% │          -28.6% │       Dramática
+   4,000 │          99.7% │          -48.1% │       Dramática
+   5,000 │          99.8% │          -16.8% │       Dramática
+   6,000 │          99.8% │           21.1% │       Dramática
+   7,000 │          99.8% │           22.0% │       Dramática
+   8,000 │          99.8% │           19.5% │       Dramática
+   9,000 │          99.9% │           34.5% │       Dramática
+  10,000 │          99.9% │           14.5% │       Dramática
+
+6. CONCLUSÕES PRINCIPAIS:
+────────────────────────────────────────────────────────────
+✓ BST Ordenada: Degeneração em lista ligada → O(n)
+✓ BST Aleatória: Balanceamento natural → O(log n) médio
+✓ AVL Ordenada: Balanceamento forçado → O(log n) garantido
+✓ AVL Aleatória: Consistência total → O(log n) sempre
+✓ Balanceamento é crucial para performance previsível
+
+7. COMPLEXIDADES OBSERVADAS:
+──────────────────────────────────────────────────
+BST Ordenada: ≈ 1.000 × n
+AVL Aleatória: ≈ 1.011 × log₂(n)
+Diferença de eficiência: 1.0x
+
+8. RECOMENDAÇÃO TÉCNICA:
+──────────────────────────────────────────────────
+Para aplicações que requerem:
+• Performance previsível → Use AVL
+• Dados potencialmente ordenados → Use AVL
+• Milhares de operações → Use AVL
+• Implementação simples e dados aleatórios → BST pode ser suficiente

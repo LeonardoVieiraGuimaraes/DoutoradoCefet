@@ -1,0 +1,255 @@
+
+  
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Projeto de pesquisa em conformidade com 
+% ABNT NBR 15287:2011 Informação e documentação - Projeto de pesquisa -
+% Apresentação 
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+ 
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+% ---
+% PACOTES
+% --- 
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{cmap}
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage{graphicx,url}			% Inclusão de gráficos
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage{lastpage}
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{subfigure}
+\usepackage{placeins}
+\usepackage{hyperref}		% controla a formação do índice
+\usepackage[portugues,ruled,lined]{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{amsfonts, amssymb, amsmath, dsfont}		% fontes e símbolos
+% matemáticos
+\usepackage{mathtools}
+\usepackage{verbatim}			% Permite apresentar texto tal como escrito no
+% documento, ainda que sejam comandos Latex
+\usepackage{multirow, array}	% Permite tabelas com múltiplas linhas e colunas
+\usepackage{float}				% Necessário para tabelas/figuras em ambiente
+% multi-colunas ---
+\usepackage{bookmark}			% Cria menu de bookmarks
+
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+%\usepackage{lipsum}				% para geração de dummy text
+% ---
+ 
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage{lscape}
+
+% --- 
+% CONFIGURAÇÕES DE PACOTES
+% --- 
+ 
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+%\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+%% Texto padrão antes do número das páginas
+%\renewcommand{\backref}{}
+%% Define os textos da citação
+%\renewcommand*{\backrefalt}[4]{
+%	\ifcase #1 %
+%		Nenhuma citação no texto.%
+%	\or
+%		Citado na página #2.%
+%	\else
+%		Citado #1 vezes nas páginas #2.%
+%	\fi}%
+%% ---
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Detecção de Fraudes em Sistemas de Gestão Agropecuária: Uma Abordagem Baseada em Sistemas Inteligentes}
+\autor{Leonardo Vieira Guimarães}
+\local{Belo Horizonte}
+\data{Janeiro de 2025}
+\cefet{Centro Federal de Educação Tecnológica de Minas Gerais -- CEFET/MG}
+\programa{Programa de Pós-graduação em Modelagem Matemática e Computacional}
+\orientador{} % Orientador não foi especificado
+%\coorientador{}
+\instituicao{%
+  \imprimircefet \par \imprimirprograma \par
+}
+\tipotrabalho{ANEXO III – Projeto de Pesquisa}
+\tituloAcademico{Mestre} % Pode ser alterado para Doutor se necessário
+
+% O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição
+% e a área de concentração
+% Preâmbulo agora definido no arquivo de folha de rosto
+%\preambulo{Projeto de Pesquisa apresentado no âmbito do Processo Público para
+%         Seleção e Admissão de Novos Alunos Regulares para o Programa de Pós-Graduação em Modelagem 
+%         Matemática e Computacional do Centro Federal de Educação Tecnológica de
+%         Minas Gerais.}
+
+% ---
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corol\'ario}
+\newtheorem{prop}[teo]{Proposi\c{c}\~ao}
+\newtheorem{defi}[teo]{Defini\c{c}\~ao}
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{black}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+%\hypersetup{
+		%pagebackref=true,
+		%pdftitle={\@title}, 
+	%	pdfauthor={\@author},
+	%	pdfsubject={\imprimirpreambulo},
+		%pdfcreator={LaTeX with abnTeX2},
+	%	pdfkeywords={abnt}{latex}{abntex}{abntex2}{projeto de pesquisa}, 
+		%colorlinks=true,       		% false: boxed links; true: colored links
+		%linkcolor=black,          	% color of internal links
+		%citecolor=black,        		% color of links to bibliography
+		%filecolor=magenta,      		% color of file links
+		%urlcolor=black,
+		%bookmarksdepth=4
+%}
+
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
+
+\makeatother
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.0cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Folha de rosto (primeira página)
+% ---
+\include{./01-Elementos-pre-textuais/FolhaRosto/folhaRosto}
+\imprimirfolhaderosto
+% --- 
+
+
+
+
+
+%\tableofcontents
+\include{./01-Elementos-pre-textuais/Resumo/resumo}  
+% --------------------------------------------------------------------------------------
+% Sumario
+% --------------------------------------------------------------------------------------
+\include{./01-Elementos-pre-textuais/Sumario/sumario}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\include{./02-Elementos-textuais/Introducao}
+%----------------------------------------------------------
+ 
+%----------------------------------------------------------
+% Descrição do Problema
+%----------------------------------------------------------
+\include{./02-Elementos-textuais/Problema}
+
+%----------------------------------------------------------
+% Objetivos
+%----------------------------------------------------------
+\include{./02-Elementos-textuais/Objetivos}
+
+%----------------------------------------------------------
+% Metodologia
+%----------------------------------------------------------
+\include{./02-Elementos-textuais/Metodologia}
+
+%----------------------------------------------------------
+% Cronograma e Formação Acadêmica
+%----------------------------------------------------------
+\include{./02-Elementos-textuais/Cronograma}
+
+%----------------------------------------------------------
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% Referências bibliográficas
+\include{./03-Elementos-pos-textuais/referencias}
+
+% Índice remissivo
+\include{./03-Elementos-pos-textuais/indiceRemissivo}
+
+\end{document}

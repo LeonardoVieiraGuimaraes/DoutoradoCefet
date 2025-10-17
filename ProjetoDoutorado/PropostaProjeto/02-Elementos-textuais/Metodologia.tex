@@ -1,0 +1,180 @@
+
+Sistemas neuro-fuzzy evolutivos representam o estado da arte para o tratamento de problemas complexos e dinâmicos, como a detecção de fraudes em grandes bases de dados. Ao combinar a capacidade adaptativa dos sistemas evolutivos, a modelagem de incertezas dos sistemas fuzzy e o poder de aprendizagem das redes neurais, esses modelos conseguem ajustar suas regras, funções de pertinência e parâmetros de decisão de forma contínua, acompanhando a evolução dos padrões de fraude. Essa abordagem permite alta sensibilidade e precisão mesmo diante de estratégias fraudulentas inéditas, tornando-se uma solução robusta, flexível e interpretável para ambientes adversariais e em constante transformação.
+
+\section{Etapas da Metodologia}
+
+\begin{enumerate}
+\item \textbf{Revisão Bibliográfica e Fundamentação Teórica}
+\begin{itemize}
+\item Realizar levantamento sistemático da literatura sobre sistemas inteligentes evolutivos, incluindo trabalhos pioneiros e desenvolvimentos recentes
+\item Analisar metodologias de detecção de anomalias e fraudes em sistemas complexos
+\item Estudar algoritmos de aprendizado incremental e online, com foco em adaptação estrutural e paramétrica
+\item Investigar técnicas de tratamento de drift conceitual e adaptação a ambientes não-estacionários
+\item Identificar lacunas teóricas e práticas que possam ser exploradas na proposição de novos algoritmos
+\end{itemize}
+
+\item \textbf{Proposição e Implementação de Algoritmos}
+\begin{itemize}
+\item Propor novos algoritmos baseados em sistemas fuzzy evolutivos adaptados ao contexto de detecção de fraudes
+\item Desenvolver mecanismos de adaptação estrutural automática (criação, fusão e remoção de regras/grupos)
+\item Implementar técnicas de aprendizado incremental para processamento de dados em tempo real
+\item Integrar métodos de pertinência fuzzy para tratamento de incertezas e modelagem de padrões ambíguos
+\item Garantir interpretabilidade através de representação linguística e explicabilidade das decisões
+\item Implementar algoritmos em linguagem Python, priorizando código modular, reutilizável e documentado
+\item Desenvolver dashboards interativos para visualização dos resultados, utilizando bibliotecas Python como Dash ou Streamlit, de modo a facilitar a análise exploratória, a interpretação dos dados e a comunicação dos achados
+\item Implementar um sistema web para disponibilização dos resultados, relatórios e ferramentas de análise, permitindo acesso remoto, interação com os dados e compartilhamento dos achados com diferentes públicos de interesse
+\end{itemize}
+
+\item \textbf{Validação Experimental e Análise Comparativa}
+\begin{itemize}
+\item Aplicar algoritmos propostos em datasets reais de sistemas agropecuários
+\item Comparar desempenho com métodos estado da arte usando métricas padronizadas
+\item Realizar análises estatísticas de significância dos resultados
+\item Avaliar capacidade de adaptação em cenários de mudança conceitual
+\item Analisar eficiência computacional e escalabilidade dos métodos propostos
+\end{itemize}
+\end{enumerate}
+
+
+\section{Cronograma de Execução}
+
+O planejamento temporal da pesquisa foi elaborado de modo a garantir a execução ordenada e eficiente de todas as etapas previstas, desde a fundamentação teórica até a validação dos resultados. O cronograma detalhado, incluindo as atividades de pesquisa, desenvolvimento, análise e as disciplinas obrigatórias do doutorado, encontra-se apresentado no Capítulo~\ref{chap:cronograma}. Ressalta-se que o acompanhamento das disciplinas cursadas, a cursar e aproveitáveis está centralizado naquele capítulo, evitando redundâncias neste.
+
+
+\section{Aspectos Éticos}
+
+Todos os procedimentos da pesquisa respeitarão rigorosamente os princípios éticos aplicáveis ao uso de dados sensíveis, em conformidade com a legislação vigente. Serão adotadas as seguintes diretrizes:
+\begin{itemize}
+    \item Anonimização e proteção integral dos dados utilizados;
+    \item Observância à Lei Geral de Proteção de Dados (LGPD);
+    \item Obtenção de autorizações institucionais formais para uso dos dados;
+    \item Garantia de que nenhuma informação permita a identificação de indivíduos, propriedades ou organizações.
+\end{itemize}
+
+
+\section{Métricas de Avaliação}
+
+Para garantir a robustez e a comparabilidade dos resultados, a avaliação dos algoritmos propostos será realizada por meio de métricas consagradas na literatura de detecção de fraudes e sistemas evolutivos. Serão consideradas métricas de precisão, classificação e testes estatísticos:
+
+
+\subsection{Métricas de Precisão}
+As métricas de precisão são utilizadas para avaliar o desempenho dos modelos em tarefas de previsão de valores contínuos:
+\begin{itemize}
+    \item \textbf{Raiz do Erro Quadrático Médio (RMSE):} Mede o erro médio das previsões realizadas pelo modelo em relação aos valores reais. Quanto menor o RMSE, melhor o desempenho do modelo, pois indica que as previsões estão mais próximas dos valores observados.
+    \[RMSE = \sqrt{\frac{\sum_{t=1}^{N}(y_t - \hat{y}_t)^2}{N}}\]
+    Onde $y_t$ é o valor real, $\hat{y}_t$ é o valor previsto e $N$ é o número total de observações.
+    \item \textbf{Índice de Erro Não Dimensional (NDEI):} É a razão entre o RMSE e o desvio padrão dos valores previstos. Permite comparar o erro relativo ao grau de dispersão dos dados, tornando a métrica adimensional e facilitando a comparação entre diferentes conjuntos de dados.
+    \[NDEI = \frac{RMSE}{\sigma(\hat{y}_t)}\]
+    Onde $\sigma(\hat{y}_t)$ é o desvio padrão das previsões.
+    \item \textbf{Soma Residual dos Quadrados (RSS):} Representa a soma dos quadrados das diferenças entre os valores reais e previstos. É utilizada para avaliar o ajuste do modelo: quanto menor o RSS, melhor o ajuste.
+    \[RSS = \sum_{t=1}^{N}(y_t - \hat{y}_t)^2\]
+\end{itemize}
+
+
+\subsection{Métricas de Classificação}
+As métricas de classificação são empregadas para avaliar o desempenho dos modelos em tarefas de detecção de fraudes (classificação binária):
+\begin{itemize}
+    \item \textbf{Precisão (Precision):} Indica a proporção de casos classificados como positivos que realmente são positivos. É útil para avaliar o desempenho do modelo em situações onde o custo de falsos positivos é alto.
+    \[\text{Precisão} = \frac{TP}{TP + FP}\]
+    Onde $TP$ são os verdadeiros positivos e $FP$ os falsos positivos.
+    \item \textbf{Recall (Sensibilidade):} Mede a capacidade do modelo de identificar corretamente todos os casos positivos. É importante em contextos onde a detecção de todos os casos reais é prioritária.
+    \[\text{Recall} = \frac{TP}{TP + FN}\]
+    Onde $FN$ são os falsos negativos.
+    \item \textbf{F1-score:} É a média harmônica entre precisão e recall, fornecendo uma medida única que equilibra ambos os aspectos. É especialmente útil quando há desequilíbrio entre as classes.
+    \[F1 = 2 \cdot \frac{\text{Precisão} \cdot \text{Recall}}{\text{Precisão} + \text{Recall}}\]
+    \item \textbf{Acurácia:} Representa a proporção de predições corretas (tanto positivas quanto negativas) em relação ao total de casos avaliados.
+    \[\text{Acurácia} = \frac{TP + TN}{TP + TN + FP + FN}\]
+    Onde $TN$ são os verdadeiros negativos.
+    \item \textbf{Área sob a Curva ROC (AUC-ROC):} Mede a capacidade do classificador em distinguir entre as classes. Quanto mais próximo de 1, melhor o desempenho do modelo. Um valor de 0,5 indica desempenho aleatório.
+\end{itemize}
+
+\subsection{Testes Estatísticos}
+Os testes estatísticos são fundamentais para validar se as diferenças observadas entre os modelos são estatisticamente significativas e não fruto do acaso. No contexto deste projeto, será utilizado o seguinte teste:
+\begin{itemize}
+    \item \textbf{Teste Morgan-Granger-Newbold (MGN):} Utilizado para comparar o desempenho de dois modelos preditivos, avaliando se a diferença entre os erros (resíduos) de ambos é estatisticamente significativa. O teste calcula um valor baseado na correlação entre os resíduos dos modelos, permitindo verificar se um modelo apresenta desempenho superior ao outro de forma consistente.
+    \[MGN = \hat{\rho}_e \sqrt{\frac{N-1}{1-\hat{\rho}_e^2}}\]
+    Onde $\hat{\rho}_e$ é a correlação entre os resíduos dos modelos comparados e $N$ é o número de observações. Valores elevados de MGN indicam maior diferença estatística entre os modelos.
+\end{itemize}
+
+\section{Base de Dados}
+
+O estudo utilizará dados reais do sistema de gerenciamento agropecuário, especificamente registros de Guias de Trânsito Animal (GTA) coletados ao longo dos anos. A base de dados principal possui as seguintes características:
+
+\subsection{Estrutura dos Dados}
+O dataset contém as seguintes variáveis principais:
+
+\begin{table}[h]
+\centering
+\caption{Estrutura da Base de Dados de GTAs}
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\textbf{Variável} & \textbf{Descrição} \\
+\hline
+nr\_gta & Número identificador único da Guia de Trânsito Animal \\
+\hline
+nr\_serie & Número de série da GTA \\
+\hline
+id\_gta & Identificador interno da GTA no sistema \\
+\hline
+dt\_emissao\_gta & Data de emissão da guia \\
+\hline
+cod\_produtor\_origem & Código do produtor de origem dos animais \\
+\hline
+cod\_produtor\_destino & Código do produtor de destino dos animais \\
+\hline
+id\_tipo\_finalidade\_gta & Identificador do tipo de finalidade da movimentação \\
+\hline
+ds\_meio\_transporte & Descrição do meio de transporte utilizado \\
+\hline
+cod\_municipio\_origem & Código do município de origem \\
+\hline
+nome\_municipio\_origem & Nome do município de origem \\
+\hline
+estado\_origem & Estado de origem (MG) \\
+\hline
+cod\_municipio\_destino & Código do município de destino \\
+\hline
+nome\_municipio\_destino & Nome do município de destino \\
+\hline
+estado\_destino & Estado de destino \\
+\hline
+qtd & Quantidade de animais transportados \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Potencial para Detecção de Fraudes}
+Esta base de dados apresenta características ideais para o desenvolvimento e validação de algoritmos de detecção de fraudes:
+
+\begin{itemize}
+\item \textbf{Volume significativo:} Com mais de 8 milhões de registros, permite análises estatísticas robustas
+\item \textbf{Diversidade temporal:} Dados históricos possibilitam análise de padrões evolutivos
+\item \textbf{Informações relacionais:} Conexões entre produtores, municípios e finalidades permitem análise de redes
+\item \textbf{Variáveis de controle:} Dados de quantidade, datas e localizações facilitam identificação de anomalias
+\end{itemize}
+
+
+\subsection{Tratamento e Preparação dos Dados}
+Os dados serão submetidos aos seguintes processos:
+\begin{enumerate}
+    \item \textbf{Limpeza e validação:} Identificação e tratamento de valores ausentes, duplicatas e inconsistências
+    \item \textbf{Anonimização:} Remoção ou codificação de informações que possam identificar produtores específicos
+    \item \textbf{Engenharia de características:} Criação de variáveis derivadas para análise de padrões (frequência de movimentação, distâncias, sazonalidade)
+    \item \textbf{Normalização:} Padronização de escalas para algoritmos de aprendizado de máquina
+    \item \textbf{Detecção de outliers:} Identificação preliminar de transações atípicas
+\end{enumerate}
+
+\subsection{Proposta de Sistema Inteligente Fuzzy Evolutivo}
+
+Com base na base de dados de GTAs, propõe-se o desenvolvimento de um sistema inteligente fuzzy evolutivo para detecção de fraudes em movimentações agropecuárias. O sistema seguirá as seguintes etapas:
+\begin{enumerate}
+    \item \textbf{Pré-processamento dos Dados:} Limpeza, anonimização e normalização das variáveis, além da criação de atributos derivados, como frequência de movimentação, distâncias e sazonalidade.
+    \item \textbf{Modelagem Fuzzy Evolutiva:} Definição de variáveis linguísticas (ex: quantidade baixa/média/alta, distância curta/longa, frequência incomum), construção de funções de pertinência para representar incertezas e inicialização de regras fuzzy para padrões normais e suspeitos.
+    \item \textbf{Evolução Online:} O sistema ajusta automaticamente as funções de pertinência e as regras fuzzy conforme novos dados são inseridos, utilizando algoritmos evolutivos para criação, fusão e remoção de regras. O aprendizado incremental permite adaptação contínua a novos comportamentos e fraudes.
+    \item \textbf{Detecção de Fraudes:} Para cada nova GTA registrada, o sistema calcula o grau de pertinência a padrões normais e suspeitos, sinalizando casos anômalos para análise detalhada.
+    \item \textbf{Visualização e Interação:} Dashboards interativos apresentam estatísticas, alertas e padrões detectados, facilitando a tomada de decisão por gestores e auditores.
+\end{enumerate}
+
+Essa abordagem permite identificar fraudes mesmo em cenários dinâmicos e incertos, aproveitando o potencial adaptativo dos sistemas fuzzy evolutivos e a riqueza de informações do banco de dados agropecuário.
+
+Portanto, a metodologia proposta permite alcançar os objetivos gerais e específicos do projeto. Cada etapa está alinhada com os objetivos previamente definidos, desde a análise do problema e coleta de dados até a validação do modelo e proposição de melhorias. Isso garante que a pesquisa seja conduzida de forma sistemática, transparente e orientada a resultados teóricos, práticos e aplicáveis.

@@ -1,0 +1,93 @@
+A metodologia adotada neste trabalho consiste na aplicação e comparação de diferentes algoritmos de agrupamento sobre os conjuntos de dados Adult e Dry Bean, utilizando métricas quantitativas e visualização para análise dos resultados. O objetivo é avaliar, de forma didática e acessível, o comportamento de cada método frente a dados reais e variados.
+
+\subsection{Bases de Dados}
+
+\textbf{Adult:} O conjunto de dados Adult contém informações demográficas e socioeconômicas de indivíduos, como idade, escolaridade, ocupação, sexo, raça, horas trabalhadas por semana, entre outros. As principais variáveis de entrada incluem:
+\begin{itemize}
+    \item \textbf{Idade} (numérica, coluna: \texttt{age})
+    \item \textbf{Escolaridade} (categórica, coluna: \texttt{education}, codificada numericamente)
+    \item \textbf{Ocupação} (categórica, coluna: \texttt{occupation}, codificada numericamente)
+    \item \textbf{Sexo} (categórica, coluna: \texttt{sex}, codificada numericamente)
+    \item \textbf{Raça} (categórica, coluna: \texttt{race}, codificada numericamente)
+    \item \textbf{Horas por semana} (numérica, coluna: \texttt{hours-per-week})
+    \item \textbf{País de origem} (categórica, coluna: \texttt{native-country}, codificada numericamente)
+\end{itemize}
+As variáveis categóricas foram convertidas para valores numéricos por meio de codificação (Label Encoding), e os dados foram normalizados. O agrupamento é realizado sem utilizar a variável de saída (\texttt{income}), que é usada apenas para avaliação das métricas.
+
+\textbf{Dry Bean:} O conjunto Dry Bean reúne características físicas extraídas de imagens de diferentes tipos de feijões. As variáveis de entrada são todas numéricas e descrevem propriedades morfológicas dos grãos, tais como:
+\begin{itemize}
+    \item \textbf{Área} (número de pixels, coluna: \texttt{Area})
+    \item \textbf{Perímetro} (comprimento do contorno, coluna: \texttt{Perimeter})
+    \item \textbf{Comprimento principal} (maior eixo, coluna: \texttt{MajorAxisLength})
+    \item \textbf{Largura principal} (menor eixo, coluna: \texttt{MinorAxisLength})
+    \item \textbf{Coeficiente de assimetria} (coluna: \texttt{AsymmetryCoeff})
+    \item \textbf{Comprimento do retângulo delimitador} (coluna: \texttt{BoundingRectLength})
+    \item \textbf{Largura do retângulo delimitador} (coluna: \texttt{BoundingRectWidth})
+    \item \textbf{Raio equivalente} (coluna: \texttt{EquivDiameter}), \textbf{Excentricidade} (coluna: \texttt{Eccentricity}), \textbf{Solidez} (coluna: \texttt{Solidity}), entre outros.
+\end{itemize}
+A variável de saída (\texttt{Class}) indica o tipo de feijão, mas é utilizada apenas para avaliação dos agrupamentos. Todas as variáveis foram normalizadas.
+
+\subsection{Balanceamento das Classes}
+
+Em muitos problemas reais, os conjuntos de dados apresentam distribuição desbalanceada entre as classes, ou seja, algumas categorias possuem muito mais exemplos do que outras. Esse desbalanceamento pode prejudicar algoritmos de agrupamento e classificação, pois os métodos tendem a favorecer as classes majoritárias, resultando em baixa sensibilidade para as classes minoritárias.
+
+Para mitigar esse problema, foi aplicado o \textbf{balanceamento por oversampling} nos conjuntos de dados utilizados neste trabalho. O oversampling consiste em aumentar artificialmente o número de exemplos das classes minoritárias, por meio da replicação aleatória de amostras dessas classes, até igualar a quantidade de exemplos da classe majoritária. Dessa forma, garante-se que todas as classes tenham o mesmo peso durante o treinamento e avaliação dos algoritmos.
+
+No caso do conjunto Adult, a variável de saída (renda) apresenta forte desbalanceamento entre as classes $y = 1$ (renda $>\!50\,\mathrm{K}$) e $y = 0$ (renda $\leq\!50\,\mathrm{K}$):
+
+Para o conjunto Dry Bean, algumas variedades de feijão são muito menos frequentes que outras. O balanceamento foi realizado antes da divisão dos dados em treino e teste, assegurando que a avaliação dos métodos reflita um cenário mais justo e comparável entre as classes.
+
+O balanceamento é fundamental para evitar viés nos resultados e garantir que as métricas de avaliação representem de forma adequada o desempenho dos algoritmos em todas as classes presentes nos dados \cite{chawla2002smote, he2009learning}.
+
+\subsection{Algoritmos de Agrupamento}
+
+Foram avaliados três algoritmos principais: KMeans, Fuzzy C-Means e Agglomerativo. Todos foram implementados e aplicados de forma padronizada, seguindo um pipeline didático que inclui: balanceamento das classes, pré-processamento, definição do número de clusters, repetição dos experimentos com diferentes seeds, avaliação quantitativa e visualização dos resultados. O método Gustafson-Kessel foi considerado, mas não incluído na comparação final devido à instabilidade dos resultados em alguns cenários.
+
+\begin{itemize}
+    \item \textbf{KMeans:} Algoritmo particional clássico que agrupa os dados em $k$ clusters, atribuindo cada ponto ao centro mais próximo. É eficiente para grandes volumes de dados, mas sensível à escolha inicial dos centróides e ao formato dos grupos \cite{lloyd1982least}.
+    \item \textbf{Fuzzy C-Means:} Extensão fuzzy do KMeans, permite que cada ponto pertença a múltiplos clusters com diferentes graus de pertinência, refletindo incertezas e sobreposições naturais nos dados. Proporciona uma segmentação mais flexível e interpretável \cite{bezdek1981pattern}.
+    \item \textbf{Agglomerativo:} Método hierárquico que une iterativamente os clusters mais próximos, formando uma estrutura em árvore (dendrograma) e revelando relações hierárquicas nos dados. Não exige a definição prévia do número de clusters e é útil para explorar estruturas hierárquicas, mas pode ser mais custoso computacionalmente \cite{mullner2011modern}.
+\end{itemize}
+
+Todos os métodos foram avaliados sem acesso à variável de saída durante o agrupamento, utilizando-a apenas para avaliação das métricas.
+
+\subsection{Métricas de Avaliação}
+
+A avaliação dos agrupamentos foi realizada por meio das seguintes métricas padronizadas:
+\begin{itemize}
+    \item \textbf{Acurácia média:} Proporção média de exemplos corretamente agrupados em relação ao total, calculada sobre múltiplas repetições do experimento.
+    \item \textbf{Desvio padrão:} Medida da dispersão das acurácias obtidas nas repetições, indicando a estabilidade do método.
+    \item \textbf{Matriz de confusão:} Tabela que resume a quantidade de exemplos de cada classe real atribuídos a cada grupo pelo algoritmo. A matriz de confusão média em porcentagem é obtida normalizando as linhas, permitindo análise detalhada do desempenho em cada classe. Em problemas binários, a matriz pode ser representada como:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        & \textbf{Predito: 1} & \textbf{Predito: 0} \\
+        \hline
+        \textbf{Real: 1} & VP & FN \\
+        \hline
+        \textbf{Real: 0} & FP & VN \\
+        \hline
+    \end{tabular}
+    \end{center}
+    \begin{itemize}
+        \item VP = verdadeiro positivo (exemplos da classe 1 corretamente identificados)
+        \item FP = falso positivo (exemplos de outras classes incorretamente atribuídos à classe 1)
+        \item VN = verdadeiro negativo (exemplos das demais classes corretamente não atribuídos à classe 1)
+        \item FN = falso negativo (exemplos da classe 1 incorretamente agrupados em outra classe)
+    \end{itemize}
+    Em problemas multiclasse, cada linha e coluna da matriz representa uma classe diferente: a diagonal principal mostra os acertos (exemplos corretamente agrupados), enquanto os elementos fora da diagonal indicam confusões entre as classes. Assim, a matriz permite identificar quais classes são mais confundidas pelo algoritmo e avaliar detalhadamente o desempenho do agrupamento para cada grupo.
+\end{itemize}
+
+\subsection{Visualização dos Resultados}
+
+Para facilitar a interpretação dos agrupamentos, foi utilizada a Análise de Componentes Principais (PCA) para projetar os dados em duas dimensões. Os resultados foram apresentados em gráficos de dispersão, nos quais cada ponto representa uma amostra e as cores indicam o cluster atribuído pelo algoritmo. Os centros dos clusters também foram destacados, permitindo observar a separação e a compactação dos grupos. As matrizes de confusão médias foram apresentadas em formato percentual, padronizando a análise visual entre todos os métodos.
+
+\subsection{Seleção do Número de Clusters: Método do Cotovelo}
+
+Para definir o número ideal de clusters, utilizou-se o \textbf{método do cotovelo} \cite{thorndike1953belongs,rousseeuw1987silhouettes}, que avalia uma métrica de qualidade (como o índice silhouette \cite{rousseeuw1987silhouettes}) para diferentes valores de $k$. O ponto de inflexão da curva indica o valor mais adequado de clusters, equilibrando qualidade e simplicidade do modelo. Esse procedimento foi aplicado separadamente para os conjuntos Adult e Dry Bean, orientando a escolha de $k$ em cada caso.
+
+A metodologia apresentada neste trabalho foi cuidadosamente estruturada para garantir uma análise comparativa clara, didática e reprodutível dos principais algoritmos de agrupamento aplicados a bases de dados reais. A escolha dos métodos, das métricas e das técnicas de visualização permite não apenas avaliar o desempenho quantitativo dos algoritmos, mas também compreender suas características, limitações e adequação a diferentes tipos de dados. Essa abordagem fornece uma base sólida para a discussão dos resultados e para a escolha do método mais apropriado em aplicações práticas de agrupamento.
+
+
+
+
