@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "teoriagrafos"
+version = "0.1.0"
+description = "Exemplos didáticos de representações de grafos"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Autor", email = "" }
+]
+dependencies = []
+
+[project.scripts]
+teoriagrafos = "teoriagrafos.__main__:main"
