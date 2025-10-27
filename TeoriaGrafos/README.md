@@ -1,82 +1,210 @@
-# Representações de Grafos — Matrizes e Listas
+# 📚 Teoria dos Grafos - Material Didático
 
-Este repositório contém implementações didáticas de representações de grafos em Python:
+Este repositório contém material completo de **Teoria dos Grafos** com:
+- ✅ **6 Jupyter Notebooks** organizados por temas
+- ✅ Exemplos práticos usando **NetworkX**
+- ✅ Visualizações interativas com **Matplotlib**
+- ✅ Exercícios e problemas clássicos
+- ✅ Configurado com **uv** para gerenciamento rápido de dependências
 
-- `representacoes_grafos.py` — implementação de:
-  - `Aresta` (dataclass)
-  - `GrafoMatriz` (matriz de adjacência)
-  - `GrafoLista` (lista de adjacência)
-  - utilitários de conversão e visualização (`matriz_para_lista`, `lista_para_matriz`, `desenha_grafo_de_lista`)
+---
 
-- `representacoes_grafos.ipynb` — notebook com explicações, exemplos e visualizações.
-- `test_grafos.py` e `test_grafos_extra.py` — testes pytest.
+## 📖 Conteúdo
 
-Como usar (Windows / PowerShell)
+### Notebooks (pasta `terminologia/`)
 
-1. Criar e ativar um ambiente virtual (recomendado):
+1. **[Introdução e Motivação](terminologia/01_introducao_motivacao.ipynb)** - O que são grafos e por que estudá-los
+2. **[Terminologia Básica](terminologia/02_terminologia.ipynb)** - Adjacência, incidência, laços, subgrafos
+3. **[Tipos de Grafos](terminologia/03_tipos_grafos.ipynb)** - Simples, direcionados, completos, ciclo, roda
+4. **[Grafos Especiais](terminologia/04_grafos_especiais.ipynb)** - Bipartidos, ponderados, planares, multigrafos
+5. **[Grau e Teoremas](terminologia/05_grau_teoremas.ipynb)** - Teorema do Aperto de Mãos, grafos regulares
+6. **[Problema de Königsberg](terminologia/06_konigsberg.ipynb)** 🌉 - O problema clássico de Euler
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
+📚 [**Ver índice completo dos notebooks →**](terminologia/README.md)
 
-2. Instalar dependências:
+---
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install networkx matplotlib pytest
-```
+## 🚀 Início Rápido
 
-3. Rodar os testes:
+### 1️⃣ Instalação com uv (recomendado)
 
-```powershell
-.\.venv\Scripts\python.exe -m pytest -q
-```
-
-4. Abrir e executar o notebook `representacoes_grafos.ipynb` no VS Code ou Jupyter.
-
-Notas
-
-- As implementações são direcionadas (cada aresta é armazenada como v1 -> v2). Se precisar de versão não direcionada, me avise que eu adapto.
-- A visualização com `networkx` e `matplotlib` é opcional; instale as bibliotecas acima para usar as funções de plot.
-
-Contato
-
-Se quiser que eu crie um PR com essas mudanças, ou adicione suporte a grafos não direcionados, me diga e eu faço os commits e abro uma branch.
-
-## Usando uv (opção mais rápida para Python) 🐍⚡
-
-O [uv](https://docs.astral.sh/uv/) é um gerenciador/instalador de Python e dependências muito rápido. Abaixo um fluxograma de uso no Windows (PowerShell):
-
-1) Instalar o uv
+O [uv](https://docs.astral.sh/uv/) é um gerenciador ultra-rápido de Python e dependências:
 
 ```powershell
-# Método recomendado
+# Instalar uv (Windows/PowerShell)
 irm https://astral.sh/uv/install.ps1 | iex
 
-# Alternativa com Invoke-WebRequest
-Invoke-WebRequest https://astral.sh/uv/install.ps1 -UseBasicParsing | Invoke-Expression
-```
-
-Feche e reabra o PowerShell após instalar.
-
-2) Instalar uma versão do Python (opcional, o uv pode usar a sua atual)
-
-```powershell
-uv python install 3.12
-```
-
-3) Criar/sincronizar o ambiente do projeto (este repositório já tem `pyproject.toml`)
-
-```powershell
-# Cria uma venv local .venv (opcional, mas recomendado)
-uv venv .venv
-
-# Instala as dependências do projeto declaradas no pyproject (e gera uv.lock)
+# Instalar todas as dependências
 uv sync
+
+# Iniciar Jupyter Notebook
+uv run jupyter notebook
 ```
 
-4) Executar o pacote
+### 2️⃣ Alternativa: pip tradicional
+
+```powershell
+# Criar ambiente virtual
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Instalar dependências
+pip install networkx matplotlib jupyter numpy
+
+# Iniciar Jupyter
+jupyter notebook
+```
+
+---
+
+## 📦 Dependências
+
+As seguintes bibliotecas são instaladas automaticamente:
+
+- **NetworkX** 3.5 - Criação e análise de grafos
+- **Matplotlib** 3.10.7 - Visualização
+- **Jupyter** Lab 4.4.10 - Ambiente de notebooks
+- **NumPy** 2.3.4 - Computação numérica
+
+---
+
+## 🎯 Ordem de Estudo Recomendada
+
+```
+1. Introdução → 2. Terminologia → 3. Tipos → 4. Especiais → 5. Teoremas → 6. Königsberg
+```
+
+Cada notebook é independente, mas segue uma progressão lógica de dificuldade.
+
+---
+
+## 💡 Como Usar os Notebooks
+
+1. **Abra o Jupyter**:
+   ```powershell
+   uv run jupyter notebook
+   ```
+
+2. **Navegue até `terminologia/`**
+
+3. **Comece pelo notebook 1** e execute todas as células (Shift+Enter)
+
+4. **Modifique os exemplos** para experimentar!
+
+---
+
+## 🔧 Comandos Úteis com uv
+
+```powershell
+# Instalar nova dependência
+uv add <pacote>
+
+# Atualizar dependências
+uv sync --upgrade
+
+# Executar Python
+uv run python script.py
+
+# Executar Jupyter Lab (interface moderna)
+uv run jupyter lab
+
+# Ver versão do Python em uso
+uv run python --version
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+TeoriaGrafos/
+├── terminologia/
+│   ├── README.md                      # 📚 Índice dos notebooks
+│   ├── 01_introducao_motivacao.ipynb  # Introdução
+│   ├── 02_terminologia.ipynb          # Terminologia básica
+│   ├── 03_tipos_grafos.ipynb          # Tipos de grafos
+│   ├── 04_grafos_especiais.ipynb      # Grafos especiais
+│   ├── 05_grau_teoremas.ipynb         # Graus e teoremas
+│   └── 06_konigsberg.ipynb            # Problema clássico 🌉
+├── src/
+│   └── teoriagrafos/                  # Pacote Python (opcional)
+├── pyproject.toml                      # Configuração uv/pip
+├── uv.lock                            # Lock file (gerado automaticamente)
+└── README.md                          # Este arquivo
+```
+
+---
+
+## 🎓 Tópicos Cobertos
+
+### Conceitos Fundamentais
+- ✅ Definição de grafos G = (V, E)
+- ✅ Vértices e arestas
+- ✅ Adjacência e incidência
+- ✅ Laços e arestas paralelas
+- ✅ Subgrafos
+
+### Tipos de Grafos
+- ✅ Grafos simples
+- ✅ Grafos direcionados (digrafos)
+- ✅ Grafos completos (Kₙ)
+- ✅ Grafos ciclo (Cₙ)
+- ✅ Grafos roda (Wₙ)
+
+### Grafos Especiais
+- ✅ Grafos bipartidos (K_{m,n})
+- ✅ Multigrafos
+- ✅ Grafos ponderados
+- ✅ Grafos planares (K₅, K₃,₃)
+
+### Teoremas e Problemas
+- ✅ Grau de vértices
+- ✅ Teorema do Aperto de Mãos (Handshaking Theorem)
+- ✅ Grafos regulares
+- ✅ **Problema das 7 Pontes de Königsberg** (Euler, 1736)
+- ✅ Caminhos e ciclos Eulerianos
+
+---
+
+## 🌐 Recursos Adicionais
+
+- 📖 [Documentação NetworkX](https://networkx.org/documentation/stable/)
+- 📺 [3Blue1Brown - Discrete Math](https://www.youtube.com/c/3blue1brown)
+- 📚 Livro: "Introduction to Graph Theory" - Douglas West
+- 🎓 [Coursera: Graph Theory](https://www.coursera.org/learn/graphs)
+
+---
+
+## 🤝 Contribuições
+
+Este material é educacional e está em constante evolução. Contribuições são bem-vindas:
+
+- 🐛 Reporte bugs
+- 💡 Sugira melhorias
+- ✍️ Adicione exemplos
+- 📝 Corrija erros
+
+---
+
+## 📄 Licença
+
+MIT License - Livre para uso educacional
+
+---
+
+## 🎉 Pronto para Começar?
+
+```powershell
+uv run jupyter notebook
+```
+
+Abra `terminologia/01_introducao_motivacao.ipynb` e boa jornada! 🚀
+
+---
+
+## ⚙️ Detalhes Técnicos do uv
+
+### Por que usar uv?
 
 ```powershell
 # Executa o ponto de entrada do pacote (src/teoriagrafos/__main__.py)

@@ -12,7 +12,15 @@ license = { text = "MIT" }
 authors = [
   { name = "Autor", email = "" }
 ]
-dependencies = []
+dependencies = [
+    "networkx>=3.0",
+    "matplotlib>=3.5",
+    "jupyter>=1.0",
+    "numpy>=1.21",
+]
 
 [project.scripts]
 teoriagrafos = "teoriagrafos.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/teoriagrafos"]
