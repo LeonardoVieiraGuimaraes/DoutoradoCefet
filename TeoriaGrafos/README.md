@@ -24,6 +24,16 @@ Este repositório contém material completo de **Teoria dos Grafos** com:
 
 ---
 
+## 🧭 Outros módulos do repositório
+
+- 📦 [Representações de Grafos](representacoes/README.md)
+- 🌲 [Árvores](arvores/README.md)
+- 🔎 [Buscas (BFS)](buscas/README.md)
+
+Esses módulos seguem o mesmo padrão didático: teoria, implementação em Python/NetworkX, visualizações e exercícios.
+
+---
+
 ## 🚀 Início Rápido
 
 ### 1️⃣ Instalação com uv (recomendado)
