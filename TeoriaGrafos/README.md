@@ -29,6 +29,8 @@ Este repositório contém material completo de **Teoria dos Grafos** com:
 - 📦 [Representações de Grafos](representacoes/README.md)
 - 🌲 [Árvores](arvores/README.md)
 - 🔎 [Buscas (BFS)](buscas/README.md)
+- 🌉 [Árvore Geradora e AGM](arvore_geradora/README.md)
+- 🛣️ [Caminhos Mínimos (Bellman-Ford e Dijkstra)](caminhos_minimos/README.md)
 
 Esses módulos seguem o mesmo padrão didático: teoria, implementação em Python/NetworkX, visualizações e exercícios.
 
