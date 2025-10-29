@@ -18,3 +18,7 @@ dist/
 
 # VS Code
 .vscode/
+
+# Arquivos de instâncias grandes (prática 01)
+praticas/pratica01/*.txt
+praticas/pratica01/largeEWD*
