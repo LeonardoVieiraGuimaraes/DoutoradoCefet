@@ -1,0 +1,1 @@
+Instância: 10000.txt\nVértices: 10000.txt\nOrigem: 0\n
