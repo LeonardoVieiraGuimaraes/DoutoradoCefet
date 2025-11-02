@@ -1,0 +1,3 @@
+instancia	comparacoes
+10k	123462
+1m	15172126
