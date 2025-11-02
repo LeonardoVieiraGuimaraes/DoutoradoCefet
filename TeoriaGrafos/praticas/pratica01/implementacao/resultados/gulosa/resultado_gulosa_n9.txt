@@ -1,10 +1,10 @@
 n=9
 0: dist=0.00, parent=None
-1: dist=4.21, parent=0
-2: dist=7.50, parent=0
-3: dist=8.47, parent=0
-4: dist=4.20, parent=0
-5: dist=5.00, parent=0
-6: dist=8.33, parent=0
-7: dist=7.90, parent=0
-8: dist=8.56, parent=0
+1: dist=2.62, parent=0
+2: dist=3.45, parent=0
+3: dist=3.52, parent=0
+4: dist=9.68, parent=0
+5: dist=9.67, parent=0
+6: dist=2.38, parent=0
+7: dist=1.18, parent=0
+8: dist=3.10, parent=0
