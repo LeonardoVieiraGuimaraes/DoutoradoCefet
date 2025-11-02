@@ -1,2 +1,0 @@
-instancia	comparacoes
-10k	123462
