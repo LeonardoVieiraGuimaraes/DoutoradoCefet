@@ -1,7 +1,7 @@
 n=6
 0: dist=0.00, parent=None
-1: dist=5.05, parent=0
-2: dist=2.63, parent=0
-3: dist=8.82, parent=0
-4: dist=1.89, parent=0
-5: dist=4.30, parent=0
+1: dist=2.07, parent=0
+2: dist=8.97, parent=0
+3: dist=4.51, parent=0
+4: dist=5.82, parent=0
+5: dist=8.30, parent=0

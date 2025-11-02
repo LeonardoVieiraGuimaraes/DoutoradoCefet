@@ -1,6 +1,6 @@
 n=5
 0: dist=0.00, parent=None
-1: dist=5.75, parent=3
-2: dist=5.00, parent=0
-3: dist=2.99, parent=0
-4: dist=6.69, parent=3
+1: dist=4.93, parent=0
+2: dist=2.28, parent=0
+3: dist=6.98, parent=2
+4: dist=2.57, parent=0
