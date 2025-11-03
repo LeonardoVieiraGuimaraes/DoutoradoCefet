@@ -1,0 +1,5 @@
+DIJKSTRA - Instância 10k
+Origem: 0
+Vertices: 10,000
+Comparacoes: 123,462
+Alcancados: 10,000
