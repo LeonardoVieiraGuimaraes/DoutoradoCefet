@@ -1,5 +1,0 @@
-n=4
-0: dist=0.00, parent=None
-1: dist=5.23, parent=0
-2: dist=9.13, parent=0
-3: dist=5.17, parent=0

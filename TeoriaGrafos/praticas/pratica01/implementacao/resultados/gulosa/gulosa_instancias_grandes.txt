@@ -1,2 +1,0 @@
-instancia	comparacoes_gulosa
-10k	123462
