@@ -1,0 +1,15 @@
+RELATÓRIO COMPLETO: DIJKSTRA vs HEURÍSTICA GULOSA
+======================================================================
+
+GRAFOS DE TESTE
+----------------------------------------------------------------------
+Tamanhos testados: n=4 até n=1000
+Dijkstra - Comparações: min=12, max=999,000
+Gulosa - Comparações: min=12, max=999,000
+
+INSTÂNCIA 10.000 VÉRTICES
+----------------------------------------------------------------------
+Dijkstra: 123,462 comparações
+Gulosa: 424 comparações
+Redução: 99.66%
+

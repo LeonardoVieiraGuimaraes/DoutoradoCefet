@@ -1,0 +1,6 @@
+DIJKSTRA - Instância 10.000 vértices
+============================================================
+Origem: 0
+Vértices: 10,000
+Comparações: 123,462
+Alcançados: 10,000
