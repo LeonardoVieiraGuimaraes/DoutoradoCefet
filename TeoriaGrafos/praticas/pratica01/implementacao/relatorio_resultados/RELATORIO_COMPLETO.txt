@@ -1,0 +1,45 @@
+════════════════════════════════════════════════════════════════════════════════
+RELATÓRIO COMPLETO - PRÁTICA 01: CAMINHO MÍNIMO
+Disciplina: Teoria de Grafos
+Gerado em: 2025-11-02 22:58:27
+════════════════════════════════════════════════════════════════════════════════
+
+1. CONFIGURAÇÃO
+--------------------------------------------------------------------------------
+   Tamanhos testados: n = 4 até 10
+   Seed: 42
+   Origem: 0
+
+2. ESTRUTURA DE ARQUIVOS GERADOS
+--------------------------------------------------------------------------------
+   📁 relatorio_resultados/
+      ├── dijkstra/
+      │   ├── grafos/ (7 arquivos TXT)
+      │   ├── imagens/ (10 imagens PNG)
+      │   └── tabelas/ (9 arquivos)
+      ├── gulosa/ (mesma estrutura)
+      ├── comparacao/ (3 arquivos)
+      └── instancias_grandes/ (1+ arquivos)
+
+3. RESUMO - DIJKSTRA
+--------------------------------------------------------------------------------
+   Total de comparações: 322
+   Média: 46.00
+   Mínimo: 12 (n=4)
+   Máximo: 90 (n=10)
+
+4. RESUMO - HEURÍSTICA GULOSA
+--------------------------------------------------------------------------------
+   Total de comparações: 322
+   Média: 46.00
+   Mínimo: 12 (n=4)
+   Máximo: 90 (n=10)
+
+5. COMPARAÇÃO GERAL
+--------------------------------------------------------------------------------
+   Redução média: 0.00%
+   ⚠ Gulosa realizou 0 comparações a MAIS
+
+════════════════════════════════════════════════════════════════════════════════
+FIM DO RELATÓRIO
+════════════════════════════════════════════════════════════════════════════════

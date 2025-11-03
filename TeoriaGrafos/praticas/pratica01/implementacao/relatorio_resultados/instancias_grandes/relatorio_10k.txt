@@ -1,0 +1,17 @@
+RELATÓRIO - INSTÂNCIA 10.000 VÉRTICES
+======================================================================
+
+Vértices: 10,000
+Origem: 0
+
+DIJKSTRA:
+  Comparações: 123,462
+  Alcançados: 10,000
+
+HEURÍSTICA GULOSA:
+  Comparações: 424
+  Alcançados: 28
+
+COMPARAÇÃO:
+  Diferença: -123,038
+  Redução: 99.66%

@@ -1,0 +1,26 @@
+DIJKSTRA - Grafo com n=8 vértices
+============================================================
+Origem: 0
+Comparações: 56
+
+Distâncias Mínimas:
+------------------------------------------------------------
+  Vértice 0: 0.00
+  Vértice 1: 5.89
+  Vértice 2: 1.23
+  Vértice 3: 3.48
+  Vértice 4: 3.01
+  Vértice 5: 5.79
+  Vértice 6: 2.28
+  Vértice 7: 5.35
+
+Árvore de Caminhos (Parent):
+------------------------------------------------------------
+  Vértice 0: parent = None
+  Vértice 1: parent = 6
+  Vértice 2: parent = 0
+  Vértice 3: parent = 0
+  Vértice 4: parent = 0
+  Vértice 5: parent = 6
+  Vértice 6: parent = 2
+  Vértice 7: parent = 3

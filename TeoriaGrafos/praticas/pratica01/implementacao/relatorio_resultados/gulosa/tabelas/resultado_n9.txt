@@ -1,0 +1,28 @@
+HEURÍSTICA GULOSA - Grafo com n=9 vértices
+============================================================
+Origem: 0
+Comparações: 72
+
+Distâncias (aproximadas):
+------------------------------------------------------------
+  Vértice 0: 0.0
+  Vértice 1: 12.281302221579235
+  Vértice 2: 1.2250967970040025
+  Vértice 3: 8.251951315565595
+  Vértice 4: 2.2835856341065517
+  Vértice 5: 13.520125948734007
+  Vértice 6: 21.441686507393385
+  Vértice 7: 15.42913881342157
+  Vértice 8: 27.92386555839628
+
+Árvore de Caminhos (Parent):
+------------------------------------------------------------
+  Vértice 0: parent = None
+  Vértice 1: parent = 3
+  Vértice 2: parent = 0
+  Vértice 3: parent = 4
+  Vértice 4: parent = 2
+  Vértice 5: parent = 1
+  Vértice 6: parent = 7
+  Vértice 7: parent = 5
+  Vértice 8: parent = 6
