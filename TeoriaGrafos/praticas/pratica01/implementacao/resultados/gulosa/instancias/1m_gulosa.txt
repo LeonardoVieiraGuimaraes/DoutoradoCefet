@@ -1,5 +1,0 @@
-GULOSA - Instância 1m
-Origem: 0
-Vertices: 1,000,000
-Comparacoes: 1,847
-Alcancados: 120

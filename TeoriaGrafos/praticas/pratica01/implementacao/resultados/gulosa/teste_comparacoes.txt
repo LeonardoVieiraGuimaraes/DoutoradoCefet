@@ -1,4 +1,0 @@
-n	comparacoes
-4	12
-5	20
-6	30

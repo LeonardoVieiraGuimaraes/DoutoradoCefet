@@ -1,5 +1,0 @@
-GULOSA - Instância 10k
-Origem: 0
-Vertices: 10,000
-Comparacoes: 424
-Alcancados: 28

@@ -1,5 +1,0 @@
-DIJKSTRA - Instância 1m
-Origem: 0
-Vertices: 1,000,000
-Comparacoes: 15,172,126
-Alcancados: 1,000,000
