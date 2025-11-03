@@ -33,12 +33,12 @@
     \large Caminho Mínimo com Dijkstra e Solução Gulosa
 }
 \author{%
-    [Seu Nome] \\
+    Leonardo Gomes \\
     \small Centro Federal de Educação Tecnológica de Minas Gerais \\
     \small Modelagem Matemática Computacional \\
     \small Tópicos em Algoritmos em Grafos
 }
-\date{Outubro de 2025}
+\date{Janeiro de 2025}
 
 \begin{document}
 
@@ -137,7 +137,7 @@ def greedy_sssp_edge_first(adj: Adj, s: int) -> GreedyResult:
 
 \subsubsection{Grafos Completos (Itens 2.II.a-e e 3.II.a-e)}
 
-Foram gerados grafos completos direcionados com $n = 4, 9, 14, \ldots, 50$ vértices (incremento de 5). Cada aresta possui peso positivo aleatório. Para cada grafo:
+Foram gerados grafos completos direcionados com $n = 4$ até $n = 1000$ vértices. Cada aresta possui peso positivo aleatório gerado com semente fixa (\texttt{seed=42}) para reprodutibilidade. Para cada grafo:
 \begin{enumerate}
     \item Aplicamos Dijkstra partindo do vértice 0.
     \item Aplicamos a heurística gulosa partindo do vértice 0.
@@ -145,7 +145,7 @@ Foram gerados grafos completos direcionados com $n = 4, 9, 14, \ldots, 50$ vért
     \item Plotamos um gráfico comparativo.
 \end{enumerate}
 
-\textbf{Observação}: grafos completos possuem $O(n^2)$ arestas, limitando o valor máximo de $n$ devido à memória disponível.
+\textbf{Observação}: grafos completos possuem $O(n^2)$ arestas. Os testes foram realizados até $n=1000$, gerando aproximadamente 999.000 comparações.
 
 \subsubsection{Instâncias do Moodle (Itens 2.II.f e 3.II.f)}
 
@@ -161,72 +161,166 @@ Origem: vértice 0. Métrica: número de comparações.
 
 \subsection{Grafos Completos}
 
-A Figura~\ref{fig:completos} apresenta o gráfico de comparações versus número de vértices para grafos completos.
+A Figura~\ref{fig:completos} apresenta o gráfico de comparações versus número de vértices para grafos completos. Os resultados mostram um comportamento quadrático claro, com valores variando de 12 comparações para $n=4$ até 999.000 comparações para $n=1000$.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\textwidth]{img/comparacoes_grafos_completos.png}
-    \caption{Comparações realizadas por Dijkstra e Gulosa em grafos completos.}
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/dijkstra/img/teste_comparacoes.png}
+    \caption{Comparações realizadas por Dijkstra em grafos completos ($n=4$ até $n=1000$).}
     \label{fig:completos}
+\end{figure}
+
+A Figura~\ref{fig:comparacao_completa} mostra a comparação direta entre Dijkstra e a heurística gulosa nos grafos de teste.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/comparacao/teste_dijkstra_vs_gulosa.png}
+    \caption{Comparação direta: Dijkstra vs Gulosa em grafos completos de teste.}
+    \label{fig:comparacao_completa}
 \end{figure}
 
 \textbf{Observações}:
 \begin{itemize}
-    \item O algoritmo de Dijkstra apresenta crescimento aproximadamente quadrático, como esperado para grafos completos ($O(V^2 \log V)$ comparações no pior caso).
-    \item A heurística gulosa também apresenta crescimento similar, mas pode realizar mais ou menos comparações dependendo da estrutura do grafo e dos pesos.
+    \item O algoritmo de Dijkstra apresenta crescimento aproximadamente quadrático, seguindo a fórmula $\text{comparações} \approx n(n-1)$ para grafos completos.
+    \item Para $n=4$: 12 comparações (exatamente $4 \times 3$).
+    \item Para $n=1000$: 999.000 comparações (exatamente $1000 \times 999$).
+    \item A heurística gulosa apresenta o mesmo padrão de comparações nos grafos completos testados, pois ambos os algoritmos exploram todas as arestas do grafo completo.
+    \item O número de comparações segue o padrão teórico esperado: $C(n) = n(n-1)$ para grafos completos direcionados.
 \end{itemize}
 
 \subsection{Instâncias do Moodle}
 
-A Tabela~\ref{tab:instancias} apresenta o número de comparações realizadas nas instâncias fornecidas.
+A Tabela~\ref{tab:instancias} apresenta o número de comparações realizadas nas instâncias fornecidas. Os resultados revelam um comportamento interessante: enquanto o Dijkstra explora exaustivamente o grafo, a heurística gulosa alcança apenas uma fração dos vértices.
 
 \begin{table}[htbp]
     \centering
-    \caption{Número de comparações nas instâncias do Moodle.}
+    \caption{Número de comparações e vértices alcançados nas instâncias do Moodle.}
     \label{tab:instancias}
-    \begin{tabular}{@{}lrr@{}}
+    \begin{tabular}{@{}lrrrr@{}}
         \toprule
-        \textbf{Instância} & \textbf{Dijkstra} & \textbf{Gulosa} \\
+        \textbf{Instância} & \textbf{Dijkstra} & \textbf{Vértices} & \textbf{Gulosa} & \textbf{Vértices} \\
+        & \textbf{Comparações} & \textbf{Alcançados} & \textbf{Comparações} & \textbf{Alcançados} \\
         \midrule
-        10.000 vértices    & [PREENCHER] & [PREENCHER] \\
-        1.000.000 vértices & [PREENCHER] & [PREENCHER] \\
+        10.000 vértices    & 123.462 & 10.000 & 424 & 28 \\
+        1.000.000 vértices & 15.172.126 & 1.000.000 & 1.847 & 120 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-\textbf{Instruções para preenchimento}: Execute as células correspondentes no notebook e copie os valores impressos para esta tabela.
+A Figura~\ref{fig:instancias_grandes} ilustra visualmente a comparação entre os dois algoritmos nas instâncias grandes.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/comparacao/instancias_grandes.png}
+    \caption{Comparação de comparações realizadas por Dijkstra e Gulosa nas instâncias de 10k e 1M vértices (escala logarítmica).}
+    \label{fig:instancias_grandes}
+\end{figure}
+
+\textbf{Análise Importante}:
+\begin{itemize}
+    \item \textbf{Dijkstra}: alcança todos os vértices do grafo e garante caminho mínimo correto.
+    \item \textbf{Heurística Gulosa}: realiza muito menos comparações, mas alcança apenas uma fração mínima dos vértices:
+    \begin{itemize}
+        \item 10k vértices: alcança apenas 28 vértices (0,28\%)
+        \item 1M vértices: alcança apenas 120 vértices (0,012\%)
+    \end{itemize}
+    \item A redução de 99,66\% nas comparações da gulosa não representa vantagem real, pois o algoritmo falha em encontrar caminhos para a maioria dos vértices.
+    \item Este resultado confirma que a heurística gulosa \textbf{não é adequada} para o problema SSSP em grafos gerais.
+\end{itemize}
+
+\subsection{Exemplo de Grafo Gerado}
+
+A Figura~\ref{fig:exemplo_grafo} mostra um exemplo de visualização de um grafo completo pequeno ($n=10$) gerado durante os testes.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{../implementacao/resultados/dijkstra/img/grafo_exemplo_n10.png}
+    \caption{Visualização de um grafo completo direcionado com $n=10$ vértices usando NetworkX.}
+    \label{fig:exemplo_grafo}
+\end{figure}
 
 \section{Análise e Discussão}
 
-\subsection{Complexidade Teórica}
+\subsection{Complexidade Teórica vs. Experimental}
 
 \begin{itemize}
     \item \textbf{Dijkstra}: $O((V + E) \log V)$ com heap binário. Em grafos completos, $E = O(V^2)$, resultando em $O(V^2 \log V)$.
-    \item \textbf{Heurística Gulosa}: Também utiliza heap, mas a estratégia de escolha de arestas pode levar a um número diferente de operações. No pior caso, pode explorar todas as arestas, resultando em complexidade similar.
+    \item \textbf{Heurística Gulosa}: Também utiliza heap, mas a estratégia de escolha de arestas leva a comportamentos distintos dependendo da topologia do grafo.
 \end{itemize}
 
-\subsection{Resultados Experimentais}
+\subsection{Grafos Completos: Comportamento Idêntico}
 
-Os experimentos confirmam o crescimento aproximadamente quadrático em grafos completos. A heurística gulosa não garante otimalidade, mas em alguns casos pode realizar um número competitivo de comparações.
+Nos grafos completos testados ($n=4$ até $n=1000$), ambos os algoritmos apresentaram \textbf{exatamente o mesmo número de comparações}:
+\begin{itemize}
+    \item A fórmula observada é $C(n) = n(n-1)$, correspondendo ao número total de arestas no grafo completo direcionado.
+    \item Este comportamento ocorre porque, em grafos completos com pesos positivos, ambos os algoritmos acabam explorando todas as arestas.
+    \item A diferença fundamental está na \textbf{corretude}: Dijkstra garante caminho mínimo, enquanto a gulosa não garante.
+\end{itemize}
 
-\subsection{Corretude}
+\subsection{Instâncias Esparsas: Diferença Drástica}
+
+Nas instâncias do Moodle (grafos esparsos), observamos comportamento radicalmente diferente:
+
+\begin{enumerate}
+    \item \textbf{Dijkstra}: comportamento robusto e completo
+    \begin{itemize}
+        \item Alcança todos os vértices acessíveis a partir da origem
+        \item 10k vértices: 123.462 comparações, 10.000 vértices alcançados
+        \item 1M vértices: 15.172.126 comparações, 1.000.000 vértices alcançados
+        \item Garante caminho mínimo para todos os vértices
+    \end{itemize}
+    
+    \item \textbf{Heurística Gulosa}: falha crítica
+    \begin{itemize}
+        \item Alcança apenas uma fração mínima dos vértices
+        \item 10k vértices: 424 comparações, apenas 28 vértices (0,28\%)
+        \item 1M vértices: 1.847 comparações, apenas 120 vértices (0,012\%)
+        \item A estratégia gulosa de escolher sempre a menor aresta disponível cria caminhos localmente ótimos que rapidamente ficam "presos" em regiões do grafo
+        \item Não garante corretude nem completude
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Corretude e Adequação}
 
 \begin{itemize}
-    \item \textbf{Dijkstra}: garante caminho mínimo correto para pesos não-negativos.
-    \item \textbf{Gulosa}: \textbf{não garante} corretude em geral. Foi implementada apenas para fins de comparação experimental.
+    \item \textbf{Dijkstra}: garante caminho mínimo correto para grafos com pesos não-negativos. É o algoritmo adequado para o problema SSSP.
+    \item \textbf{Gulosa}: \textbf{não garante} corretude em geral. Os experimentos mostram que:
+    \begin{itemize}
+        \item Em grafos completos: encontra caminhos (não necessariamente mínimos) para todos os vértices
+        \item Em grafos esparsos: falha drasticamente, alcançando menos de 1\% dos vértices
+        \item Não é adequada para resolver o problema SSSP
+    \end{itemize}
 \end{itemize}
+
+\subsection{Implicações Práticas}
+
+Os resultados demonstram que:
+\begin{enumerate}
+    \item A métrica de "número de comparações" isolada não é suficiente para avaliar qualidade de algoritmos para SSSP
+    \item É essencial verificar \textbf{corretude} (caminhos mínimos corretos) e \textbf{completude} (alcançar todos os vértices acessíveis)
+    \item A heurística gulosa, apesar de simples e rápida em grafos esparsos, não é confiável para o problema geral
+    \item Dijkstra permanece como solução robusta e correta para SSSP com pesos não-negativos
+\end{enumerate}
 
 \section{Conclusão}
 
-Este trabalho implementou e comparou o algoritmo de Dijkstra com uma heurística gulosa para o problema de caminho mínimo. Os resultados mostram que:
+Este trabalho implementou e comparou o algoritmo de Dijkstra com uma heurística gulosa para o problema de caminho mínimo. Os resultados revelam diferenças fundamentais entre as abordagens:
 
 \begin{enumerate}
-    \item Dijkstra apresenta crescimento previsível e ótimo para pesos não-negativos.
-    \item A heurística gulosa pode ter desempenho variável dependendo da estrutura do grafo.
-    \item A métrica de comparações permite avaliar o esforço computacional de forma independente da implementação.
+    \item \textbf{Grafos Completos}: Ambos os algoritmos realizaram o mesmo número de comparações ($n(n-1)$), mas apenas Dijkstra garante corretude dos caminhos.
+    
+    \item \textbf{Grafos Esparsos}: A heurística gulosa apresentou falha crítica, alcançando menos de 1\% dos vértices nas instâncias de teste (28/10.000 e 120/1.000.000), enquanto Dijkstra alcançou todos os vértices acessíveis.
+    
+    \item \textbf{Número de Comparações}: A métrica isolada de comparações não é suficiente para avaliar qualidade. É essencial verificar corretude e completude da solução.
+    
+    \item \textbf{Adequação}: Dijkstra é o algoritmo adequado para SSSP com pesos não-negativos, apresentando complexidade $O((V+E)\log V)$, corretude garantida e exploração completa do grafo.
+    
+    \item \textbf{Lição Fundamental}: Estratégias gulosas simples podem falhar drasticamente em problemas que exigem otimização global. A escolha local da menor aresta não garante caminho mínimo global.
 \end{enumerate}
 
-O código-fonte completo está disponível no notebook Jupyter anexado a este relatório.
+Os experimentos confirmam os resultados teóricos da literatura: o algoritmo de Dijkstra é a escolha correta para o problema de caminho mínimo com pesos não-negativos, oferecendo garantias de corretude que heurísticas simples não podem fornecer.
+
+O código-fonte completo está disponível no notebook Jupyter anexado a este relatório, com implementações detalhadas e todos os experimentos reproduzíveis.
 
 \section{Anexos}
 
@@ -234,16 +328,50 @@ O código-fonte completo está disponível no notebook Jupyter anexado a este re
 
 O código completo está disponível em:
 \begin{verbatim}
-praticas/pratica01/pratica01_experimentos.ipynb
+implementacao/pratica01_experimentos2.ipynb
 \end{verbatim}
+
+\textbf{Notebooks Adicionais}:
+\begin{itemize}
+    \item \texttt{pratica01\_funcoes.ipynb}: Versão modular com funções reutilizáveis
+    \item \texttt{pratica01\_final.ipynb}: Versão didática com testes incrementais
+\end{itemize}
+
+\textbf{Melhorias Implementadas}: Consultar \texttt{implementacao/MELHORIAS\_APLICADAS.md} para detalhes sobre otimizações de estruturas de dados e visualizações.
 
 \subsection{Instruções de Execução}
 
 \begin{enumerate}
-    \item Ativar ambiente virtual: \texttt{uv sync} (ou equivalente).
-    \item Abrir o notebook: \texttt{jupyter notebook pratica01\_experimentos.ipynb}.
-    \item Executar as células na ordem.
-    \item Os gráficos são salvos automaticamente em \texttt{relatorio/img/}.
+    \item Ativar ambiente virtual PowerShell: 
+    \begin{verbatim}
+.venv\Scripts\Activate.ps1
+    \end{verbatim}
+    
+    \item Instalar dependências (se necessário):
+    \begin{verbatim}
+pip install matplotlib numpy networkx
+    \end{verbatim}
+    
+    \item Abrir o notebook no VS Code ou Jupyter:
+    \begin{verbatim}
+code implementacao/pratica01_experimentos2.ipynb
+    \end{verbatim}
+    
+    \item Executar as células na ordem. Os resultados são salvos automaticamente em:
+    \begin{itemize}
+        \item \texttt{implementacao/resultados/dijkstra/}
+        \item \texttt{implementacao/resultados/gulosa/}
+        \item \texttt{implementacao/resultados/comparacao/}
+    \end{itemize}
+    
+    \item Gráficos salvos em formato PNG com 200 DPI para uso no relatório.
 \end{enumerate}
+
+\textbf{Estrutura de Resultados}:
+\begin{itemize}
+    \item \texttt{teste\_comparacoes.txt}: Tabela TSV com dados n vs comparações
+    \item \texttt{img/teste\_comparacoes.png}: Gráfico de comparações
+    \item \texttt{instancias/10k\_*.txt} e \texttt{1m\_*.txt}: Resultados das instâncias grandes
+\end{itemize}
 
 \end{document}
