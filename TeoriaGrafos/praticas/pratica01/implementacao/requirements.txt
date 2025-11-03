@@ -1,0 +1,19 @@
+# Dependências para Prática 01 - Teoria de Grafos
+# Algoritmo de Dijkstra e Heurística Gulosa
+
+# Manipulação de grafos
+networkx>=2.8.0
+
+# Visualização e plotagem
+matplotlib>=3.5.0
+
+# Computação numérica
+numpy>=1.21.0
+
+# Biblioteca padrão (já incluídas no Python, listadas para referência)
+# - typing
+# - collections
+# - math
+# - heapq
+# - random
+# - os
