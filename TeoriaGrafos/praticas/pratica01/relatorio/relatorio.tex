@@ -27,27 +27,82 @@
     numberstyle=\tiny\color{gray}
 }
 
-% Informações do documento
-\title{%
-    \textbf{1ª Avaliação Prática} \\
-    \large Caminho Mínimo com Dijkstra e Solução Gulosa
-}
-\author{%
-    Leonardo Gomes \\
-    \small Centro Federal de Educação Tecnológica de Minas Gerais \\
-    \small Modelagem Matemática Computacional \\
-    \small Tópicos em Algoritmos em Grafos
-}
-\date{Janeiro de 2025}
-
 \begin{document}
 
-\maketitle
+% ============================================================
+% CAPA
+% ============================================================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Large \textbf{CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA\\DE MINAS GERAIS}}\\[0.5cm]
+    {\large Programa de Pós-Graduação em Modelagem Matemática e Computacional}\\[3cm]
+    
+    {\Large \textbf{Leonardo Gomes}}\\[4cm]
+    
+    {\Huge \textbf{Caminho Mínimo em Grafos:\\Dijkstra vs Heurística Gulosa}}\\[1cm]
+    
+    {\Large \textbf{1ª Avaliação Prática}}\\[1cm]
+    
+    {\large Tópicos em Algoritmos em Grafos}\\[6cm]
+    
+    \vfill
+    
+    {\large Belo Horizonte}\\
+    {\large Novembro de 2025}
+\end{titlepage}
+
+% ============================================================
+% PÁGINA DE ROSTO
+% ============================================================
+\newpage
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{3cm}
+    
+    {\Large \textbf{Leonardo Gomes}}\\[6cm]
+    
+    {\Huge \textbf{Caminho Mínimo em Grafos:\\Dijkstra vs Heurística Gulosa}}\\[1cm]
+    
+    {\Large \textbf{1ª Avaliação Prática}}\\[3cm]
+    
+    \hspace{.45\textwidth}
+    \begin{minipage}{.5\textwidth}
+        Trabalho apresentado ao Programa de Pós-Graduação em Modelagem Matemática e Computacional do Centro Federal de Educação Tecnológica de Minas Gerais como requisito parcial para avaliação na disciplina de Tópicos em Algoritmos em Grafos.
+    \end{minipage}
+    
+    \vfill
+    
+    {\large Belo Horizonte}\\
+    {\large Novembro de 2025}
+\end{center}
+
+% ============================================================
+% RESUMO
+% ============================================================
+\newpage
+\thispagestyle{empty}
 
 \begin{abstract}
-Este relatório apresenta a implementação e análise comparativa entre o algoritmo de Dijkstra e uma heurística gulosa para o problema de caminho mínimo em grafos direcionados ponderados. Os experimentos foram realizados em grafos completos de tamanhos variados e em instâncias do Moodle com 10.000 e 1.000.000 de vértices. O objetivo é comparar o número de operações de relaxamento (comparações) realizadas por cada algoritmo.
+Este relatório apresenta a implementação e análise comparativa entre o algoritmo de Dijkstra e uma heurística gulosa para o problema de caminho mínimo em grafos direcionados ponderados. Os experimentos foram realizados em grafos completos de tamanhos variados e em instâncias do Moodle com 10.000 e 1.000.000 de vértices. O objetivo é comparar o número de operações de relaxamento (comparações) realizadas por cada algoritmo. Os resultados demonstram que, embora a heurística gulosa realize menos comparações em grafos esparsos, ela alcança apenas 0,28\% dos vértices na instância de 10k e 0,012\% na instância de 1M, confirmando que não é adequada para o problema de caminho mínimo de origem única (SSSP).
 \end{abstract}
 
+% ============================================================
+% SUMÁRIO
+% ============================================================
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+
+% ============================================================
+% CONTEÚDO
+% ============================================================
+\newpage
+\pagenumbering{arabic}
 \section{Introdução}
 
 O problema de caminho mínimo de origem única (SSSP -- \textit{Single Source Shortest Path}) consiste em encontrar as distâncias mínimas de um vértice origem para todos os demais vértices de um grafo ponderado. Este trabalho implementa e compara:

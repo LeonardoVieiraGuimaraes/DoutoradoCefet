@@ -18,8 +18,14 @@
 ```bash
 cd relatorio
 pdflatex relatorio.tex
-pdflatex relatorio.tex  # Segunda execução para referências cruzadas
+pdflatex relatorio.tex  # Segunda execução para sumário e referências cruzadas
 ```
+
+**Nota**: A segunda execução é **obrigatória** para gerar corretamente:
+- Sumário (Table of Contents)
+- Lista de Figuras
+- Lista de Tabelas
+- Referências cruzadas entre seções
 
 ### Opção 2: VS Code com LaTeX Workshop
 
@@ -59,13 +65,25 @@ pratica01/
 
 O arquivo `relatorio.pdf` será gerado na pasta `relatorio/` com:
 
-- Capa com título e autor
-- Abstract
-- 6 seções principais
-- 5 figuras (gráficos e visualizações)
-- 1 tabela (resultados das instâncias)
-- Código fonte formatado com syntax highlighting
-- Referências cruzadas numeradas automaticamente
+- **Capa**: Título institucional completo
+- **Página de Rosto**: Informações do trabalho e finalidade
+- **Resumo (Abstract)**: Síntese dos objetivos e resultados
+- **Sumário Automático**: 
+  - Índice de Seções e Subseções
+  - Lista de Figuras (5 figuras)
+  - Lista de Tabelas (1 tabela)
+- **Conteúdo Principal** (6 seções):
+  1. Introdução
+  2. Metodologia
+  3. Resultados
+  4. Análise e Discussão
+  5. Conclusão
+  6. Anexos
+- **Figuras**: 5 gráficos e visualizações
+- **Tabela**: Resultados das instâncias grandes
+- **Código Fonte**: Formatado com syntax highlighting
+- **Numeração**: Páginas iniciais em romano (i, ii, iii...), conteúdo em arábico (1, 2, 3...)
+- **Referências Cruzadas**: Numeradas automaticamente
 
 ## Troubleshooting
 
