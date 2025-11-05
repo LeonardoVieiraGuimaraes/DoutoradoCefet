@@ -1,17 +1,24 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[brazilian]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
 \usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{setspace}
 
 \geometry{margin=2.5cm}
+
+% Espaçamento entre linhas (1.5 = espaçamento um e meio)
+\onehalfspacing
 
 % Configuração de código
 \lstset{
@@ -22,7 +29,7 @@
     stringstyle=\color{red},
     showstringspaces=false,
     breaklines=true,
-    frame=single,
+    frame=none,
     numbers=left,
     numberstyle=\tiny\color{gray}
 }
@@ -34,49 +41,31 @@
 % ============================================================
 \begin{titlepage}
     \centering
-    \vspace*{2cm}
+    \vspace*{1.5cm}
     
-    {\Large \textbf{CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA\\DE MINAS GERAIS}}\\[0.5cm]
-    {\large Programa de Pós-Graduação em Modelagem Matemática e Computacional}\\[3cm]
+    % Instituição - fonte 12, caixa alta, negrito
+    {\fontsize{12}{14}\selectfont\textbf{CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA\\DE MINAS GERAIS}}\\[0.3cm]
+    % Programa - fonte 12
+    {\fontsize{12}{14}\selectfont Programa de Pós-Graduação em Modelagem Matemática e Computacional}\\[2cm]
     
-    {\Large \textbf{Leonardo Gomes}}\\[4cm]
+    % Autor - fonte 12, negrito
+    {\fontsize{12}{14}\selectfont\textbf{Leonardo Vieira Guimarães}}\\[2.5cm]
     
-    {\Huge \textbf{Caminho Mínimo em Grafos:\\Dijkstra vs Heurística Gulosa}}\\[1cm]
+    % Título - fonte 12, caixa alta, negrito
+    {\fontsize{12}{14}\selectfont\textbf{CAMINHO MÍNIMO EM GRAFOS:\\DIJKSTRA VS HEURÍSTICA GULOSA}}\\[0.8cm]
     
-    {\Large \textbf{1ª Avaliação Prática}}\\[1cm]
+    % Subtítulo - fonte 12, negrito
+    {\fontsize{12}{14}\selectfont\textbf{1ª Avaliação Prática}}\\[0.8cm]
     
-    {\large Tópicos em Algoritmos em Grafos}\\[6cm]
+    % Disciplina - fonte 12
+    {\fontsize{12}{14}\selectfont Tópicos em Algoritmos em Grafos}\\[3cm]
     
     \vfill
     
-    {\large Belo Horizonte}\\
-    {\large Novembro de 2025}
+    % Local e data - fonte 12
+    {\fontsize{12}{14}\selectfont Belo Horizonte}\\
+    {\fontsize{12}{14}\selectfont Novembro de 2025}
 \end{titlepage}
-
-% ============================================================
-% PÁGINA DE ROSTO
-% ============================================================
-\newpage
-\thispagestyle{empty}
-\begin{center}
-    \vspace*{3cm}
-    
-    {\Large \textbf{Leonardo Gomes}}\\[6cm]
-    
-    {\Huge \textbf{Caminho Mínimo em Grafos:\\Dijkstra vs Heurística Gulosa}}\\[1cm]
-    
-    {\Large \textbf{1ª Avaliação Prática}}\\[3cm]
-    
-    \hspace{.45\textwidth}
-    \begin{minipage}{.5\textwidth}
-        Trabalho apresentado ao Programa de Pós-Graduação em Modelagem Matemática e Computacional do Centro Federal de Educação Tecnológica de Minas Gerais como requisito parcial para avaliação na disciplina de Tópicos em Algoritmos em Grafos.
-    \end{minipage}
-    
-    \vfill
-    
-    {\large Belo Horizonte}\\
-    {\large Novembro de 2025}
-\end{center}
 
 % ============================================================
 % RESUMO
@@ -85,7 +74,7 @@
 \thispagestyle{empty}
 
 \begin{abstract}
-Este relatório apresenta a implementação e análise comparativa entre o algoritmo de Dijkstra e uma heurística gulosa para o problema de caminho mínimo em grafos direcionados ponderados. Os experimentos foram realizados em grafos completos de tamanhos variados e em instâncias do Moodle com 10.000 e 1.000.000 de vértices. O objetivo é comparar o número de operações de relaxamento (comparações) realizadas por cada algoritmo. Os resultados demonstram que, embora a heurística gulosa realize menos comparações em grafos esparsos, ela alcança apenas 0,28\% dos vértices na instância de 10k e 0,012\% na instância de 1M, confirmando que não é adequada para o problema de caminho mínimo de origem única (SSSP).
+Este trabalho apresenta uma análise comparativa entre o algoritmo de Dijkstra e uma heurística gulosa para o problema de caminho mínimo de origem única (SSSP) em grafos direcionados ponderados. Foram implementados ambos os algoritmos utilizando heap binário e realizados experimentos em dois cenários: (1) grafos completos dirigidos gerados programaticamente com 4 a 1000 vértices, e (2) instâncias reais de grafos esparsos dirigidos com 10.000 e 1.000.000 de vértices. A métrica de avaliação é o número de operações de relaxamento. Os resultados evidenciam que, em grafos completos dirigidos, ambos os algoritmos apresentam desempenho idêntico ($n(n-1)$ comparações), porém apenas Dijkstra garante caminho mínimo ótimo. Em grafos esparsos dirigidos, a diferença é crítica: embora a heurística gulosa realize 99,66\% a 99,99\% menos comparações, ela alcança apenas 0,28\% e 0,012\% dos vértices acessíveis, enquanto Dijkstra alcança 100\% dos vértices com número de comparações proporcional às arestas. A conclusão fundamental é que a economia de 99\% nas comparações não tem valor quando o algoritmo falha em encontrar 99\% da solução, confirmando que Dijkstra é o algoritmo adequado para SSSP com garantia de corretude e exploração completa.
 \end{abstract}
 
 % ============================================================
@@ -94,9 +83,6 @@ Este relatório apresenta a implementação e análise comparativa entre o algor
 \newpage
 \pagenumbering{roman}
 \tableofcontents
-\newpage
-\listoffigures
-\listoftables
 
 % ============================================================
 % CONTEÚDO
@@ -105,328 +91,356 @@ Este relatório apresenta a implementação e análise comparativa entre o algor
 \pagenumbering{arabic}
 \section{Introdução}
 
-O problema de caminho mínimo de origem única (SSSP -- \textit{Single Source Shortest Path}) consiste em encontrar as distâncias mínimas de um vértice origem para todos os demais vértices de um grafo ponderado. Este trabalho implementa e compara:
+O problema de caminho mínimo de origem única (SSSP -- \textit{Single Source Shortest Path}) é um dos problemas fundamentais em teoria dos grafos e consiste em encontrar as distâncias mínimas de um vértice origem para todos os demais vértices alcançáveis de um grafo ponderado \cite{cormen2012}. Este problema possui aplicações práticas em diversos domínios, incluindo roteamento de redes de computadores, sistemas de navegação GPS, otimização de rotas logísticas, planejamento de caminhos em robótica e análise de redes sociais \cite{ziviani2013}.
 
-\begin{itemize}
-    \item \textbf{Algoritmo de Dijkstra}: algoritmo clássico e ótimo para grafos com pesos não-negativos, com complexidade $O((V + E) \log V)$ usando heap binário.
-    \item \textbf{Heurística Gulosa}: estratégia que, em cada passo, escolhe a aresta de menor peso saindo do conjunto de vértices já alcançados. Esta heurística \textbf{não garante} caminho mínimo ótimo em geral.
-\end{itemize}
+O algoritmo de Dijkstra \cite{cormen2012}, proposto em 1959, é a solução clássica e ótima para o problema SSSP em grafos com pesos não-negativos. Utilizando uma fila de prioridade implementada com heap binário, o algoritmo garante encontrar os caminhos mínimos para todos os vértices alcançáveis com complexidade de tempo $O((V + E) \log V)$, onde $V$ é o número de vértices e $E$ o número de arestas \cite{ziviani2013}. A corretude do algoritmo baseia-se na propriedade de subestrutura ótima e na operação de relaxamento de arestas \cite{campos2010}.
 
-A métrica de comparação utilizada é o \textbf{número de comparações de relaxamento}, contabilizadas pela operação \texttt{dist[u] + w < dist[v]}.
+Em contraste, estratégias gulosas (\textit{greedy}) para o problema de caminho mínimo, embora atrativas por sua simplicidade, não garantem solução ótima em geral. Uma heurística gulosa típica escolhe, a cada passo, a aresta de menor peso disponível no conjunto de vértices já alcançados, sem considerar as consequências globais dessa escolha local \cite{cormen2012}. Embora essa estratégia possa reduzir o número de operações realizadas, ela pode falhar drasticamente em alcançar todos os vértices do grafo, especialmente em grafos esparsos.
+
+Este trabalho implementa e compara experimentalmente o algoritmo de Dijkstra com uma heurística gulosa, avaliando o desempenho de ambos em dois cenários distintos: grafos completos dirigidos (densidade 100\%) e grafos esparsos dirigidos (densidade menor que 0,12\%). A métrica de comparação utilizada é o \textbf{número de comparações de relaxamento}, contabilizadas pela operação \texttt{dist[u] + w < dist[v]} \cite{ziviani2013}. Além do número de comparações, também é avaliado o número de vértices alcançados por cada algoritmo, métrica fundamental para verificar a corretude da solução.
+
+O objetivo central é demonstrar que, embora heurísticas possam reduzir o custo computacional aparente (número de operações), essa economia não tem valor quando o algoritmo não resolve o problema corretamente, isto é, quando não alcança todos os vértices acessíveis a partir da origem. Os resultados evidenciam que Dijkstra é o algoritmo adequado para SSSP, oferecendo garantia matemática de corretude e exploração completa do grafo.
 
 \section{Metodologia}
 
-\subsection{Estrutura de Dados}
+Esta seção descreve os dois algoritmos implementados e o planejamento experimental utilizado para comparar seus desempenhos.
 
-Os grafos foram representados utilizando \textbf{listas de adjacência}, armazenadas em um dicionário Python:
-\begin{lstlisting}
-Adj = Dict[int, List[Tuple[int, float]]]
-adj[u] = [(v1, w1), (v2, w2), ...]
-\end{lstlisting}
+\subsection{Algoritmo de Dijkstra}
 
-Onde \texttt{u} é o vértice de origem, \texttt{v} é o vértice de destino e \texttt{w} é o peso da aresta $(u,v)$.
+O algoritmo de Dijkstra \cite{cormen2012, campos2010} utiliza uma fila de prioridade (heap binário) para selecionar sempre o vértice com menor distância estimada. O processo consiste em:
 
-\subsection{Implementações}
-
-\subsubsection{Dijkstra}
-
-\begin{lstlisting}
-def dijkstra_count(adj: Adj, s: int) -> DijkstraResult:
-    dist = {u: inf for u in adj}
-    parent = {u: None for u in adj}
-    dist[s] = 0.0
-    
-    heap = [(0.0, s)]
-    visited = set()
-    comparisons = 0
-    
-    while heap:
-        du, u = heapq.heappop(heap)
-        if u in visited:
-            continue
-        visited.add(u)
-        
-        for v, w in adj[u]:
-            comparisons += 1  # Contagem
-            if dist[u] + w < dist[v]:
-                dist[v] = dist[u] + w
-                parent[v] = u
-                heapq.heappush(heap, (dist[v], v))
-    
-    return DijkstraResult(dist, parent, comparisons)
-\end{lstlisting}
-
-\subsubsection{Heurística Gulosa}
-
-\begin{lstlisting}
-def greedy_sssp_edge_first(adj: Adj, s: int) -> GreedyResult:
-    dist = {u: inf for u in adj}
-    parent = {u: None for u in adj}
-    dist[s] = 0.0
-    
-    visited = set([s])
-    edge_heap = []  # (peso, u, v)
-    
-    for v, w in adj[s]:
-        heapq.heappush(edge_heap, (w, s, v))
-    
-    comparisons = 0
-    
-    while edge_heap:
-        w, u, v = heapq.heappop(edge_heap)
-        
-        comparisons += 1  # Contagem
-        if dist[u] + w < dist[v]:
-            dist[v] = dist[u] + w
-            parent[v] = u
-            
-            if v not in visited:
-                visited.add(v)
-                for x, wx in adj[v]:
-                    heapq.heappush(edge_heap, (wx, v, x))
-    
-    return GreedyResult(dist, parent, comparisons)
-\end{lstlisting}
-
-\subsection{Testes Realizados}
-
-\subsubsection{Grafos Completos (Itens 2.II.a-e e 3.II.a-e)}
-
-Foram gerados grafos completos direcionados com $n = 4$ até $n = 1000$ vértices. Cada aresta possui peso positivo aleatório gerado com semente fixa (\texttt{seed=42}) para reprodutibilidade. Para cada grafo:
 \begin{enumerate}
-    \item Aplicamos Dijkstra partindo do vértice 0.
-    \item Aplicamos a heurística gulosa partindo do vértice 0.
-    \item Contamos o número de comparações em cada caso.
-    \item Plotamos um gráfico comparativo.
+    \item Inicializar todas as distâncias como infinito, exceto a origem (distância zero)
+    \item Inserir a origem na fila de prioridade
+    \item Enquanto a fila não estiver vazia:
+    \begin{itemize}
+        \item Extrair o vértice $u$ com menor distância
+        \item Para cada vizinho $v$ de $u$, realizar relaxamento:
+        \item Se $dist[u] + peso(u,v) < dist[v]$, atualizar $dist[v]$ e $parent[v]$
+        \item Inserir $v$ na fila de prioridade com a nova distância
+    \end{itemize}
 \end{enumerate}
 
-\textbf{Observação}: grafos completos possuem $O(n^2)$ arestas. Os testes foram realizados até $n=1000$, gerando aproximadamente 999.000 comparações.
+A operação de relaxamento garante que, ao processar cada vértice, sua distância é a mínima possível \cite{cormen2012}.
 
-\subsubsection{Instâncias do Moodle (Itens 2.II.f e 3.II.f)}
+A implementação utiliza heap binário (módulo \texttt{heapq} em Python) oferecendo inserção e extração do mínimo em $O(\log n)$ \cite{ziviani2013}. Embora heap de Fibonacci tenha complexidade teórica melhor, o heap binário é mais eficiente na prática devido à menor constante multiplicativa e melhor localidade de cache \cite{cormen2012}.
 
-Aplicamos ambos os algoritmos nas instâncias fornecidas:
+\subsection{Heurística Gulosa}
+
+A heurística gulosa implementada adota uma estratégia de escolha local: sempre seleciona a aresta de menor peso disponível a partir dos vértices já visitados. O processo é:
+
+\begin{enumerate}
+    \item Inicializar a origem com distância zero
+    \item Manter uma fila de arestas candidatas ordenadas por peso
+    \item Enquanto houver arestas na fila:
+    \begin{itemize}
+        \item Extrair a aresta $(u, v)$ de menor peso
+        \item Se $v$ não foi visitado e a distância pode ser melhorada, atualizar
+        \item Adicionar todas as arestas saindo de $v$ à fila
+    \end{itemize}
+\end{enumerate}
+
+Esta abordagem \textbf{não garante} caminho mínimo ótimo, pois decisões locais podem impedir alcançar soluções globais melhores \cite{cormen2012}.
+
+\subsection{Planejamento dos Testes}
+
+Os grafos foram representados utilizando \textbf{listas de adjacência} \cite{cormen2012, campos2010}, estrutura eficiente que permite iteração rápida sobre os vizinhos de cada vértice.
+
+\subsubsection{Testes em Grafos Completos Dirigidos}
+
+Grafos completos direcionados foram gerados com $n = 4, 5, 6, \ldots, 1000$ vértices:
+
 \begin{itemize}
-    \item \textbf{10000.txt}: 10.000 vértices
-    \item \textbf{largeEWD...txt}: 1.000.000 de vértices
+    \item \textbf{Pesos das arestas}: valores aleatórios no intervalo $[1.0, 10.0]$
+    \item \textbf{Reprodutibilidade}: semente fixa (\texttt{seed=42})
+    \item \textbf{Número de arestas}: $n(n-1)$ por grafo
+    \item \textbf{Vértice de origem}: vértice 0
+    \item \textbf{Métrica}: número de comparações (\texttt{dist[u] + w < dist[v]})
 \end{itemize}
 
-Origem: vértice 0. Métrica: número de comparações.
+Ambos os algoritmos foram executados no mesmo grafo para cada valor de $n$.
 
-\section{Resultados}
+\subsubsection{Testes em Instâncias de Grafos Esparsos Dirigidos}
 
-\subsection{Grafos Completos}
+Duas instâncias reais de grafos esparsos direcionados:
 
-A Figura~\ref{fig:completos} apresenta o gráfico de comparações versus número de vértices para grafos completos. Os resultados mostram um comportamento quadrático claro, com valores variando de 12 comparações para $n=4$ até 999.000 comparações para $n=1000$.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/dijkstra/img/teste_comparacoes.png}
-    \caption{Comparações realizadas por Dijkstra em grafos completos ($n=4$ até $n=1000$).}
-    \label{fig:completos}
-\end{figure}
-
-A Figura~\ref{fig:comparacao_completa} mostra a comparação direta entre Dijkstra e a heurística gulosa nos grafos de teste.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/comparacao/teste_dijkstra_vs_gulosa.png}
-    \caption{Comparação direta: Dijkstra vs Gulosa em grafos completos de teste.}
-    \label{fig:comparacao_completa}
-\end{figure}
-
-\textbf{Observações}:
 \begin{itemize}
-    \item O algoritmo de Dijkstra apresenta crescimento aproximadamente quadrático, seguindo a fórmula $\text{comparações} \approx n(n-1)$ para grafos completos.
-    \item Para $n=4$: 12 comparações (exatamente $4 \times 3$).
-    \item Para $n=1000$: 999.000 comparações (exatamente $1000 \times 999$).
-    \item A heurística gulosa apresenta o mesmo padrão de comparações nos grafos completos testados, pois ambos os algoritmos exploram todas as arestas do grafo completo.
-    \item O número de comparações segue o padrão teórico esperado: $C(n) = n(n-1)$ para grafos completos direcionados.
+    \item \textbf{Instância 10k}: 10.000 vértices, 123.462 arestas (densidade $\approx$ 0,12\%)
+    \item \textbf{Instância 1M}: 1.000.000 vértices, 15.172.126 arestas (densidade $\approx$ 0,0015\%)
+    \item \textbf{Vértice de origem}: vértice 0
+    \item \textbf{Métricas}: comparações e vértices alcançados
+    \item \textbf{Formato EWD} (\textit{Edge-Weighted Digraph}): linha 1 contém $V$, linha 2 contém $E$, demais linhas no formato \texttt{u v peso}
 \end{itemize}
 
-\subsection{Instâncias do Moodle}
 
-A Tabela~\ref{tab:instancias} apresenta o número de comparações realizadas nas instâncias fornecidas. Os resultados revelam um comportamento interessante: enquanto o Dijkstra explora exaustivamente o grafo, a heurística gulosa alcança apenas uma fração dos vértices.
+\section{Resultados e Discussão}
 
-\begin{table}[htbp]
+Esta seção apresenta exemplos visuais dos grafos, resultados quantitativos de cada algoritmo e comparação direta entre ambos.
+
+\subsection{Exemplo de Grafo Completo Dirigido}
+
+A Figura~\ref{fig:exemplo_n10} ilustra um grafo completo dirigido com $n=10$ vértices gerado pela biblioteca NetworkX \cite{networkx2008}.
+
+\begin{figure}[H]
     \centering
-    \caption{Número de comparações e vértices alcançados nas instâncias do Moodle.}
-    \label{tab:instancias}
-    \begin{tabular}{@{}lrrrr@{}}
+    \includegraphics[width=0.65\textwidth]{../implementacao/resultados/dijkstra/img/grafo_exemplo_n10.png}
+    \caption{Grafo completo dirigido com $n=10$ vértices e $n(n-1) = 90$ arestas. Densidade 100\%, pesos aleatórios no intervalo [1.0, 10.0].}
+    \label{fig:exemplo_n10}
+\end{figure}
+
+\subsection{Exemplo de Grafo Esparso Dirigido}
+
+A Figura~\ref{fig:grafo_esparso_exemplo} apresenta um grafo esparso dirigido com $n=10$ vértices e apenas 30\% das arestas possíveis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{../implementacao/resultados/dijkstra/img/grafo_esparso_exemplo_n10.png}
+    \caption{Grafo esparso dirigido com $n=10$ vértices e 27 arestas (densidade 30\%).}
+    \label{fig:grafo_esparso_exemplo}
+\end{figure}
+
+\subsection{Comparação Visual: Completo vs Esparso}
+
+A Figura~\ref{fig:comparacao_completo_esparso} compara lado a lado os dois tipos de grafos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{../implementacao/resultados/dijkstra/img/comparacao_completo_vs_esparso.png}
+    \caption{Comparação visual: grafo completo (90 arestas, 100\%) vs grafo esparso (27 arestas, 30\%), ambos com $n=10$ vértices.}
+    \label{fig:comparacao_completo_esparso}
+\end{figure}
+
+\subsection{Parte 1 — Resultados do Algoritmo de Dijkstra}
+
+Esta seção apresenta os resultados obtidos com a execução do algoritmo de Dijkstra em dois cenários: grafos completos dirigidos e grafos esparsos dirigidos.
+
+\subsubsection{Grafos Completos Dirigidos}
+
+A Tabela~\ref{tab:dijkstra_completos} apresenta o número de comparações realizadas pelo algoritmo de Dijkstra em grafos completos dirigidos com diferentes tamanhos.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Comparações realizadas por Dijkstra em grafos completos dirigidos.}
+    \label{tab:dijkstra_completos}
+    \begin{tabular}{@{}ccc@{}}
         \toprule
-        \textbf{Instância} & \textbf{Dijkstra} & \textbf{Vértices} & \textbf{Gulosa} & \textbf{Vértices} \\
-        & \textbf{Comparações} & \textbf{Alcançados} & \textbf{Comparações} & \textbf{Alcançados} \\
+        \textbf{Vértices ($n$)} & \textbf{Comparações} & \textbf{Fórmula $n(n-1)$} \\
         \midrule
-        10.000 vértices    & 123.462 & 10.000 & 424 & 28 \\
-        1.000.000 vértices & 15.172.126 & 1.000.000 & 1.847 & 120 \\
+        4   & 12        & $4 \times 3 = 12$ \\
+        10  & 90        & $10 \times 9 = 90$ \\
+        50  & 2.450     & $50 \times 49 = 2.450$ \\
+        100 & 9.900     & $100 \times 99 = 9.900$ \\
+        500 & 249.500   & $500 \times 499 = 249.500$ \\
+        1000 & 999.000  & $1000 \times 999 = 999.000$ \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-A Figura~\ref{fig:instancias_grandes} ilustra visualmente a comparação entre os dois algoritmos nas instâncias grandes.
+Observa-se comportamento quadrático consistente, seguindo exatamente a fórmula $C(n) = n(n-1)$, variando de 12 comparações ($n=4$) até 999.000 comparações ($n=1000$).
 
-\begin{figure}[htbp]
+A Figura~\ref{fig:dijkstra_completos} ilustra graficamente o crescimento do número de comparações em função do número de vértices.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/comparacao/instancias_grandes.png}
-    \caption{Comparação de comparações realizadas por Dijkstra e Gulosa nas instâncias de 10k e 1M vértices (escala logarítmica).}
-    \label{fig:instancias_grandes}
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/dijkstra/img/teste_comparacoes.png}
+    \caption{Gráfico do número de comparações realizadas por Dijkstra em grafos completos dirigidos ($n=4$ até $n=1000$). Eixo X: número de vértices; Eixo Y: número de comparações.}
+    \label{fig:dijkstra_completos}
 \end{figure}
 
-\textbf{Análise Importante}:
-\begin{itemize}
-    \item \textbf{Dijkstra}: alcança todos os vértices do grafo e garante caminho mínimo correto.
-    \item \textbf{Heurística Gulosa}: realiza muito menos comparações, mas alcança apenas uma fração mínima dos vértices:
-    \begin{itemize}
-        \item 10k vértices: alcança apenas 28 vértices (0,28\%)
-        \item 1M vértices: alcança apenas 120 vértices (0,012\%)
-    \end{itemize}
-    \item A redução de 99,66\% nas comparações da gulosa não representa vantagem real, pois o algoritmo falha em encontrar caminhos para a maioria dos vértices.
-    \item Este resultado confirma que a heurística gulosa \textbf{não é adequada} para o problema SSSP em grafos gerais.
-\end{itemize}
+\subsubsection{Instâncias de Grafos Esparsos Dirigidos}
 
-\subsection{Exemplo de Grafo Gerado}
+A Tabela~\ref{tab:dijkstra_reais} apresenta os resultados do algoritmo de Dijkstra nas instâncias de grafos esparsos direcionados.
 
-A Figura~\ref{fig:exemplo_grafo} mostra um exemplo de visualização de um grafo completo pequeno ($n=10$) gerado durante os testes.
-
-\begin{figure}[htbp]
+\begin{table}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{../implementacao/resultados/dijkstra/img/grafo_exemplo_n10.png}
-    \caption{Visualização de um grafo completo direcionado com $n=10$ vértices usando NetworkX.}
-    \label{fig:exemplo_grafo}
+    \small
+    \caption{Resultados de Dijkstra em instâncias de grafos esparsos dirigidos.}
+    \label{tab:dijkstra_reais}
+    \begin{tabular}{@{}lrrr@{}}
+        \toprule
+        \textbf{Instância} & \textbf{Arestas} & \textbf{Comparações} & \textbf{Vértices Alcançados} \\
+        \midrule
+        10.000 vértices    & 123.462   & 123.462      & 10.000 (100\%) \\
+        1.000.000 vértices & 15.172.126 & 15.172.126   & 1.000.000 (100\%) \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+O algoritmo de Dijkstra alcançou todos os vértices alcançáveis a partir da origem em ambas as instâncias, garantindo a solução ótima do problema de caminho mínimo de fonte única.
+
+\subsection{Parte 2 — Resultados da Heurística Gulosa}
+
+Esta seção apresenta os resultados obtidos com a execução da heurística gulosa nos mesmos cenários testados com Dijkstra: grafos completos dirigidos e grafos esparsos dirigidos.
+
+\subsubsection{Grafos Completos Dirigidos}
+
+A Tabela~\ref{tab:gulosa_completos} apresenta o número de comparações realizadas pela heurística gulosa em grafos completos dirigidos.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Comparações realizadas pela heurística gulosa em grafos completos dirigidos.}
+    \label{tab:gulosa_completos}
+    \begin{tabular}{@{}ccc@{}}
+        \toprule
+        \textbf{Vértices ($n$)} & \textbf{Comparações} & \textbf{Fórmula $n(n-1)$} \\
+        \midrule
+        4   & 12        & $4 \times 3 = 12$ \\
+        10  & 90        & $10 \times 9 = 90$ \\
+        50  & 2.450     & $50 \times 49 = 2.450$ \\
+        100 & 9.900     & $100 \times 99 = 9.900$ \\
+        500 & 249.500   & $500 \times 499 = 249.500$ \\
+        1000 & 999.000  & $1000 \times 999 = 999.000$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Em grafos completos dirigidos, a heurística gulosa apresenta o mesmo número de comparações que Dijkstra, seguindo exatamente $C(n) = n(n-1)$.
+
+A Figura~\ref{fig:gulosa_completos} ilustra graficamente o crescimento do número de comparações em função do número de vértices.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/gulosa/img/teste_comparacoes.png}
+    \caption{Gráfico do número de comparações realizadas pela heurística gulosa em grafos completos dirigidos ($n=4$ até $n=1000$). Eixo X: número de vértices; Eixo Y: número de comparações.}
+    \label{fig:gulosa_completos}
 \end{figure}
 
-\section{Análise e Discussão}
+\subsubsection{Instâncias de Grafos Esparsos Dirigidos}
 
-\subsection{Complexidade Teórica vs. Experimental}
+A Tabela~\ref{tab:gulosa_reais} apresenta os resultados da heurística gulosa nas instâncias de grafos esparsos direcionados.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Resultados da heurística gulosa em instâncias de grafos esparsos dirigidos.}
+    \label{tab:gulosa_reais}
+    \begin{tabular}{@{}lrrr@{}}
+        \toprule
+        \textbf{Instância} & \textbf{Arestas} & \textbf{Comparações} & \textbf{Vértices Alcançados} \\
+        \midrule
+        10.000 vértices    & 123.462   & 424   & 28 (0,28\%) \\
+        1.000.000 vértices & 15.172.126 & 1.847 & 120 (0,012\%) \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+A heurística gulosa realizou significativamente menos comparações, porém alcançou menos de 1\% dos vértices em ambas as instâncias, demonstrando que não resolve o problema de caminho mínimo de fonte única.
+
+\subsection{Comparação entre os Algoritmos}
+
+Esta seção apresenta uma análise comparativa direta entre os dois algoritmos, destacando suas diferenças de desempenho em dois cenários distintos:
 
 \begin{itemize}
-    \item \textbf{Dijkstra}: $O((V + E) \log V)$ com heap binário. Em grafos completos, $E = O(V^2)$, resultando em $O(V^2 \log V)$.
-    \item \textbf{Heurística Gulosa}: Também utiliza heap, mas a estratégia de escolha de arestas leva a comportamentos distintos dependendo da topologia do grafo.
-\end{itemize}
-
-\subsection{Grafos Completos: Comportamento Idêntico}
-
-Nos grafos completos testados ($n=4$ até $n=1000$), ambos os algoritmos apresentaram \textbf{exatamente o mesmo número de comparações}:
-\begin{itemize}
-    \item A fórmula observada é $C(n) = n(n-1)$, correspondendo ao número total de arestas no grafo completo direcionado.
-    \item Este comportamento ocorre porque, em grafos completos com pesos positivos, ambos os algoritmos acabam explorando todas as arestas.
-    \item A diferença fundamental está na \textbf{corretude}: Dijkstra garante caminho mínimo, enquanto a gulosa não garante.
-\end{itemize}
-
-\subsection{Instâncias Esparsas: Diferença Drástica}
-
-Nas instâncias do Moodle (grafos esparsos), observamos comportamento radicalmente diferente:
-
-\begin{enumerate}
-    \item \textbf{Dijkstra}: comportamento robusto e completo
+    \item \textbf{Grafos Completos Dirigidos}: Grafos onde existe uma aresta direcionada entre \textit{cada par ordenado} de vértices. Em um grafo completo dirigido com $n$ vértices, temos exatamente $n(n-1)$ arestas. Por exemplo, um grafo completo dirigido com 1000 vértices tem 999.000 arestas. Neste caso, a heurística gulosa sempre encontra o caminho direto da origem ao destino (pois ele sempre existe), resultando em desempenho idêntico ao Dijkstra.
+    
+    \item \textbf{Grafos Esparsos}: Grafos com \textit{poucas} arestas em relação ao número de vértices. Nos experimentos, as instâncias reais são grafos esparsos:
     \begin{itemize}
-        \item Alcança todos os vértices acessíveis a partir da origem
-        \item 10k vértices: 123.462 comparações, 10.000 vértices alcançados
-        \item 1M vértices: 15.172.126 comparações, 1.000.000 vértices alcançados
-        \item Garante caminho mínimo para todos os vértices
+        \item Instância 10k: 10.000 vértices e 123.462 arestas (densidade $\approx$ 0,12\%)
+        \item Instância 1M: 1.000.000 vértices e 15.172.126 arestas (densidade $\approx$ 0,0015\%)
     \end{itemize}
     
-    \item \textbf{Heurística Gulosa}: falha crítica
-    \begin{itemize}
-        \item Alcança apenas uma fração mínima dos vértices
-        \item 10k vértices: 424 comparações, apenas 28 vértices (0,28\%)
-        \item 1M vértices: 1.847 comparações, apenas 120 vértices (0,012\%)
-        \item A estratégia gulosa de escolher sempre a menor aresta disponível cria caminhos localmente ótimos que rapidamente ficam "presos" em regiões do grafo
-        \item Não garante corretude nem completude
-    \end{itemize}
-\end{enumerate}
-
-\subsection{Corretude e Adequação}
-
-\begin{itemize}
-    \item \textbf{Dijkstra}: garante caminho mínimo correto para grafos com pesos não-negativos. É o algoritmo adequado para o problema SSSP.
-    \item \textbf{Gulosa}: \textbf{não garante} corretude em geral. Os experimentos mostram que:
-    \begin{itemize}
-        \item Em grafos completos: encontra caminhos (não necessariamente mínimos) para todos os vértices
-        \item Em grafos esparsos: falha drasticamente, alcançando menos de 1\% dos vértices
-        \item Não é adequada para resolver o problema SSSP
-    \end{itemize}
+    Para comparação, se fossem grafos completos dirigidos teriam aproximadamente 100 milhões e 1 trilhão de arestas, respectivamente. Neste cenário, a heurística gulosa \textbf{falha drasticamente} porque frequentemente não consegue alcançar vértices que não estão diretamente conectados ao caminho guloso inicial.
 \end{itemize}
 
-\subsection{Implicações Práticas}
+É importante esclarecer que a heurística gulosa \textbf{não é uma melhoria} em relação ao Dijkstra. A comparação visa evidenciar que economia no número de comparações não tem valor quando o algoritmo não resolve o problema corretamente (não alcança todos os vértices acessíveis).
 
-Os resultados demonstram que:
-\begin{enumerate}
-    \item A métrica de "número de comparações" isolada não é suficiente para avaliar qualidade de algoritmos para SSSP
-    \item É essencial verificar \textbf{corretude} (caminhos mínimos corretos) e \textbf{completude} (alcançar todos os vértices acessíveis)
-    \item A heurística gulosa, apesar de simples e rápida em grafos esparsos, não é confiável para o problema geral
-    \item Dijkstra permanece como solução robusta e correta para SSSP com pesos não-negativos
-\end{enumerate}
+\subsubsection{Grafos Completos Dirigidos}
+
+A Tabela~\ref{tab:comparacao_completos} compara diretamente o desempenho de ambos os algoritmos em grafos completos dirigidos.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Comparação entre Dijkstra e Heurística Gulosa em grafos completos dirigidos.}
+    \label{tab:comparacao_completos}
+    \begin{tabular}{@{}ccc@{}}
+        \toprule
+        \textbf{Vértices ($n$)} & \textbf{Dijkstra (Comparações)} & \textbf{Gulosa (Comparações)} \\
+        \midrule
+        4     & 12        & 12        \\
+        10    & 90        & 90        \\
+        50    & 2.450     & 2.450     \\
+        100   & 9.900     & 9.900     \\
+        500   & 249.500   & 249.500   \\
+        1000  & 999.000   & 999.000   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Em grafos completos dirigidos, não há diferença entre os algoritmos: ambos apresentam \textbf{desempenho idêntico}, realizando exatamente $n(n-1)$ comparações para cada valor de $n$.
+
+A Figura~\ref{fig:comparacao_completos} ilustra graficamente a comparação entre os dois algoritmos nos grafos completos dirigidos testados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../implementacao/resultados/comparacao/teste_dijkstra_vs_gulosa.png}
+    \caption{Comparação gráfica entre Dijkstra e Heurística Gulosa em grafos completos dirigidos. Ambos apresentam comportamento idêntico seguindo $C(n) = n(n-1)$.}
+    \label{fig:comparacao_completos}
+\end{figure}
+
+\subsubsection{Instâncias de Grafos Esparsos Dirigidos}
+
+A Tabela~\ref{tab:comparacao_reais} compara o desempenho dos algoritmos nas instâncias de grafos esparsos direcionados.
+
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Comparação entre Dijkstra e Heurística Gulosa em instâncias de grafos esparsos dirigidos.}
+    \label{tab:comparacao_reais}
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \multirow{2}{*}{\textbf{Instância}} & \multicolumn{2}{c}{\textbf{Dijkstra}} & \multicolumn{2}{c}{\textbf{Gulosa}} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & \textbf{Comparações} & \textbf{Vértices} & \textbf{Comparações} & \textbf{Vértices} \\
+        \midrule
+        10k vértices  & 123.462 & 10.000 (100\%) & 424 & 28 (0,28\%) \\
+        1M vértices   & 15.172.126 & 1.000.000 (100\%) & 1.847 & 120 (0,012\%) \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Nas instâncias de grafos esparsos dirigidos, observa-se uma diferença drástica entre os algoritmos: a heurística gulosa realiza 99,66\% (10k) e 99,99\% (1M) menos comparações que Dijkstra, porém alcança apenas 0,28\% e 0,012\% dos vértices, respectivamente, enquanto Dijkstra alcança 100\% dos vértices em ambas as instâncias.
+
 
 \section{Conclusão}
 
-Este trabalho implementou e comparou o algoritmo de Dijkstra com uma heurística gulosa para o problema de caminho mínimo. Os resultados revelam diferenças fundamentais entre as abordagens:
+Este trabalho comparou o algoritmo de Dijkstra com uma heurística gulosa para o problema de caminho mínimo em grafos direcionados ponderados. Os experimentos demonstraram diferenças fundamentais entre as abordagens:
 
-\begin{enumerate}
-    \item \textbf{Grafos Completos}: Ambos os algoritmos realizaram o mesmo número de comparações ($n(n-1)$), mas apenas Dijkstra garante corretude dos caminhos.
-    
-    \item \textbf{Grafos Esparsos}: A heurística gulosa apresentou falha crítica, alcançando menos de 1\% dos vértices nas instâncias de teste (28/10.000 e 120/1.000.000), enquanto Dijkstra alcançou todos os vértices acessíveis.
-    
-    \item \textbf{Número de Comparações}: A métrica isolada de comparações não é suficiente para avaliar qualidade. É essencial verificar corretude e completude da solução.
-    
-    \item \textbf{Adequação}: Dijkstra é o algoritmo adequado para SSSP com pesos não-negativos, apresentando complexidade $O((V+E)\log V)$, corretude garantida e exploração completa do grafo.
-    
-    \item \textbf{Lição Fundamental}: Estratégias gulosas simples podem falhar drasticamente em problemas que exigem otimização global. A escolha local da menor aresta não garante caminho mínimo global.
-\end{enumerate}
+Em \textbf{grafos completos dirigidos}, ambos realizaram $n(n-1)$ comparações, mas apenas Dijkstra garante caminhos mínimos ótimos. O número de comparações segue exatamente a fórmula $C(n) = n(n-1)$, com crescimento quadrático $O(n^2)$, compatível com a análise teórica usando heap binário.
 
-Os experimentos confirmam os resultados teóricos da literatura: o algoritmo de Dijkstra é a escolha correta para o problema de caminho mínimo com pesos não-negativos, oferecendo garantias de corretude que heurísticas simples não podem fornecer.
+Em \textbf{grafos esparsos dirigidos}, a diferença é crítica: a heurística gulosa realizou 99,66\% a 99,99\% menos comparações, mas alcançou apenas 0,28\% (28/10.000) e 0,012\% (120/1.000.000) dos vértices. Em contraste, Dijkstra alcançou 100\% dos vértices em ambas as instâncias, realizando aproximadamente uma comparação por aresta (15.172.126 comparações para 15.172.126 arestas na instância 1M).
 
-O código-fonte completo está disponível no notebook Jupyter anexado a este relatório, com implementações detalhadas e todos os experimentos reproduzíveis.
+\textbf{A economia de 99\% nas comparações não tem valor quando o algoritmo falha em encontrar 99\% da solução.} A heurística gulosa demonstra inadequação total para o problema SSSP em grafos esparsos: decisões locais (escolher sempre a menor aresta) não garantem otimização global, levando a becos sem saída que interrompem prematuramente a exploração do grafo.
 
-\section{Anexos}
+Conclui-se que Dijkstra é o algoritmo adequado para SSSP com pesos não-negativos, oferecendo complexidade $O((V+E)\log V)$, garantia de corretude e exploração completa do grafo. A superioridade é evidente em grafos esparsos, onde $|E| \ll |V|^2$, com número de comparações proporcional às arestas, não aos vértices ao quadrado.
 
-\subsection{Código Fonte}
+O código-fonte completo está disponível no notebook Jupyter anexado, com implementações detalhadas e experimentos reproduzíveis.
 
-O código completo está disponível em:
-\begin{verbatim}
-implementacao/pratica01_experimentos2.ipynb
-\end{verbatim}
 
-\textbf{Notebooks Adicionais}:
-\begin{itemize}
-    \item \texttt{pratica01\_funcoes.ipynb}: Versão modular com funções reutilizáveis
-    \item \texttt{pratica01\_final.ipynb}: Versão didática com testes incrementais
-\end{itemize}
+% ============================================================
+% REFERÊNCIAS BIBLIOGRÁFICAS
+% ============================================================
+\newpage
+\begin{thebibliography}{9}
 
-\textbf{Melhorias Implementadas}: Consultar \texttt{implementacao/MELHORIAS\_APLICADAS.md} para detalhes sobre otimizações de estruturas de dados e visualizações.
+\bibitem{cormen2012}
+CORMEN, Thomas H.; LEISERSON, Charles E.; RIVEST, Ronald L.; STEIN, Clifford. 
+\textit{Algoritmos: teoria e prática}. 3. ed. Rio de Janeiro: Elsevier, 2012.
 
-\subsection{Instruções de Execução}
+\bibitem{ziviani2013}
+ZIVIANI, Nivio. 
+\textit{Projeto de algoritmos com implementações em Java e C++}. 3. ed. São Paulo: Cengage Learning, 2013.
 
-\begin{enumerate}
-    \item Ativar ambiente virtual PowerShell: 
-    \begin{verbatim}
-.venv\Scripts\Activate.ps1
-    \end{verbatim}
-    
-    \item Instalar dependências (se necessário):
-    \begin{verbatim}
-pip install matplotlib numpy networkx
-    \end{verbatim}
-    
-    \item Abrir o notebook no VS Code ou Jupyter:
-    \begin{verbatim}
-code implementacao/pratica01_experimentos2.ipynb
-    \end{verbatim}
-    
-    \item Executar as células na ordem. Os resultados são salvos automaticamente em:
-    \begin{itemize}
-        \item \texttt{implementacao/resultados/dijkstra/}
-        \item \texttt{implementacao/resultados/gulosa/}
-        \item \texttt{implementacao/resultados/comparacao/}
-    \end{itemize}
-    
-    \item Gráficos salvos em formato PNG com 200 DPI para uso no relatório.
-\end{enumerate}
+\bibitem{campos2010}
+CAMPOS, Fernando de Souza. 
+\textit{Grafos e algoritmos computacionais}. São Paulo: LTC, 2010.
 
-\textbf{Estrutura de Resultados}:
-\begin{itemize}
-    \item \texttt{teste\_comparacoes.txt}: Tabela TSV com dados n vs comparações
-    \item \texttt{img/teste\_comparacoes.png}: Gráfico de comparações
-    \item \texttt{instancias/10k\_*.txt} e \texttt{1m\_*.txt}: Resultados das instâncias grandes
-\end{itemize}
+\bibitem{networkx2008}
+HAGBERG, Aric A.; SCHULT, Daniel A.; SWART, Pieter J. 
+Exploring network structure, dynamics, and function using NetworkX. In: \textit{Proceedings of the 7th Python in Science Conference (SciPy)}, 2008, p. 11-15.
+
+\end{thebibliography}
 
 \end{document}
