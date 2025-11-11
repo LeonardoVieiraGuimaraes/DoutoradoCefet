@@ -53,12 +53,78 @@ Aproximadamente **9.500 dos 10.000 intervalos** (95%) devem conter a verdadeira 
 - **Python 3.8+**
 
 ### Bibliotecas Utilizadas
+
+#### NumPy
 ```python
-numpy          # Computação numérica e geração de dados
-scipy          # Distribuições estatísticas e testes
-matplotlib     # Visualização de dados
-seaborn        # Gráficos estatísticos avançados
+import numpy as np
 ```
+Biblioteca fundamental para computação numérica em Python. Utilizada para:
+- Geração de números aleatórios com distribuições estatísticas
+- Operações matemáticas em arrays e matrizes
+- Cálculos de médias, desvios padrão e outras estatísticas
+
+#### SciPy
+```python
+from scipy.stats import t
+```
+**SciPy** (Scientific Python) é uma biblioteca fundamental para computação científica em Python, construída sobre o NumPy.
+
+**O que é o módulo `scipy.stats`?**
+
+O módulo `scipy.stats` contém uma vasta coleção de distribuições de probabilidade e funções estatísticas:
+- **Distribuições Contínuas e Discretas:** Normal, t-Student, chi-quadrado, binomial, Poisson, etc.
+- **Funções Estatísticas:** Testes de hipóteses, correlação, regressão
+- **Intervalos de Confiança:** Cálculo automático de ICs para diversas distribuições
+
+**Por que usamos `t.interval()` nas simulações?**
+
+A distribuição **t de Student** é usada quando:
+- ✅ A população tem distribuição normal (ou aproximadamente normal)
+- ✅ O desvio padrão populacional (σ) é **desconhecido**
+- ✅ Estimamos σ usando o desvio padrão amostral (s)
+- ✅ Tamanho de amostra pequeno (n < 30) ou médio
+
+**Função `t.interval()`:**
+```python
+t.interval(confidence, df, loc, scale)
+```
+
+**Parâmetros:**
+- `confidence`: Nível de confiança (ex: 0.95 para 95%)
+- `df`: Graus de liberdade (n - 1)
+- `loc`: Média amostral (centro do intervalo)
+- `scale`: Erro padrão (s / √n)
+
+**Retorna:** `(limite_inferior, limite_superior)` do intervalo de confiança
+
+**Vantagens do SciPy:**
+1. **Precisão:** Implementações numericamente estáveis e validadas
+2. **Facilidade:** Uma linha de código substitui cálculos complexos
+3. **Flexibilidade:** Suporta dezenas de distribuições diferentes
+4. **Integração:** Funciona perfeitamente com NumPy e Pandas
+
+**Alternativa Manual (sem SciPy):**
+```python
+# Sem SciPy - cálculo manual
+t_critical = 1.984  # Valor crítico para 95% de confiança e 99 graus de liberdade
+margin_error = t_critical * standard_error
+ic_lower = sample_mean - margin_error
+ic_upper = sample_mean + margin_error
+```
+
+Com SciPy, tudo isso é feito automaticamente com `t.interval()` ! 🎯
+
+#### Matplotlib
+```python
+import matplotlib.pyplot as plt
+```
+Biblioteca principal para visualização de dados em Python. Utilizada para criar gráficos estáticos, animados e interativos.
+
+#### Seaborn
+```python
+import seaborn as sns
+```
+Biblioteca de visualização de dados estatísticos construída sobre Matplotlib. Oferece estilos visuais mais atraentes e funções especializadas para gráficos estatísticos.
 
 ### Ambiente de Desenvolvimento
 - **Jupyter Notebook** / JupyterLab
