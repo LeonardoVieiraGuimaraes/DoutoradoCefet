@@ -1,0 +1,222 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{abnt}
+\geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm}
+
+% CAPA
+\begin{document}
+\begin{titlepage}
+    \centering
+    {\large Centro Federal de Educação Tecnológica de Minas Gerais\\}
+    {\large Programa de Pós-Graduação em Modelagem Matemática e Computacional\\}
+    \vspace{3cm}
+    {\LARGE\bfseries Problema do Caixeiro Chinês\\}
+    \vspace{2cm}
+    {\large Relatório Acadêmico\\}
+    \vspace{2cm}
+    {\large Leonardo Vieira Guimarães\\}
+    {\large Belo Horizonte\\}
+    {\large \today}
+\end{titlepage}
+
+\setcounter{page}{1}
+
+\section{Introdução}
+O Problema do Caixeiro Chinês consiste em encontrar um circuito fechado de menor custo que percorra todas as arestas de um grafo pelo menos uma vez. Este problema tem aplicações práticas, como roteirização de entregas e inspeção de ruas.
+
+\section{Objetivo}
+Implementar e testar um algoritmo para a solução ótima do problema do Caixeiro Chinês, utilizando Python e a biblioteca NetworkX, e analisar os resultados em diferentes instâncias de grafos.
+
+\section{Metodologia}
+\subsection{Implementação do Algoritmo}
+O algoritmo foi desenvolvido de forma modular, destacando:
+\begin{itemize}
+    \item \textbf{Caminho Mínimo}: Utiliza o algoritmo de Dijkstra (via NetworkX) para encontrar os menores caminhos entre vértices de grau ímpar.
+    \item \textbf{Emparelhamento}: Realiza o emparelhamento ótimo dos vértices de grau ímpar, duplicando arestas para tornar o grafo euleriano.
+    \item \textbf{Circuito Euleriano}: Após eulerizar o grafo, encontra o circuito euleriano de menor custo.
+\end{itemize}
+\subsection{Testes}
+O algoritmo foi testado em cinco instâncias:
+\begin{itemize}
+    \item Instância apresentada em aula.
+    \item Quatro instâncias do AVA (gr15.tsp, gr17.tsp, gr21.tsp, gr24.tsp).
+\end{itemize}
+
+\section{Resultados}
+\subsection{Percurso encontrado em cada instância}
+\subsubsection{Instância Aula}
+\begin{longtable}{|c|c|c|}
+\hline Origem & Destino & Peso \\
+\hline a & f & 5 \\
+\hline f & e & 5 \\
+\hline e & d & 11 \\
+\hline d & e & 11 \\
+\hline e & g & 5 \\
+\hline g & d & 8 \\
+\hline d & c & 5 \\
+\hline c & b & 6 \\
+\hline b & g & 5 \\
+\hline g & a & 7 \\
+\hline a & b & 12 \\
+\hline b & a & 12 \\
+\hline\end{longtable}
+
+\subsubsection{Instância gr15.tsp}
+\begin{longtable}{|c|c|c|}
+\hline Origem & Destino & Peso \\
+\hline 1 & 12 & 74 \\
+\hline 12 & 15 & 55 \\
+\hline 15 & 14 & 59 \\
+\hline 14 & 13 & 62 \\
+\hline 13 & 3 & 64 \\
+\hline 3 & 9 & 41 \\
+\hline 9 & 14 & 51 \\
+\hline 14 & 11 & 59 \\
+\hline 11 & 6 & 33 \\
+\hline 6 & 11 & 33 \\
+\hline 11 & 10 & 51 \\
+\hline 10 & 15 & 37 \\
+\hline 15 & 7 & 33 \\
+\hline 7 & 4 & 72 \\
+\hline 4 & 7 & 72 \\
+\hline 7 & 6 & 61 \\
+\hline 6 & 15 & 59 \\
+\hline 15 & 13 & 23 \\
+\hline 13 & 12 & 61 \\
+\hline 12 & 10 & 21 \\
+\hline 10 & 8 & 15 \\
+\hline 8 & 15 & 37 \\
+\hline 15 & 11 & 61 \\
+\hline 11 & 2 & 41 \\
+\hline 2 & 14 & 52 \\
+\hline 14 & 5 & 65 \\
+\hline 5 & 15 & 23 \\
+\hline 15 & 9 & 11 \\
+\hline 9 & 12 & 46 \\
+\hline\end{longtable}
+
+\subsubsection{Instância gr17.tsp}
+\begin{longtable}{|c|c|c|}
+\hline Origem & Destino & Peso \\
+\hline 1 & 17 & 121 \\
+\hline 17 & 16 & 336 \\
+\hline 16 & 15 & 483 \\
+\hline 15 & 14 & 57 \\
+\hline 14 & 12 & 391 \\
+\hline 12 & 15 & 448 \\
+\hline 15 & 17 & 153 \\
+\hline 17 & 13 & 55 \\
+\hline 13 & 11 & 287 \\
+\hline 11 & 12 & 435 \\
+\hline 12 & 16 & 157 \\
+\hline 16 & 8 & 349 \\
+\hline 8 & 16 & 349 \\
+\hline 16 & 9 & 202 \\
+\hline 9 & 15 & 383 \\
+\hline 15 & 8 & 165 \\
+\hline 8 & 14 & 108 \\
+\hline 14 & 9 & 326 \\
+\hline 9 & 12 & 95 \\
+\hline 12 & 9 & 95 \\
+\hline 9 & 17 & 236 \\
+\hline 17 & 10 & 390 \\
+\hline 10 & 11 & 154 \\
+\hline 11 & 8 & 250 \\
+\hline 8 & 12 & 314 \\
+\hline 12 & 13 & 254 \\
+\hline 13 & 6 & 83 \\
+\hline 6 & 11 & 208 \\
+\hline 11 & 9 & 352 \\
+\hline\end{longtable}
+
+\subsubsection{Instância gr21.tsp}
+\begin{longtable}{|c|c|c|}
+\hline Origem & Destino & Peso \\
+\hline 1 & 21 & 380 \\
+\hline 21 & 18 & 165 \\
+\hline 18 & 17 & 225 \\
+\hline 17 & 21 & 280 \\
+\hline 21 & 20 & 150 \\
+\hline 20 & 19 & 155 \\
+\hline 19 & 16 & 375 \\
+\hline 16 & 21 & 380 \\
+\hline 21 & 14 & 280 \\
+\hline 14 & 19 & 525 \\
+\hline 19 & 13 & 485 \\
+\hline 13 & 21 & 345 \\
+\hline 21 & 11 & 240 \\
+\hline 11 & 20 & 100 \\
+\hline 20 & 10 & 150 \\
+\hline 10 & 21 & 185 \\
+\hline 21 & 15 & 105 \\
+\hline 15 & 18 & 190 \\
+\hline 18 & 16 & 545 \\
+\hline 16 & 15 & 475 \\
+\hline 15 & 14 & 170 \\
+\hline 14 & 16 & 650 \\
+\hline 16 & 17 & 485 \\
+\hline 17 & 13 & 400 \\
+\hline 13 & 16 & 715 \\
+\hline 16 & 9 & 230 \\
+\hline 9 & 19 & 600 \\
+\hline 19 & 8 & 240 \\
+\hline 8 & 21 & 370 \\
+\hline\end{longtable}
+
+\subsubsection{Instância gr24.tsp}
+\begin{longtable}{|c|c|c|}
+\hline Origem & Destino & Peso \\
+\hline 1 & 24 & 121 \\
+\hline 24 & 20 & 146 \\
+\hline 20 & 15 & 82 \\
+\hline 15 & 17 & 125 \\
+\hline 17 & 18 & 79 \\
+\hline 18 & 20 & 176 \\
+\hline 20 & 8 & 131 \\
+\hline 8 & 11 & 90 \\
+\hline 11 & 22 & 138 \\
+\hline 22 & 10 & 76 \\
+\hline 10 & 20 & 90 \\
+\hline 20 & 19 & 90 \\
+\hline 19 & 22 & 46 \\
+\hline 22 & 7 & 160 \\
+\hline 7 & 17 & 121 \\
+\hline 17 & 10 & 37 \\
+\hline 10 & 11 & 151 \\
+\hline 11 & 10 & 151 \\
+\hline 10 & 5 & 40 \\
+\hline 5 & 19 & 123 \\
+\hline 19 & 18 & 86 \\
+\hline 18 & 4 & 261 \\
+\hline 4 & 18 & 261 \\
+\hline 18 & 14 & 178 \\
+\hline 14 & 15 & 134 \\
+\hline 15 & 24 & 178 \\
+\hline 24 & 22 & 135 \\
+\hline 22 & 12 & 184 \\
+\hline 12 & 19 & 202 \\
+\hline\end{longtable}
+
+\subsection{Explicação da Solução para a Seleção dos Emparelhamentos}
+O algoritmo identifica todos os vértices de grau ímpar e realiza o emparelhamento ótimo entre eles, utilizando o menor caminho entre pares. As arestas correspondentes aos emparelhamentos são duplicadas, tornando o grafo euleriano. Assim, é possível encontrar um circuito fechado que percorre todas as arestas com o menor custo possível.
+
+\subsection{Implementação dos Testes}
+Os testes foram realizados automaticamente para cada instância, gerando:
+\begin{itemize}
+    \item Percurso ótimo (CSV)
+    \item Visualização do grafo original e do circuito euleriano (PNG)
+\end{itemize}
+
+\section{Conclusão}
+O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. O emparelhamento dos vértices de grau ímpar é fundamental para garantir a existência do circuito euleriano.
+
+\section{Referências}
+\begin{itemize}
+    \item NetworkX Documentation: \url{https://networkx.org/}
+    \item ABNT NBR 14724:2011 — Trabalhos acadêmicos
+\end{itemize}
+\end{document}
