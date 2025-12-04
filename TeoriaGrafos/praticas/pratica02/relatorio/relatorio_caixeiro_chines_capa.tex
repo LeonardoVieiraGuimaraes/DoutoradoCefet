@@ -1,50 +1,53 @@
+
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{url}
-\usepackage{abnt}
+\usepackage[alf]{abntex2cite} % Citações ABNT 2
 \geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm}
 
-% CAPA
 \begin{document}
-\begin{titlepage}
-    \centering
-    {\large Centro Federal de Educação Tecnológica de Minas Gerais\\}
-    {\large Programa de Pós-Graduação em Modelagem Matemática e Computacional\\}
-    \vspace{3cm}
-    {\LARGE\bfseries Problema do Caixeiro Chinês\\}
-    \vspace{2cm}
-    {\large Relatório Acadêmico\\}
-    \vspace{2cm}
-    {\large Leonardo Vieira Guimarães\\}
-    {\large Belo Horizonte\\}
-    {\large \today}
-\end{titlepage}
-
+% Capa separada
+\input{capa.tex}
 \setcounter{page}{1}
 
 \section{Introdução}
-O Problema do Caixeiro Chinês consiste em encontrar um circuito fechado de menor custo que percorra todas as arestas de um grafo pelo menos uma vez. Este problema tem aplicações práticas, como roteirização de entregas e inspeção de ruas.
 
-\section{Objetivo}
-Implementar e testar um algoritmo para a solução ótima do problema do Caixeiro Chinês, utilizando Python e a biblioteca NetworkX, e analisar os resultados em diferentes instâncias de grafos.
+
+O Problema do Caixeiro Chinês, também conhecido como Problema do Carteiro Chinês ou Eulerização de Grafos, é um clássico da Teoria dos Grafos e da Pesquisa Operacional. Seu objetivo é determinar um circuito fechado de menor custo que percorra todas as arestas de um grafo pelo menos uma vez, minimizando o total percorrido. Proposto por Mei-Ko Kwan em 1962, esse problema possui grande relevância em situações reais, como inspeção de ruas, redes de distribuição, coleta de lixo e outras aplicações urbanas e industriais.
+
+Neste trabalho, implemento e analiso algoritmos para a solução ótima do Problema do Caixeiro Chinês utilizando a linguagem Python e a biblioteca NetworkX. Inicialmente, é construído um grafo de teste para validar a abordagem e os métodos empregados. Em seguida, quatro instâncias reais no formato .tsp (gr15.tsp, gr17.tsp, gr21.tsp, gr24.tsp) são utilizadas para avaliar o desempenho e a generalidade da solução proposta.
+
+A solução envolve conceitos fundamentais de grafos e algoritmos, como emparelhamento de vértices de grau ímpar, caminhos mínimos e circuitos eulerianos. O estudo e implementação do Problema do Caixeiro Chinês contribuem para o desenvolvimento de técnicas eficientes de roteirização, otimização logística e análise de redes, sendo amplamente utilizado em aplicações urbanas, industriais e científicas.
 
 \section{Metodologia}
-\subsection{Implementação do Algoritmo}
-O algoritmo foi desenvolvido de forma modular, destacando:
-\begin{itemize}
-    \item \textbf{Caminho Mínimo}: Utiliza o algoritmo de Dijkstra (via NetworkX) para encontrar os menores caminhos entre vértices de grau ímpar.
-    \item \textbf{Emparelhamento}: Realiza o emparelhamento ótimo dos vértices de grau ímpar, duplicando arestas para tornar o grafo euleriano.
-    \item \textbf{Circuito Euleriano}: Após eulerizar o grafo, encontra o circuito euleriano de menor custo.
-\end{itemize}
-\subsection{Testes}
-O algoritmo foi testado em cinco instâncias:
-\begin{itemize}
-    \item Instância apresentada em aula.
-    \item Quatro instâncias do AVA (gr15.tsp, gr17.tsp, gr21.tsp, gr24.tsp).
-\end{itemize}
+
+
+O trabalho foi desenvolvido em duas etapas principais:
+
+\begin{enumerate}
+    \item \textbf{Implementação do Algoritmo:} O objetivo inicial foi implementar um algoritmo para a solução ótima do Problema do Caixeiro Chinês, utilizando Python e a biblioteca NetworkX. O desenvolvimento foi modular, contemplando:
+    \begin{itemize}
+        \item \textbf{Caminho Mínimo}: Utilização do algoritmo de Dijkstra para encontrar os menores caminhos entre vértices de grau ímpar.
+        \item \textbf{Emparelhamento}: Emparelhamento ótimo dos vértices de grau ímpar, duplicando arestas para tornar o grafo euleriano.
+        \item \textbf{Circuito Euleriano}: Após a eulerização, obtenção do circuito euleriano de menor custo.
+    \end{itemize}
+    \item \textbf{Testes e Validação:} A segunda etapa consistiu em testar o algoritmo implementado em cinco instâncias distintas:
+    \begin{itemize}
+        \item \textbf{Instância apresentada em aula:} Utilizada para validar a corretude da implementação, com um grafo simples e conhecido.
+        \item \textbf{Quatro instâncias do AVA:}
+        \begin{itemize}
+            \item \textbf{gr15.tsp:} Grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. É uma instância de porte intermediário, útil para avaliar o desempenho do algoritmo em um cenário não trivial.
+            \item \textbf{gr17.tsp:} Grafo com 17 vértices, também com distâncias explícitas. Apresenta maior complexidade e serve para testar a escalabilidade da solução.
+            \item \textbf{gr21.tsp:} Instância com 21 cidades, baseada em problemas clássicos de roteamento. As distâncias são fornecidas em formato de matriz triangular inferior, exigindo tratamento específico na leitura dos dados.
+            \item \textbf{gr24.tsp:} A maior instância utilizada, com 24 vértices e distâncias explícitas entre pares de cidades. Permite avaliar o algoritmo em cenários mais próximos de aplicações reais, onde o número de vértices e arestas é significativo.
+        \end{itemize}
+    \end{itemize}
+    \vspace{0.5em}
+    Todas as instâncias seguem o formato TSPLIB, com matriz de distâncias explícitas entre cidades. Para cada uma delas, o algoritmo gera imagens do grafo original e do circuito euleriano encontrado, além dos arquivos CSV com o percurso ótimo. Essas imagens e resultados ilustram o funcionamento do algoritmo e permitem comparar a qualidade das soluções obtidas em diferentes cenários.
+\end{enumerate}
 
 \section{Resultados}
 \subsection{Percurso encontrado em cada instância}
@@ -64,6 +67,12 @@ O algoritmo foi testado em cinco instâncias:
 \hline a & b & 12 \\
 \hline b & a & 12 \\
 \hline\end{longtable}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../resultado/grafo_aula.png}
+    \caption{Grafo da instância apresentada em aula}
+\end{figure}
 
 \subsubsection{Instância gr15.tsp}
 \begin{longtable}{|c|c|c|}
@@ -214,9 +223,8 @@ Os testes foram realizados automaticamente para cada instância, gerando:
 \section{Conclusão}
 O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. O emparelhamento dos vértices de grau ímpar é fundamental para garantir a existência do circuito euleriano.
 
+
 \section{Referências}
-\begin{itemize}
-    \item NetworkX Documentation: \url{https://networkx.org/}
-    \item ABNT NBR 14724:2011 — Trabalhos acadêmicos
-\end{itemize}
+\bibliography{referencias}
+\bibliographystyle{abntex2-alf}
 \end{document}
