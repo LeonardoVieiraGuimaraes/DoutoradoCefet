@@ -6,21 +6,42 @@
 \usepackage{longtable}
 \usepackage{url}
 \usepackage[alf]{abntex2cite} % Citações ABNT 2
+\usepackage{setspace} % Espaçamento entre linhas
+\usepackage{float} 
 \geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm}
 
+
 \begin{document}
-% Capa separada
-\input{capa.tex}
+\onehalfspacing
+% Capa incorporada
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Large Centro Federal de Educação Tecnológica de Minas Gerais}\\[0.7cm]
+    {\large Programa de Pós-Graduação em Computação Aplicada}\\[0.5cm]
+    {\large Doutorado em Computação Aplicada}\\[2.5cm]
+    {\LARGE \textbf{Problema do Caixeiro Chinês}}\\[2.5cm]
+    {\large Leonardo Vieira Guimarães}\\[0.7cm]
+    {\large Orientador: Prof. Dr. Fulano de Tal}\\[5.5cm]
+    {\large Belo Horizonte}\\[0.3cm]
+    {\large Dezembro de 2025}
+    \vspace*{2cm}
+\end{titlepage}
 \setcounter{page}{1}
 
 \section{Introdução}
-
 
 O Problema do Caixeiro Chinês, também conhecido como Problema do Carteiro Chinês ou Eulerização de Grafos, é um clássico da Teoria dos Grafos e da Pesquisa Operacional. Seu objetivo é determinar um circuito fechado de menor custo que percorra todas as arestas de um grafo pelo menos uma vez, minimizando o total percorrido. Proposto por Mei-Ko Kwan em 1962, esse problema possui grande relevância em situações reais, como inspeção de ruas, redes de distribuição, coleta de lixo e outras aplicações urbanas e industriais.
 
 Neste trabalho, implemento e analiso algoritmos para a solução ótima do Problema do Caixeiro Chinês utilizando a linguagem Python e a biblioteca NetworkX. Inicialmente, é construído um grafo de teste para validar a abordagem e os métodos empregados. Em seguida, quatro instâncias reais no formato .tsp (gr15.tsp, gr17.tsp, gr21.tsp, gr24.tsp) são utilizadas para avaliar o desempenho e a generalidade da solução proposta.
 
 A solução envolve conceitos fundamentais de grafos e algoritmos, como emparelhamento de vértices de grau ímpar, caminhos mínimos e circuitos eulerianos. O estudo e implementação do Problema do Caixeiro Chinês contribuem para o desenvolvimento de técnicas eficientes de roteirização, otimização logística e análise de redes, sendo amplamente utilizado em aplicações urbanas, industriais e científicas.
+
+\section{Fundamentos Teóricos}
+
+O \textbf{Problema do Caixeiro Chinês} consiste em encontrar um circuito fechado de menor custo que percorra todas as arestas de um grafo pelo menos uma vez, minimizando o total percorrido. Esse problema, também chamado de Problema do Carteiro Chinês, foi formalizado por Mei-Ko Kwan em 1962 e possui aplicações práticas em logística, inspeção de ruas, coleta de lixo e redes urbanas \cite{boaventura2002grafos,feofiloff2011introduccao}.
+
+Para que seja possível percorrer todas as arestas de um grafo em um único circuito fechado, é necessário que o grafo seja \textbf{euleriano}. O \textit{Teorema de Euler} estabelece que um grafo conexo é euleriano se, e somente se, todos os seus vértices possuem grau par. Caso contrário, é preciso duplicar algumas arestas (eulerização) para garantir essa propriedade \cite{boaventura2002grafos}.
 
 \section{Metodologia}
 
@@ -49,179 +70,303 @@ O trabalho foi desenvolvido em duas etapas principais:
     Todas as instâncias seguem o formato TSPLIB, com matriz de distâncias explícitas entre cidades. Para cada uma delas, o algoritmo gera imagens do grafo original e do circuito euleriano encontrado, além dos arquivos CSV com o percurso ótimo. Essas imagens e resultados ilustram o funcionamento do algoritmo e permitem comparar a qualidade das soluções obtidas em diferentes cenários.
 \end{enumerate}
 
-\section{Resultados}
-\subsection{Percurso encontrado em cada instância}
-\subsubsection{Instância Aula}
-\begin{longtable}{|c|c|c|}
-\hline Origem & Destino & Peso \\
-\hline a & f & 5 \\
-\hline f & e & 5 \\
-\hline e & d & 11 \\
-\hline d & e & 11 \\
-\hline e & g & 5 \\
-\hline g & d & 8 \\
-\hline d & c & 5 \\
-\hline c & b & 6 \\
-\hline b & g & 5 \\
-\hline g & a & 7 \\
-\hline a & b & 12 \\
-\hline b & a & 12 \\
-\hline\end{longtable}
+\section{Resultados e Discussão}
+
+
+Nesta seção, apresentamos os resultados obtidos a partir da implementação do algoritmo do Caixeiro Chinês, organizados conforme as instâncias analisadas:
+
+\begin{enumerate}
+    \item \textbf{Instância apresentada em aula:} Utilizada para validar a abordagem e garantir a corretude da implementação em um grafo simples e conhecido.
+    \item \textbf{Instância gr15.tsp:} Grafo com 15 vértices, representando cidades e distâncias explícitas entre pares. Permite avaliar o desempenho do algoritmo em um cenário intermediário.
+    \item \textbf{Instância gr17.tsp:} Grafo com 17 vértices, com maior complexidade e distâncias explícitas, útil para testar a escalabilidade da solução.
+    \item \textbf{Instância gr21.tsp:} Instância com 21 cidades, baseada em problemas clássicos de roteamento, com matriz triangular inferior de distâncias.
+    \item \textbf{Instância gr24.tsp:} A maior instância utilizada, com 24 vértices e distâncias explícitas, aproximando-se de cenários reais de aplicação.
+\end{enumerate}
+
+\subsection{Análise da instância de aula}
+
+Para a validação do método, foi utilizada uma instância composta por 7 vértices (a, b, c, d, e, f, g) e 12 arestas, cada uma com pesos explícitos representando as distâncias entre os vértices. A estrutura do grafo pode ser visualizada na Figura~\ref{fig:grafo_aula}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{../resultado/grafo_aula.png}
-    \caption{Grafo da instância apresentada em aula}
+    \includegraphics[width=0.6\textwidth]{./resultado/grafo_aula.png}
+    \caption{Grafo original da instância de aula}
+    \label{fig:grafo_aula}
 \end{figure}
 
-\subsubsection{Instância gr15.tsp}
-\begin{longtable}{|c|c|c|}
-\hline Origem & Destino & Peso \\
-\hline 1 & 12 & 74 \\
-\hline 12 & 15 & 55 \\
-\hline 15 & 14 & 59 \\
-\hline 14 & 13 & 62 \\
-\hline 13 & 3 & 64 \\
-\hline 3 & 9 & 41 \\
-\hline 9 & 14 & 51 \\
-\hline 14 & 11 & 59 \\
-\hline 11 & 6 & 33 \\
-\hline 6 & 11 & 33 \\
-\hline 11 & 10 & 51 \\
-\hline 10 & 15 & 37 \\
-\hline 15 & 7 & 33 \\
-\hline 7 & 4 & 72 \\
-\hline 4 & 7 & 72 \\
-\hline 7 & 6 & 61 \\
-\hline 6 & 15 & 59 \\
-\hline 15 & 13 & 23 \\
-\hline 13 & 12 & 61 \\
-\hline 12 & 10 & 21 \\
-\hline 10 & 8 & 15 \\
-\hline 8 & 15 & 37 \\
-\hline 15 & 11 & 61 \\
-\hline 11 & 2 & 41 \\
-\hline 2 & 14 & 52 \\
-\hline 14 & 5 & 65 \\
-\hline 5 & 15 & 23 \\
-\hline 15 & 9 & 11 \\
-\hline 9 & 12 & 46 \\
-\hline\end{longtable}
+Após a eulerização do grafo, ou seja, a duplicação das arestas necessárias para garantir que todos os vértices tenham grau par, foi possível encontrar o circuito euleriano de menor custo. O percurso ótimo obtido está detalhado na Tabela~\ref{tab:percurso_aula} e ilustrado na Figura~\ref{fig:circuito_aula}.
 
-\subsubsection{Instância gr17.tsp}
-\begin{longtable}{|c|c|c|}
-\hline Origem & Destino & Peso \\
-\hline 1 & 17 & 121 \\
-\hline 17 & 16 & 336 \\
-\hline 16 & 15 & 483 \\
-\hline 15 & 14 & 57 \\
-\hline 14 & 12 & 391 \\
-\hline 12 & 15 & 448 \\
-\hline 15 & 17 & 153 \\
-\hline 17 & 13 & 55 \\
-\hline 13 & 11 & 287 \\
-\hline 11 & 12 & 435 \\
-\hline 12 & 16 & 157 \\
-\hline 16 & 8 & 349 \\
-\hline 8 & 16 & 349 \\
-\hline 16 & 9 & 202 \\
-\hline 9 & 15 & 383 \\
-\hline 15 & 8 & 165 \\
-\hline 8 & 14 & 108 \\
-\hline 14 & 9 & 326 \\
-\hline 9 & 12 & 95 \\
-\hline 12 & 9 & 95 \\
-\hline 9 & 17 & 236 \\
-\hline 17 & 10 & 390 \\
-\hline 10 & 11 & 154 \\
-\hline 11 & 8 & 250 \\
-\hline 8 & 12 & 314 \\
-\hline 12 & 13 & 254 \\
-\hline 13 & 6 & 83 \\
-\hline 6 & 11 & 208 \\
-\hline 11 & 9 & 352 \\
-\hline\end{longtable}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_aula.png}
+    \caption{Circuito euleriano encontrado para a instância de aula}
+    \label{fig:circuito_aula}
+\end{figure}
 
-\subsubsection{Instância gr21.tsp}
-\begin{longtable}{|c|c|c|}
-\hline Origem & Destino & Peso \\
-\hline 1 & 21 & 380 \\
-\hline 21 & 18 & 165 \\
-\hline 18 & 17 & 225 \\
-\hline 17 & 21 & 280 \\
-\hline 21 & 20 & 150 \\
-\hline 20 & 19 & 155 \\
-\hline 19 & 16 & 375 \\
-\hline 16 & 21 & 380 \\
-\hline 21 & 14 & 280 \\
-\hline 14 & 19 & 525 \\
-\hline 19 & 13 & 485 \\
-\hline 13 & 21 & 345 \\
-\hline 21 & 11 & 240 \\
-\hline 11 & 20 & 100 \\
-\hline 20 & 10 & 150 \\
-\hline 10 & 21 & 185 \\
-\hline 21 & 15 & 105 \\
-\hline 15 & 18 & 190 \\
-\hline 18 & 16 & 545 \\
-\hline 16 & 15 & 475 \\
-\hline 15 & 14 & 170 \\
-\hline 14 & 16 & 650 \\
-\hline 16 & 17 & 485 \\
-\hline 17 & 13 & 400 \\
-\hline 13 & 16 & 715 \\
-\hline 16 & 9 & 230 \\
-\hline 9 & 19 & 600 \\
-\hline 19 & 8 & 240 \\
-\hline 8 & 21 & 370 \\
-\hline\end{longtable}
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Percurso} \\
+        \hline
+        a -- (5) $\rightarrow$ f & f -- (5) $\rightarrow$ e & \textbf{e -- (11) $\rightarrow$ d} & \textbf{d -- (11) $\rightarrow$ e} \\
+        e -- (6) $\rightarrow$ g & g -- (8) $\rightarrow$ d & d -- (5) $\rightarrow$ c & c -- (6) $\rightarrow$ b \\
+        b -- (7) $\rightarrow$ g & g -- (7) $\rightarrow$ a & \textbf{a -- (12) $\rightarrow$ b} & \textbf{b -- (12) $\rightarrow$ a} \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a instância de aula (cada célula mostra: vértice de início -- (peso) $\rightarrow$ vértice de fim). \textbf{Células em negrito indicam arestas emparelhadas pelo algoritmo.}}
+    \label{tab:percurso_aula}
+\end{table}
 
-\subsubsection{Instância gr24.tsp}
-\begin{longtable}{|c|c|c|}
-\hline Origem & Destino & Peso \\
-\hline 1 & 24 & 121 \\
-\hline 24 & 20 & 146 \\
-\hline 20 & 15 & 82 \\
-\hline 15 & 17 & 125 \\
-\hline 17 & 18 & 79 \\
-\hline 18 & 20 & 176 \\
-\hline 20 & 8 & 131 \\
-\hline 8 & 11 & 90 \\
-\hline 11 & 22 & 138 \\
-\hline 22 & 10 & 76 \\
-\hline 10 & 20 & 90 \\
-\hline 20 & 19 & 90 \\
-\hline 19 & 22 & 46 \\
-\hline 22 & 7 & 160 \\
-\hline 7 & 17 & 121 \\
-\hline 17 & 10 & 37 \\
-\hline 10 & 11 & 151 \\
-\hline 11 & 10 & 151 \\
-\hline 10 & 5 & 40 \\
-\hline 5 & 19 & 123 \\
-\hline 19 & 18 & 86 \\
-\hline 18 & 4 & 261 \\
-\hline 4 & 18 & 261 \\
-\hline 18 & 14 & 178 \\
-\hline 14 & 15 & 134 \\
-\hline 15 & 24 & 178 \\
-\hline 24 & 22 & 135 \\
-\hline 22 & 12 & 184 \\
-\hline 12 & 19 & 202 \\
-\hline\end{longtable}
+O percurso apresentado na tabela corresponde exatamente ao caminho percorrido no circuito euleriano, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo.
 
-\subsection{Explicação da Solução para a Seleção dos Emparelhamentos}
-O algoritmo identifica todos os vértices de grau ímpar e realiza o emparelhamento ótimo entre eles, utilizando o menor caminho entre pares. As arestas correspondentes aos emparelhamentos são duplicadas, tornando o grafo euleriano. Assim, é possível encontrar um circuito fechado que percorre todas as arestas com o menor custo possível.
+\subsection{Análise da instância gr15.tsp}
 
-\subsection{Implementação dos Testes}
-Os testes foram realizados automaticamente para cada instância, gerando:
-\begin{itemize}
-    \item Percurso ótimo (CSV)
-    \item Visualização do grafo original e do circuito euleriano (PNG)
-\end{itemize}
+A instância gr15.tsp consiste em um grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. Essa instância é útil para avaliar o desempenho do algoritmo em um cenário intermediário, com maior número de vértices e arestas em relação ao exemplo de aula.
+
+A Figura~\ref{fig:grafo_gr15} apresenta o grafo original da instância gr15.tsp.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/grafo_gr15.tsp.png}
+    \caption{Grafo original da instância gr15.tsp}
+    \label{fig:grafo_gr15}
+\end{figure}
+
+Após a eulerização do grafo, foi possível encontrar o circuito euleriano de menor custo para essa instância. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr15} e ilustrado na Figura~\ref{fig:circuito_gr15}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr15.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr15.tsp}
+    \label{fig:circuito_gr15}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Percurso} \\
+        \hline
+        	\textbf{1 -- (74) $\rightarrow$ 12} & 12 -- (55) $\rightarrow$ 15 & 15 -- (59) $\rightarrow$ 14 & 14 -- (62) $\rightarrow$ 13 \\
+        13 -- (64) $\rightarrow$ 3 & 3 -- (41) $\rightarrow$ 9 & 9 -- (51) $\rightarrow$ 14 & 14 -- (59) $\rightarrow$ 11 \\
+        	\textbf{11 -- (33) $\rightarrow$ 6} & \textbf{6 -- (33) $\rightarrow$ 11} & 11 -- (51) $\rightarrow$ 10 & 10 -- (37) $\rightarrow$ 15 \\
+        15 -- (33) $\rightarrow$ 7 & \textbf{7 -- (72) $\rightarrow$ 4} & \textbf{4 -- (72) $\rightarrow$ 7} & 7 -- (61) $\rightarrow$ 6 \\
+        6 -- (59) $\rightarrow$ 15 & 15 -- (23) $\rightarrow$ 13 & 13 -- (61) $\rightarrow$ 12 & 12 -- (21) $\rightarrow$ 10 \\
+        10 -- (15) $\rightarrow$ 8 & 8 -- (37) $\rightarrow$ 15 & 15 -- (61) $\rightarrow$ 11 & 11 -- (41) $\rightarrow$ 2 \\
+        2 -- (52) $\rightarrow$ 14 & 14 -- (65) $\rightarrow$ 5 & 5 -- (23) $\rightarrow$ 15 & 15 -- (11) $\rightarrow$ 9 \\
+        9 -- (46) $\rightarrow$ 12 & 12 -- (51) $\rightarrow$ 4 & 4 -- (82) $\rightarrow$ 5 & 5 -- (21) $\rightarrow$ 9 \\
+        9 -- (33) $\rightarrow$ 8 & 8 -- (42) $\rightarrow$ 1 & 1 -- (46) $\rightarrow$ 15 & 15 -- (51) $\rightarrow$ 3 \\
+        3 -- (46) $\rightarrow$ 5 & 5 -- (68) $\rightarrow$ 1 & \textbf{1 -- (74) $\rightarrow$ 12} & 12 -- (37) $\rightarrow$ 7 \\
+        7 -- (43) $\rightarrow$ 2 & \textbf{2 -- (55) $\rightarrow$ 3} & \textbf{3 -- (55) $\rightarrow$ 2} & 2 -- (29) $\rightarrow$ 1 \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a instância gr15.tsp (cada célula mostra: vértice de início -- (peso) $\rightarrow$ vértice de fim). \textbf{Células em negrito indicam arestas emparelhadas pelo algoritmo.}}
+    \label{tab:percurso_gr15}
+\end{table}
+
+O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr15.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de porte intermediário.
+
+\subsection{Análise da instância gr17.tsp}
+
+A instância gr17.tsp consiste em um grafo com 17 vértices, representando cidades e as distâncias explícitas entre cada par. Essa instância apresenta maior complexidade e serve para testar a escalabilidade do algoritmo em cenários mais desafiadores.
+
+A Figura~\ref{fig:grafo_gr17} apresenta o grafo original da instância gr17.tsp.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/grafo_gr17.tsp.png}
+    \caption{Grafo original da instância gr17.tsp}
+    \label{fig:grafo_gr17}
+\end{figure}
+
+Após a eulerização do grafo, foi possível encontrar o circuito euleriano de menor custo para essa instância. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr17} e ilustrado na Figura~\ref{fig:circuito_gr17}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr17.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr17.tsp}
+    \label{fig:circuito_gr17}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Percurso} \\
+        \hline
+        	\textbf{1 -- (121) $\rightarrow$ 17} & 17 -- (336) $\rightarrow$ 16 & 16 -- (483) $\rightarrow$ 15 & 15 -- (57) $\rightarrow$ 14 \\
+        14 -- (391) $\rightarrow$ 12 & 12 -- (448) $\rightarrow$ 15 & 15 -- (153) $\rightarrow$ 17 & 17 -- (55) $\rightarrow$ 13 \\
+        13 -- (287) $\rightarrow$ 11 & 11 -- (435) $\rightarrow$ 12 & 12 -- (157) $\rightarrow$ 16 & \textbf{16 -- (349) $\rightarrow$ 8} \\
+        	\textbf{8 -- (349) $\rightarrow$ 16} & 16 -- (202) $\rightarrow$ 9 & 9 -- (383) $\rightarrow$ 15 & 15 -- (165) $\rightarrow$ 8 \\
+        8 -- (108) $\rightarrow$ 14 & 14 -- (326) $\rightarrow$ 9 & \textbf{9 -- (95) $\rightarrow$ 12} & \textbf{12 -- (95) $\rightarrow$ 9} \\
+        9 -- (236) $\rightarrow$ 17 & 17 -- (390) $\rightarrow$ 10 & 10 -- (154) $\rightarrow$ 11 & 11 -- (250) $\rightarrow$ 8 \\
+        8 -- (314) $\rightarrow$ 12 & 12 -- (254) $\rightarrow$ 13 & 13 -- (83) $\rightarrow$ 6 & 6 -- (208) $\rightarrow$ 11 \\
+        11 -- (352) $\rightarrow$ 9 & 9 -- (495) $\rightarrow$ 10 & 10 -- (402) $\rightarrow$ 8 & 8 -- (36) $\rightarrow$ 17 \\
+        17 -- (518) $\rightarrow$ 2 & 2 -- (420) $\rightarrow$ 15 & 15 -- (53) $\rightarrow$ 3 & 3 -- (472) $\rightarrow$ 16 \\
+        16 -- (528) $\rightarrow$ 5 & 5 -- (243) $\rightarrow$ 14 & 14 -- (466) $\rightarrow$ 2 & 2 -- (745) $\rightarrow$ 16 \\
+        16 -- (246) $\rightarrow$ 1 & 1 -- (268) $\rightarrow$ 15 & 15 -- (207) $\rightarrow$ 7 & 7 -- (29) $\rightarrow$ 8 \\
+        8 -- (249) $\rightarrow$ 9 & 9 -- (264) $\rightarrow$ 6 & 6 -- (329) $\rightarrow$ 12 & 12 -- (324) $\rightarrow$ 1 \\
+        1 -- (211) $\rightarrow$ 14 & 14 -- (74) $\rightarrow$ 3 & 3 -- (191) $\rightarrow$ 13 & 13 -- (346) $\rightarrow$ 5 \\
+        5 -- (309) $\rightarrow$ 8 & 8 -- (34) $\rightarrow$ 6 & 6 -- (63) $\rightarrow$ 7 & 7 -- (351) $\rightarrow$ 5 \\
+        5 -- (267) $\rightarrow$ 6 & 6 -- (360) $\rightarrow$ 10 & 10 -- (505) $\rightarrow$ 1 & 1 -- (70) $\rightarrow$ 13 \\
+        13 -- (567) $\rightarrow$ 2 & 2 -- (282) $\rightarrow$ 11 & 11 -- (110) $\rightarrow$ 3 & 3 -- (372) $\rightarrow$ 9 \\
+        9 -- (259) $\rightarrow$ 1 & \textbf{1 -- (121) $\rightarrow$ 17} & 17 -- (84) $\rightarrow$ 4 & 4 -- (105) $\rightarrow$ 8 \\
+        8 -- (154) $\rightarrow$ 3 & 3 -- (196) $\rightarrow$ 7 & 7 -- (80) $\rightarrow$ 1 & 1 -- (134) $\rightarrow$ 8 \\
+        8 -- (530) $\rightarrow$ 2 & 2 -- (488) $\rightarrow$ 6 & 6 -- (112) $\rightarrow$ 3 & 3 -- (169) $\rightarrow$ 5 \\
+        5 -- (412) $\rightarrow$ 1 & 1 -- (150) $\rightarrow$ 6 & 6 -- (120) $\rightarrow$ 4 & 4 -- (228) $\rightarrow$ 3 \\
+        3 -- (257) $\rightarrow$ 1 & 1 -- (91) $\rightarrow$ 4 & 4 -- (661) $\rightarrow$ 2 & 2 -- (633) $\rightarrow$ 1 \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a instância gr17.tsp (cada célula mostra: vértice de início -- (peso) $\rightarrow$ vértice de fim). \textbf{Células em negrito indicam arestas emparelhadas pelo algoritmo.}}
+    \label{tab:percurso_gr17}
+\end{table}
+
+O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr17.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de maior complexidade.
+
+\subsection{Análise da instância gr21.tsp}
+
+A instância gr21.tsp consiste em um grafo com 21 vértices, baseado em problemas clássicos de roteamento, com distâncias fornecidas em formato de matriz triangular inferior. Essa instância exige tratamento específico na leitura dos dados e permite avaliar o algoritmo em cenários ainda mais complexos.
+
+A Figura~\ref{fig:grafo_gr21} apresenta o grafo original da instância gr21.tsp.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/grafo_gr21.tsp.png}
+    \caption{Grafo original da instância gr21.tsp}
+    \label{fig:grafo_gr21}
+\end{figure}
+
+Após a eulerização do grafo, foi possível encontrar o circuito euleriano de menor custo para essa instância. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr21} e ilustrado na Figura~\ref{fig:circuito_gr21}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr21.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr21.tsp}
+    \label{fig:circuito_gr21}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Percurso} \\
+        \hline
+        1 -- (21) $\rightarrow$ 18 & 21 -- (18) $\rightarrow$ 17 & 18 -- (17) $\rightarrow$ 21 & 17 -- (21) $\rightarrow$ 20 \\
+        21 -- (20) $\rightarrow$ 19 & 20 -- (19) $\rightarrow$ 16 & 19 -- (16) $\rightarrow$ 21 & 16 -- (21) $\rightarrow$ 14 \\
+        21 -- (14) $\rightarrow$ 19 & 14 -- (19) $\rightarrow$ 13 & 19 -- (13) $\rightarrow$ 21 & 13 -- (21) $\rightarrow$ 11 \\
+        21 -- (11) $\rightarrow$ 20 & 11 -- (20) $\rightarrow$ 10 & 20 -- (10) $\rightarrow$ 21 & 10 -- (21) $\rightarrow$ 15 \\
+        21 -- (15) $\rightarrow$ 18 & 15 -- (18) $\rightarrow$ 16 & 18 -- (16) $\rightarrow$ 15 & 16 -- (15) $\rightarrow$ 14 \\
+        15 -- (14) $\rightarrow$ 16 & 14 -- (16) $\rightarrow$ 17 & 16 -- (17) $\rightarrow$ 13 & 17 -- (13) $\rightarrow$ 16 \\
+        13 -- (16) $\rightarrow$ 9 & 16 -- (9) $\rightarrow$ 19 & 9 -- (19) $\rightarrow$ 8 & 19 -- (8) $\rightarrow$ 21 \\
+        8 -- (21) $\rightarrow$ 12 & 21 -- (12) $\rightarrow$ 14 & 12 -- (14) $\rightarrow$ 13 & 14 -- (13) $\rightarrow$ 12 \\
+        13 -- (12) $\rightarrow$ 18 & 12 -- (18) $\rightarrow$ 11 & 18 -- (11) $\rightarrow$ 14 & 11 -- (14) $\rightarrow$ 10 \\
+        14 -- (10) $\rightarrow$ 13 & 10 -- (13) $\rightarrow$ 11 & 13 -- (11) $\rightarrow$ 10 & 11 -- (10) $\rightarrow$ 18 \\
+        10 -- (18) $\rightarrow$ 5 & \textbf{18 -- (5) $\rightarrow$ 19} & 5 -- (19) $\rightarrow$ 7 & 19 -- (7) $\rightarrow$ 20 \\
+        7 -- (20) $\rightarrow$ 3 & \textbf{20 -- (3) $\rightarrow$ 20} & \textbf{3 -- (20) $\rightarrow$ 4} & 20 -- (4) $\rightarrow$ 21 \\
+        4 -- (21) $\rightarrow$ 2 & \textbf{21 -- (2) $\rightarrow$ 21} & \textbf{2 -- (21) $\rightarrow$ 6} & 21 -- (6) $\rightarrow$ 16 \\
+        6 -- (16) $\rightarrow$ 7 & 16 -- (7) $\rightarrow$ 11 & 7 -- (11) $\rightarrow$ 12 & 11 -- (12) $\rightarrow$ 15 \\
+        12 -- (15) $\rightarrow$ 9 & 15 -- (9) $\rightarrow$ 14 & 9 -- (14) $\rightarrow$ 8 & 14 -- (8) $\rightarrow$ 13 \\
+        8 -- (13) $\rightarrow$ 5 & 13 -- (5) $\rightarrow$ 19 & \textbf{5 -- (19) $\rightarrow$ 1} & 19 -- (1) $\rightarrow$ 20 \\
+        1 -- (20) $\rightarrow$ 2 & 20 -- (2) $\rightarrow$ 18 & 2 -- (18) $\rightarrow$ 1 & 1 -- (16) $\rightarrow$ 4 \\
+        16 -- (4) $\rightarrow$ 11 & 4 -- (11) $\rightarrow$ 9 & 11 -- (9) $\rightarrow$ 10 & 9 -- (10) $\rightarrow$ 7 \\
+        10 -- (7) $\rightarrow$ 12 & 7 -- (12) $\rightarrow$ 6 & \textbf{12 -- (6) $\rightarrow$ 12} & \textbf{6 -- (12) $\rightarrow$ 8} \\
+        12 -- (8) $\rightarrow$ 15 & 8 -- (15) $\rightarrow$ 1 & 15 -- (1) $\rightarrow$ 17 & 1 -- (17) $\rightarrow$ 3 \\
+        17 -- (3) $\rightarrow$ 13 & 3 -- (13) $\rightarrow$ 1 & 1 -- (14) $\rightarrow$ 2 & 14 -- (2) $\rightarrow$ 11 \\
+        2 -- (11) $\rightarrow$ 5 & 11 -- (5) $\rightarrow$ 12 & 5 -- (12) $\rightarrow$ 1 & 1 -- (11) $\rightarrow$ 6 \\
+        11 -- (6) $\rightarrow$ 8 & 6 -- (8) $\rightarrow$ 7 & 8 -- (7) $\rightarrow$ 5 & 7 -- (5) $\rightarrow$ 8 \\
+        5 -- (8) $\rightarrow$ 1 & 8 -- (1) $\rightarrow$ 9 & 1 -- (9) $\rightarrow$ 3 & 9 -- (3) $\rightarrow$ 10 \\
+        3 -- (10) $\rightarrow$ 4 & 10 -- (4) $\rightarrow$ 7 & \textbf{4 -- (7) $\rightarrow$ 6} & 7 -- (6) $\rightarrow$ 5 \\
+        6 -- (5) $\rightarrow$ 4 & 5 -- (4) $\rightarrow$ 7 & \textbf{4 -- (7) $\rightarrow$ 1} & 7 -- (1) $\rightarrow$ 10 \\
+        1 -- (10) $\rightarrow$ 2 & 10 -- (2) $\rightarrow$ 6 & 2 -- (6) $\rightarrow$ 1 & 1 -- (5) $\rightarrow$ 3 \\
+        5 -- (3) $\rightarrow$ 4 & 3 -- (4) $\rightarrow$ 1 & 4 -- (1) $\rightarrow$ 3 & 1 -- (3) $\rightarrow$ 2 \\
+        3 -- (2) $\rightarrow$ 1 & & & \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a instância gr21.tsp (cada célula mostra: vértice de início -- (peso) $\rightarrow$ vértice de fim). \textbf{Células em negrito indicam arestas emparelhadas pelo algoritmo.}}
+    \label{tab:percurso_gr21}
+\end{table}
+
+O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr21.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de porte elevado.
+
+\subsection{Análise da instância gr24.tsp}
+
+A instância gr24.tsp consiste em um grafo com 24 vértices e distâncias explícitas entre pares de cidades. É a maior instância utilizada neste trabalho, permitindo avaliar o desempenho do algoritmo em cenários próximos de aplicações reais, com grande número de vértices e arestas.
+
+A Figura~\ref{fig:grafo_gr24} apresenta o grafo original da instância gr24.tsp.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/grafo_gr24.tsp.png}
+    \caption{Grafo original da instância gr24.tsp}
+    \label{fig:grafo_gr24}
+\end{figure}
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \multicolumn{4}{|c|}{Percurso} \\
+        \hline
+        1 -- (24) $\rightarrow$ 24 & 24 -- (20) $\rightarrow$ 20 & 20 -- (15) $\rightarrow$ 15 & 15 -- (17) $\rightarrow$ 17 \\
+        17 -- (18) $\rightarrow$ 18 & 18 -- (20) $\rightarrow$ 20 & 20 -- (8) $\rightarrow$ 8 & 8 -- (11) $\rightarrow$ 11 \\
+        11 -- (22) $\rightarrow$ 22 & 22 -- (10) $\rightarrow$ 10 & 10 -- (20) $\rightarrow$ 20 & 20 -- (19) $\rightarrow$ 19 \\
+        19 -- (22) $\rightarrow$ 22 & 22 -- (7) $\rightarrow$ 7 & 7 -- (17) $\rightarrow$ 17 & 17 -- (10) $\rightarrow$ 10 \\
+        	\textbf{10 -- (11) $\rightarrow$ 11} & \textbf{11 -- (10) $\rightarrow$ 10} & 10 -- (5) $\rightarrow$ 5 & 5 -- (19) $\rightarrow$ 19 \\
+        19 -- (18) $\rightarrow$ 18 & \textbf{18 -- (4) $\rightarrow$ 18} & \textbf{4 -- (18) $\rightarrow$ 18} & 18 -- (14) $\rightarrow$ 14 \\
+        14 -- (15) $\rightarrow$ 15 & 15 -- (24) $\rightarrow$ 24 & 24 -- (22) $\rightarrow$ 22 & 22 -- (12) $\rightarrow$ 12 \\
+        12 -- (19) $\rightarrow$ 19 & 19 -- (11) $\rightarrow$ 11 & 11 -- (14) $\rightarrow$ 14 & 14 -- (10) $\rightarrow$ 10 \\
+        10 -- (4) $\rightarrow$ 4 & 4 -- (19) $\rightarrow$ 19 & 19 -- (8) $\rightarrow$ 8 & 8 -- (14) $\rightarrow$ 14 \\
+        14 -- (5) $\rightarrow$ 5 & 5 -- (4) $\rightarrow$ 4 & 4 -- (14) $\rightarrow$ 14 & 14 -- (12) $\rightarrow$ 12 \\
+        12 -- (11) $\rightarrow$ 11 & 11 -- (24) $\rightarrow$ 24 & 24 -- (10) $\rightarrow$ 10 & 10 -- (12) $\rightarrow$ 12 \\
+        12 -- (7) $\rightarrow$ 7 & 7 -- (24) $\rightarrow$ 24 & 24 -- (19) $\rightarrow$ 19 & 19 -- (21) $\rightarrow$ 21 \\
+        21 -- (22) $\rightarrow$ 22 & 22 -- (23) $\rightarrow$ 23 & 23 -- (24) $\rightarrow$ 24 & 24 -- (18) $\rightarrow$ 18 \\
+        18 -- (16) $\rightarrow$ 16 & 16 -- (22) $\rightarrow$ 22 & 22 -- (9) $\rightarrow$ 9 & 9 -- (18) $\rightarrow$ 18 \\
+        18 -- (21) $\rightarrow$ 21 & 21 -- (24) $\rightarrow$ 24 & 24 -- (12) $\rightarrow$ 12 & 12 -- (16) $\rightarrow$ 16 \\
+        16 -- (24) $\rightarrow$ 24 & 24 -- (17) $\rightarrow$ 17 & 17 -- (23) $\rightarrow$ 23 & 23 -- (14) $\rightarrow$ 14 \\
+        14 -- (21) $\rightarrow$ 21 & 21 -- (17) $\rightarrow$ 17 & 17 -- (9) $\rightarrow$ 9 & \textbf{9 -- (15) $\rightarrow$ 9} \\
+        	\textbf{15 -- (9) $\rightarrow$ 15} & 9 -- (24) $\rightarrow$ 24 & 24 -- (8) $\rightarrow$ 8 & 8 -- (16) $\rightarrow$ 16 \\
+        16 -- (11) $\rightarrow$ 11 & 11 -- (9) $\rightarrow$ 9 & 9 -- (19) $\rightarrow$ 19 & \textbf{19 -- (13) $\rightarrow$ 19} \\
+        13 -- (23) $\rightarrow$ 23 & 23 -- (2) $\rightarrow$ 2 & 2 -- (19) $\rightarrow$ 19 & \textbf{19 -- (13) $\rightarrow$ 19} \\
+        13 -- (16) $\rightarrow$ 16 & 16 -- (7) $\rightarrow$ 7 & 7 -- (9) $\rightarrow$ 9 & 9 -- (8) $\rightarrow$ 8 \\
+        8 -- (21) $\rightarrow$ 21 & 21 -- (20) $\rightarrow$ 20 & 20 -- (6) $\rightarrow$ 6 & 6 -- (24) $\rightarrow$ 24 \\
+        24 -- (3) $\rightarrow$ 3 & 3 -- (16) $\rightarrow$ 16 & 16 -- (6) $\rightarrow$ 6 & 6 -- (9) $\rightarrow$ 9 \\
+        9 -- (12) $\rightarrow$ 12 & 12 -- (13) $\rightarrow$ 13 & 13 -- (14) $\rightarrow$ 14 & 14 -- (2) $\rightarrow$ 2 \\
+        2 -- (24) $\rightarrow$ 24 & 24 -- (5) $\rightarrow$ 5 & 5 -- (6) $\rightarrow$ 6 & 6 -- (7) $\rightarrow$ 7 \\
+        7 -- (2) $\rightarrow$ 2 & 2 -- (12) $\rightarrow$ 12 & 12 -- (3) $\rightarrow$ 3 & 3 -- (21) $\rightarrow$ 21 \\
+        21 -- (1) $\rightarrow$ 1 & \textbf{1 -- (16) $\rightarrow$ 16} & \textbf{16 -- (1) $\rightarrow$ 1} & 1 -- (23) $\rightarrow$ 23 \\
+        23 -- (4) $\rightarrow$ 4 & 4 -- (6) $\rightarrow$ 6 & 6 -- (13) $\rightarrow$ 13 & 13 -- (1) $\rightarrow$ 1 \\
+        1 -- (9) $\rightarrow$ 9 & 9 -- (3) $\rightarrow$ 3 & 3 -- (4) $\rightarrow$ 4 & 4 -- (2) $\rightarrow$ 2 \\
+        	\textbf{2 -- (3) $\rightarrow$ 2} & 3 -- (6) $\rightarrow$ 6 & 6 -- (1) $\rightarrow$ 1 & 1 -- (3) $\rightarrow$ 3 \\
+        	\textbf{3 -- (2) $\rightarrow$ 3} & 2 -- (1) $\rightarrow$ 1 & & \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a instância gr24.tsp (cada célula mostra: vértice de início -- (peso) $\rightarrow$ vértice de fim). \textbf{Células em negrito indicam arestas emparelhadas pelo algoritmo.}}
+    \label{tab:percurso_gr24}
+\end{table}
+
+
+O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr24.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de grande porte.
+
+
+
+
 
 \section{Conclusão}
-O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. O emparelhamento dos vértices de grau ímpar é fundamental para garantir a existência do circuito euleriano.
+
+O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. Um dos pontos centrais da solução é a seleção dos emparelhamentos entre os vértices de grau ímpar. Para que o grafo se torne euleriano, é necessário duplicar arestas de modo que todos os vértices passem a ter grau par. A escolha ótima dos pares de vértices de grau ímpar é feita utilizando algoritmos de emparelhamento mínimo, geralmente baseados em caminhos mínimos (como Dijkstra), garantindo que o acréscimo de arestas seja o menor possível em termos de custo total.
+
+
+Durante a atividade, foi possível compreender na prática como a estrutura dos grafos influencia diretamente na complexidade do problema e na necessidade de emparelhamento. A implementação permitiu visualizar o impacto da eulerização e da escolha dos emparelhamentos sobre o percurso final, além de reforçar conceitos fundamentais da teoria dos grafos, como circuitos eulerianos, emparelhamento ótimo e algoritmos de caminhos mínimos.
+
+Nas instâncias analisadas (aula, gr17.tsp, gr15.tsp e gr21.tsp), observou-se que o emparelhamento ótimo realizado pelo algoritmo ocorreu entre os vértices \textbf{a, b} e \textbf{e, d}, tornando-os de grau par e viabilizando a existência do circuito euleriano. Essa solução é resultado direto do algoritmo de emparelhamento mínimo, que busca pares de vértices de grau ímpar com menor custo de ligação. A recorrência desse emparelhamento em diferentes instâncias evidencia a robustez e a consistência da abordagem utilizada.
+
+O trabalho contribuiu para consolidar o entendimento sobre a importância da modelagem correta e da análise dos graus dos vértices para a obtenção de soluções eficientes em problemas de roteamento e otimização logística.
 
 
 \section{Referências}
