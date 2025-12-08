@@ -1,0 +1,14 @@
+\begin{table}[H]
+    \centering
+    \scriptsize
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \multicolumn{5}{|c|}{Percurso} \\ \hline
+    a -- (5) $\rightarrow$ f & f -- (5) $\rightarrow$ e & \textcolor{red}{e -- (11) $\rightarrow$ d} & \textcolor{red}{d -- (11) $\rightarrow$ e} & e -- (6) $\rightarrow$ g \\
+    g -- (8) $\rightarrow$ d & d -- (5) $\rightarrow$ c & c -- (6) $\rightarrow$ b & b -- (7) $\rightarrow$ g & g -- (7) $\rightarrow$ a \\
+    \textcolor{red}{a -- (12) $\rightarrow$ b} & \textcolor{red}{b -- (12) $\rightarrow$ a} &   &   &   \\
+        \hline
+    \end{tabular}
+    \caption{Percurso ótimo encontrado para a Instância de Teste. Células em vermelho indicam arestas emparelhadas pelo algoritmo.}
+    \label{tab:percurso_aula}
+\end{table}
