@@ -125,16 +125,18 @@ Para a validação do método, foi utilizada uma instância de teste composta po
     \label{fig:grafo_aula}
 \end{figure}
 
-Após a eulerização do grafo, ou seja, a duplicação das arestas necessárias para garantir que todos os vértices tenham grau par, foi possível encontrar o circuito euleriano de menor custo. O percurso ótimo obtido está detalhado na Tabela~\ref{tab:percurso_aula} e ilustrado na Figura~\ref{fig:circuito_aula}.
+Após a eulerização do grafo, ou seja, a duplicação das arestas necessárias para garantir que todos os vértices tenham grau par, foi possível encontrar o circuito euleriano de menor custo. O percurso ótimo obtido está detalhado na Tabela~\ref{tab:percurso_aula} e ilustrado na Figura~\ref{fig:circuito_euleriano_aula}.
+
+  
+\input{resultado/percurso_aula.tex}
+
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_aula.png}
     \caption{Circuito euleriano encontrado para a instância de teste}
-    \label{fig:circuito_aula}
+    \label{fig:circuito_euleriano_aula}
 \end{figure}
-   
-\input{resultado/percurso_aula.tex}
 
 O percurso apresentado na tabela corresponde exatamente ao caminho percorrido no circuito euleriano, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo.
 
@@ -143,6 +145,7 @@ O percurso apresentado na tabela corresponde exatamente ao caminho percorrido no
 A instância gr15.tsp consiste em um grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. Essa instância é útil para avaliar o desempenho do algoritmo em um cenário intermediário, com maior número de vértices e arestas em relação ao exemplo de teste.
 
 \noindent A Figura~\ref{fig:grafo_gr15} apresenta o grafo original da instância gr15.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr15}.
+\noindent A Figura~\ref{fig:grafo_gr15} apresenta o grafo original da instância gr15.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr15} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr15}.
 
 \begin{figure}[H]
     \centering
@@ -153,13 +156,22 @@ A instância gr15.tsp consiste em um grafo com 15 vértices, representando cidad
 
 \input{resultado/percurso_gr15.tsp.tex}
 
-O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr17.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de maior complexidade.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr15.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr15.tsp}
+    \label{fig:circuito_euleriano_gr15}
+\end{figure}
+
+O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr15.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de maior complexidade.
 
 \subsection{Análise da instância gr17.tsp}
 
 A instância gr17.tsp consiste em um grafo com 17 vértices, com maior complexidade e distâncias explícitas entre pares de cidades. Essa instância é útil para testar a escalabilidade da solução e avaliar o desempenho do algoritmo em cenários mais desafiadores.
 
 \noindent A Figura~\ref{fig:grafo_gr17} apresenta o grafo original da instância gr17.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr17}.
+\noindent A Figura~\ref{fig:grafo_gr17} apresenta o grafo original da instância gr17.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr17} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr17}.
 
 \begin{figure}[H]
     \centering
@@ -170,6 +182,14 @@ A instância gr17.tsp consiste em um grafo com 17 vértices, com maior complexid
 
 \input{resultado/percurso_gr17.tsp.tex}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr17.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr17.tsp}
+    \label{fig:circuito_euleriano_gr17}
+\end{figure}
+
 O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr17.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de maior complexidade.
 
 \subsection{Análise da instância gr21.tsp}
@@ -177,6 +197,7 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 A instância gr21.tsp consiste em um grafo com 21 vértices, baseado em problemas clássicos de roteamento, com distâncias fornecidas em formato de matriz triangular inferior. Essa instância exige tratamento específico na leitura dos dados e permite avaliar o algoritmo em cenários ainda mais complexos.
 
 \noindent A Figura~\ref{fig:grafo_gr21} apresenta o grafo original da instância gr21.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr21}.
+\noindent A Figura~\ref{fig:grafo_gr21} apresenta o grafo original da instância gr21.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr21} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr21}.
 
 \begin{figure}[H]
     \centering
@@ -187,6 +208,14 @@ A instância gr21.tsp consiste em um grafo com 21 vértices, baseado em problema
 
 \input{resultado/percurso_gr21.tsp.tex}
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr21.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr21.tsp}
+    \label{fig:circuito_euleriano_gr21}
+\end{figure}
+
 O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr21.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de porte elevado.
 
 \subsection{Análise da instância gr24.tsp}
@@ -194,6 +223,7 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 A instância gr24.tsp consiste em um grafo com 24 vértices e distâncias explícitas entre pares de cidades. É a maior instância utilizada neste trabalho, permitindo avaliar o desempenho do algoritmo em cenários próximos de aplicações reais, com grande número de vértices e arestas.
 
 \noindent A Figura~\ref{fig:grafo_gr24} apresenta o grafo original da instância gr24.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr24}.
+\noindent A Figura~\ref{fig:grafo_gr24} apresenta o grafo original da instância gr24.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr24} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr24}.
 
 \begin{figure}[H]
     \centering
@@ -203,6 +233,14 @@ A instância gr24.tsp consiste em um grafo com 24 vértices e distâncias explí
 \end{figure}
 
 \input{resultado/percurso_gr24.tsp.tex}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{./resultado/circuito_euleriano_gr24.tsp.png}
+    \caption{Circuito euleriano encontrado para a instância gr24.tsp}
+    \label{fig:circuito_euleriano_gr24}
+\end{figure}
 
 O percurso apresentado na tabela corresponde ao caminho percorrido no circuito euleriano da instância gr24.tsp, garantindo que todas as arestas do grafo sejam visitadas ao menos uma vez com o menor custo total possível. As imagens e a tabela permitem validar visualmente e numericamente a solução encontrada pelo algoritmo para um grafo de grande porte.
 
