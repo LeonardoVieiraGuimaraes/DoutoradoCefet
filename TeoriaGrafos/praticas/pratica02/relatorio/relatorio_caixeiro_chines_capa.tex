@@ -44,6 +44,36 @@ O \textbf{Problema do Caixeiro Chinês} consiste em encontrar um circuito fechad
 
 Para que seja possível percorrer todas as arestas de um grafo em um único circuito fechado, é necessário que o grafo seja \textbf{euleriano}. O \textit{Teorema de Euler} estabelece que um grafo conexo é euleriano se, e somente se, todos os seus vértices possuem grau par. Caso contrário, é preciso duplicar algumas arestas (eulerização) para garantir essa propriedade \cite{boaventura2002grafos}.
 
+
+O algoritmo clássico para encontrar circuitos eulerianos foi proposto por Hierholzer em 1873. O método consiste em iniciar o percurso em qualquer vértice e seguir arestas não visitadas até retornar ao ponto de partida, formando um ciclo. Caso existam arestas não visitadas, o ciclo é expandido até que todas as arestas sejam percorridas. Esse procedimento é eficiente e garante a construção do circuito euleriano em grafos conexos com todos os vértices de grau par \cite{hierholzer1873}.
+
+
+O pseudocódigo do algoritmo de Hierholzer, pensado para implementação em programação, pode ser descrito assim:
+
+\begin{quote}
+	\textbf{Algoritmo de Hierholzer para Circuito Euleriano}
+
+\begin{verbatim}
+Hierholzer(Grafo G):
+    ciclo = lista vazia
+    pilha = lista vazia
+    v = vértice inicial
+    pilha.push(v)
+    enquanto pilha não está vazia:
+        u = pilha.topo()
+        se u tem arestas não visitadas:
+            escolha uma aresta (u, w) não visitada
+            marque (u, w) como visitada
+            pilha.push(w)
+        senão:
+            ciclo.append(u)
+            pilha.pop()
+    retorne ciclo invertido
+\end{verbatim}
+\end{quote}
+
+Na solução do Problema do Caixeiro Chinês, após a eulerização do grafo (emparelhamento dos vértices de grau ímpar e duplicação das arestas de menor custo), o algoritmo de Hierholzer é utilizado para encontrar o circuito euleriano de menor custo, garantindo que todas as arestas sejam percorridas ao menos uma vez. Essa abordagem é fundamental para a obtenção de soluções ótimas e eficientes em problemas de roteamento.
+
 \section{Metodologia}
 
 
@@ -178,14 +208,14 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 
 \section{Conclusão}
 
-O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. Um dos pontos centrais da solução é a seleção dos emparelhamentos entre os vértices de grau ímpar. Para que o grafo se torne euleriano, é necessário duplicar arestas de modo que todos os vértices passem a ter grau par. A escolha ótima dos pares de vértices de grau ímpar é feita utilizando algoritmos de emparelhamento mínimo, geralmente baseados em caminhos mínimos (como Dijkstra), garantindo que o acréscimo de arestas seja o menor possível em termos de custo total.
 
+O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. O ponto central da solução é a eulerização do grafo, realizada por meio do emparelhamento ótimo dos vértices de grau ímpar e duplicação das arestas de menor custo. Após essa etapa, o algoritmo de Hierholzer é aplicado para encontrar o circuito euleriano, garantindo que todas as arestas sejam percorridas ao menos uma vez com o menor custo total.
 
 Durante a atividade, foi possível compreender na prática como a estrutura dos grafos influencia diretamente na complexidade do problema e na necessidade de emparelhamento. A implementação permitiu visualizar o impacto da eulerização e da escolha dos emparelhamentos sobre o percurso final, além de reforçar conceitos fundamentais da teoria dos grafos, como circuitos eulerianos, emparelhamento ótimo e algoritmos de caminhos mínimos.
 
-Nas instâncias analisadas (teste, gr17.tsp, gr15.tsp e gr21.tsp), observou-se que o emparelhamento ótimo realizado pelo algoritmo ocorreu entre os vértices \textbf{a, b} e \textbf{e, d}, tornando-os de grau par e viabilizando a existência do circuito euleriano. Essa solução é resultado direto do algoritmo de emparelhamento mínimo, que busca pares de vértices de grau ímpar com menor custo de ligação. A recorrência desse emparelhamento em diferentes instâncias evidencia a robustez e a consistência da abordagem utilizada.
+Nas instâncias analisadas, observou-se que o emparelhamento ótimo realizado pelo algoritmo tornou todos os vértices de grau par, viabilizando a existência do circuito euleriano. Essa solução é resultado direto do algoritmo de emparelhamento mínimo, que busca pares de vértices de grau ímpar com menor custo de ligação, seguido da aplicação do algoritmo de Hierholzer para construção do percurso final. A recorrência desse emparelhamento em diferentes instâncias evidencia a robustez e a consistência da abordagem utilizada.
 
-O trabalho contribuiu para consolidar o entendimento sobre a importância da modelagem correta e da análise dos graus dos vértices para a obtenção de soluções eficientes em problemas de roteamento e otimização logística.
+O trabalho contribuiu para consolidar o entendimento sobre a importância da modelagem correta, da análise dos graus dos vértices e da utilização do algoritmo euleriano para a obtenção de soluções eficientes em problemas de roteamento e otimização logística.
 
 
 \section{Referências}
