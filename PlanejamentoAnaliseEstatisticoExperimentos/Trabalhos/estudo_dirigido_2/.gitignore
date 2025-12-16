@@ -1,0 +1,50 @@
+# Arquivos LaTeX auxiliares
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.ilg
+*.ind
+*.idx
+
+# Arquivos gerados durante compilação
+*.pdf
+*.dvi
+*.ps
+
+# Arquivos de editor
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Arquivos do sistema
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Diretórios de cache
+.cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Arquivos temporários
+*.tmp
+*.temp

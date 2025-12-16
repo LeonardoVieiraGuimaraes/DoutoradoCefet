@@ -1,0 +1,401 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[portuguese]{babel}
+\usepackage[top=3cm,left=3cm,right=2cm,bottom=2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{indentfirst}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+
+% Configuração ABNT
+\linespread{1.5}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\raggedbottom
+\justifying
+
+% Configuração de cabeçalho e rodapé
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+
+% Remover numeração de página da capa
+\newcommand{\capa}{%
+    \thispagestyle{empty}%
+}
+
+% Configuração de hiperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    bookmarksopen=true
+}
+
+\begin{document}
+
+% ======== CAPA ========
+\capa
+\begin{center}
+\vspace*{1.5cm}
+
+{\large \textbf{CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA DE MINAS GERAIS} \\[0.2cm]
+\textbf{CEFET-MG}}
+
+\vspace*{1.5cm}
+
+{\normalsize Programa de Pós-Graduação em Educação Profissional e Tecnológica}
+
+\vspace*{3cm}
+
+{\LARGE \textbf{TEOREMA CENTRAL DO LIMITE E \\ INTERVALOS DE CONFIANÇA}}
+
+\vspace*{1cm}
+
+{\large em Distribuições Assimétricas}
+
+\vspace*{5cm}
+
+{\normalsize Leonardo Vieira Guimarães}
+
+\vspace*{1cm}
+
+{\normalsize Dezembro de 2025}
+
+\vspace*{\fill}
+
+{\large Belo Horizonte - MG \\[0.3cm] 2025}
+
+\vspace*{1cm}
+
+\end{center}
+
+\newpage
+
+% ======== SUMÁRIO ========
+\tableofcontents
+\newpage
+
+% ======== INTRODUÇÃO ========
+\section{Introdução}
+
+\begin{sloppypar}
+O Teorema Central do Limite (TCL) é um dos conceitos fundamentais da Estatística \cite{casella2002,montgomery2016}. Ele estabelece que a distribuição das médias amostrais tende a uma distribuição normal conforme o tamanho da amostra aumenta, independentemente da distribuição da população original. Este princípio é essencial para a validade de muitos testes estatísticos e procedimentos de estimação utilizados na prática.
+\end{sloppypar}
+
+A relevância prática do TCL reside em sua aplicabilidade a populações com distribuições não-normais. Em muitos cenários reais, os dados coletados não seguem uma distribuição normal; entretanto, graças ao TCL, podemos utilizar métodos baseados na distribuição normal para realizar inferências estatísticas sobre a média populacional.
+
+O Intervalo de Confiança (IC) é uma ferramenta estatística que, quando construído adequadamente, fornece uma estimativa intervalar para um parâmetro populacional com um nível de confiança especificado (por exemplo, 95\%). A robustez do IC diante de desvios de normalidade na população original é garantida, em grande parte, pelo TCL.
+
+O presente relatório investiga numericamente a manifestação do TCL em uma população com distribuição assimétrica (Exponencial) e valida a cobertura de Intervalos de Confiança (95\%) mesmo quando a população apresenta forte assimetria. Os objetivos específicos são:
+
+\begin{enumerate}
+  \item Demonstrar a redução da assimetria nas distribuições das médias amostrais conforme o tamanho da amostra aumenta;
+  \item Comparar visualmente as distribuições amostrais para diferentes tamanhos de amostra;
+  \item Validar que a taxa de cobertura do IC mantém-se próxima ao nível nominal (95\%) mesmo para população não-normal.
+\end{enumerate}
+
+\section{Fundamentação Teórica}
+
+Esta seção apresenta os conceitos teóricos fundamentais que sustentam o desenvolvimento deste estudo. Abordamos o Teorema Central do Limite, a distribuição Exponencial utilizada nas simulações e os Intervalos de Confiança para a média populacional.
+
+\subsection{Teorema Central do Limite}
+
+O Teorema Central do Limite pode ser enunciado formalmente como segue \cite{gosset1908,lyapunov1901}: Seja $X_1, X_2, \ldots, X_n$ uma sequência de variáveis aleatórias independentes e identicamente distribuídas com média $\mu$ e variância $\sigma^2$ finitas.
+
+Então, a distribuição da média amostral $\overline{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$ converge para uma distribuição normal com média $\mu$ e variância $\frac{\sigma^2}{n}$ conforme $n \to \infty$.
+
+Formalmente:
+\begin{equation}
+\frac{\overline{X} - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0, 1)
+\end{equation}
+
+Uma consequência importante é que a variância da distribuição das médias amostrais é inversamente proporcional ao tamanho da amostra:
+\begin{equation}
+\text{Var}(\overline{X}) = \frac{\sigma^2}{n}
+\end{equation}
+
+Isso explica por que amostras maiores produzem estimativas mais precisas da média populacional.
+
+\subsection{Distribuição Exponencial}
+
+A distribuição Exponencial com parâmetro de taxa $\lambda > 0$ possui função de densidade de probabilidade:
+\begin{equation}
+f(x) = \lambda e^{-\lambda x}, \quad x \geq 0
+\end{equation}
+
+Sua média é $\mu = \frac{1}{\lambda}$ e sua variância é $\sigma^2 = \frac{1}{\lambda^2}$. A distribuição Exponencial é caracterizada por forte assimetria positiva, com coeficiente de assimetria (skewness) igual a 2, independentemente do valor de $\lambda$.
+
+Para este estudo, utilizou-se $\lambda = 0.2$, resultando em $\mu = 5$ e $\sigma^2 = 25$.
+
+\subsection{Intervalo de Confiança para a Média}
+
+Um Intervalo de Confiança (IC) de nível $1 - \alpha$ para a média populacional $\mu$ é um intervalo $[\overline{X} - E, \overline{X} + E]$, onde $E$ é a margem de erro \cite{devore2015}. Para amostras de tamanho $n \geq 30$ ou quando $\sigma$ é desconhecida, utiliza-se a distribuição $t$ de Student:
+
+\begin{equation}
+\text{IC}_{1-\alpha}(\mu) = \left[ \overline{X} - t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}, \quad \overline{X} + t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}} \right]
+\end{equation}
+
+onde $s$ é o desvio padrão amostral, $n$ é o tamanho da amostra e $t_{\alpha/2, n-1}$ é o valor crítico da distribuição $t$ de Student com $n-1$ graus de liberdade.
+
+A taxa de cobertura do IC refere-se à proporção de Intervalos de Confiança construídos que contêm o verdadeiro valor do parâmetro populacional. Idealmente, essa taxa deve ser próxima ao nível nominal (por exemplo, 0.95 para IC de 95\%).
+
+% ======== METODOLOGIA ========
+\section{Metodologia}
+
+Este estudo é um exercício de simulação computacional para validar numericamente as propriedades teóricas do Teorema Central do Limite e dos Intervalos de Confiança. O delineamento compreende duas tarefas principais: simulação do TCL e validação da cobertura do IC.
+
+\subsection{Parâmetros da Simulação}
+
+Os parâmetros utilizados na simulação foram:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Parâmetro} & \textbf{Valor} \\
+\midrule
+Distribuição Populacional & Exponencial \\
+Taxa de Distribuição ($\lambda$) & 0.2 \\
+Média Populacional ($\mu$) & 5.0 \\
+Tamanho da População & 100.000 \\
+Tamanho Amostral Pequeno (n) & 5 \\
+Tamanho Amostral Grande (n) & 50 \\
+Número de Simulações & 10.000 \\
+Nível de Confiança do IC & 95\% \\
+\bottomrule
+\end{tabular}
+\caption{Parâmetros da simulação}
+\label{tab:parametros}
+\end{table}
+
+\subsection{Procedimento}
+
+\subsubsection{Tarefa 1: Simulação do TCL}
+
+\begin{enumerate}
+  \item Gerar uma população de 100.000 valores aleatórios da distribuição Exponencial com $\lambda = 0.2$.
+  \item Calcular a assimetria (skewness) da população.
+  \item Para $n = 5$ e $n = 50$, executar 10.000 simulações:
+  \begin{itemize}
+    \item Extrair uma amostra aleatória de tamanho $n$ da população.
+    \item Calcular a média da amostra.
+    \item Armazenar a média.
+  \end{itemize}
+  \item Calcular a assimetria das distribuições das médias amostrais para $n = 5$ e $n = 50$.
+  \item Comparar visualmente e quantitativamente as distribuições.
+\end{enumerate}
+
+\subsubsection{Tarefa 2: Validação da Cobertura do IC}
+
+\begin{enumerate}
+  \item Executar 10.000 simulações com tamanho amostral $n = 50$.
+  \item Para cada simulação:
+  \begin{itemize}
+    \item Extrair uma amostra aleatória de tamanho $n = 50$.
+    \item Calcular a média amostral $\overline{x}$ e o desvio padrão amostral $s$.
+    \item Construir o IC de 95\% utilizando a distribuição $t$: 
+    \[ \text{IC} = \left[ \overline{x} - t_{0.025, 49} \cdot \frac{s}{\sqrt{50}}, \quad \overline{x} + t_{0.025, 49} \cdot \frac{s}{\sqrt{50}} \right] \]
+    \item Verificar se o verdadeiro valor da média ($\mu = 5$) está contido no IC.
+  \end{itemize}
+  \item Calcular a taxa de cobertura como a proporção de ICs que contêm $\mu = 5$.
+  \item Comparar a taxa observada com a taxa esperada (0.95).
+\end{enumerate}
+
+\subsection{Métricas e Cálculos}
+
+Esta subsecção detalha as métricas estatísticas utilizadas para avaliar os resultados das simulações, apresentando suas definições formais e interpretações.
+
+\subsubsection{Coeficiente de Assimetria (Skewness)}
+
+\begin{sloppypar}
+O coeficiente de assimetria é uma medida que quantifica o grau de simetria de uma distribuição em relação à sua média. Para uma variável aleatória $X$ com média $\mu$ e desvio padrão $\sigma$, o coeficiente de assimetria é definido como:
+\end{sloppypar}
+
+\begin{equation}
+\gamma = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3}{\sigma^3}
+\end{equation}
+
+onde $\mu_3$ é o terceiro momento central. Para uma amostra de tamanho $n$, a estimativa do coeficiente de assimetria é:
+
+\begin{equation}
+g = \frac{\frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^3}{s^3}
+\end{equation}
+
+onde $s$ é o desvio padrão amostral. A interpretação é:
+\begin{itemize}
+  \item $\gamma \approx 0$: distribuição simétrica
+  \item $\gamma > 0$: assimetria positiva (cauda à direita)
+  \item $\gamma < 0$: assimetria negativa (cauda à esquerda)
+\end{itemize}
+
+Neste estudo, o coeficiente de assimetria foi calculado para a população original e para as distribuições das médias amostrais ($n = 5$ e $n = 50$), permitindo avaliar a convergência para a simetria.
+
+\subsubsection{Taxa de Cobertura do Intervalo de Confiança}
+
+A taxa de cobertura é a proporção de Intervalos de Confiança construídos que contêm o verdadeiro valor do parâmetro populacional. Para uma simulação com $m$ replicações, a taxa de cobertura é calculada como:
+
+\begin{equation}
+\text{Cobertura} = \frac{\text{Número de ICs que contêm } \mu}{m}
+\end{equation}
+
+Em notação mais precisa, se $IC_i = [\overline{x}_{i,\text{inf}}, \overline{x}_{i,\text{sup}}]$ representa o $i$-ésimo intervalo de confiança, então:
+
+\begin{equation}
+\text{Cobertura} = \frac{1}{m}\sum_{i=1}^{m} \mathbb{1}(\overline{x}_{i,\text{inf}} \leq \mu \leq \overline{x}_{i,\text{sup}})
+\end{equation}
+
+onde $\mathbb{1}(\cdot)$ é a função indicadora que vale 1 se a condição é verdadeira e 0 caso contrário.
+
+Para um intervalo de confiança de nível $1 - \alpha$ (por exemplo, 95\%), espera-se que a taxa de cobertura observada seja próxima a $1 - \alpha = 0.95$. Desvios significativos indicam problemas com a construção do intervalo ou violação de suposições.
+
+\subsubsection{Redução Relativa de Assimetria}
+
+A redução relativa de assimetria quantifica a diminuição percentual no coeficiente de assimetria quando o tamanho amostral aumenta. Define-se como:
+
+\begin{equation}
+\text{Redução (\%)} = \frac{\gamma_{\text{original}} - \gamma_n}{\gamma_{\text{original}}} \times 100\%
+\end{equation}
+
+onde $\gamma_{\text{original}}$ é o coeficiente de assimetria da população original e $\gamma_n$ é o coeficiente de assimetria das médias amostrais para tamanho amostral $n$.
+
+Esta métrica permite avaliar quantitativamente a velocidade de convergência do Teorema Central do Limite. Uma redução próxima a 100\% indica que a distribuição das médias amostrais é praticamente simétrica, aproximando-se de uma distribuição normal.
+
+Os principais indicadores calculados foram: Coeficiente de Assimetria (Skewness) - medida de simetria das distribuições com valores próximos a zero indicando simetria aproximada; Taxa de Cobertura - proporção de Intervalos de Confiança que contêm a verdadeira média populacional; Redução Relativa de Assimetria - percentual de redução na assimetria da distribuição das médias em relação à população original.
+
+% ======== RESULTADOS ========
+\section{Resultados e Discussão}
+
+Esta seção apresenta e discute os resultados obtidos através de simulações computacionais \cite{morettin2010}. Os achados são relacionados com a teoria estatística \cite{fisher1925}, abordando a manifestação do Teorema Central do Limite e a validação dos Intervalos de Confiança.
+
+\subsection{Assimetria da População e Distribuições Amostrais}
+
+Os resultados quantitativos das assimetrias observadas nas diferentes distribuições são apresentados na Tabela \ref{tab:assimetria}.
+
+\input{resultados/analise_1_assimetria.tex}
+
+Os resultados demonstram uma redução progressiva da assimetria conforme o tamanho da amostra aumenta. A população original apresenta uma assimetria de 1.9921, indicando forte desvio à direita. Com $n = 5$, a assimetria é reduzida para 0.8982. Para $n = 50$, a assimetria diminui significativamente para 0.2901, aproximando-se de uma distribuição simétrica.
+
+\subsubsection{Visualizações das Distribuições}
+
+As distribuições da população e das médias amostrais são apresentadas nas Figuras \ref{fig:populacao}, \ref{fig:medias_n5}, \ref{fig:medias_n50} e \ref{fig:qqplot}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_1_populacao.png}
+\caption{Histograma da População Exponencial ($\lambda = 0.2$)}
+\label{fig:populacao}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_1_medias_n5.png}
+\caption{Distribuição das Médias Amostrais para $n = 5$}
+\label{fig:medias_n5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_1_medias_n50.png}
+\caption{Distribuição das Médias Amostrais para $n = 50$}
+\label{fig:medias_n50}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_1_qqplot.png}
+\caption{Q-Q Plot: Médias Amostrais ($n = 50$) versus Distribuição Normal}
+\label{fig:qqplot}
+\end{figure}
+
+\subsubsection{Efeito do Tamanho da Amostra}
+
+A comparação entre os tamanhos amostrais $n = 5$ e $n = 50$ é apresentada na Tabela \ref{tab:efeito_n}.
+
+\input{resultados/analise_2_efeito_n.tex}
+
+\subsection{Intervalo de Confiança: Taxa de Cobertura}
+
+Os resultados da validação da cobertura do IC são apresentados na Tabela \ref{tab:validacao_ic}.
+
+\input{resultados/analise_3_validacao_ic.tex}
+
+A taxa de cobertura observada (93,24\%) está próxima à taxa esperada (95,00\%), com uma diferença de apenas 1,76 pontos percentuais. Este resultado confirma que o IC mantém uma cobertura adequada mesmo quando construído a partir de uma população não-normal.
+
+\subsubsection{Visualizações da Cobertura do IC}
+
+Os resultados da simulação do IC são ilustrados nas Figuras \ref{fig:cobertura} e \ref{fig:sucessofalha}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_2_cobertura.png}
+\caption{Taxa de Cobertura do IC: Observada versus Esperada}
+\label{fig:cobertura}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/tarefa_2_sucessofalha.png}
+\caption{Número de ICs com Sucesso e Falha (10.000 simulações)}
+\label{fig:sucessofalha}
+\end{figure}
+
+\subsection{Manifestação do Teorema Central do Limite}
+
+Os resultados demonstram claramente a manifestação do Teorema Central do Limite. A população Exponencial, com assimetria de 1.9921, apresenta uma distribuição altamente assimétrica. Entretanto, quando extraem-se médias de amostras cada vez maiores, a distribuição dessas médias torna-se progressivamente mais simétrica e próxima de uma distribuição normal.
+
+A redução de 54.91\% na assimetria com $n = 5$ e de 85.44\% com $n = 50$ evidencia esse processo de convergência. A aproximação à normalidade é particularmente notável com $n = 50$, onde a assimetria reduz-se para 0.2901, um valor muito próximo de zero (que indicaria perfeita simetria).
+
+Este comportamento está em perfeita concordância com a teoria estatística. O TCL garante que, independentemente da distribuição original, a distribuição das médias amostrais aproxima-se de uma normal conforme $n$ aumenta. A velocidade dessa convergência é mais rápida para distribuições que já possuem alguma simetria, porém mesmo distribuições altamente assimétricas, como a Exponencial, convergem satisfatoriamente para $n \geq 50$.
+
+A comparação entre $n = 5$ e $n = 50$ revela o impacto significativo do tamanho amostral na precisão e na normalidade da distribuição das médias. Visualmente, os histogramas mostram comportamentos distintos: para $n = 5$, a distribuição ainda exibe cauda direita pronunciada; para $n = 50$, aproxima-se de curva simétrica.
+
+Quantitativamente, a redução na assimetria de 0.8982 para 0.2901 representa diminuição de 67.70\%. A variância é dada por $\text{Var}(\overline{X}) = \frac{\sigma^2}{n}$. Com $n = 5$, $\text{Var}(\overline{X}) = 5$; com $n = 50$, $\text{Var}(\overline{X}) = 0.5$. A variância diminui em fator de 10, melhorando a precisão.
+
+\subsection{Robustez do Intervalo de Confiança}
+
+O resultado da taxa de cobertura (0.9324) é particularmente relevante. A distribuição $t$ de Student \cite{gosset1908}, quando utilizada para construir intervalos de confiança para a média, é reconhecidamente robusta a desvios de normalidade da população original. Este estudo corrobora essa propriedade.
+
+Mesmo partindo de uma população Exponencial com assimetria de 1.9921 (altamente não-normal), a construção de Intervalos de Confiança baseados na distribuição $t$ resulta em uma taxa de cobertura muito próxima ao nível nominal de 95\%. A pequena diferença observada (1.76 pontos percentuais) está dentro da variabilidade esperada em simulações de Monte Carlo.
+
+Este comportamento é explicado por dois fatores principais:
+\begin{enumerate}
+  \item O TCL garante que a distribuição das médias amostrais seja aproximadamente normal mesmo para população não-normal, desde que $n$ seja suficientemente grande (neste caso, $n = 50$).
+  \item A distribuição $t$ é naturalmente robusta a desvios moderados de normalidade, especialmente quando o tamanho amostral é razoavelmente grande.
+\end{enumerate}
+
+% ======== CONCLUSÃO ========
+\section{Conclusão}
+
+Este estudo realizou uma validação numérica de dois princípios fundamentais da Estatística \cite{lima2015,ross2014}: o Teorema Central do Limite e a robustez dos Intervalos de Confiança baseados na distribuição $t$. A seguir, apresentamos as principais conclusões extraídas dos resultados e análises realizadas.
+
+Os resultados obtidos confirmam que:
+
+\begin{enumerate}
+  \item \textbf{O TCL manifesta-se em cenários práticos:} A simulação com uma população Exponencial demonstrou que, mesmo para distribuições altamente assimétricas, a distribuição das médias amostrais converge para a normalidade conforme o tamanho amostral aumenta. A redução de 85.44\% na assimetria com $n = 50$ evidencia essa convergência.
+  
+  \item \textbf{O tamanho amostral é crucial:} A diferença entre $n = 5$ e $n = 50$ é substancial. Enquanto $n = 5$ resulta ainda em assimetria significativa (0.8982), $n = 50$ produz distribuição praticamente simétrica (0.2901). A variância da distribuição das médias também diminui proporcionalmente com $n$, concentrando as estimativas próximas à verdadeira média.
+  
+  \item \textbf{O IC é robusto mesmo para população não-normal:} A taxa de cobertura observada (0.9324) valida o uso de Intervalos de Confiança baseados na distribuição $t$ quando a população original não segue uma distribuição normal. 
+  
+  Isto é de importância prática, pois na maioria dos problemas reais, a normalidade da população não pode ser garantida.
+\end{enumerate}
+
+\vspace{2cm}
+
+% ======== REFERÊNCIAS ========
+\section*{Referências}
+
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias}
+
+\end{document}
