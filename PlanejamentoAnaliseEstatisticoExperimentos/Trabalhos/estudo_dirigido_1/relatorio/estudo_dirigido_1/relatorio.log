@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.11)  16 DEC 2025 00:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.11)  16 DEC 2025 02:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -161,11 +161,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Program Files\MiKTeX\tex/latex/setspace\setspace.sty
-Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Program Files\MiKTeX\tex/latex/tools\indentfirst.sty
-Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (C:\Program Files\MiKTeX\tex/latex/float\float.sty
+)) (C:\Program Files\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count300
 \float@exts=\toks24
@@ -277,77 +273,111 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip54
-) (C:\Program Files\MiKTeX\tex/latex/bookmark\bookmark.sty
-Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
- (C:\Program Files\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
-File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count313
-)) (C:\Program Files\MiKTeX\tex/latex/tools\array.sty
-Package: array 2025/05/19 v2.6i Tabular extension package (FMi)
-\col@sep=\dimen173
-\ar@mcellbox=\box57
-\extrarowheight=\dimen174
-\NC@list=\toks26
-\extratabsurround=\skip55
-\backup@length=\skip56
-\ar@cellbox=\box58
+) (C:\Program Files\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip55
+\f@nch@offset@elh=\skip56
+\f@nch@offset@erh=\skip57
+\f@nch@offset@olh=\skip58
+\f@nch@offset@orh=\skip59
+\f@nch@offset@elf=\skip60
+\f@nch@offset@erf=\skip61
+\f@nch@offset@olf=\skip62
+\f@nch@offset@orf=\skip63
+\f@nch@height=\skip64
+\f@nch@footalignment=\skip65
+\f@nch@widthL=\skip66
+\f@nch@widthC=\skip67
+\f@nch@widthR=\skip68
+\@temptokenb=\toks26
+) (C:\Program Files\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Program Files\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (C:\Program Files\MiKTeX\tex/latex/psnfss\times.sty
+Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+) (C:\Program Files\MiKTeX\tex/latex/tools\indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 ) (C:\Program Files\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen175
-\lightrulewidth=\dimen176
-\cmidrulewidth=\dimen177
-\belowrulesep=\dimen178
-\belowbottomsep=\dimen179
-\aboverulesep=\dimen180
-\abovetopsep=\dimen181
-\cmidrulesep=\dimen182
-\cmidrulekern=\dimen183
-\defaultaddspace=\dimen184
-\@cmidla=\count314
-\@cmidlb=\count315
-\@aboverulesep=\dimen185
-\@belowrulesep=\dimen186
-\@thisruleclass=\count316
-\@lastruleclass=\count317
-\@thisrulewidth=\dimen187
-) (C:\Program Files\MiKTeX\tex/latex/titlesec\titlesec.sty
-Package: titlesec 2025/01/04 v2.17 Sectioning titles
-\ttl@box=\box59
-\beforetitleunit=\skip57
-\aftertitleunit=\skip58
-\ttl@plus=\dimen188
-\ttl@minus=\dimen189
-\ttl@toksa=\toks27
-\titlewidth=\dimen190
-\titlewidthlast=\dimen191
-\titlewidthfirst=\dimen192
+\heavyrulewidth=\dimen173
+\lightrulewidth=\dimen174
+\cmidrulewidth=\dimen175
+\belowrulesep=\dimen176
+\belowbottomsep=\dimen177
+\aboverulesep=\dimen178
+\abovetopsep=\dimen179
+\cmidrulesep=\dimen180
+\cmidrulekern=\dimen181
+\defaultaddspace=\dimen182
+\@cmidla=\count313
+\@cmidlb=\count314
+\@aboverulesep=\dimen183
+\@belowrulesep=\dimen184
+\@thisruleclass=\count315
+\@lastruleclass=\count316
+\@thisrulewidth=\dimen185
+) (C:\Program Files\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip69
+\RaggedLeftLeftskip=\skip70
+\RaggedRightLeftskip=\skip71
+\CenteringRightskip=\skip72
+\RaggedLeftRightskip=\skip73
+\RaggedRightRightskip=\skip74
+\CenteringParfillskip=\skip75
+\RaggedLeftParfillskip=\skip76
+\RaggedRightParfillskip=\skip77
+\JustifyingParfillskip=\skip78
+\CenteringParindent=\skip79
+\RaggedLeftParindent=\skip80
+\RaggedRightParindent=\skip81
+\JustifyingParindent=\skip82
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 42.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 42.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 44.
+ (C:\Program Files\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count318
+\l__color_backend_stack_int=\count317
 ) (relatorio.aux
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported  on input line 9.
+(babel)             Reported  on input line 8.
 )
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -357,15 +387,15 @@ LaTeX Font Info:    ... okay on input line 38.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(85.35826pt, 702.78308pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=455.24411pt
 * \textheight=702.78308pt
-* \oddsidemargin=-1.1381pt
-* \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -385,92 +415,152 @@ LaTeX Font Info:    ... okay on input line 38.
 
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count319
-\scratchdimen=\dimen193
-\scratchbox=\box60
-\nofMPsegments=\count320
-\nofMParguments=\count321
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count322
-\MPscratchDim=\dimen194
-\MPnumerator=\count323
-\makeMPintoPDFobject=\count324
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count318
+\scratchdimen=\dimen186
+\scratchbox=\box57
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen187
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks28
 ) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring ON on input line 44.
+ (relatorio.out) (relatorio.out)
+\@outlinefile=\write3
+\openout3 = `relatorio.out'.
+
 
 
 [1
 
-{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-[2]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc}] (relatorio.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+))
+\tf@toc=\write4
+\openout4 = `relatorio.toc'.
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.97 
-      [1]
+
+[2]
+Overfull \hbox (107.11432pt too wide) in paragraph at lines 91--92
+[]\OT1/ptm/m/n/12 O Te-o-rema Cen-tral do Li-mite (TCL) []e um dos con-cei-tos fun-da-men-tais da Es-tat[]^^Pstica [[],
+ []
 
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.132 
-       [2]
 
 [3]
 
 [4]
 
 [5]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 188.
+ (C:\Program Files\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (108.7352pt too wide) in paragraph at lines 217--218
+[]\OT1/ptm/m/n/12 Esta se[][]ao apre-senta os re-sul-ta-dos ob-ti-dos atrav[]es das simula[][]oes com-pu-ta-ci-o-nais [[]].
+ []
 
-LaTeX Warning: Reference `fig:analise' on page 6 undefined on input line 257.
+(resultados/analise_1_assimetria.tex
+
+[6])
+<resultados/tarefa_1_populacao.png, id=173, 715.473pt x 425.6703pt>
+File: resultados/tarefa_1_populacao.png Graphic file (type png)
+<use resultados/tarefa_1_populacao.png>
+Package pdftex.def Info: resultados/tarefa_1_populacao.png  used on input line 233.
+(pdftex.def)             Requested size: 318.66948pt x 189.5883pt.
+<resultados/tarefa_1_medias_n5.png, id=175, 715.473pt x 425.9112pt>
+File: resultados/tarefa_1_medias_n5.png Graphic file (type png)
+<use resultados/tarefa_1_medias_n5.png>
+Package pdftex.def Info: resultados/tarefa_1_medias_n5.png  used on input line 240.
+(pdftex.def)             Requested size: 318.66948pt x 189.6956pt.
+
+
+[7 <./resultados/tarefa_1_populacao.png>]
+<resultados/tarefa_1_medias_n50.png, id=187, 715.473pt x 425.9112pt>
+File: resultados/tarefa_1_medias_n50.png Graphic file (type png)
+<use resultados/tarefa_1_medias_n50.png>
+Package pdftex.def Info: resultados/tarefa_1_medias_n50.png  used on input line 247.
+(pdftex.def)             Requested size: 318.66948pt x 189.6956pt.
+<resultados/tarefa_1_qqplot.png, id=188, 714.5094pt x 424.4658pt>
+File: resultados/tarefa_1_qqplot.png Graphic file (type png)
+<use resultados/tarefa_1_qqplot.png>
+Package pdftex.def Info: resultados/tarefa_1_qqplot.png  used on input line 254.
+(pdftex.def)             Requested size: 318.66948pt x 189.31091pt.
+
+
+[8 <./resultados/tarefa_1_medias_n5.png> <./resultados/tarefa_1_medias_n50.png>] (resultados/analise_2_efeito_n.tex) (resultados/analise_3_validacao_ic.tex)
+
+[9 <./resultados/tarefa_1_qqplot.png>]
+<resultados/tarefa_2_cobertura.png, id=206, 715.9548pt x 425.4294pt>
+File: resultados/tarefa_2_cobertura.png Graphic file (type png)
+<use resultados/tarefa_2_cobertura.png>
+Package pdftex.def Info: resultados/tarefa_2_cobertura.png  used on input line 279.
+(pdftex.def)             Requested size: 318.66948pt x 189.35767pt.
+<resultados/tarefa_2_sucessofalha.png, id=207, 715.473pt x 424.7067pt>
+File: resultados/tarefa_2_sucessofalha.png Graphic file (type png)
+<use resultados/tarefa_2_sucessofalha.png>
+Package pdftex.def Info: resultados/tarefa_2_sucessofalha.png  used on input line 286.
+(pdftex.def)             Requested size: 318.66948pt x 189.15913pt.
+
+Overfull \hbox (20.1996pt too wide) in paragraph at lines 293--294
+[]\OT1/ptm/m/n/12 Esta se[][]ao dis-cute os re-sul-ta-dos ob-ti-dos, relacionando-os com a te-o-ria es-tat[]^^Pstica [[]]
+ []
 
 
 
-[6]
+[10 <./resultados/tarefa_2_cobertura.png> <./resultados/tarefa_2_sucessofalha.png>]
+Overfull \hbox (3.9046pt too wide) in paragraph at lines 305--306
+[]\OT1/ptm/m/n/12 Quantitativamente, a redu[][]ao na as-si-me-tria de 0.8982 para 0.2901 re-pre-senta uma diminui[][]ao
+ []
 
-[7]
 
-[8]
 
-[9] (relatorio.aux)
+[11]
+
+[12]
+Overfull \hbox (0.77042pt too wide) in paragraph at lines 331--332
+\OT1/ptm/m/n/12 (0.9324) va-lida o uso de In-ter-va-los de Confian[]a ba-se-a-dos na distribui[][]ao $\OML/cmm/m/it/12 t$ \OT1/ptm/m/n/12 mesmo quando
+ []
+
+
+
+[13] (relatorio.bbl)
+
+[14] (relatorio.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
+Package rerunfilecheck Info: File `relatorio.out' has not changed.
+(rerunfilecheck)             Checksum: 03A10D8AC916393C943F7DDD97593050;3891.
  ) 
 Here is how much of TeX's memory you used:
- 12108 strings out of 468225
- 186844 string characters out of 5443040
- 614314 words of memory out of 5000000
- 40438 multiletter control sequences out of 15000+600000
- 633672 words of font info for 65 fonts, out of 8000000 for 9000
+ 12604 strings out of 468225
+ 197878 string characters out of 5443040
+ 630637 words of memory out of 5000000
+ 40855 multiletter control sequences out of 15000+600000
+ 645170 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,653b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on relatorio.pdf (11 pages, 151628 bytes).
+ 75i,12n,79p,611b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (14 pages, 847024 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 314 PDF objects out of 1000 (max. 8388607)
+ 78 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

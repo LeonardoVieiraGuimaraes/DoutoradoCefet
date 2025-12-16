@@ -58,10 +58,6 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\setspace\setspace.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\setspace\setspace.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\indentfirst.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\indentfirst.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\hyperref\hyperref.sty
@@ -119,17 +115,28 @@ INPUT C:\Program Files\MiKTeX\tex\latex\base\atveryend-ltx.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\base\atveryend-ltx.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bkm-pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bkm-pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bkm-pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\array.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\fancyhdr\fancyhdr.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\times.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\times.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tools\indentfirst.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\tools\indentfirst.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\titlesec\titlesec.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT .\relatorio.aux
@@ -144,13 +151,35 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\graphics\color.sty
+INPUT .\relatorio.out
+INPUT .\relatorio.out
+INPUT relatorio.out
+INPUT relatorio.out
 OUTPUT relatorio.pdf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\relatorio.out
+INPUT .\relatorio.out
+OUTPUT relatorio.out
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\leona\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\base\8r.enc
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT .\relatorio.toc
+INPUT .\relatorio.toc
+INPUT relatorio.toc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -174,13 +203,78 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+OUTPUT relatorio.toc
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+INPUT .\resultados\analise_1_assimetria.tex
+INPUT .\resultados\analise_1_assimetria.tex
+INPUT resultados\analise_1_assimetria.tex
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_populacao.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n5.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_medias_n50.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\tarefa_1_qqplot.png
+INPUT .\resultados\analise_2_efeito_n.tex
+INPUT .\resultados\analise_2_efeito_n.tex
+INPUT resultados\analise_2_efeito_n.tex
+INPUT .\resultados\analise_3_validacao_ic.tex
+INPUT .\resultados\analise_3_validacao_ic.tex
+INPUT resultados\analise_3_validacao_ic.tex
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_cobertura.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\resultados\tarefa_2_sucessofalha.png
+INPUT .\relatorio.bbl
+INPUT .\relatorio.bbl
+INPUT relatorio.bbl
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT relatorio.aux
-INPUT C:\Users\leona\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\leona\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT .\relatorio.out
+INPUT .\relatorio.out
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
@@ -197,5 +291,9 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\urw\times\utmri8a.pfb
