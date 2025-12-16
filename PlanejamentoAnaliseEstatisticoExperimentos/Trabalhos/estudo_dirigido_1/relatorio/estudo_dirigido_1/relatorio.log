@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.11)  16 DEC 2025 02:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.11)  16 DEC 2025 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -534,12 +534,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-Overfull \hbox (107.11432pt too wide) in paragraph at lines 91--92
-[]\OT1/ptm/m/n/12 O Te-o-rema Cen-tral do Li-mite (TCL) []e um dos con-cei-tos 
-fun-da-men-tais da Es-tat[]^^Pstica [[],
- []
-
-
 
 [3]
 
@@ -547,104 +541,87 @@ fun-da-men-tais da Es-tat[]^^Pstica [[],
 
 [5]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-88.
+90.
  (C:\Program Files\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (105.7352pt too wide) in paragraph at lines 217--218
-[]\OT1/ptm/m/n/12 Esta se[][]ao apre-senta os re-sul-ta-dos ob-ti-dos atrav[]es
- das simula[][]oes com-pu-ta-ci-o-nais [[]]
- []
 
+[6]
 
-Overfull \hbox (2.82678pt too wide) in paragraph at lines 217--218
-\OT1/ptm/m/n/12 gr[]aficos e an[]alises quan-ti-ta-ti-vas so-bre a manifesta[][
-]ao do Te-o-rema Cen-tral do Li-mite e a valida[][]ao
- []
+[7] (resultados/analise_1_assimetria.tex
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-[6] (resultados/analise_1_assimetria.tex)
-<resultados/tarefa_1_populacao.png, id=170, 715.473pt x 425.6703pt>
+)
+<resultados/tarefa_1_populacao.png, id=198, 715.473pt x 425.6703pt>
 File: resultados/tarefa_1_populacao.png Graphic file (type png)
 <use resultados/tarefa_1_populacao.png>
 Package pdftex.def Info: resultados/tarefa_1_populacao.png  used on input line 
-233.
+294.
 (pdftex.def)             Requested size: 318.66948pt x 189.5883pt.
-<resultados/tarefa_1_medias_n5.png, id=172, 715.473pt x 425.9112pt>
+
+
+[8]
+<resultados/tarefa_1_medias_n5.png, id=208, 715.473pt x 425.9112pt>
 File: resultados/tarefa_1_medias_n5.png Graphic file (type png)
 <use resultados/tarefa_1_medias_n5.png>
 Package pdftex.def Info: resultados/tarefa_1_medias_n5.png  used on input line 
-240.
+301.
 (pdftex.def)             Requested size: 318.66948pt x 189.6956pt.
-
-
-[7 <./resultados/tarefa_1_populacao.png>]
-<resultados/tarefa_1_medias_n50.png, id=184, 715.473pt x 425.9112pt>
+<resultados/tarefa_1_medias_n50.png, id=209, 715.473pt x 425.9112pt>
 File: resultados/tarefa_1_medias_n50.png Graphic file (type png)
 <use resultados/tarefa_1_medias_n50.png>
 Package pdftex.def Info: resultados/tarefa_1_medias_n50.png  used on input line
- 247.
+ 308.
 (pdftex.def)             Requested size: 318.66948pt x 189.6956pt.
-<resultados/tarefa_1_qqplot.png, id=185, 714.5094pt x 424.4658pt>
+
+
+[9 <./resultados/tarefa_1_populacao.png> <./resultados/tarefa_1_medias_n5.png>]
+<resultados/tarefa_1_qqplot.png, id=220, 714.5094pt x 424.4658pt>
 File: resultados/tarefa_1_qqplot.png Graphic file (type png)
 <use resultados/tarefa_1_qqplot.png>
-Package pdftex.def Info: resultados/tarefa_1_qqplot.png  used on input line 254
+Package pdftex.def Info: resultados/tarefa_1_qqplot.png  used on input line 315
 .
 (pdftex.def)             Requested size: 318.66948pt x 189.31091pt.
+(resultados/analise_2_efeito_n.tex) (resultados/analise_3_validacao_ic.tex
 
-
-[8 <./resultados/tarefa_1_medias_n5.png> <./resultados/tarefa_1_medias_n50.png>
-] (resultados/analise_2_efeito_n.tex) (resultados/analise_3_validacao_ic.tex)
-
-[9 <./resultados/tarefa_1_qqplot.png>]
-<resultados/tarefa_2_cobertura.png, id=203, 715.9548pt x 425.4294pt>
+[10 <./resultados/tarefa_1_medias_n50.png> <./resultados/tarefa_1_qqplot.png>])
+<resultados/tarefa_2_cobertura.png, id=232, 715.9548pt x 425.4294pt>
 File: resultados/tarefa_2_cobertura.png Graphic file (type png)
 <use resultados/tarefa_2_cobertura.png>
 Package pdftex.def Info: resultados/tarefa_2_cobertura.png  used on input line 
-279.
+340.
 (pdftex.def)             Requested size: 318.66948pt x 189.35767pt.
-<resultados/tarefa_2_sucessofalha.png, id=204, 715.473pt x 424.7067pt>
+<resultados/tarefa_2_sucessofalha.png, id=233, 715.473pt x 424.7067pt>
 File: resultados/tarefa_2_sucessofalha.png Graphic file (type png)
 <use resultados/tarefa_2_sucessofalha.png>
 Package pdftex.def Info: resultados/tarefa_2_sucessofalha.png  used on input li
-ne 286.
+ne 347.
 (pdftex.def)             Requested size: 318.66948pt x 189.15913pt.
 
 
-[10 <./resultados/tarefa_2_cobertura.png> <./resultados/tarefa_2_sucessofalha.p
-ng>]
-Overfull \hbox (3.9046pt too wide) in paragraph at lines 301--302
-[]\OT1/ptm/m/n/12 Quantitativamente, a redu[][]ao na as-si-me-tria de 0.8982 pa
-ra 0.2901 re-pre-senta uma diminui[][]ao
- []
+[11 <./resultados/tarefa_2_cobertura.png>]
 
+[12 <./resultados/tarefa_2_sucessofalha.png>]
 
+[13] (relatorio.bbl
 
-[11]
-Overfull \hbox (0.77042pt too wide) in paragraph at lines 327--328
-\OT1/ptm/m/n/12 (0.9324) va-lida o uso de In-ter-va-los de Confian[]a ba-se-a-d
-os na distribui[][]ao $\OML/cmm/m/it/12 t$ \OT1/ptm/m/n/12 mesmo quando
- []
+[14])
 
-
-
-[12] (relatorio.bbl)
-
-[13] (relatorio.aux)
+[15] (relatorio.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2025-05-26>
  ***********
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
-(rerunfilecheck)             Checksum: F121B591EF1D35341E9BD35E09E7F477;3869.
+(rerunfilecheck)             Checksum: 808D32D4FEDCCAF38CB27C23D14642DB;4830.
  ) 
 Here is how much of TeX's memory you used:
- 12599 strings out of 468225
- 197479 string characters out of 5443040
- 628634 words of memory out of 5000000
- 40854 multiletter control sequences out of 15000+600000
- 645170 words of font info for 77 fonts, out of 8000000 for 9000
+ 12617 strings out of 468225
+ 197761 string characters out of 5443040
+ 629641 words of memory out of 5000000
+ 40860 multiletter control sequences out of 15000+600000
+ 646248 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,79p,489b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
@@ -654,11 +631,12 @@ eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
 onts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.p
 fb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
 am Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
-eX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/ti
-mes/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (13 pages, 845604 bytes).
+eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/font
+s/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utm
+r8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (15 pages, 862841 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
- 76 named destinations out of 1000 (max. 500000)
- 183 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 345 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 

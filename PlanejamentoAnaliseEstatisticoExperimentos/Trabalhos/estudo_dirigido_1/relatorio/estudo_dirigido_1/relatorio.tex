@@ -88,7 +88,9 @@
 % ======== INTRODUÇÃO ========
 \section{Introdução}
 
-O Teorema Central do Limite (TCL) é um dos conceitos fundamentais da Estatística \cite{casella2002,montgomery2016}, estabelecendo que a distribuição das médias amostrais tende a uma distribuição normal conforme o tamanho da amostra aumenta, independentemente da distribuição da população original. Este princípio é essencial para a validade de muitos testes estatísticos e procedimentos de estimação utilizados na prática.
+\begin{sloppypar}
+O Teorema Central do Limite (TCL) é um dos conceitos fundamentais da Estatística \cite{casella2002,montgomery2016}. Ele estabelece que a distribuição das médias amostrais tende a uma distribuição normal conforme o tamanho da amostra aumenta, independentemente da distribuição da população original. Este princípio é essencial para a validade de muitos testes estatísticos e procedimentos de estimação utilizados na prática.
+\end{sloppypar}
 
 A relevância prática do TCL reside em sua aplicabilidade a populações com distribuições não-normais. Em muitos cenários reais, os dados coletados não seguem uma distribuição normal; entretanto, graças ao TCL, podemos utilizar métodos baseados na distribuição normal para realizar inferências estatísticas sobre a média populacional.
 
@@ -209,12 +211,71 @@ Nível de Confiança do IC & 95\% \\
   \item Comparar a taxa observada com a taxa esperada (0.95).
 \end{enumerate}
 
+\subsection{Métricas e Cálculos}
+
+Esta subsecção detalha as métricas estatísticas utilizadas para avaliar os resultados das simulações, apresentando suas definições formais e interpretações.
+
+\subsubsection{Coeficiente de Assimetria (Skewness)}
+
+\begin{sloppypar}
+O coeficiente de assimetria é uma medida que quantifica o grau de simetria de uma distribuição em relação à sua média. Para uma variável aleatória $X$ com média $\mu$ e desvio padrão $\sigma$, o coeficiente de assimetria é definido como:
+\end{sloppypar}
+
+\begin{equation}
+\gamma = E\left[\left(\frac{X - \mu}{\sigma}\right)^3\right] = \frac{\mu_3}{\sigma^3}
+\end{equation}
+
+onde $\mu_3$ é o terceiro momento central. Para uma amostra de tamanho $n$, a estimativa do coeficiente de assimetria é:
+
+\begin{equation}
+g = \frac{\frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^3}{s^3}
+\end{equation}
+
+onde $s$ é o desvio padrão amostral. A interpretação é:
+\begin{itemize}
+  \item $\gamma \approx 0$: distribuição simétrica
+  \item $\gamma > 0$: assimetria positiva (cauda à direita)
+  \item $\gamma < 0$: assimetria negativa (cauda à esquerda)
+\end{itemize}
+
+Neste estudo, o coeficiente de assimetria foi calculado para a população original e para as distribuições das médias amostrais ($n = 5$ e $n = 50$), permitindo avaliar a convergência para a simetria.
+
+\subsubsection{Taxa de Cobertura do Intervalo de Confiança}
+
+A taxa de cobertura é a proporção de Intervalos de Confiança construídos que contêm o verdadeiro valor do parâmetro populacional. Para uma simulação com $m$ replicações, a taxa de cobertura é calculada como:
+
+\begin{equation}
+\text{Cobertura} = \frac{\text{Número de ICs que contêm } \mu}{m}
+\end{equation}
+
+Em notação mais precisa, se $IC_i = [\overline{x}_{i,\text{inf}}, \overline{x}_{i,\text{sup}}]$ representa o $i$-ésimo intervalo de confiança, então:
+
+\begin{equation}
+\text{Cobertura} = \frac{1}{m}\sum_{i=1}^{m} \mathbb{1}(\overline{x}_{i,\text{inf}} \leq \mu \leq \overline{x}_{i,\text{sup}})
+\end{equation}
+
+onde $\mathbb{1}(\cdot)$ é a função indicadora que vale 1 se a condição é verdadeira e 0 caso contrário.
+
+Para um intervalo de confiança de nível $1 - \alpha$ (por exemplo, 95\%), espera-se que a taxa de cobertura observada seja próxima a $1 - \alpha = 0.95$. Desvios significativos indicam problemas com a construção do intervalo ou violação de suposições.
+
+\subsubsection{Redução Relativa de Assimetria}
+
+A redução relativa de assimetria quantifica a diminuição percentual no coeficiente de assimetria quando o tamanho amostral aumenta. Define-se como:
+
+\begin{equation}
+\text{Redução (\%)} = \frac{\gamma_{\text{original}} - \gamma_n}{\gamma_{\text{original}}} \times 100\%
+\end{equation}
+
+onde $\gamma_{\text{original}}$ é o coeficiente de assimetria da população original e $\gamma_n$ é o coeficiente de assimetria das médias amostrais para tamanho amostral $n$.
+
+Esta métrica permite avaliar quantitativamente a velocidade de convergência do Teorema Central do Limite. Uma redução próxima a 100\% indica que a distribuição das médias amostrais é praticamente simétrica, aproximando-se de uma distribuição normal.
+
 Os principais indicadores calculados foram: Coeficiente de Assimetria (Skewness) - medida de simetria das distribuições com valores próximos a zero indicando simetria aproximada; Taxa de Cobertura - proporção de Intervalos de Confiança que contêm a verdadeira média populacional; Redução Relativa de Assimetria - percentual de redução na assimetria da distribuição das médias em relação à população original.
 
 % ======== RESULTADOS ========
 \section{Resultados e Discussão}
 
-Esta seção apresenta os resultados obtidos através das simulações computacionais \cite{morettin2010} e os discute, relacionando-os com a teoria estatística \cite{fisher1925}. Incluem-se tabelas, gráficos e análises quantitativas sobre a manifestação do Teorema Central do Limite e a validação dos Intervalos de Confiança.
+Esta seção apresenta e discute os resultados obtidos através de simulações computacionais \cite{morettin2010}. Os achados são relacionados com a teoria estatística \cite{fisher1925}, abordando a manifestação do Teorema Central do Limite e a validação dos Intervalos de Confiança.
 
 \subsection{Assimetria da População e Distribuições Amostrais}
 
@@ -296,9 +357,9 @@ A redução de 54.91\% na assimetria com $n = 5$ e de 85.44\% com $n = 50$ evide
 
 Este comportamento está em perfeita concordância com a teoria estatística. O TCL garante que, independentemente da distribuição original, a distribuição das médias amostrais aproxima-se de uma normal conforme $n$ aumenta. A velocidade dessa convergência é mais rápida para distribuições que já possuem alguma simetria, porém mesmo distribuições altamente assimétricas, como a Exponencial, convergem satisfatoriamente para $n \geq 50$.
 
-A comparação entre $n = 5$ e $n = 50$ revela o impacto significativo do tamanho amostral na precisão e na normalidade da distribuição das médias. Visualmente, os histogramas mostram que para $n = 5$, a distribuição das médias ainda exibe uma cauda direita pronunciada; para $n = 50$, a distribuição aproxima-se de uma curva de sino simétrica.
+A comparação entre $n = 5$ e $n = 50$ revela o impacto significativo do tamanho amostral na precisão e na normalidade da distribuição das médias. Visualmente, os histogramas mostram comportamentos distintos: para $n = 5$, a distribuição ainda exibe cauda direita pronunciada; para $n = 50$, aproxima-se de curva simétrica.
 
-Quantitativamente, a redução na assimetria de 0.8982 para 0.2901 representa uma diminuição de 67.70\%. A variância da distribuição das médias também é afetada pela fórmula $\text{Var}(\overline{X}) = \frac{\sigma^2}{n}$: com $n = 5$, $\text{Var}(\overline{X}) = 5$; com $n = 50$, $\text{Var}(\overline{X}) = 0.5$. A variância diminui em um fator de 10, melhorando a precisão das estimativas.
+Quantitativamente, a redução na assimetria de 0.8982 para 0.2901 representa diminuição de 67.70\%. A variância é dada por $\text{Var}(\overline{X}) = \frac{\sigma^2}{n}$. Com $n = 5$, $\text{Var}(\overline{X}) = 5$; com $n = 50$, $\text{Var}(\overline{X}) = 0.5$. A variância diminui em fator de 10, melhorando a precisão.
 
 \subsection{Robustez do Intervalo de Confiança}
 
@@ -324,15 +385,14 @@ Os resultados obtidos confirmam que:
   
   \item \textbf{O tamanho amostral é crucial:} A diferença entre $n = 5$ e $n = 50$ é substancial. Enquanto $n = 5$ resulta ainda em assimetria significativa (0.8982), $n = 50$ produz distribuição praticamente simétrica (0.2901). A variância da distribuição das médias também diminui proporcionalmente com $n$, concentrando as estimativas próximas à verdadeira média.
   
-  \item \textbf{O IC é robusto mesmo para população não-normal:} A taxa de cobertura observada (0.9324) valida o uso de Intervalos de Confiança baseados na distribuição $t$ mesmo quando a população original não segue uma distribuição normal. 
+  \item \textbf{O IC é robusto mesmo para população não-normal:} A taxa de cobertura observada (0.9324) valida o uso de Intervalos de Confiança baseados na distribuição $t$ quando a população original não segue uma distribuição normal. 
   
-  Isto é de extrema importância prática, pois na maioria dos problemas reais, a normalidade da população não pode ser garantida.
+  Isto é de importância prática, pois na maioria dos problemas reais, a normalidade da população não pode ser garantida.
 \end{enumerate}
 
 \vspace{2cm}
 
 % ======== REFERÊNCIAS ========
-\newpage
 \section*{Referências}
 
 \bibliographystyle{abntex2-alf}
