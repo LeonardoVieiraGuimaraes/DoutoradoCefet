@@ -8,31 +8,61 @@
 *.bbl
 *.blg
 *.synctex.gz
+*.synctex(busy)
 *.fls
 *.fdb_latexmk
 *.ilg
 *.ind
 *.idx
+*.auxlock
+*.gls
+*.glo
+*.ist
+*.glsdefs
+*.nav
+*.snm
+*.vrb
 
-# Arquivos gerados durante compilação
-*.pdf
+# Arquivos gerados durante compilação LaTeX
 *.dvi
 *.ps
+
+# Arquivo PDF final (comentado se quiser versioná-lo)
+# *.pdf
 
 # Arquivos de editor
 *.swp
 *.swo
 *~
 .DS_Store
+Thumbs.db
 
 # Arquivos Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 *.egg-info/
 .venv/
 venv/
 env/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
 
 # Arquivos do sistema
 .idea/
@@ -44,7 +74,24 @@ env/
 .cache/
 .pytest_cache/
 .ipynb_checkpoints/
+*.ipynb_checkpoints
 
 # Arquivos temporários
 *.tmp
 *.temp
+*.bak
+*.backup
+
+# Arquivos do VS Code
+.vscode/
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
