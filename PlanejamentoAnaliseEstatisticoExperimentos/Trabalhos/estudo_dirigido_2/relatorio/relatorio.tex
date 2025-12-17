@@ -1,0 +1,473 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{titletoc}
+
+% Configuração de margens
+\geometry{
+    left=3cm,
+    right=2cm,
+    top=3cm,
+    bottom=2cm
+}
+
+% Espaçamento
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+
+% Header e Footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\thepage}
+\setlength{\headheight}{14.49998pt}
+
+% Configuração de hiperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\begin{document}
+
+% ===== CAPA =====
+\thispagestyle{empty}
+\begin{center}
+\vspace*{2cm}
+
+{\Large \textbf{UNIVERSIDADE FEDERAL DO CENTRO-OESTE DE MINAS GERAIS}} \\
+{\Large \textbf{UNIFAL-MG}}
+
+\vspace{1.5cm}
+
+{\large \textbf{Programa de Pós-Graduação}}
+
+\vspace{4cm}
+
+{\Large \textbf{Leonardo Vieira Guimarães}}
+
+\vspace{3cm}
+
+\vspace*{\fill}
+
+{\large Belo Horizonte - MG} \\
+{\large \today}
+
+\end{center}
+
+\newpage
+
+% ===== ÍNDICE/SUMÁRIO =====
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+
+% ===== INTRODUÇÃO =====
+\pagestyle{fancy}
+\section{Introdução}
+
+O Teorema Central do Limite (TCL) é um dos conceitos mais fundamentais da Estatística. Estabelece que a distribuição das médias amostrais converge para uma distribuição normal conforme o tamanho da amostra aumenta, independentemente da distribuição da população original. Este princípio é essencial para a validade de praticamente todos os testes estatísticos clássicos e procedimentos de estimação utilizados na prática científica e profissional.
+
+A relevância prática do TCL reside em sua aplicabilidade a populações com distribuições não-normais. Em muitos cenários reais, os dados não seguem distribuição normal. Entretanto, graças ao TCL, podemos utilizar métodos baseados na distribuição normal para realizar inferências estatísticas sobre parâmetros populacionais.
+
+O Intervalo de Confiança (IC) é uma ferramenta estatística essencial que fornece uma estimativa intervalar para um parâmetro populacional com nível de confiança especificado (p.ex., 95\%). A robustez do IC diante de desvios de normalidade é garantida principalmente pelo TCL.
+
+Além do TCL, este trabalho aborda:
+
+\begin{itemize}
+    \item \textbf{Análise de Variância (ANOVA):} Ferramenta para comparar múltiplos grupos identificando diferenças significativas entre tratamentos;
+    \item \textbf{Planejamento Experimental:} Metodologia para investigar sistematicamente os efeitos de variáveis independentes;
+    \item \textbf{Bloqueamento:} Técnica para reduzir erro experimental controlando variabilidade sistemática;
+    \item \textbf{Planejamento Fatorial:} Abordagem para investigar simultaneamente múltiplos fatores e suas interações;
+    \item \textbf{Comparações Múltiplas:} Testes para identificar especificamente quais grupos diferem, controlando erro familiarwise.
+\end{itemize}
+
+Os objetivos específicos deste relatório são:
+
+\begin{enumerate}
+    \item Demonstrar a redução da assimetria nas distribuições das médias amostrais conforme tamanho amostral aumenta;
+    \item Validar taxa de cobertura do IC para população não-normal;
+    \item Investigar efeitos de blocos e tratamentos em ANOVA;
+    \item Analisar efeitos principais e de interação em planejamento fatorial;
+    \item Apresentar interpretações práticas de análises estatísticas;
+    \item Integrar resultados numéricos com tabelas TEX, gráficos e análises.
+\end{enumerate}
+
+% ===== FUNDAMENTAÇÃO TEÓRICA =====
+\section{Fundamentação Teórica}
+
+Esta seção apresenta os fundamentos teóricos dos conceitos estatísticos utilizados nos experimentos: o Teorema Central do Limite, a construção de intervalos de confiança e os métodos de Análise de Variância. Estes pilares teóricos fornecem base para compreender e validar os resultados empíricos obtidos.
+
+\subsection{Teorema Central do Limite}
+
+\subsubsection{Enunciado e Formulação Matemática}
+
+O Teorema Central do Limite (TCL) é um dos resultados mais importantes da probabilidade e estatística. Estabelece que a distribuição das médias amostrais converge para uma distribuição normal, independentemente da forma da distribuição original.
+
+Seja $X_1, X_2, \ldots, X_n$ uma sequência de variáveis aleatórias independentes e identicamente distribuídas (i.i.d.) com média $\mu$ e variância $\sigma^2$ finitas. Define-se a média amostral como:
+
+\begin{equation}
+\overline{X}_n = \frac{1}{n}\sum_{i=1}^{n}X_i
+\end{equation}
+
+O Teorema Central do Limite estabelece que, quando $n \to \infty$:
+
+\begin{equation}
+\frac{\overline{X}_n - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} \mathcal{N}(0, 1)
+\end{equation}
+
+Isto significa que a distribuição padronizada da média amostral converge em distribuição para uma Normal padrão.
+
+Equivalentemente, para $n$ suficientemente grande:
+
+\begin{equation}
+\overline{X}_n \sim \mathcal{N}\left(\mu, \frac{\sigma^2}{n}\right)
+\end{equation}
+
+Esta convergência é notável porque não depende da distribuição original de $X_i$. Mesmo que a população seja exponencial, uniforme, discreta ou qualquer outra, a distribuição das médias será aproximadamente normal.
+
+\subsubsection{Métrica: Coeficiente de Assimetria (Skewness)}
+
+O coeficiente de assimetria mede o grau de falta de simetria de uma distribuição. Para uma variável aleatória $X$ com média $\mu$ e desvio padrão $\sigma$, define-se como:
+
+\begin{equation}
+\gamma_1 = \frac{E[(X - \mu)^3]}{\sigma^3} = \frac{m_3}{m_2^{3/2}}
+\end{equation}
+
+onde $m_k$ é o $k$-ésimo momento central.
+
+Para uma amostra de tamanho $n$, a estimativa do coeficiente de assimetria amostral é:
+
+\begin{equation}
+b_1 = \frac{\frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^3}{s^3}
+\end{equation}
+
+onde $s$ é o desvio padrão amostral.
+
+\subsubsection{Métrica: Taxa de Cobertura do Intervalo de Confiança}
+
+Um Intervalo de Confiança (IC) de nível $1 - \alpha$ para um parâmetro $\theta$ é um intervalo aleatório que, quando construído repetidamente, contém o verdadeiro valor de $\theta$ em proporção $(1-\alpha)$ das vezes.
+
+A taxa de cobertura empírica é a proporção de intervalos de confiança que contêm o verdadeiro valor do parâmetro:
+
+\begin{equation}
+\text{Cobertura Observada} = \frac{\text{Número de ICs que contêm } \mu}{m}
+\end{equation}
+
+\subsection{Intervalo de Confiança para a Média}
+
+Um intervalo de confiança de nível $(1-\alpha)\%$ para a média populacional $\mu$ quando a variância populacional é desconhecida é dado por:
+
+\begin{equation}
+\text{IC}_{1-\alpha}(\mu) = \left[\overline{X} - t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}, \quad \overline{X} + t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}\right]
+\end{equation}
+
+\subsection{Análise de Variância (ANOVA)}
+
+A Análise de Variância (ANOVA) é um conjunto de técnicas estatísticas para testar se as médias de dois ou mais grupos (tratamentos) são significativamente diferentes entre si.
+
+\subsubsection{ANOVA de Uma Via (One-Way)}
+
+No delineamento completamente casualizado com um único fator (One-Way ANOVA), as observações são distribuídas aleatoriamente entre os $k$ tratamentos. O modelo linear é:
+
+\begin{equation}
+Y_{ij} = \mu + \tau_i + \epsilon_{ij}
+\end{equation}
+
+A partição da soma de quadrados total é:
+
+\begin{equation}
+\text{SQ}_{\text{Total}} = \text{SQ}_{\text{Tratamentos}} + \text{SQ}_{\text{Erro}}
+\end{equation}
+
+A estatística de teste é:
+
+\begin{equation}
+F = \frac{\text{QM}_{\text{Tratamentos}}}{\text{QM}_{\text{Erro}}}
+\end{equation}
+
+\subsubsection{Delineamento em Blocos Casualizados (RCBD)}
+
+O Delineamento em Blocos Casualizados (RCBD) é utilizado quando existe uma fonte de variabilidade conhecida que deve ser controlada. O modelo é:
+
+\begin{equation}
+Y_{ij} = \mu + \tau_i + \beta_j + \epsilon_{ij}
+\end{equation}
+
+O bloqueamento reduz o quadrado médio do erro ao isolar a variação sistemática devida aos blocos.
+
+\subsubsection{Planejamento Fatorial}
+
+Um planejamento fatorial permite investigar os efeitos de múltiplos fatores simultaneamente. O modelo para um planejamento fatorial com dois fatores é:
+
+\begin{equation}
+Y_{ijk} = \mu + \tau_i + \gamma_j + (\tau\gamma)_{ij} + \epsilon_{ijk}
+\end{equation}
+
+A interação ocorre quando o efeito de um fator depende do nível de outro fator.
+
+\subsection{Teste de Tukey para Comparações Múltiplas}
+
+O teste de Tukey HSD (Honestly Significant Difference) controla a Taxa de Erro Familiarwise (FWER) em um nível nominal (p.ex., 0.05). A diferença mínima significativa é:
+
+\begin{equation}
+\text{HSD} = q_{\alpha}(k, N-k) \cdot \sqrt{\frac{\text{QM}_{\text{Erro}}}{n}}
+\end{equation}
+
+% ===== METODOLOGIA =====
+\section{Metodologia}
+
+\subsection{Delineamento dos Experimentos}
+
+Este estudo compreende três experimentos complementares com simulações computacionais para validar conceitos teóricos. Todos os experimentos foram realizados em linguagem Python com bibliotecas NumPy, Pandas, SciPy e Matplotlib.
+
+\subsection{Experimento 1: Validação do TCL}
+
+Validar empiricamente o Teorema Central do Limite em uma população com distribuição assimétrica e verificar se a taxa de cobertura de um intervalo de confiança mantém-se próxima ao valor teórico.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Parâmetro} & \textbf{Valor} \\
+\midrule
+Distribuição Populacional & Exponencial \\
+Taxa de Distribuição ($\lambda$) & 0.2 \\
+Tamanho da População & 100.000 \\
+Tamanho Amostral Pequeno ($n_1$) & 5 \\
+Tamanho Amostral Grande ($n_2$) & 50 \\
+Número de Simulações & 10.000 \\
+Nível de Confiança do IC & 95\% \\
+\bottomrule
+\end{tabular}
+\caption{Parâmetros do Experimento 1}
+\end{table}
+
+\subsection{Experimento 2: ANOVA com Blocos Casualizados}
+
+Investigar os efeitos de blocos e tratamentos demonstrando como o bloqueamento reduz o erro experimental.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Parâmetro} & \textbf{Valor} \\
+\midrule
+Número de Blocos & 3 \\
+Número de Tratamentos & 4 \\
+Total de Observações & 12 \\
+Nível de Significância & $\alpha = 0.05$ \\
+\bottomrule
+\end{tabular}
+\caption{Parâmetros do Experimento 2}
+\end{table}
+
+\subsection{Experimento 3: Planejamento Fatorial 2×3}
+
+Investigar efeitos principais e de interação de dois fatores (temperatura e pressão).
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Parâmetro} & \textbf{Valor} \\
+\midrule
+Fator A (Temperatura) - Níveis & 2 \\
+Fator B (Pressão) - Níveis & 3 \\
+Replicações por Combinação & 5 \\
+Total de Observações & 30 \\
+Nível de Significância & $\alpha = 0.05$ \\
+\bottomrule
+\end{tabular}
+\caption{Parâmetros do Experimento 3}
+\end{table}
+
+% ===== RESULTADOS E DISCUSSÃO =====
+\section{Resultados e Discussão}
+
+Esta seção apresenta os resultados obtidos nos três experimentos realizados, acompanhados de análises detalhadas e discussões interpretativas. Os resultados são organizados por experimento, começando com a validação do Teorema Central do Limite, seguido pela análise de variância com diferentes delineamentos e finalizando com a análise de interações em planejamento fatorial.
+
+\subsection{Parte I: Teorema Central do Limite}
+
+Os histogramas a seguir visualizam a progressão da distribuição das médias amostrais conforme o tamanho da amostra aumenta.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_1_tcl/histograma_tcl_populacao.png}
+\caption{Distribuição da População Exponencial ($\lambda = 0.2$).}
+\label{fig:tcl_pop}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_1_tcl/histograma_tcl_n5.png}
+\caption{Distribuição das Médias Amostrais para $n=5$. Redução de assimetria: 58\%.}
+\label{fig:tcl_n5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_1_tcl/histograma_tcl_n50.png}
+\caption{Distribuição das Médias Amostrais para $n=50$. Redução de assimetria: 85\%.}
+\label{fig:tcl_n50}
+\end{figure}
+
+\input{resultados/parte_1_tcl/tabela_tcl_resultados}
+
+\input{resultados/analises/tcl/analise_tcl}
+
+\subsubsection{Validação do Teorema Central do Limite}
+
+Os resultados validam empiricamente o TCL. A população Exponencial original apresenta assimetria fortemente positiva de 1.9684, indicando distribuição altamente não-normal. Entretanto, a distribuição das médias amostrais converge progressivamente para a normalidade.
+
+A redução de 58.48\% na assimetria com $n = 5$ demonstra movimento significativo em direção à simetria. A redução de 84.73\% com $n = 50$ representa convergência praticamente completa para distribuição simétrica.
+
+\subsubsection{Robustez do Intervalo de Confiança}
+
+A taxa de cobertura observada (0.9315) é muito próxima ao valor teórico (0.95). A pequena diferença de 1.85 pontos percentuais está bem dentro da variabilidade esperada em simulações. Este resultado valida que o intervalo de confiança baseado na distribuição $t$-Student mantém suas propriedades mesmo com população não-normal.
+
+\subsection{Parte II: Análise de Variância}
+
+\subsubsection{One-Way ANOVA}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_oneway/boxplot_oneway.png}
+\caption{Boxplot da One-Way ANOVA: distribuição por tratamento.}
+\label{fig:oneway_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_oneway/tukey_oneway.png}
+\caption{Intervalos de Confiança de Tukey HSD - One-Way ANOVA.}
+\label{fig:oneway_tukey}
+\end{figure}
+
+\input{resultados/parte_2_oneway/tabela_oneway_resultados}
+
+\subsubsection{Delineamento em Blocos Casualizados (RCBD)}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_rcbd/boxplot_rcbd.png}
+\caption{Boxplot do RCBD: distribuição por tratamento.}
+\label{fig:rcbd_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_rcbd/tukey_rcbd.png}
+\caption{Intervalos de Confiança de Tukey HSD para RCBD.}
+\label{fig:rcbd_tukey}
+\end{figure}
+
+\input{resultados/parte_2_rcbd/tabela_rcbd_resultados}
+
+\input{resultados/analises/rcbd/analise_rcbd}
+
+\subsubsection{Planejamento Fatorial 2×3}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_fatorial/interacao_fatorial.png}
+\caption{Gráfico de Interação Temperatura × Pressão.}
+\label{fig:fatorial_int}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_fatorial/boxplot_fatorial.png}
+\caption{Boxplot do Planejamento Fatorial 2×3.}
+\label{fig:fatorial_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_fatorial/tukey_fatorial.png}
+\caption{Intervalos de Confiança de Tukey HSD para Planejamento Fatorial.}
+\label{fig:fatorial_tukey}
+\end{figure}
+
+\input{resultados/parte_2_fatorial/tabela_fatorial_resultados}
+
+\input{resultados/analises/fatorial/analise_fatorial}
+
+\subsection{Discussão}
+
+\subsubsection{Benefícios do Bloqueamento}
+
+O bloqueamento permite isolar e controlar variação sistemática, reduzindo o erro experimental. As consequências são:
+
+\begin{itemize}
+    \item Quadrado Médio do Erro reduzido;
+    \item Intervalos de Confiança mais estreitos;
+    \item Poder estatístico aumentado.
+\end{itemize}
+
+\subsubsection{Análise de Interações Fatoriais}
+
+A interação significativa entre temperatura e pressão indica que:
+
+\begin{itemize}
+    \item A pressão ótima não é a mesma em todas as temperaturas;
+    \item Otimizações devem considerar combinações de fatores;
+    \item Recomendações práticas exigem análise de efeitos conjuntos.
+\end{itemize}
+
+% ===== CONCLUSÃO =====
+\section{Conclusão}
+
+Esta seção sintetiza os principais achados dos três experimentos realizados, destacando as validações empíricas dos conceitos teóricos e as implicações práticas dos resultados para pesquisa e aplicação em engenharia e ciências.
+
+\subsection{Conclusões Principais}
+
+\subsubsection{Teorema Central do Limite}
+
+A distribuição das médias amostrais aproxima-se de distribuição Normal mesmo quando a população original é altamente não-normal. A assimetria reduz de 1.9684 para 0.3007 com $n=50$ (redução de 85\%), e a taxa de cobertura do IC (0.9315) valida a robustez dos intervalos de confiança.
+
+\subsubsection{ANOVA com Bloqueamento}
+
+O bloqueamento reduz significativamente o erro experimental. Os intervalos de confiança tornam-se mais precisos e o poder estatístico aumenta, permitindo detectar diferenças menores entre tratamentos.
+
+\subsubsection{Planejamento Fatorial}
+
+A análise simultânea de múltiplos fatores identifica não apenas efeitos principais, mas também interações críticas. A interação significativa revela que ótimos isolados não levam à otimização global.
+
+\subsection{Implicações Práticas}
+
+Os métodos apresentados são essenciais na pesquisa científica e engenharia. O TCL fornece base teórica para usar métodos baseados em normalidade. O planejamento cuidadoso (bloqueamento, fatorial) e análise apropriada (ANOVA, Tukey) maximizam a informação dos dados. Análise estatística rigorosa permite decisões fundamentadas com confiança quantificada.
+
+% ===== REFERÊNCIAS =====
+\newpage
+\section*{Referências}
+
+\begin{thebibliography}{99}
+
+\bibitem{montgomery2013} Montgomery, D.C. (2013). \textit{Design and Analysis of Experiments}. 8th ed. John Wiley \& Sons.
+
+\bibitem{rice2006} Rice, J.A. (2006). \textit{Mathematical Statistics and Data Analysis}. 3rd ed. Cengage Learning.
+
+\bibitem{casella2002} Casella, G., \& Berger, R.L. (2002). \textit{Statistical Inference}. 2nd ed. Cengage Learning.
+
+\bibitem{walpole2012} Walpole, R.E., Myers, R.H., Myers, S.L., \& Ye, K. (2012). \textit{Probability and Statistics for Engineers and Scientists}. 9th ed. Pearson.
+
+\bibitem{fisher1925} Fisher, R.A. (1925). \textit{Statistical Methods for Research Workers}. Oliver and Boyd.
+
+\bibitem{tukey1949} Tukey, J.W. (1949). Comparing individual means in the analysis of variance. \textit{Biometrics}, 5(2), 99-114.
+
+\end{thebibliography}
+
+\end{document}

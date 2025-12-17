@@ -1,0 +1,29 @@
+\subsubsection{Características do RCBD}
+
+O experimento foi estruturado como um delineamento em blocos casualizados com os seguintes parâmetros:
+
+\begin{align*}
+\text{Número de Blocos} &= 3 \\
+\text{Número de Tratamentos} &= 4 \\
+\text{Total de Observações} &= 60
+\end{align*}
+
+\paragraph{Modelo RCBD}
+O modelo estatístico é dado por:
+
+\[Y_{ij} = \mu + \tau_i + \beta_j + \epsilon_{ij}\]
+
+onde: $Y_{ij}$ é a observação no tratamento $i$ e bloco $j$; $\mu$ é a média geral; $\tau_i$ é o efeito do tratamento $i$; $\beta_j$ é o efeito do bloco $j$; $\epsilon_{ij}$ é o erro aleatório.
+
+\paragraph{Benefícios do Bloqueamento}
+O uso de blocos reduz a variância residual, isolando a variação sistemática devida aos blocos do erro aleatório. Isto aumenta o poder estatístico para detectar diferenças entre tratamentos.
+
+\paragraph{Interpretação dos Resultados}
+Espera-se que:
+
+\begin{enumerate}
+\item O efeito do bloco seja significativo (p-valor baixo)
+\item O quadrado médio residual (MSResíduo) seja menor que em um delineamento completamente casualizado
+\item O p-valor do tratamento seja menor, indicando maior poder para detectar diferenças
+\end{enumerate}
+

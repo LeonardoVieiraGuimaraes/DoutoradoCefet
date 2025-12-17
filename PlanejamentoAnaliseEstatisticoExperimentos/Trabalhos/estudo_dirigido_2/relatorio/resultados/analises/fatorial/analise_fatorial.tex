@@ -1,0 +1,40 @@
+\subsubsection{Características do Experimento Fatorial}
+
+O experimento foi estruturado como um fatorial completo $2 \times 3$ com os parâmetros a seguir:
+
+\begin{align*}
+\text{Níveis de Temperatura} &= 2 \\
+\text{Níveis de Pressão} &= 3 \\
+\text{Total de Combinações} &= 6 \\
+\text{Total de Observações} &= 30
+\end{align*}
+
+\paragraph{Modelo Fatorial}
+O modelo estatístico é dado por:
+
+\[Y_{ijk} = \mu + \tau_i + \gamma_j + (\tau\gamma)_{ij} + \epsilon_{ijk}\]
+
+onde: $Y_{ijk}$ é a resposta; $\tau_i$ é o efeito da Temperatura $i$; $\gamma_j$ é o efeito da Pressão $j$; $(\tau\gamma)_{ij}$ é o efeito de interação; $\epsilon_{ijk}$ é o erro aleatório.
+
+\paragraph{Conceito de Interação}
+A interação ocorre quando o efeito de um fator depende do nível do outro fator. Quando presente (p-valor $< 0.05$), a interação significa que:
+
+\begin{itemize}
+\item Não é possível fazer recomendações sobre um fator independentemente do outro
+\item A análise deve focar nas combinações ótimas de níveis dos fatores
+\item Os gráficos de perfil mostram linhas não-paralelas
+\end{itemize}
+
+\paragraph{Interpretação dos Resultados Esperados}
+Para este experimento, espera-se:
+
+\begin{enumerate}
+\item \textbf{Efeito Principal de Temperatura:} Significativo (efeito esperado)
+\item \textbf{Efeito Principal de Pressão:} Significativo (efeito esperado)
+\item \textbf{Interação Temperatura $\times$ Pressão:} Muito significativa ($p \ll 0.05$)
+\item \textbf{Conclusão:} A pressão ótima depende criticamente da temperatura escolhida
+\end{enumerate}
+
+\paragraph{Recomendação Prática}
+A existência de interação exige que a recomendação se baseie na combinação ótima de Temperatura $\times$ Pressão, não em fatores isolados.
+

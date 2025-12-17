@@ -1,0 +1,29 @@
+\subsubsection{Detalhes Técnicos}
+
+Os gráficos a seguir mostram a evolução da distribuição conforme o tamanho amostral aumenta.
+
+\paragraph{Efeito da Assimetria na População Original}
+A população Exponencial simulada possui assimetria fortemente positiva:
+
+$\gamma_1 = 1.9684$
+
+Este valor ($\gamma_1 > 2$) indica uma distribuição fortemente assimétrica à direita.
+
+\paragraph{Validação do Teorema do Limite Central}
+A assimetria das médias amostrais diminui com o aumento do tamanho amostral:
+
+$$\gamma_1(n=5) = 0.8174$$
+$$\gamma_1(n=50) = 0.3007$$
+
+Para $n=50$, a assimetria é próxima de zero, comprovando que a distribuição das médias amostrais aproxima-se da Normal.
+
+\paragraph{Validação da Cobertura do Intervalo de Confiança}
+A taxa de cobertura do intervalo de confiança de 95\% é:
+
+$$P(\mu \in [\overline{X} - 1.96 \cdot SE, \overline{X} + 1.96 \cdot SE]) = 0.9315$$
+
+Este resultado (esperado $\approx 0.95$) confirma que o TCL permite o uso confiável dos intervalos de confiança baseados na distribuição Normal, mesmo quando a população original é assimétrica.
+
+\paragraph{Conclusão}
+O TCL é validado: a normalidade da distribuição das médias amostrais permite o uso confiável de métodos inferenciais baseados na distribuição Normal, independentemente da distribuição populacional.
+
