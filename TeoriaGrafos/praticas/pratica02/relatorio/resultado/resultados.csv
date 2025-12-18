@@ -1,0 +1,6 @@
+Instância,Dimensão (Vértices),Arestas Originais,Custo Mínimo Total,Tamanho do Circuito,Custo Original,Custo Final,Vértices Grau Ímpar,Arestas Duplicadas,Overhead,Overhead (%),Taxa Duplicação (%),Grau Mínimo,Grau Máximo,Grau Médio,Componentes Conexas
+aula.tsp,7,10,95,12,72,95,4,2,23,31.94,20.00,2,4,3.43,1
+gr15.tsp,15,40,2105,44,1871,2105,8,4,234,12.51,10.00,4,12,5.87,1
+gr17.tsp,17,81,22626,84,22061,22626,6,3,565,2.56,3.70,6,16,9.88,1
+gr21.tsp,21,113,39823,118,38429,39823,10,5,1394,3.63,4.42,6,20,11.24,1
+gr24.tsp,24,116,17678,122,16541,17678,12,6,1137,6.87,5.17,6,20,10.17,1

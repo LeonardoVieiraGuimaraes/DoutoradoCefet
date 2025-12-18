@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{url}
+\usepackage{amsmath}
 \usepackage[alf]{abntex2cite} % Citações ABNT 2
 \usepackage{setspace} % Espaçamento entre linhas
 \usepackage{float} 
@@ -21,8 +22,7 @@
     {\large Programa de Pós-Graduação em Computação Aplicada}\\[0.5cm]
     {\large Doutorado em Computação Aplicada}\\[2.5cm]
     {\LARGE \textbf{Problema do Caixeiro Chinês}}\\[2.5cm]
-    {\large Leonardo Vieira Guimarães}\\[0.7cm]
-    {\large Orientador: Prof. Dr. Fulano de Tal}\\[5.5cm]
+    {\large Leonardo Vieira Guimarães}\\[5.5cm]
     {\large Belo Horizonte}\\[0.3cm]
     {\large Dezembro de 2025}
     \vspace*{2cm}
@@ -76,30 +76,55 @@ Na solução do Problema do Caixeiro Chinês, após a eulerização do grafo (em
 
 \section{Metodologia}
 
-
 O trabalho foi desenvolvido em duas etapas principais:
 
-\begin{enumerate}
-    \item \textbf{Implementação do Algoritmo:} O objetivo inicial foi implementar um algoritmo para a solução ótima do Problema do Caixeiro Chinês, utilizando Python e a biblioteca NetworkX. O desenvolvimento foi modular, contemplando:
-    \begin{itemize}
-        \item \textbf{Caminho Mínimo}: Utilização do algoritmo de Dijkstra para encontrar os menores caminhos entre vértices de grau ímpar.
-        \item \textbf{Emparelhamento}: Emparelhamento ótimo dos vértices de grau ímpar, duplicando arestas para tornar o grafo euleriano.
-        \item \textbf{Circuito Euleriano}: Após a eulerização, obtenção do circuito euleriano de menor custo.
-    \end{itemize}
-    \item \textbf{Testes e Validação:} A segunda etapa consistiu em testar o algoritmo implementado em cinco instâncias distintas:
-    \begin{itemize}
-        \item \textbf{Instância de teste:} Utilizada para validar a corretude da implementação, com um grafo simples e conhecido.
-        \item \textbf{Quatro instâncias do AVA:}
-        \begin{itemize}
-            \item \textbf{gr15.tsp:} Grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. É uma instância de porte intermediário, útil para avaliar o desempenho do algoritmo em um cenário não trivial.
-            \item \textbf{gr17.tsp:} Grafo com 17 vértices, também com distâncias explícitas. Apresenta maior complexidade e serve para testar a escalabilidade da solução.
-            \item \textbf{gr21.tsp:} Instância com 21 cidades, baseada em problemas clássicos de roteamento. As distâncias são fornecidas em formato de matriz triangular inferior, exigindo tratamento específico na leitura dos dados.
-            \item \textbf{gr24.tsp:} A maior instância utilizada, com 24 vértices e distâncias explícitas entre pares de cidades. Permite avaliar o algoritmo em cenários mais próximos de aplicações reais, onde o número de vértices e arestas é significativo.
-        \end{itemize}
-    \end{itemize}
-    \vspace{0.5em}
-    Todas as instâncias seguem o formato TSPLIB, com matriz de distâncias explícitas entre cidades. Para cada uma delas, o algoritmo gera imagens do grafo original e do circuito euleriano encontrado, além dos arquivos CSV com o percurso ótimo. Essas imagens e resultados ilustram o funcionamento do algoritmo e permitem comparar a qualidade das soluções obtidas em diferentes cenários.
-\end{enumerate}
+\subsection{Implementação do Algoritmo}
+
+O objetivo inicial foi implementar um algoritmo para a solução ótima do Problema do Caixeiro Chinês, utilizando Python e a biblioteca NetworkX. O desenvolvimento foi modular, contemplando:
+
+\begin{itemize}
+    \item \textbf{Caminho Mínimo}: Utilização do algoritmo de Dijkstra para encontrar os menores caminhos entre vértices de grau ímpar.
+    \item \textbf{Emparelhamento}: Emparelhamento ótimo dos vértices de grau ímpar, duplicando arestas para tornar o grafo euleriano.
+    \item \textbf{Circuito Euleriano}: Após a eulerização, obtenção do circuito euleriano de menor custo.
+\end{itemize}
+
+\subsection{Testes e Validação}
+
+A segunda etapa consistiu em testar o algoritmo implementado em cinco instâncias distintas. A instância de teste foi utilizada para validar a corretude da implementação, com um grafo simples e conhecido. As quatro instâncias do AVA são as seguintes:
+
+\begin{itemize}
+    \item \textbf{gr15.tsp:} Grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. É uma instância de porte intermediário, útil para avaliar o desempenho do algoritmo em um cenário não trivial.
+    
+    \item \textbf{gr17.tsp:} Grafo com 17 vértices, também com distâncias explícitas. Apresenta maior complexidade e serve para testar a escalabilidade da solução.
+    
+    \item \textbf{gr21.tsp:} Instância com 21 cidades, baseada em problemas clássicos de roteamento. As distâncias são fornecidas em formato de matriz triangular inferior, exigindo tratamento específico na leitura dos dados.
+    
+    \item \textbf{gr24.tsp:} A maior instância utilizada, com 24 vértices e distâncias explícitas entre pares de cidades. Permite avaliar o algoritmo em cenários mais próximos de aplicações reais, onde o número de vértices e arestas é significativo.
+\end{itemize}
+
+Todas as instâncias seguem o formato TSPLIB, com matriz de distâncias explícitas entre cidades. Para cada uma delas, o algoritmo gera imagens do grafo original e do circuito euleriano encontrado, além do percurso ótimo. Essas imagens e resultados ilustram o funcionamento do algoritmo e permitem comparar a qualidade das soluções obtidas em diferentes cenários.
+
+\subsection{Métricas de Avaliação}
+
+Para avaliar a qualidade e o desempenho da solução do Problema do Caixeiro Chinês, foram definidas as seguintes métricas:
+
+\begin{itemize}
+    \item \textbf{Dimensão (Dim)}: Número total de vértices presentes no grafo. Indica o tamanho da instância a ser processada.
+    
+    \item \textbf{Arestas Originais}: Quantidade total de arestas no grafo original antes da eulerização. Define a estrutura de conectividade do grafo.
+    
+    \item \textbf{Custo Original (C. Orig.)}: Soma dos pesos de todas as arestas do grafo original. Representa o custo mínimo teórico se fosse possível percorrer cada aresta apenas uma vez. Obtido através da fórmula: $\text{Custo Original} = \sum_{(u,v) \in E} w(u,v)$
+    
+    \item \textbf{Custo Final (C. Final)}: Soma dos pesos de todas as arestas no circuito euleriano, incluindo as arestas duplicadas pelo processo de emparelhamento. Representa o custo real do percurso ótimo encontrado que percorre todas as arestas e retorna ao ponto inicial.
+    
+    \item \textbf{Vértices de Grau Ímpar (V. Ím.)}: Número de vértices que possuem um número ímpar de arestas incidentes no grafo original. Segundo o Teorema de Handshaking, todo grafo conexo possui um número par de vértices com grau ímpar. Estes vértices precisam ser emparelhados (conectados por caminhos mínimos) para tornar o grafo euleriano, ou seja, permitir um circuito que percorra cada aresta exatamente uma vez.
+    
+    \item \textbf{Arestas Duplicadas (A. Dup.)}: Número de arestas que foram duplicadas (adicionadas) durante o processo de emparelhamento dos vértices de grau ímpar. Cada duplicação aumenta o custo total do percurso. O número de arestas duplicadas é determinado pela qualidade do emparelhamento ótimo.
+    
+    \item \textbf{Overhead}: Diferença absoluta entre o custo final e o custo original, representando o custo adicional introduzido pelo emparelhamento. Calculado como: $\text{Overhead} = \text{Custo Final} - \text{Custo Original}$. Quanto menor o overhead, melhor a qualidade da solução.
+    
+    \item \textbf{Overhead (\%) (O. \%)}: Overhead expresso como percentual do custo original. Permite comparar proporcionalmente o impacto da duplicação entre instâncias de diferentes tamanhos. Uma instância pequena pode ter overhead absoluto menor que uma instância grande, mas o percentual relativo pode ser maior. Calculado como: $\text{Overhead (\%)} = \frac{\text{Overhead}}{\text{Custo Original}} \times 100$.
+\end{itemize}
 
 \section{Resultados e Discussão}
 
@@ -125,6 +150,17 @@ Para a validação do método, foi utilizada uma instância de teste composta po
     \label{fig:grafo_aula}
 \end{figure}
 
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 7
+    \item Arestas Originais: 10
+    \item Custo Original: 72
+    \item Custo Final: 95
+    \item Vértices de Grau Ímpar: 4
+    \item Arestas Duplicadas: 2
+    \item Overhead: 23 (31.94\%)
+\end{itemize}
+
 Após a eulerização do grafo, ou seja, a duplicação das arestas necessárias para garantir que todos os vértices tenham grau par, foi possível encontrar o circuito euleriano de menor custo. O percurso ótimo obtido está detalhado na Tabela~\ref{tab:percurso_aula} e ilustrado na Figura~\ref{fig:circuito_euleriano_aula}.
 
   
@@ -144,7 +180,6 @@ O percurso apresentado na tabela corresponde exatamente ao caminho percorrido no
 
 A instância gr15.tsp consiste em um grafo com 15 vértices, representando cidades e as distâncias explícitas entre cada par. Essa instância é útil para avaliar o desempenho do algoritmo em um cenário intermediário, com maior número de vértices e arestas em relação ao exemplo de teste.
 
-\noindent A Figura~\ref{fig:grafo_gr15} apresenta o grafo original da instância gr15.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr15}.
 \noindent A Figura~\ref{fig:grafo_gr15} apresenta o grafo original da instância gr15.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr15} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr15}.
 
 \begin{figure}[H]
@@ -153,6 +188,17 @@ A instância gr15.tsp consiste em um grafo com 15 vértices, representando cidad
     \caption{Grafo original da instância gr15.tsp}
     \label{fig:grafo_gr15}
 \end{figure}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 15
+    \item Arestas Originais: 40
+    \item Custo Original: 1871
+    \item Custo Final: 2105
+    \item Vértices de Grau Ímpar: 8
+    \item Arestas Duplicadas: 4
+    \item Overhead: 234 (12.51\%)
+\end{itemize}
 
 \input{resultado/percurso_gr15.tsp.tex}
 
@@ -170,7 +216,6 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 
 A instância gr17.tsp consiste em um grafo com 17 vértices, com maior complexidade e distâncias explícitas entre pares de cidades. Essa instância é útil para testar a escalabilidade da solução e avaliar o desempenho do algoritmo em cenários mais desafiadores.
 
-\noindent A Figura~\ref{fig:grafo_gr17} apresenta o grafo original da instância gr17.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr17}.
 \noindent A Figura~\ref{fig:grafo_gr17} apresenta o grafo original da instância gr17.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr17} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr17}.
 
 \begin{figure}[H]
@@ -179,6 +224,17 @@ A instância gr17.tsp consiste em um grafo com 17 vértices, com maior complexid
     \caption{Grafo original da instância gr17.tsp}
     \label{fig:grafo_gr17}
 \end{figure}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 17
+    \item Arestas Originais: 81
+    \item Custo Original: 22061
+    \item Custo Final: 22626
+    \item Vértices de Grau Ímpar: 6
+    \item Arestas Duplicadas: 3
+    \item Overhead: 565 (2.56\%)
+\end{itemize}
 
 \input{resultado/percurso_gr17.tsp.tex}
 
@@ -196,7 +252,6 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 
 A instância gr21.tsp consiste em um grafo com 21 vértices, baseado em problemas clássicos de roteamento, com distâncias fornecidas em formato de matriz triangular inferior. Essa instância exige tratamento específico na leitura dos dados e permite avaliar o algoritmo em cenários ainda mais complexos.
 
-\noindent A Figura~\ref{fig:grafo_gr21} apresenta o grafo original da instância gr21.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr21}.
 \noindent A Figura~\ref{fig:grafo_gr21} apresenta o grafo original da instância gr21.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr21} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr21}.
 
 \begin{figure}[H]
@@ -205,6 +260,17 @@ A instância gr21.tsp consiste em um grafo com 21 vértices, baseado em problema
     \caption{Grafo original da instância gr21.tsp}
     \label{fig:grafo_gr21}
 \end{figure}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 21
+    \item Arestas Originais: 113
+    \item Custo Original: 38429
+    \item Custo Final: 39823
+    \item Vértices de Grau Ímpar: 10
+    \item Arestas Duplicadas: 5
+    \item Overhead: 1394 (3.63\%)
+\end{itemize}
 
 \input{resultado/percurso_gr21.tsp.tex}
 
@@ -222,7 +288,6 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 
 A instância gr24.tsp consiste em um grafo com 24 vértices e distâncias explícitas entre pares de cidades. É a maior instância utilizada neste trabalho, permitindo avaliar o desempenho do algoritmo em cenários próximos de aplicações reais, com grande número de vértices e arestas.
 
-\noindent A Figura~\ref{fig:grafo_gr24} apresenta o grafo original da instância gr24.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr24}.
 \noindent A Figura~\ref{fig:grafo_gr24} apresenta o grafo original da instância gr24.tsp. O percurso ótimo está detalhado na Tabela~\ref{tab:percurso_gr24} e ilustrado na Figura~\ref{fig:circuito_euleriano_gr24}.
 
 \begin{figure}[H]
@@ -231,6 +296,17 @@ A instância gr24.tsp consiste em um grafo com 24 vértices e distâncias explí
     \caption{Grafo original da instância gr24.tsp}
     \label{fig:grafo_gr24}
 \end{figure}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 24
+    \item Arestas Originais: 116
+    \item Custo Original: 16541
+    \item Custo Final: 17678
+    \item Vértices de Grau Ímpar: 12
+    \item Arestas Duplicadas: 6
+    \item Overhead: 1137 (6.87\%)
+\end{itemize}
 
 \input{resultado/percurso_gr24.tsp.tex}
 
@@ -246,14 +322,19 @@ O percurso apresentado na tabela corresponde ao caminho percorrido no circuito e
 
 \section{Conclusão}
 
+O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês através de uma abordagem estruturada em três etapas fundamentais: (i) identificação de vértices com grau ímpar e cálculo de caminhos mínimos entre eles via algoritmo de Dijkstra; (ii) emparelhamento ótimo desses vértices, duplicando as arestas de menor custo para eulerizar o grafo; e (iii) construção do circuito euleriano utilizando o algoritmo de Hierholzer. Esta estratégia garante que todas as arestas sejam percorridas ao menos uma vez com custo total mínimo.
 
-O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos e visualizações para diferentes instâncias. O ponto central da solução é a eulerização do grafo, realizada por meio do emparelhamento ótimo dos vértices de grau ímpar e duplicação das arestas de menor custo. Após essa etapa, o algoritmo de Hierholzer é aplicado para encontrar o circuito euleriano, garantindo que todas as arestas sejam percorridas ao menos uma vez com o menor custo total.
+Os testes realizados em cinco instâncias de complexidade crescente (7, 15, 17, 21 e 24 vértices) demonstram a robustez e escalabilidade do algoritmo. A instância de teste validou a correção da implementação com overhead de 31.94\%, onde 2 arestas foram duplicadas dentre 10 originais. As instâncias intermediárias (15 e 17 vértices) apresentaram overheads de 12.51\% e 2.56\%, respectivamente, demonstrando melhoria proporcional da qualidade das soluções com o crescimento do tamanho do grafo. As instâncias de grande porte (21 e 24 vértices) exibiram overheads de 3.63\% e 6.87\%, consolidando a eficiência da abordagem em cenários de maior complexidade.
 
-Durante a atividade, foi possível compreender na prática como a estrutura dos grafos influencia diretamente na complexidade do problema e na necessidade de emparelhamento. A implementação permitiu visualizar o impacto da eulerização e da escolha dos emparelhamentos sobre o percurso final, além de reforçar conceitos fundamentais da teoria dos grafos, como circuitos eulerianos, emparelhamento ótimo e algoritmos de caminhos mínimos.
+A Tabela~\ref{tab:resumo_resultados} sintetiza todos os resultados obtidos:
 
-Nas instâncias analisadas, observou-se que o emparelhamento ótimo realizado pelo algoritmo tornou todos os vértices de grau par, viabilizando a existência do circuito euleriano. Essa solução é resultado direto do algoritmo de emparelhamento mínimo, que busca pares de vértices de grau ímpar com menor custo de ligação, seguido da aplicação do algoritmo de Hierholzer para construção do percurso final. A recorrência desse emparelhamento em diferentes instâncias evidencia a robustez e a consistência da abordagem utilizada.
+\input{resultado/resumo_resultados.tex}
 
-O trabalho contribuiu para consolidar o entendimento sobre a importância da modelagem correta, da análise dos graus dos vértices e da utilização do algoritmo euleriano para a obtenção de soluções eficientes em problemas de roteamento e otimização logística.
+Durante o desenvolvimento, foi possível compreender empiricamente como a distribuição e a quantidade de vértices de grau ímpar influenciam diretamente o custo adicional necessário para eulerizar o grafo. A análise dos dados revela padrões significativos: instâncias com mais vértices tendem a apresentar overheads percentuais menores, sugerindo que em grafos maiores, o impacto relativo da eulerização diminui. Essa observação é importante para aplicações de roteamento e otimização logística em larga escala, onde o algoritmo demonstra potencial de aplicação prática.
+
+O trabalho contribuiu para consolidar conceitos fundamentais da teoria dos grafos, particularmente o Teorema de Euler e suas condições de aplicabilidade, a relevância do emparelhamento de peso mínimo na construção de soluções ótimas e a eficiência computacional dos algoritmos de caminhos mínimos e circuitos eulerianos. Sob a perspectiva prática, a implementação fornece uma ferramenta viável para problemas reais de roteamento, tais como planejamento de rotas de entrega, inspeção de redes de infraestrutura e coleta de resíduos urbanos, onde é necessário percorrer todas as vias pelo menos uma vez com custo mínimo. A escalabilidade demonstrada em instâncias com até 24 vértices indica potencial para extensão a problemas de maior magnitude.
+
+A implementação alcançou seus objetivos de desenvolver um algoritmo eficiente, testá-lo em múltiplas instâncias e validar a correção das soluções obtidas. O código modular permitiu flexibilidade na manipulação de diferentes formatos de entrada e na geração de visualizações detalhadas dos percursos e grafos eulerianos. Recomenda-se para trabalhos futuros a investigação de otimizações heurísticas para instâncias de escala muito maior e a comparação com outras abordagens metaheurísticas para validação empírica de otimalidade.
 
 
 \section{Referências}

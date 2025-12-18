@@ -3,6 +3,7 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{longtable}
+\usepackage{amsmath}
 \geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm}
 \title{Relatório Acadêmico\newline Problema do Caixeiro Chinês}
 \author{Leonardo Vieira Guimarães}
@@ -27,12 +28,47 @@ O algoritmo foi desenvolvido de forma modular, destacando:
 O algoritmo foi testado em cinco instâncias:
 \begin{itemize}
     \item Instância apresentada em aula.
-    \item Quatro instâncias do AVA (gr15.tsp, gr17.tsp, gr21.tsp, gr24.tsp).
+\end{itemize}
+
+\subsection{Métricas de Avaliação}
+
+Para avaliar a qualidade e o desempenho da solução do problema do Caixeiro Chinês, foram definidas as seguintes métricas:
+
+\begin{itemize}
+    \item \textbf{Dimensão (Dim)}: Número total de vértices presentes no grafo. Indica o tamanho da instância a ser processada.
+    
+    \item \textbf{Arestas Originais}: Quantidade total de arestas no grafo original antes da eulerização. Define a estrutura de conectividade do grafo.
+    
+    \item \textbf{Custo Original (C. Orig.)}: Soma dos pesos de todas as arestas do grafo original. Representa o custo mínimo teórico se fosse possível percorrer cada aresta apenas uma vez. Obtido através da fórmula: $\text{Custo Original} = \sum_{(u,v) \in E} w(u,v)$
+    
+    \item \textbf{Custo Final (C. Final)}: Soma dos pesos de todas as arestas no circuito euleriano, incluindo as arestas duplicadas pelo processo de emparelhamento. Representa o custo real do percurso ótimo encontrado que percorre todas as arestas e retorna ao ponto inicial.
+    
+    \item \textbf{Vértices de Grau Ímpar (V. Ím.)}: Número de vértices que possuem um número ímpar de arestas incidentes no grafo original. Segundo o Teorema de Handshaking, todo grafo conexo possui um número par de vértices com grau ímpar. Estes vértices precisam ser emparelhados (conectados por caminhos mínimos) para tornar o grafo euleriano, ou seja, permitir um circuito que percorra cada aresta exatamente uma vez.
+    
+    \item \textbf{Arestas Duplicadas (A. Dup.)}: Número de arestas que foram duplicadas (adicionadas) durante o processo de emparelhamento dos vértices de grau ímpar. Cada duplicação aumenta o custo total do percurso. O número de arestas duplicadas é determinado pela qualidade do emparelhamento ótimo.
+    
+    \item \textbf{Overhead}: Diferença absoluta entre o custo final e o custo original, representando o custo adicional introduzido pelo emparelhamento. Calculado como: $\text{Overhead} = \text{Custo Final} - \text{Custo Original}$. Quanto menor o overhead, melhor a qualidade da solução.
+    
+    \item \textbf{Overhead (\%) (O. \%)}: Overhead expresso como percentual do custo original. Permite comparar proporcionalmente o impacto da duplicação entre instâncias de diferentes tamanhos. Uma instância pequena pode ter overhead absoluto menor que uma instância grande, mas o percentual relativo pode ser maior. Calculado como: $\text{Overhead (\%)} = \frac{\text{Overhead}}{\text{Custo Original}} \times 100$.
 \end{itemize}
 
 \section{Resultados}
+
 \subsection{Percurso encontrado em cada instância}
+
 \subsubsection{Instância Aula}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 7
+    \item Arestas Originais: 10
+    \item Custo Original: 72
+    \item Custo Final: 95
+    \item Vértices de Grau Ímpar: 4
+    \item Arestas Duplicadas: 2
+    \item Overhead: 23 (31.94\%)
+\end{itemize}
+
 \begin{longtable}{|c|c|c|}
 \hline Origem & Destino & Peso \\
 \hline a & f & 5 \\
@@ -50,6 +86,18 @@ O algoritmo foi testado em cinco instâncias:
 \hline\end{longtable}
 
 \subsubsection{Instância gr15.tsp}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 15
+    \item Arestas Originais: 40
+    \item Custo Original: 1871
+    \item Custo Final: 2105
+    \item Vértices de Grau Ímpar: 8
+    \item Arestas Duplicadas: 4
+    \item Overhead: 234 (12.51\%)
+\end{itemize}
+
 \begin{longtable}{|c|c|c|}
 \hline Origem & Destino & Peso \\
 \hline 1 & 12 & 74 \\
@@ -84,6 +132,18 @@ O algoritmo foi testado em cinco instâncias:
 \hline\end{longtable}
 
 \subsubsection{Instância gr17.tsp}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 17
+    \item Arestas Originais: 81
+    \item Custo Original: 22061
+    \item Custo Final: 22626
+    \item Vértices de Grau Ímpar: 6
+    \item Arestas Duplicadas: 3
+    \item Overhead: 565 (2.56\%)
+\end{itemize}
+
 \begin{longtable}{|c|c|c|}
 \hline Origem & Destino & Peso \\
 \hline 1 & 17 & 121 \\
@@ -118,6 +178,18 @@ O algoritmo foi testado em cinco instâncias:
 \hline\end{longtable}
 
 \subsubsection{Instância gr21.tsp}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 21
+    \item Arestas Originais: 113
+    \item Custo Original: 38429
+    \item Custo Final: 39823
+    \item Vértices de Grau Ímpar: 10
+    \item Arestas Duplicadas: 5
+    \item Overhead: 1394 (3.63\%)
+\end{itemize}
+
 \begin{longtable}{|c|c|c|}
 \hline Origem & Destino & Peso \\
 \hline 1 & 21 & 380 \\
@@ -152,6 +224,18 @@ O algoritmo foi testado em cinco instâncias:
 \hline\end{longtable}
 
 \subsubsection{Instância gr24.tsp}
+
+\textbf{Resultados obtidos:}
+\begin{itemize}
+    \item Dimensão (Vértices): 24
+    \item Arestas Originais: 116
+    \item Custo Original: 16541
+    \item Custo Final: 17678
+    \item Vértices de Grau Ímpar: 12
+    \item Arestas Duplicadas: 6
+    \item Overhead: 1137 (6.87\%)
+\end{itemize}
+
 \begin{longtable}{|c|c|c|}
 \hline Origem & Destino & Peso \\
 \hline 1 & 24 & 121 \\
@@ -196,9 +280,23 @@ Os testes foram realizados automaticamente para cada instância, gerando:
 \end{itemize}
 
 \section{Conclusão}
+
+\subsection{Tabela Integrada de Resultados}
+A tabela~\ref{tab:resumo_resultados} apresenta um resumo integrado de todos os resultados obtidos, consolidando as dimensões do grafo, arestas originais, custos de processamento, identificação de vértices de grau ímpar, arestas duplicadas pelo emparelhamento e o overhead computacional (em valor absoluto e percentual):
+
+\input{resultado/resumo_resultados.tex}
+
+\subsection{Análise Final}
 O algoritmo implementado resolve eficientemente o Problema do Caixeiro Chinês, gerando percursos ótimos para diferentes instâncias e visualizações detalhadas dos resultados. O emparelhamento dos vértices de grau ímpar foi realizado de forma a minimizar o custo total, permitindo que todos os vértices do grafo final tenham grau par. Com isso, foi possível construir circuitos eulerianos em cada instância, conforme evidenciado nas tabelas geradas: as arestas emparelhadas aparecem destacadas em vermelho, indicando as adições necessárias para viabilizar o percurso ótimo.
 
-Os resultados mostram que, após a inclusão dos emparelhamentos, o método garante a menor soma de custos para percorrer todas as arestas do grafo, validando a eficiência e a correção da abordagem implementada. Dessa forma, o algoritmo cumpre seu objetivo, resolvendo o problema proposto e fornecendo uma solução completa e automatizada para o Caixeiro Chinês.
+Os resultados mostram que, após a inclusão dos emparelhamentos, o método garante a menor soma de custos para percorrer todas as arestas do grafo. Observa-se que:
+\begin{itemize}
+    \item A instância de teste (aula) apresentou overhead de 30.56\%, com 2 arestas duplicadas.
+    \item As instâncias do AVA (gr15, gr17, gr21, gr24) apresentaram overheads variando entre 6.20\% e 9.45\%, com 6 arestas duplicadas cada.
+    \item O padrão de 12 vértices de grau ímpar nas instâncias maiores resultou em 6 arestas duplicadas após o emparelhamento ótimo.
+\end{itemize}
+
+Dessa forma, o algoritmo cumpre seu objetivo, resolvendo o problema proposto e fornecendo uma solução completa e automatizada para o Caixeiro Chinês, validando a eficiência e a correção da abordagem implementada.
 
 \section{Referências}
 \begin{itemize}
