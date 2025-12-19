@@ -133,6 +133,16 @@ INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\ragged2e\ragged2e.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\cite\cite.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\cite\cite.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype.sty
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype-pdftex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype-pdftex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype-pdftex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\microtype.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ot1ptm.fd
@@ -160,6 +170,9 @@ OUTPUT relatorio.pdf
 INPUT .\relatorio.out
 INPUT .\relatorio.out
 OUTPUT relatorio.out
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-ptm.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-ptm.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-ptm.cfg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
@@ -180,6 +193,9 @@ INPUT .\relatorio.toc
 INPUT .\relatorio.toc
 INPUT relatorio.toc
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -195,12 +211,18 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msa.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msa.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msa.cfg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msb.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msb.cfg
+INPUT C:\Program Files\MiKTeX\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT relatorio.toc
@@ -208,16 +230,23 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb7t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr7t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT .\resultados\analise_1_assimetria.tex
 INPUT .\resultados\analise_1_assimetria.tex
 INPUT resultados\analise_1_assimetria.tex
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr7t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT .\resultados\tarefa_1_populacao.png
 INPUT .\resultados\tarefa_1_populacao.png
 INPUT .\resultados\tarefa_1_populacao.png
@@ -269,9 +298,6 @@ INPUT .\resultados\tarefa_2_sucessofalha.png
 INPUT .\relatorio.bbl
 INPUT .\relatorio.bbl
 INPUT relatorio.bbl
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri7t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
 INPUT relatorio.aux
 INPUT .\relatorio.out
 INPUT .\relatorio.out
@@ -279,6 +305,8 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb

@@ -3,22 +3,18 @@
 \contentsline {section}{\numberline {2}Fundamentação Teórica}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Teorema Central do Limite}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Distribuição Exponencial}{4}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Intervalo de Confiança para a Média}{4}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Metodologia}{5}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Parâmetros da Simulação}{5}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Procedimento}{5}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Tarefa 1: Simulação do TCL}{5}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Tarefa 2: Validação da Cobertura do IC}{6}{subsubsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.3}Métricas e Cálculos}{6}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Coeficiente de Assimetria (Skewness)}{6}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Taxa de Cobertura do Intervalo de Confiança}{7}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Redução Relativa de Assimetria}{8}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {2.3}Intervalo de Confiança para a Média}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Metodologia}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Parâmetros da Simulação}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Procedimento}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Simulação do TCL}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Validação da Cobertura do IC}{7}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Métricas Calculadas}{7}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Resultados e Discussão}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Assimetria da População e Distribuições Amostrais}{8}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Visualizações das Distribuições}{9}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Efeito do Tamanho da Amostra}{10}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Intervalo de Confiança: Taxa de Cobertura}{11}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Visualizações da Cobertura do IC}{11}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Manifestação do Teorema Central do Limite}{12}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Robustez do Intervalo de Confiança}{13}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.1}Assimetria da População vs. Amostragem}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Efeito do n no TCL}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Validação do IC}{11}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Conclusão}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Assimetria da População vs. Amostragem}{13}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Efeito do n no TCL}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Validação do IC}{13}{subsection.5.3}%

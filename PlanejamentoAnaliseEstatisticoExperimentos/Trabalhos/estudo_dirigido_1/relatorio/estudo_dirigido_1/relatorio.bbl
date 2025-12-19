@@ -5,51 +5,14 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[CASELLA e BERGER 2002]{casella2002}
-\abntrefinfo{CASELLA e BERGER}{CASELLA; BERGER}{2002}
-{CASELLA, G.; BERGER, R.~L. \emph{Statistical inference}. 2nd. ed. Belmont, CA:
-  Duxbury Press, 2002.}
-
 \bibitem[DEVORE 2015]{devore2015}
 \abntrefinfo{DEVORE}{DEVORE}{2015}
 {DEVORE, J.~L. \emph{Probability and statistics for engineering and the
   sciences}. 9th. ed. Boston, MA: Cengage Learning, 2015.}
 
-\bibitem[FISHER 1925]{fisher1925}
-\abntrefinfo{FISHER}{FISHER}{1925}
-{FISHER, R.~A. Statistical methods for research workers.
-Oliver and Boyd, Edinburgh, 1925.}
-
-\bibitem[GOSSET 1908]{gosset1908}
-\abntrefinfo{GOSSET}{GOSSET}{1908}
-{GOSSET, W.~S. The probable error of a mean.
-\emph{Biometrika}, v.~6, n.~1, p. 1--25, 1908.
-Publicado sob o pseudônimo ``Student''.}
-
-\bibitem[LIMA e CARVALHO 2015]{lima2015}
-\abntrefinfo{LIMA e CARVALHO}{LIMA; CARVALHO}{2015}
-{LIMA, A. C.~M.; CARVALHO, P. C.~P. \emph{Tópicos de estatística
-  inferencial}. Rio de Janeiro: Universidade Federal do Rio de Janeiro, 2015.}
-
-\bibitem[LYAPUNOV 1901]{lyapunov1901}
-\abntrefinfo{LYAPUNOV}{LYAPUNOV}{1901}
-{LYAPUNOV, A.~M. Nouvelle forme du théorème sur la limite de probabilité.
-\emph{Mémoires de l'Académie Impériale des Sciences de Saint-Pétersbourg},
-  v.~12, p. 1--24, 1901.}
-
-\bibitem[MONTGOMERY e RUNGER 2016]{montgomery2016}
-\abntrefinfo{MONTGOMERY e RUNGER}{MONTGOMERY; RUNGER}{2016}
-{MONTGOMERY, D.~C.; RUNGER, G.~C. \emph{Applied statistics and probability for
-  engineers}. 6th. ed. Hoboken, NJ: John Wiley \& Sons, 2016.}
-
-\bibitem[MORETTIN e BUSSAB 2010]{morettin2010}
-\abntrefinfo{MORETTIN e BUSSAB}{MORETTIN; BUSSAB}{2010}
-{MORETTIN, P.~A.; BUSSAB, W.~O. \emph{Estatística básica}. 6th. ed. São
-  Paulo: Saraiva, 2010.}
-
-\bibitem[ROSS 2014]{ross2014}
-\abntrefinfo{ROSS}{ROSS}{2014}
-{ROSS, S.~M. \emph{Introduction to probability models}. 11th. ed. Cambridge,
-  MA: Academic Press, 2014.}
+\bibitem[MONTGOMERY e RUNGER 2018]{montgomery2016}
+\abntrefinfo{MONTGOMERY e RUNGER}{MONTGOMERY; RUNGER}{2018}
+{MONTGOMERY, D.~C.; RUNGER, G.~C. \emph{Estatística aplicada e probabilidade
+  para engenheiros}. 7ª. ed. Rio de Janeiro: Grupo GEN, 2018.}
 
 \end{thebibliography}
