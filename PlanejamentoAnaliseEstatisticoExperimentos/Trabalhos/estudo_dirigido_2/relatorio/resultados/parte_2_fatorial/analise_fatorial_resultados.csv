@@ -1,4 +1,13 @@
 Métrica,Valor
-Total de observações,30
-Níveis de temperatura,2
-Níveis de pressão,3
+Temperatura 170°C-Irrigação 1 - Média,100.0122
+Temperatura 170°C-Irrigação 2 - Média,119.1662
+Temperatura 190°C-Irrigação 1 - Média,110.3197
+Temperatura 190°C-Irrigação 2 - Média,93.2116
+F-Estatística (Temperatura),32.2181
+P-Value Temperatura,3.4e-05
+F-Estatística (Irrigação),0.5508
+P-Value Irrigação,0.468744
+F-Estatística (Interação),173.0367
+P-Value Interação,0.0
+R-Squared,0.9279
+Resíduos Padrão,3.082
