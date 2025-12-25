@@ -1,4 +1,4 @@
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \caption{Estatísticas Descritivas por Combinação (Fatorial 2x2)}
 \label{tab:descritivas_fatorial}
@@ -6,15 +6,17 @@
 \hline
 \textbf{Temperatura-Irrigação} & \textbf{n} & \textbf{Média} & \textbf{DP} & \textbf{Mín} & \textbf{Máx} \\
 \hline
-170°C-I1 & 5 & 100.01 & 2.83 & 96.68 & 103.70 \\
-170°C-I2 & 5 & 119.17 & 2.57 & 117.04 & 123.17 \\
-190°C-I1 & 5 & 110.32 & 2.77 & 107.41 & 114.01 \\
-190°C-I2 & 5 & 93.21 & 3.97 & 89.74 & 98.80 \\
+70°C-I50 & 5 & 45.01 & 1.89 & 42.78 & 47.47 \\
+70°C-I60 & 5 & 51.44 & 1.71 & 50.02 & 54.11 \\
+70°C-I70 & 5 & 58.21 & 1.85 & 56.27 & 60.67 \\
+85°C-I50 & 5 & 46.81 & 2.64 & 44.49 & 50.53 \\
+85°C-I60 & 5 & 47.20 & 0.91 & 46.00 & 48.37 \\
+85°C-I70 & 5 & 41.77 & 0.85 & 40.97 & 43.16 \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \caption{Tabela ANOVA Fatorial 2x2}
 \label{tab:anova_fatorial}
@@ -22,10 +24,10 @@
 \hline
 \textbf{Fonte} & \textbf{SQ} & \textbf{GL} & \textbf{MQ} & \textbf{F} & \textbf{p-value} \\
 \hline
-C(Temperatura) & 306.04 & 1 & 306.04 & 32.22 & 0.0000 \\
-C(Irrigacao) & 5.23 & 1 & 5.23 & 0.55 & 0.4687 \\
-C(Temperatura):C(Irrigacao) & 1643.68 & 1 & 1643.68 & 173.04 & 0.0000 \\
-Residual & 151.98 & 16 & 9.50 & nan & nan \\
+C(Temperatura) & 297.34 & 1 & 297.34 & 96.73 & 0.0000 \\
+C(Irrigacao) & 95.94 & 2 & 47.97 & 15.60 & 0.0000 \\
+C(Temperatura):C(Irrigacao) & 431.62 & 2 & 215.81 & 70.21 & 0.0000 \\
+Residual & 73.77 & 24 & 3.07 & nan & nan \\
 \hline
 \end{tabular}
 \end{table}

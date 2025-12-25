@@ -1,0 +1,10 @@
+Métrica,Valor
+Distribuição,Exponencial
+Média da População (μ),5
+Taxa (λ),0.2
+Tamanho da População,100000
+Tamanhos Amostrais,"[5, 50]"
+Número de Simulações,10000
+Nível de Confiança (%),95.0
+Significância (α),0.050000000000000044
+Semente Aleatória,1

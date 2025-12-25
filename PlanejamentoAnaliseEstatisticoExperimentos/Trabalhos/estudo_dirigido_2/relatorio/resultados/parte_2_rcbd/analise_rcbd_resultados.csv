@@ -1,15 +1,19 @@
 Métrica,Valor
-D1 - Média,1194.5523
-D1 - DP,226.5616
-D2 - Média,1260.5383
-D2 - DP,226.572
-D3 - Média,1246.819
-D3 - DP,84.1807
-D4 - Média,1379.5981
-D4 - DP,106.3611
-F-Estatística (Tratamento),2.7738
-P-Value Tratamento,0.13299
-F-Estatística (Bloco),15.3194
-P-Value Bloco,0.004392
-R-Squared,0.8665
-Resíduos Padrão,81.2928
+T1 - Média,55.2244
+T1 - DP,5.7382
+T1 - n,3.0
+T2 - Média,57.5441
+T2 - DP,5.6914
+T2 - n,3.0
+T3 - Média,59.2697
+T3 - DP,2.6326
+T3 - n,3.0
+T4 - Média,69.9253
+T4 - DP,3.4071
+T4 - n,3.0
+F-Stat Tratamento,48.0134
+P-Value Tratamento,0.000138
+F-Stat Bloco,28.7234
+P-Value Bloco,0.000846
+R-Squared,0.9711
+Resíduos Padrão,1.6259

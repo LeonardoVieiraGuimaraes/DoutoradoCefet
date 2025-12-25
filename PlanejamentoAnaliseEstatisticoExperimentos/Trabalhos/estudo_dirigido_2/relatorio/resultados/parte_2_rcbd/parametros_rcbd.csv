@@ -1,0 +1,9 @@
+Métrica,Valor
+Semente Aleatória,456
+Número de Blocos,3
+Número de Tratamentos,4
+Base de Ganho,50
+Desvio Padrão,2
+Nível de Significância,0.05
+Efeitos de Bloco,"[0, 5, 10]"
+Efeitos de Tratamento,"[0, 2, 5, 15]"
