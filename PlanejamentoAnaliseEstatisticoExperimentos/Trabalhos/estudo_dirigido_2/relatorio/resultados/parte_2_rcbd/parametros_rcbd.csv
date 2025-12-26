@@ -2,8 +2,8 @@ Métrica,Valor
 Semente Aleatória,456
 Número de Blocos,3
 Número de Tratamentos,4
-Base de Ganho,50
-Desvio Padrão,2
+Nomes dos Blocos,"Gaiola-1, Gaiola-2, Gaiola-3"
+Nomes dos Tratamentos,"D1, D2, D3, D4"
+Base de Ganho,60
+Desvio Padrão,1.5
 Nível de Significância,0.05
-Efeitos de Bloco,"[0, 5, 10]"
-Efeitos de Tratamento,"[0, 2, 5, 15]"

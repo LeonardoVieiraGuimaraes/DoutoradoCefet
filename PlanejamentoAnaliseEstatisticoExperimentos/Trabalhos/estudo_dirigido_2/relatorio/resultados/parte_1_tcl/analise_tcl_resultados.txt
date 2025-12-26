@@ -1,38 +1,27 @@
 ======================================================================
 RELATÓRIO: SIMULAÇÃO DO TEOREMA CENTRAL DO LIMITE (TCL)
 ======================================================================
-Data: 25/12/2025 15:33:17
+Data: 26/12/2025 01:32:52
 
 PARÂMETROS DA SIMULAÇÃO:
 ----------------------------------------------------------------------
-Distribuição:.................... Exponencial
-Média da População (μ):.......... 5
-Taxa (λ):........................ 0.2
-Tamanho da População:........... 100,000
-Tamanhos Amostrais (n):......... [5, 50]
-Número de Simulações (k):....... 10,000
-Nível de Confiança:............. 95.0%
-Significância (α):.............. 0.050000000000000044
-Semente Aleatória:.............. 1
+Distribuição...................................... Exponencial
+Média da População (μ)............................ 5
+Taxa (λ).......................................... 0.2
+Tamanho da População.............................. 100000
+Tamanhos Amostrais................................ [5, 50]
+Número de Simulações.............................. 10000
+Nível de Confiança (%)............................ 95.0
+Significância (α)................................. 0.050000000000000044
+Semente Aleatória................................. 1
 
-RESULTADOS - ANÁLISE DE ASSIMETRIA:
+RESULTADOS:
 ----------------------------------------------------------------------
-Assimetria da População (Exponencial): 1.9684
-Assimetria Dist. Médias (n=5):  0.8174
-Assimetria Dist. Médias (n=50): 0.3007
-
-RESULTADOS - VALIDAÇÃO DO INTERVALO DE CONFIANÇA:
-----------------------------------------------------------------------
-Tamanho Amostral (n):............ 50
-Taxa de Cobertura Observada:... 0.9315
-Taxa de Cobertura Esperada:.... 0.9500
-Diferença:...................... 0.0185
-
-CONCLUSÕES:
-----------------------------------------------------------------------
-1. A população exponencial é fortemente assimétrica (≈ 1.97)
-2. A distribuição das médias com n=50 apresenta assimetria de 0.3007,
-   validando o Teorema Central do Limite
-3. A taxa de cobertura do IC (0.9315) está próxima do esperado
-   (0.9500), comprovando a robustez do método
+Assimetria da População........................... 1.9684
+Assimetria Médias (n=5)........................... 0.8174
+Assimetria Médias (n=50).......................... 0.3007
+Tamanho Amostral (n).............................. 50
+Taxa de Cobertura Observada....................... 0.9315
+Taxa de Cobertura Esperada........................ 0.95
+Diferença......................................... 0.0185
 ======================================================================

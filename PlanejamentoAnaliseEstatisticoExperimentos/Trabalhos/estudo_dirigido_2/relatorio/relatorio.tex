@@ -45,7 +45,17 @@
 % ===== CAPA =====
 \thispagestyle{empty}
 \begin{center}
-\vspace*{3cm}
+\vspace*{1cm}
+
+{\large \textbf{CEFET-MG}}
+
+{\large Centro Federal de Educação Tecnológica de Minas Gerais}
+
+\vspace{0.5cm}
+
+{\large \textit{Planejamento e Análise Estatística de Experimentos}}
+
+\vspace{2cm}
 
 {\Huge \textbf{Simulação Estatística, TCL e ANOVA}}
 
@@ -121,7 +131,7 @@ A Análise de Variância (ANOVA) é um conjunto de técnicas estatísticas para 
 
 \subsubsection{ANOVA de Uma Via (One-Way)}
 
-No delineamento completamente casualizado com um único fator (One-Way ANOVA), as observações são distribuídas aleatoriamente entre os $k$ tratamentos. O modelo linear é:
+No delineamento completamente casualizado com um único fator (One-Way ANOVA), as observações são distribuídas aleatoriamente entre os tratamentos. O modelo linear é:
 
 \begin{equation}
 Y_{ij} = \mu + \tau_i + \epsilon_{ij}
@@ -180,8 +190,6 @@ A primeira parte deste estudo foca na validação empírica do Teorema Central d
 
 O objetivo é Validar empiricamente o Teorema Central do Limite em uma população com distribuição assimétrica (exponencial) e verificar a taxa de cobertura de um Intervalo de Confiança (IC) para diferentes tamanhos amostrais.
 
-\input{resultados/parte_1_tcl/tabela_parametros_parte1.tex}
-
 A simulação segue os seguintes passos:
 \begin{enumerate}
     \item Gerar população com distribuição exponencial de 100.000 valores;
@@ -200,6 +208,8 @@ As seguintes métricas serão utilizadas para analisar os resultados: (1) Coefic
 \subsubsection{Exercício 1: ANOVA de Fator Único (One-Way) com Tukey HSD}
 
 Comparação de três revestimentos (A, B, C) quanto à sua capacidade de redução de desgaste.
+
+Os parâmetros utilizados neste experimento estão apresentados na Tabela \ref{tab:param_parte2_1}.
 
 \begin{table}[H]
 \centering
@@ -225,6 +235,8 @@ Semente Aleatória & 123 \\
 \subsubsection{Exercício 2: Delineamento em Blocos Casualizados (RCBD)}
 
 Investigação de 4 dietas (D1, D2, D3, D4) em 3 gaiolas (G1, G2, G3) como blocos, com forte efeito de bloco e tratamento.
+
+Os parâmetros utilizados neste experimento estão apresentados na Tabela \ref{tab:param_parte2_2}.
 
 \begin{table}[H]
 \centering
@@ -286,7 +298,7 @@ Os resultados da simulação são apresentados em três etapas: análise da popu
 
 \paragraph{Distribuição da População Original}
 
-A população Exponencial original com parâmetro $\lambda = 0.2$ apresenta assimetria fortemente positiva (skewness $\approx$ 1.97), caracterizando uma distribuição altamente não-normal com cauda longa à direita. A Figura \ref{fig:tcl_pop} mostra claramente este padrão: a maioria dos valores concentra-se à esquerda com uma cauda extensa à direita, impossibilitando a aplicação direta de métodos que assumem normalidade.
+A população Exponencial original com parâmetro $\lambda = 0.2$ apresenta assimetria fortemente positiva (skewness $\approx$ 1.97), caracterizando uma distribuição altamente não-normal com cauda longa à direita. A Figura \ref{fig:tcl_pop} mostra claramente este padrão: a maioria dos valores concentra-se à esquerda com uma cauda extensa à direita, impossibilitando a aplicação direta de métodos baseados em normalidade.
 
 \begin{figure}[H]
 \centering
@@ -295,11 +307,28 @@ A população Exponencial original com parâmetro $\lambda = 0.2$ apresenta assi
 \label{fig:tcl_pop}
 \end{figure}
 
+\paragraph{Parâmetros e Resultados da Simulação TCL}
+
+Os parâmetros utilizados na simulação do Teorema Central do Limite estão apresentados na Tabela \ref{tab:parametros_tcl}, enquanto os resultados das simulações (incluindo assimetrias das médias amostrais e taxa de cobertura do intervalo de confiança) encontram-se na Tabela \ref{tab:resultados_tcl}.
+
+\input{tabelas_latex/parte_1_tcl/01_parametros_tcl.tex}
+
+\input{tabelas_latex/parte_1_tcl/02_resultados_tcl.tex}
+
 \paragraph{Distribuições das Médias Amostrais}
 
 As distribuições das médias amostrais para tamanhos amostrais pequeno ($n=5$) e grande ($n=50$) evidenciam a progressiva convergência para normalidade. Este é o resultado central do Teorema Central do Limite: apesar da população original ser severamente assimétrica, a distribuição das médias amostrais aproxima-se de uma distribuição normal conforme $n$ aumenta.
 
-A Figura \ref{fig:tcl_n50} demonstra isso de forma clara: para $n=50$, a distribuição das médias assume uma forma aproximadamente simétrica e gaussiana, com assimetria reduzida a apenas 0.30 (redução de 85\% em relação à população). Esta transformação permite aplicar procedimentos inferenciais baseados na distribuição normal com segurança.
+A Figura \ref{fig:tcl_n5} demonstra o comportamento inicial com $n=5$: a distribuição ainda retém uma assimetria moderada de aproximadamente 0.85, indicando que para tamanhos amostrais pequenos, a convergência para normalidade ainda não é completa.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_1_tcl/histograma_tcl_n5.png}
+\caption{Distribuição das Médias Amostrais para $n=5$. Ainda apresenta assimetria moderada (0.85), evidenciando que a convergência para normalidade é progressiva com o aumento do tamanho amostral.}
+\label{fig:tcl_n5}
+\end{figure}
+
+A Figura \ref{fig:tcl_n50} demonstra o resultado para $n=50$: a distribuição das médias assume uma forma aproximadamente simétrica e gaussiana, com assimetria reduzida a apenas 0.30 (redução de 85\% em relação à população). Esta transformação permite aplicar procedimentos inferenciais baseados na distribuição normal com segurança.
 
 \begin{figure}[H]
 \centering
@@ -307,8 +336,6 @@ A Figura \ref{fig:tcl_n50} demonstra isso de forma clara: para $n=50$, a distrib
 \caption{Distribuição das Médias Amostrais para $n=50$. Redução de aproximadamente 85\% na assimetria confirma forte convergência para distribuição normal, com forma de sino claramente visível.}
 \label{fig:tcl_n50}
 \end{figure}
-
-\input{resultados/parte_1_tcl/tabela_tcl_resultados}
 
 \paragraph{Validação do Intervalo de Confiança}
 
@@ -322,25 +349,59 @@ A taxa de cobertura observada compara a proporção de intervalos que contêm o 
 
 \subsection{Parte 2: Apresentação dos Resultados ANOVA}
 
-Os três experimentos ANOVA foram conduzidos seguindo os delineamentos especificados na Metodologia, utilizando dados simulados com estruturas de efeitos conhecidas. Esta subsection apresenta os resultados brutos de cada experimento sem interpretações analíticas.
+Os três experimentos ANOVA foram conduzidos seguindo os delineamentos especificados na Metodologia, utilizando dados simulados com estruturas de efeitos conhecidas.
 
 \subsubsection{Exercício 1: ANOVA de Fator Único (One-Way)}
 
-Este experimento compara três revestimentos (A, B, C) em sua capacidade de redução de desgaste. Foram realizadas 30 repetições por revestimento, totalizando 90 observações. Os resultados da análise de variância estão resumidos na tabela abaixo.
+Este experimento compara três revestimentos (A, B, C) em sua capacidade de redução de desgaste. Foram realizadas 30 repetições por revestimento, totalizando 90 observações. Os parâmetros estão resumidos na Tabela \ref{tab:parametros_oneway} e os resultados da análise de variância estão na Tabela \ref{tab:anova_oneway}. O teste de Tukey HSD foi utilizado para identificar quais pares de revestimentos diferem significativamente, conforme mostrado nas Figuras \ref{fig:oneway_box} e \ref{fig:tukey_oneway}.
 
-\input{resultados/parte_2_oneway/tabela_oneway_resultados}
+\input{tabelas_latex/parte_2_oneway/03_parametros_oneway.tex}
+
+\input{tabelas_latex/parte_2_oneway/04_anova_oneway.tex}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_oneway/boxplot_oneway.png}
+\caption{Boxplot da ANOVA One-Way. Distribuição da redução de desgaste para cada revestimento (A, B, C), mostrando diferenças substanciais entre os grupos. A caixa representa os quartis, a linha central é a mediana, e os pontos são outliers.}
+\label{fig:oneway_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_oneway/tukey_oneway.png}
+\caption{Teste de Tukey HSD para ANOVA One-Way. Comparações múltiplas entre pares de revestimentos identificando diferenças significativas. Intervalos que não cruzam o zero indicam pares que diferem significativamente.}
+\label{fig:tukey_oneway}
+\end{figure}
 
 \subsubsection{Exercício 2: Delineamento em Blocos Casualizados (RCBD)}
 
-O segundo experimento avalia o desempenho de 4 dietas (D1, D2, D3, D4) em 3 gaiolas (G1, G2, G3) como blocos, totalizando 12 observações. O bloqueamento por gaiola controla a variabilidade sistemática entre unidades experimentais. Os resultados estão apresentados na tabela seguinte.
+O segundo experimento avalia o desempenho de 4 dietas (D1, D2, D3, D4) em 3 gaiolas (G1, G2, G3) como blocos, totalizando 12 observações. O bloqueamento por gaiola controla a variabilidade sistemática entre unidades experimentais. Os parâmetros estão apresentados na Tabela \ref{tab:parametros_rcbd}, os resultados da ANOVA na Tabela \ref{tab:anova_rcbd}, e as visualizações nas Figuras \ref{fig:rcbd_box} e \ref{fig:tukey_rcbd}.
 
-\input{resultados/parte_2_rcbd/tabela_rcbd_resultados}
+\input{tabelas_latex/parte_2_rcbd/06_parametros_rcbd.tex}
+
+\input{tabelas_latex/parte_2_rcbd/07_anova_rcbd.tex}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_rcbd/boxplot_rcbd.png}
+\caption{Boxplot do Delineamento em Blocos Casualizados. Distribuição do ganho de peso para cada dieta (D1-D4) em cada bloco (G1-G3), evidenciando efeitos de blocos e tratamentos.}
+\label{fig:rcbd_box}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_rcbd/tukey_rcbd.png}
+\caption{Teste de Tukey HSD para ANOVA RCBD. Comparações múltiplas entre dietas controlando pela variação dos blocos (gaiolas).}
+\label{fig:tukey_rcbd}
+\end{figure}
 
 \subsubsection{Exercício 3: ANOVA Fatorial Completa 2×2 com Interação}
 
-Este experimento investiga os efeitos de Temperatura (2 níveis: T1 Baixa, T2 Alta) e Irrigação (2 níveis: I1 Mínima, I2 Máxima) na produtividade agrícola. Foram realizadas 5 replicações para cada uma das 4 combinações de tratamentos, totalizando 20 observações. 
+Este experimento investiga os efeitos de Temperatura (2 níveis: T1 Baixa, T2 Alta) e Irrigação (2 níveis: I1 Mínima, I2 Máxima) na produtividade agrícola. Foram realizadas 5 replicações para cada uma das 4 combinações de tratamentos, totalizando 20 observações. Os parâmetros estão na Tabela \ref{tab:parametros_fatorial}, os resultados da ANOVA na Tabela \ref{tab:anova_fatorial}, e os gráficos de interação nas Figuras \ref{fig:fatorial_int}, \ref{fig:fatorial_box} e \ref{fig:heatmap_fatorial}.
 
-O gráfico de interação (Figura \ref{fig:fatorial_int}) apresenta as respostas médias em cada combinação de fatores. O boxplot (Figura \ref{fig:fatorial_box}) mostra a distribuição completa dos dados para cada tratamento, incluindo mediana, quartis e outliers.
+\input{tabelas_latex/parte_2_fatorial/08_parametros_fatorial.tex}
+
+\input{tabelas_latex/parte_2_fatorial/09_anova_fatorial.tex}
 
 \begin{figure}[H]
 \centering
@@ -356,7 +417,12 @@ O gráfico de interação (Figura \ref{fig:fatorial_int}) apresenta as respostas
 \label{fig:fatorial_box}
 \end{figure}
 
-\input{resultados/parte_2_fatorial/tabela_fatorial_resultados}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{resultados/parte_2_fatorial/heatmap_fatorial.png}
+\caption{Heatmap do Planejamento Fatorial 2×2. Representação em cores das respostas médias para cada combinação de temperatura e irrigação, destacando a combinação ótima T1×I2.}
+\label{fig:heatmap_fatorial}
+\end{figure}
 
 \subsection{Parte 3: Análise dos Exercícios}
 
@@ -372,30 +438,32 @@ O resultado principal é que a Normalidade da distribuição das médias amostra
 
 \paragraph{Análise do Exercício 1: One-Way ANOVA}
 
-A análise de variância de fator único demonstra diferenças significativas entre os três revestimentos. O teste F rejeita a hipótese nula de igualdade de médias. As comparações múltiplas de Tukey HSD identificam quais pares de revestimentos diferem significativamente.
+A análise de variância de fator único demonstra diferenças significativas entre os três revestimentos (A, B, C). O teste F rejeita a hipótese nula de igualdade de médias. As comparações múltiplas de Tukey HSD, apresentadas na Figura \ref{fig:tukey_oneway}, identificam quais pares de revestimentos diferem significativamente. A visualização em boxplot (Figura \ref{fig:oneway_box}) mostra a distribuição clara dos dados em cada grupo, confirmando o poder discriminativo do experimento.
 
-\paragraph{Exercício 2: RCBD (Blocagem)}
+\paragraph{Análise do Exercício 2: RCBD (Bloqueamento)}
 
-O Delineamento em Blocos Casualizados (RCBD) investiga 4 dietas (D1-D4) em 3 gaiolas (G1-G3) como blocos. A comparação entre RCBD e CRD (Delineamento Completamente Casualizado) evidencia o ganho prático do bloqueamento:
+O Delineamento em Blocos Casualizados (RCBD) investiga 4 dietas (D1-D4) em 3 gaiolas (G1-G3) como blocos. A comparação com um delineamento completamente casualizado (CRD) evidencia o ganho prático do bloqueamento:
 
 \begin{enumerate}
-    \item \textbf{Efeito do Bloco:} O Bloco (Gaiola) apresenta um p-valor muito baixo, indicando que a variação entre gaiolas é significativa e deve ser controlada.
-    \item \textbf{Quadrado Médio do Resíduo (QM$_{\text{Resíduo}}$):} O valor de QM$_{\text{Resíduo}}$ no RCBD é significativamente menor que no CRD, refletindo o isolamento da variação sistemática do bloco do erro aleatório.
-    \item \textbf{Efeito do Tratamento (Dieta):} O p-valor da Dieta é menor no modelo RCBD comparado ao CRD, confirmando a rejeição mais robusta de H$_0$ pois a variação sistemática do bloco foi isolada.
+    \item \textbf{Efeito do Bloco:} O fator Bloco (Gaiola) apresenta um p-valor muito baixo, indicando que a variação entre gaiolas é significativa e deve ser controlada.
+    \item \textbf{Quadrado Médio do Resíduo (QM$_{\text{Resíduo}}$):} O valor de QM$_{\text{Resíduo}}$ no RCBD é significativamente menor que em um CRD equivalente, refletindo o isolamento da variação sistemática do bloco do erro aleatório.
+    \item \textbf{Efeito do Tratamento (Dieta):} O p-valor da Dieta é menor no modelo RCBD comparado a um CRD, confirmando a rejeição mais robusta de H$_0$ pois a variação sistemática do bloco foi isolada.
 \end{enumerate}
 
-Este resultado demonstra que o bloqueamento aumenta o poder estatístico para detecção de diferenças entre tratamentos, resultando em conclusões mais confiáveis com a mesma quantidade de dados.
+Este resultado demonstra que o bloqueamento aumenta o poder estatístico para detecção de diferenças entre tratamentos, resultando em conclusões mais confiáveis com a mesma quantidade de dados. As figuras \ref{fig:rcbd_box} e \ref{fig:tukey_rcbd} visualizam essas diferenças.
 
-\paragraph{Exercício 3: ANOVA Fatorial (Interação)}
+\paragraph{Análise do Exercício 3: ANOVA Fatorial (Interação)}
 
 O planejamento fatorial 2×2 investiga Temperatura (T1, T2) e Irrigação (I1, I2) com forte interação esperada. Os resultados revelam:
 
 \begin{enumerate}
     \item \textbf{Interação T×I:} O p-valor para o termo de interação (Temperatura:Irrigação) é significativamente baixo (P $\ll$ 0.05), indicando que o efeito da Irrigação depende criticamente da Temperatura.
-    \item \textbf{Padrão de Inversão:} A análise de comparações múltiplas de Tukey HSD nas 4 combinações (T1×I1, T1×I2, T2×I1, T2×I2) confirma o padrão de inversão: a Irrigação Máxima (I2) é a melhor escolha apenas em Temperatura Baixa (T1), sendo uma das piores em Temperatura Alta (T2).
-    \item \textbf{Combinação Ótima:} A combinação ótima T1×I2 apresenta rendimento máximo, mas isto não pode ser predito pelos efeitos principais isolados.
+    \item \textbf{Padrão de Inversão:} A Figura \ref{fig:fatorial_int} mostra claramente as linhas não-paralelas, confirmando o padrão de inversão: a Irrigação Máxima (I2) é a melhor escolha apenas em Temperatura Baixa (T1), sendo uma das piores em Temperatura Alta (T2).
+    \item \textbf{Combinação Ótima:} A Figura \ref{fig:heatmap_fatorial} destaca que a combinação ótima T1×I2 apresenta rendimento máximo, mas isto não pode ser predito pelos efeitos principais isolados.
     \item \textbf{Conclusão:} A significância da interação impede interpretação isolada dos efeitos principais, exigindo recomendação baseada na combinação ótima identificada (T1×I2).
 \end{enumerate}
+
+O boxplot da Figura \ref{fig:fatorial_box} completa a visualização mostrando a distribuição completa dos dados em cada combinação de tratamentos.
 
 % ===== CONCLUSÃO =====
 \section{Conclusão}
