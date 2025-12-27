@@ -45,27 +45,34 @@
 % ===== CAPA =====
 \thispagestyle{empty}
 \begin{center}
-\vspace*{1cm}
 
-{\large \textbf{CEFET-MG}}
+\vspace*{0.8cm}
 
-{\large Centro Federal de Educação Tecnológica de Minas Gerais}
+{\large \textbf{CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA DE MINAS GERAIS}}
 
-\vspace{0.5cm}
+\vspace{0.2cm}
 
-{\large \textit{Planejamento e Análise Estatística de Experimentos}}
-
-\vspace{2cm}
-
-{\Huge \textbf{Simulação Estatística, TCL e ANOVA}}
+{\large CEFET-MG}
 
 \vspace{1.5cm}
 
-{\large Leonardo Vieira Guimarães}
+{\normalsize Planejamento e Análise Estatística de Experimentos}
+
+\vspace{4cm}
+
+{\huge \textbf{SIMULAÇÃO ESTATÍSTICA, TEOREMA CENTRAL DO LIMITE E ANOVA}}
+
+\vspace{3cm}
+
+{\normalsize Leonardo Vieira Guimarães}
 
 \vspace*{\fill}
 
-{\large \today}
+{\normalsize Belo Horizonte}
+
+\vspace{0.2cm}
+
+{\normalsize \the\year}
 
 \end{center}
 
@@ -397,7 +404,7 @@ O segundo experimento avalia o desempenho de 4 dietas (D1, D2, D3, D4) em 3 gaio
 
 \subsubsection{Exercício 3: ANOVA Fatorial Completa 2×2 com Interação}
 
-Este experimento investiga os efeitos de Temperatura (2 níveis: T1 Baixa, T2 Alta) e Irrigação (2 níveis: I1 Mínima, I2 Máxima) na produtividade agrícola. Foram realizadas 5 replicações para cada uma das 4 combinações de tratamentos, totalizando 20 observações. Os parâmetros estão na Tabela \ref{tab:parametros_fatorial}, os resultados da ANOVA na Tabela \ref{tab:anova_fatorial}, e os gráficos de interação nas Figuras \ref{fig:fatorial_int}, \ref{fig:fatorial_box} e \ref{fig:heatmap_fatorial}.
+Este experimento investiga os efeitos de Temperatura (2 níveis: T1 Baixa, T2 Alta) e Irrigação (2 níveis: I1 Mínima, I2 Máxima) na produtividade agrícola. Foram realizadas 5 replicações para cada uma das 4 combinações de tratamentos, totalizando 20 observações. Os parâmetros estão na Tabela \ref{tab:parametros_fatorial}, os resultados da ANOVA na Tabela \ref{tab:anova_fatorial}, e os gráficos de interação nas Figuras \ref{fig:fatorial_int} e \ref{fig:fatorial_box}.
 
 \input{tabelas_latex/parte_2_fatorial/08_parametros_fatorial.tex}
 
@@ -417,12 +424,7 @@ Este experimento investiga os efeitos de Temperatura (2 níveis: T1 Baixa, T2 Al
 \label{fig:fatorial_box}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{resultados/parte_2_fatorial/heatmap_fatorial.png}
-\caption{Heatmap do Planejamento Fatorial 2×2. Representação em cores das respostas médias para cada combinação de temperatura e irrigação, destacando a combinação ótima T1×I2.}
-\label{fig:heatmap_fatorial}
-\end{figure}
+
 
 \subsection{Parte 3: Análise dos Exercícios}
 
@@ -459,7 +461,7 @@ O planejamento fatorial 2×2 investiga Temperatura (T1, T2) e Irrigação (I1, I
 \begin{enumerate}
     \item \textbf{Interação T×I:} O p-valor para o termo de interação (Temperatura:Irrigação) é significativamente baixo (P $\ll$ 0.05), indicando que o efeito da Irrigação depende criticamente da Temperatura.
     \item \textbf{Padrão de Inversão:} A Figura \ref{fig:fatorial_int} mostra claramente as linhas não-paralelas, confirmando o padrão de inversão: a Irrigação Máxima (I2) é a melhor escolha apenas em Temperatura Baixa (T1), sendo uma das piores em Temperatura Alta (T2).
-    \item \textbf{Combinação Ótima:} A Figura \ref{fig:heatmap_fatorial} destaca que a combinação ótima T1×I2 apresenta rendimento máximo, mas isto não pode ser predito pelos efeitos principais isolados.
+    \item \textbf{Combinação Ótima:} A combinação ótima T1×I2 apresenta rendimento máximo, mas isto não pode ser predito pelos efeitos principais isolados.
     \item \textbf{Conclusão:} A significância da interação impede interpretação isolada dos efeitos principais, exigindo recomendação baseada na combinação ótima identificada (T1×I2).
 \end{enumerate}
 
