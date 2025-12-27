@@ -1,0 +1,231 @@
+================================================================================
+📊 EXPLICAÇÃO DOS DADOS GTA - SISTEMA DE INFORMAÇÕES ZOOTÉCNICAS
+================================================================================
+
+Data da Análise: 27 de dezembro de 2025
+Pasta de Origem: D:\OneDrive\Pessoais\Doutorado\Cefet\data
+
+================================================================================
+📋 RESUMO GERAL
+================================================================================
+
+Este projeto contém dados do sistema GTA (Guia de Trânsito Animal) do Brasil,
+que registra o movimento de animais entre produtores. Os arquivos foram 
+analisados automaticamente com detecção de delimitador (";") para garantir
+a leitura correta de todas as colunas.
+
+================================================================================
+📁 ARQUIVOS DISPONÍVEIS (7 no total)
+================================================================================
+
+1. bd_gta_dentro_mg202505091607.csv
+   ├─ Tamanho: 950.40 MB
+   ├─ Linhas: 8.298.490
+   ├─ Colunas: 15
+   ├─ Delimitador: ;
+   └─ Descrição: Base principal de GTAs dentro de Minas Gerais
+      Contém dados completos de transporte animal entre produtores
+
+   Colunas Principais:
+      • nr_gta (int64): Número da Guia de Trânsito Animal
+      • nr_serie (object): Série da GTA
+      • id_gta (int64): Identificador único da GTA
+      • dt_emissao_gta (object): Data de emissão da GTA
+      • cod_produtor_origem (int64): Código do produtor origem
+      • cod_produtor_destino (int64): Código do produtor destino
+      • id_tipo_finalidade_gta (int64): Tipo de finalidade do transporte
+      • ds_meio_transporte (object): Descrição do meio de transporte
+      • cod_municipio_origem (int64): Código do município origem
+      • nome_municipio_origem (object): Nome do município origem
+      • estado_origem (object): Estado de origem
+      • cod_municipio_destino (int64): Código do município destino
+      • nome_municipio_destino (object): Nome do município destino
+      • estado_destino (object): Estado destino
+      • qtd (int64): Quantidade de animais transportados
+
+
+2. bd_gta_dentro_mg_faixa_etaria202505091602.csv
+   ├─ Tamanho: 652.78 MB
+   ├─ Linhas: 11.838.896
+   ├─ Colunas: 5
+   ├─ Delimitador: ;
+   └─ Descrição: Dados de faixa etária dos animais
+      Quebra dos animais por faixa etária e sexo
+
+   Colunas:
+      • id_gta (int64): Referência à GTA
+      • dt_emissao_gta (object): Data de emissão
+      • ds_faixa_etaria (object): Faixa etária (ex: "De 0 até 12 meses")
+      • tp_sexo (object): Tipo de sexo (M/F)
+      • qt_animais (int64): Quantidade de animais nesta faixa
+
+
+3. bd_gta_oe202505091618.csv
+   ├─ Tamanho: 6.46 MB
+   ├─ Linhas: 64.677
+   ├─ Colunas: 14
+   ├─ Delimitador: ;
+   └─ Descrição: GTAs de origem em outro estado
+      Importações de animais de outros estados para Minas Gerais
+
+   Colunas:
+      • nr_gta, nr_serie, id_gta_origem_outro_estado (ids)
+      • dt_emissao_gta (object): Data de emissão
+      • cod_produtor_origem, cod_produtor_destino (int64)
+      • id_tipo_finalidade_gta (int64): Tipo de finalidade
+      • municipio_origem, cod_municipio_origem (location)
+      • estado_origem (object): Estado de origem
+      • municipio_destino, cod_municipio_destino (location)
+      • estado_destino (object): Estado destino
+      • qtd (int64): Quantidade de animais
+
+
+4. bd_gta_oe_faixa_etaria202505091630.csv
+   ├─ Tamanho: 4.55 MB
+   ├─ Linhas: 87.560
+   ├─ Colunas: 5
+   ├─ Delimitador: ;
+   └─ Descrição: Faixa etária dos animais importados de outro estado
+      Complemento ao arquivo bd_gta_oe com quebra por faixa etária
+
+   Colunas:
+      • id_gta_origem_outro_estado (int64): Referência
+      • dt_emissao_gta (object): Data
+      • ds_faixa_etaria (object): Faixa etária
+      • tp_sexo (object): Sexo
+      • qt_animais (int64): Quantidade
+
+
+5. gtas_com_distancias.csv
+   ├─ Tamanho: 1.156.59 MB
+   ├─ Linhas: 8.363.167
+   ├─ Colunas: 21
+   ├─ Delimitador: ;
+   └─ Descrição: GTAs com cálculo de distâncias e durações
+      Enriquecimento dos dados com informações de transporte
+
+   Colunas Adicionais (além das GTAs básicas):
+      • Acima de 36 meses (int64): Quantidade de animais adultos
+      • De 0 até 12 meses (int64): Quantidade de filhotes
+      • De 13 até 24 meses (int64): Quantidade juvenis
+      • De 25 até 36 meses (int64): Quantidade sub-adultos
+      • distancia_km (float64): Distância de transporte em km
+      • duracao_min (float64): Duração estimada em minutos
+
+
+6. matriz_distancias.csv
+   ├─ Tamanho: 370.34 MB
+   ├─ Linhas: 4.751.210
+   ├─ Colunas: 6
+   ├─ Delimitador: ;
+   └─ Descrição: Matriz de distâncias entre municípios
+      Referência para cálculos de distância entre municipios
+
+   Colunas:
+      • municipio_origem (object): Município de origem
+      • municipio_destino (object): Município de destino
+      • dist_rod_km (float64): Distância rodoviária em km
+      • dist_rod_min (float64): Tempo rodoviário em minutos
+      • dist_ped_km (float64): Distância pedestre em km
+      • dist_ped_min (float64): Tempo pedestre em minutos
+
+
+7. possiveis_fraudes.csv
+   ├─ Tamanho: 0.02 MB
+   ├─ Linhas: 311
+   ├─ Colunas: 7
+   ├─ Delimitador: ;
+   └─ Descrição: GTAs identificadas como possíveis fraudes
+      Registros suspeitos que requerem investigação
+
+   Colunas:
+      • id_gta (int64): Identificador da GTA suspeita
+      • dt_emissao_gta (object): Data de emissão
+      • cod_produtor_origem (int64): Código produtor origem
+      • cod_produtor_destino (int64): Código produtor destino
+      • qtd (int64): Quantidade de animais
+      • distancia_km (float64): Distância de transporte
+      • data_seconds (int64): Timestamp da emissão
+
+
+================================================================================
+🔑 CONCEITOS-CHAVE
+================================================================================
+
+• GTA (Guia de Trânsito Animal): Documento legal que autoriza o transporte
+  de animais entre estados/municípios no Brasil
+
+• Delimitador: Todos os arquivos usam ";" como separador de colunas
+  (característica comum de dados brasileiros)
+
+• Tipos de Dados:
+  - int64: Números inteiros (IDs, códigos, quantidades)
+  - object: Texto (nomes, descrições, datas)
+  - float64: Números com casas decimais (distâncias, durações)
+
+• Faixas Etárias: Classificação por idade dos animais
+  - De 0 até 12 meses (filhotes)
+  - De 13 até 24 meses (juvenis)
+  - De 25 até 36 meses (sub-adultos)
+  - Acima de 36 meses (adultos)
+
+
+================================================================================
+📊 RECOMENDAÇÕES PARA ANÁLISE
+================================================================================
+
+1. ANÁLISE DE MOVIMENTO DE ANIMAIS:
+   Use bd_gta_dentro_mg202505091607.csv para estudar rotas principais
+   e volumes de transporte entre regiões.
+
+2. ANÁLISE DE FAIXA ETÁRIA:
+   Combine os arquivos de faixa etária para estudar padrões de
+   transporte por idade dos animais.
+
+3. ANÁLISE DE DISTÂNCIA:
+   Use gtas_com_distancias.csv para correlações entre distância
+   e características do transporte.
+
+4. DETECÇÃO DE FRAUDES:
+   Investigue possiveis_fraudes.csv para entender padrões de
+   transações suspeitas.
+
+5. RELACIONAMENTO ENTRE ARQUIVOS:
+   Use id_gta como chave para relacionar dados de diferentes arquivos.
+
+
+================================================================================
+📈 INSIGHTS INICIAIS
+================================================================================
+
+• Volume Total: ~8.3 milhões de GTAs dentro de MG + ~64.6 mil de outro estado
+• Tamanho Total: ~4 GB de dados (altamente comprimível)
+• Cobertura Geográfica: Minas Gerais e estados vizinhos
+• Período: Dados atualizados até maio de 2025
+• Qualidade: Todos os 7 arquivos foram validados com sucesso
+
+
+================================================================================
+🔧 FERRAMENTAS UTILIZADAS
+================================================================================
+
+• Python 3.x com pandas: Análise e processamento
+• Detecção automática de delimitador: Garante leitura correta
+• Análise de tipos de dados: Validação de integridade
+• Relatório em CSV + TXT: Documentação estruturada
+
+
+================================================================================
+📝 PRÓXIMOS PASSOS
+================================================================================
+
+1. Executar análises estatísticas com os dados explorados
+2. Aplicar Teorema do Limite Central (TCL) para validação
+3. Calcular Intervalos de Confiança (IC)
+4. Realizar ANOVA para comparações entre grupos
+5. Gerar visualizações e relatórios finais
+
+
+================================================================================
+Arquivo Gerado: 27/12/2025 11:07:32
+================================================================================

@@ -1,8 +1,0 @@
-﻿Arquivo,Tamanho_MB,Linhas,Colunas,Variáveis
-bd_gta_dentro_mg202505091607.csv,950.4,8298490,1,"nr_gta;""nr_serie"";""id_gta"";""dt_emissao_gta"";""cod_produtor_origem"";""cod_produtor_destino"";""id_tipo_finalidade_gta"";""ds_meio_transporte"";""cod_municipio_origem"";""nome_municipio_origem"";""estado_origem"";""cod_municipio_destino"";""nome_municipio_destino"";""estado_destino"";""qtd"""
-bd_gta_dentro_mg_faixa_etaria202505091602.csv,652.78,11838896,1,"id_gta;""dt_emissao_gta"";""ds_faixa_etaria"";""tp_sexo"";""qt_animais"""
-bd_gta_oe202505091618.csv,6.46,64677,1,"nr_gta;""nr_serie"";""id_gta_origem_outro_estado"";""dt_emissao_gta"";""cod_produtor_origem"";""cod_produtor_destino"";""id_tipo_finalidade_gta"";""municipio_origem"";""cod_municipio_origem"";""estado_origem"";""municipio_destino"";""cod_municipio_destino"";""estado_destino"";""qtd"""
-bd_gta_oe_faixa_etaria202505091630.csv,4.55,87560,1,"id_gta_origem_outro_estado;""dt_emissao_gta"";""ds_faixa_etaria"";""tp_sexo"";""qt_animais"""
-gtas_com_distancias.csv,1156.59,8363167,1,nr_gta;nr_serie;id_gta;dt_emissao_gta;cod_produtor_origem;cod_produtor_destino;id_tipo_finalidade_gta;ds_meio_transporte;cod_municipio_origem;nome_municipio_origem;estado_origem;cod_municipio_destino;nome_municipio_destino;estado_destino;qtd;Acima de 36 meses;De 0 até 12 meses;De 13 até 24 meses;De 25 até 36 meses;distancia_km;duracao_min
-matriz_distancias.csv,370.34,4751210,1,municipio_origem;municipio_destino;dist_rod_km;dist_rod_min;dist_ped_km;dist_ped_min
-possiveis_fraudes.csv,0.02,311,1,id_gta;dt_emissao_gta;cod_produtor_origem;cod_produtor_destino;qtd;distancia_km;data_seconds
