@@ -1,129 +1,331 @@
-# 📊 Estudo Dirigido 3: Planejamento, Análise e Estatística de Experimentos
+# 📊 Estudo Dirigido 3: Análise Estatística com Dados Reais
 
-> **⚠️ IMPORTANTE**: Este trabalho é a continuação dos **Estudos Dirigidos 1 e 2** e marca a transição para o **Trabalho Final com Dados Reais**
+## 🎯 Descrição do Projeto
 
----
-
-## 📚 Progresso dos Estudos
-
-### 📖 **Estudo Dirigido 1** 
-Fundamentos teóricos e conceitos básicos de planejamento experimental:
-- Conceitos estatísticos fundamentais
-- Distribuições de probabilidade
-- Amostragem e estimação
-- Testes de hipóteses
-
-### 📖 **Estudo Dirigido 2**
-Aprofundamento em técnicas estatísticas:
-- Teorema Central do Limite (TCL)
-- Intervalos de confiança
-- Análise de variância (ANOVA)
-- Análise de regressão
-- Testes de normalidade
-
-### 🎯 **Estudo Dirigido 3** (ATUAL)
-**Aplicação Prática: Análise Estatística com Dados Reais**
-
-Este estudo marca a transição da teoria para a prática, integrando todos os conceitos aprendidos nos estudos dirigidos 1 e 2 para análise de **dados reais**.
+Projeto de análise estatística aplicada integrando **Teorema Central do Limite (TCL)**, **Intervalos de Confiança (IC)** e **Análise de Variância (ANOVA)** em dados reais do GTA (Grand Theft Auto). O trabalho transita da teoria para a prática, utilizando dados simulados e reais para validar conceitos estatísticos fundamentais.
 
 ---
 
-## 📁 Estrutura de Diretórios
+## 📋 Conteúdo dos Notebooks
+
+### 1️⃣ `01_analise_exponencial_simulada.ipynb`
+**Análise estatística com dados simulados (distribuição exponencial)**
+
+Demonstra conceitos teóricos usando dados controlados e simulados:
+- Geração de amostras de distribuição exponencial
+- Aplicação do Teorema Central do Limite
+- Cálculo de Intervalos de Confiança
+- Visualizações de convergência
+
+**Saídas:**
+- Gráficos de distribuições e Q-Q plots
+- Tabelas com estatísticas descritivas
+
+---
+
+### 2️⃣ `analise_tcl_ic_anova_dados_reais.ipynb` ⭐ **PRINCIPAL**
+**Análise estatística completa com dados reais do GTA**
+
+Implementação completa das três técnicas estatísticas em dados reais:
+
+#### 📊 **Parte 1 - Exploração de Dados**
+- Carregamento e análise de 100.000 registros
+- Estatísticas descritivas (média, mediana, desvio padrão, etc.)
+- Testes de normalidade (Shapiro-Wilk)
+- Visualização: histograma + Q-Q plot
+
+**Arquivo de saída:** `01_estatisticas_dados_reais.csv`
+
+#### 📈 **Parte 2 - Teorema Central do Limite (TCL)**
+Valida a convergência para a distribuição normal com amostras de tamanho $n = 5$ e $n = 50$
+
+- Extração de 10.000 amostras para cada tamanho
+- Cálculo das médias amostrais
+- Comparação com distribuição teórica (z-score)
+
+**Visualizações separadas:**
+- `02_tcl_histograma_n5.png` - Histograma das médias (n=5)
+- `02_tcl_histograma_n50.png` - Histograma das médias (n=50)
+- `02_tcl_qqplot_n5.png` - Q-Q plot (n=5)
+- `02_tcl_qqplot_n50.png` - Q-Q plot (n=50)
+
+**Arquivo de saída:** `02_tcl_resultados.csv`
+
+#### 🎯 **Parte 3 - Intervalos de Confiança (IC)**
+Construção e validação de intervalos de confiança a 95%
+
+- Geração de 10.000 intervalos independentes
+- Cálculo da taxa de cobertura (esperado ≈ 95%)
+- Análise da variabilidade dos limites
+
+**Visualizações separadas:**
+- `03_ic_intervalos_amostra.png` - Primeiros 100 intervalos
+- `03_ic_distribuicao_limites.png` - Distribuição dos limites inferior e superior
+
+**Arquivos de saída:** 
+- `03_ic_resumo.csv` - Resumo dos resultados
+- `03_ic_amostra_1000.csv` - Amostra de 1.000 intervalos
+
+#### 🔬 **Parte 4 - Análise de Variância (ANOVA)**
+Teste de diferenças entre grupos (por estado)
+
+- Particionamento dos dados por unidade federativa
+- Teste ANOVA de um fator
+- Cálculo de F-statistic e p-value
+
+**Visualizações separadas:**
+- `04_anova_distribuicao_histograma.png` - Histograma da distribuição
+- `04_anova_estatisticas_tabela.png` - Tabela de estatísticas
+
+**Arquivos de saída:**
+- `04_anova_resumo.csv` - Resumo do teste ANOVA
+- `04_estatisticas_por_grupo.csv` - Estatísticas descritivas por grupo
+
+#### 📋 **Parte 5 - Consolidação Final**
+Agregação de todos os parâmetros e resultados
+
+**Arquivo de saída:** `parametros_completos.csv` - Parâmetros consolidados de todas as análises
+
+---
+
+### 3️⃣ `02_analise_dados_reais_gta.ipynb`
+**Análise exploratória adicional com dados reais**
+
+Complementa a análise principal com explorações específicas dos dados GTA.
+
+---
+
+### 4️⃣ `explorador_dados.ipynb`
+**Utilitário de exploração e documentação de CSV**
+
+Ferramenta automatizada para:
+- Detecção automática de delimitadores
+- Análise de estrutura de dados
+- Geração de documentação automática
+
+**Saídas:**
+- `relatorio_dados_detalhado.csv` - Relatório estruturado dos arquivos CSV analisados
+
+---
+
+## 📁 Estrutura de Arquivos
 
 ```
 estudo_dirigido_3/
+├── 01_analise_exponencial_simulada.ipynb
+├── 02_analise_dados_reais_gta.ipynb
+├── analise_tcl_ic_anova_dados_reais.ipynb  ⭐ Notebook principal
+├── explorador_dados.ipynb
+├── requirements.txt
+├── README.md
 │
-├── 01_analise_exponencial_simulada.ipynb    # Análise com dados simulados
-├── 02_analise_dados_reais_gta.ipynb         # Análise com dados reais
-├── requirements.txt                          # Dependências Python
-├── README.md                                 # Este arquivo
+└── relatorio/
+    └── resultados/
+        ├── imagens/
+        │   ├── 01_distribuicao_dados_reais.png
+        │   ├── 02_tcl_histograma_n5.png
+        │   ├── 02_tcl_histograma_n50.png
+        │   ├── 02_tcl_qqplot_n5.png
+        │   ├── 02_tcl_qqplot_n50.png
+        │   ├── 03_ic_intervalos_amostra.png
+        │   ├── 03_ic_distribuicao_limites.png
+        │   ├── 04_anova_distribuicao_histograma.png
+        │   └── 04_anova_estatisticas_tabela.png
+        │
+        ├── 01_estatisticas_dados_reais.csv
+        ├── 02_tcl_resultados.csv
+        ├── 03_ic_resumo.csv
+        ├── 03_ic_amostra_1000.csv
+        ├── 04_anova_resumo.csv
+        ├── 04_estatisticas_por_grupo.csv
+        ├── parametros_completos.csv
+        └── relatorio_dados_detalhado.csv
 │
-├── relatorio/
-│   └── resultados/
-│       ├── dados/                           # Arquivos de dados (CSV e TXT)
-│       │   ├── populacao_exponencial.csv    # Dados da população exponencial simulada
-│       │   ├── estatisticas_tcl.csv         # Resultados do Teorema Central do Limite
-│       │   ├── intervalos_confianca.csv     # Intervalos de confiança calculados
-│       │   ├── dados_gta.csv                # Dados reais do GTA
-│       │   └── resumo_resultados.txt        # Resumo textual de todas as análises
-│       │
-│       └── imagens/                         # Figuras e gráficos
-│           ├── 01_exponencial_simulada/    # Imagens da análise com dados simulados
-│           │   ├── populacao_exponencial.png
-│           │   ├── tcl_convergencia.png
-│           │   ├── intervalos_confianca.png
-│           │   ├── anova_resultados.png
-│           │   └── analise_integrada.png
-│           │
-│           └── 02_dados_reais_gta/         # Imagens da análise com dados reais
-│               ├── distribuicao_gta.png
-│               ├── tcl_dados_reais.png
-│               ├── intervalos_confianca_gta.png
-│               ├── anova_gta.png
-│               └── resumo_analise_gta.png
-│
-└── _arquivos_antigos/                       # Versões anteriores dos notebooks
-
+└── _arquivos_antigos/
+    ├── analise_dados_reais_gta.ipynb
+    ├── informacao.ipynb
+    ├── trabalho_final_com_dados_reais.ipynb
+    └── trabalhofinal/
 ```
 
-## 📝 Descrição dos Arquivos
+---
 
-### Notebooks
+## 📊 Dados Utilizados
 
-#### 1. **01_analise_exponencial_simulada.ipynb**
-- Análise inicial com **dados simulados** de uma distribuição exponencial
-- Aplicação dos conceitos aprendidos nos Estudos Dirigidos 1 e 2
-- Validação de técnicas estatísticas em ambiente controlado
+**Fonte:** Base de dados GTA  
+**Tamanho:** 950.40 MB (8.3 milhões de registros)  
+**Amostra:** 100.000 registros para análise  
 
-**Tópicos cobertos:**
-- Geração de dados simulados
-- Verificação do Teorema Central do Limite
-- Cálculo de intervalos de confiança
-- Análise de variância (ANOVA)
-- Visualização e interpretação de resultados
+**Características dos dados:**
+- Distribuição: Altamente assimétrica (assimetria: 16.70)
+- Curtose: 687.43 (distribuição com caudas muito pesadas)
+- Teste de normalidade: Rejeita hipótese nula (não-normal)
+- Grupos: 1 estado (MG) na análise ANOVA
 
-#### 2. **02_analise_dados_reais_gta.ipynb**
-- Análise com **dados reais** coletados do sistema GTA
-- Aplicação prática de todas as técnicas aprendidas
-- **Esta é a ponte para o Trabalho Final**
+---
 
-### Dados (CSV/TXT)
+## 🔧 Configuração do Ambiente
 
-- **populacao_exponencial.csv**: Amostra de 10.000 valores da população exponencial (λ=2.0)
-- **estatisticas_tcl.csv**: Médias amostrais de diferentes tamanhos de amostra
-- **intervalos_confianca.csv**: Limites inferior e superior dos ICs calculados
-- **dados_gta.csv**: Amostra dos dados reais carregados do arquivo GTA
-- **resumo_resultados.txt**: Estatísticas resumidas (média, desvio padrão, assimetria, etc.)
+### Requisitos
+- **Python:** 3.8 ou superior
+- **Jupyter Notebook:** Latest version
+- **Bibliotecas:** Ver `requirements.txt`
 
-### Imagens
+### Instalação
 
-#### Análise 1: Exponencial Simulada
-- **populacao_exponencial.png**: Distribuição da população com histograma e Q-Q plot
-- **tcl_convergencia.png**: Convergência do TCL para diferentes tamanhos de amostra
-- **intervalos_confianca.png**: Visualização dos 100 primeiros ICs calculados
-- **anova_resultados.png**: Boxplots e distribuição dos grupos (ANOVA)
-- **analise_integrada.png**: Painel com 8 subplots mostrando toda a análise
-
-#### Análise 2: Dados Reais GTA
-- **distribuicao_gta.png**: Distribuição dos dados reais com Q-Q plot
-- **tcl_dados_reais.png**: TCL aplicado aos dados reais
-- **intervalos_confianca_gta.png**: ICs calculados a partir dos dados reais
-- **anova_gta.png**: ANOVA para os grupos disponíveis
-- **resumo_analise_gta.png**: Visualizações consolidadas dos dados reais
-
-## 🚀 Como Gerar os Resultados
-
-Execute os notebooks na ordem:
-
-1. **01_analise_exponencial_simulada.ipynb**: Análise com dados simulados
+1. **Clone o repositório:**
    ```bash
-   jupyter notebook 01_analise_exponencial_simulada.ipynb
+   git clone https://github.com/LeonardoVieiraGuimaraes/DoutoradoCefet.git
+   cd DoutoradoCefet/PlanejamentoAnaliseEstatisticoExperimentos/Trabalhos/estudo_dirigido_3
    ```
 
-2. **02_analise_dados_reais_gta.ipynb**: Análise com dados reais
+2. **Instale as dependências:**
    ```bash
-   jupyter notebook 02_analise_dados_reais_gta.ipynb
+   pip install -r requirements.txt
    ```
+
+3. **Inicie o Jupyter:**
+   ```bash
+   jupyter notebook
+   ```
+
+### Dependências Principais
+- **pandas**: Manipulação de dados
+- **numpy**: Computação numérica
+- **scipy.stats**: Testes e distribuições estatísticas
+- **matplotlib** e **seaborn**: Visualizações
+- **scikit-learn**: Testes adicionais
+
+---
+
+## 📖 Como Usar
+
+### Opção 1: Análise Simples (Dados Simulados)
+Execute `01_analise_exponencial_simulada.ipynb` para visualizar:
+- Geração de dados controlados
+- Aplicação de TCL, IC e ANOVA em ambiente sem ruído
+
+### Opção 2: Análise Completa (Dados Reais) ⭐ **RECOMENDADO**
+Execute `analise_tcl_ic_anova_dados_reais.ipynb` para:
+- Análise estatística completa de dados reais
+- Validação teórica em cenário prático
+- Visualizações publication-quality em alta resolução (300 dpi)
+
+### Opção 3: Exploração de Dados
+Execute `explorador_dados.ipynb` para:
+- Gerar relatório automático da estrutura dos dados
+- Detectar delimitadores e tipos de dados
+- Criar documentação CSV estruturada
+
+---
+
+## 📈 Resultados Esperados
+
+### Teorema Central do Limite
+- ✅ Convergência para distribuição normal conforme $n$ aumenta
+- ✅ Melhor aproximação com $n = 50$ comparado a $n = 5$
+- ✅ Validação via Q-Q plot e testes estatísticos
+
+### Intervalos de Confiança (95%)
+- ✅ Taxa de cobertura ≈ 95%
+- ✅ Amplitude dos intervalos decresce com maior tamanho amostral
+- ✅ Validação da relação entre nível de confiança e largura do intervalo
+
+### ANOVA
+- ✅ Teste de igualdade de médias entre grupos
+- ✅ Cálculo de F-statistic e p-value
+- ✅ Visualização de distribuições por grupo
+
+---
+
+## 📂 Saídas Geradas
+
+### Arquivos CSV
+| Arquivo | Descrição | Linhas |
+|---------|-----------|--------|
+| `01_estatisticas_dados_reais.csv` | Estatísticas descritivas dos dados reais | 1 |
+| `02_tcl_resultados.csv` | Resultados do TCL para n=5 e n=50 | Múltiplas |
+| `03_ic_resumo.csv` | Resumo dos intervalos de confiança | 1 |
+| `03_ic_amostra_1000.csv` | Amostra de 1.000 intervalos | 1.001 |
+| `04_anova_resumo.csv` | Resultado do teste ANOVA | 1 |
+| `04_estatisticas_por_grupo.csv` | Estatísticas por grupo | 2+ |
+| `parametros_completos.csv` | Consolidação de todos os parâmetros | Múltiplos |
+| `relatorio_dados_detalhado.csv` | Documentação automática dos CSVs | 8 |
+
+### Arquivos PNG (Imagens - 300 dpi)
+| Arquivo | Descrição |
+|---------|-----------|
+| `01_distribuicao_dados_reais.png` | Histograma + Q-Q plot dos dados |
+| `02_tcl_histograma_n5.png` | Distribuição das médias (n=5) |
+| `02_tcl_histograma_n50.png` | Distribuição das médias (n=50) |
+| `02_tcl_qqplot_n5.png` | Q-Q plot vs normal (n=5) |
+| `02_tcl_qqplot_n50.png` | Q-Q plot vs normal (n=50) |
+| `03_ic_intervalos_amostra.png` | Primeiros 100 intervalos |
+| `03_ic_distribuicao_limites.png` | Distribuição dos limites |
+| `04_anova_distribuicao_histograma.png` | Histograma da distribuição |
+| `04_anova_estatisticas_tabela.png` | Tabela de estatísticas |
+
+---
+
+## 🔍 Verificação de Integridade
+
+Todos os arquivos de saída são gerados automaticamente com:
+- ✅ Delimitador: `;` (semicolon)
+- ✅ Codificação: UTF-8 com BOM
+- ✅ Decimal: `.` (ponto)
+- ✅ Imagens: PNG 300 dpi
+- ✅ Validação: Sem dados corrompidos
+
+---
+
+## 📚 Conceitos Teóricos
+
+### Teorema Central do Limite (TCL)
+Demonstra que a distribuição das médias amostrais converge para uma distribuição normal, independentemente da distribuição original da população.
+
+$$\sqrt{n} \left(\bar{X}_n - \mu\right) \xrightarrow{d} N(0, \sigma^2)$$
+
+### Intervalos de Confiança (IC)
+Intervalo de estimação que contém o parâmetro populacional com probabilidade $\alpha$ (e.g., 95%).
+
+$$IC: \left[\bar{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \bar{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\right]$$
+
+### Análise de Variância (ANOVA)
+Teste estatístico para verificar se há diferenças significativas entre as médias de grupos.
+
+$$F = \frac{MS_{between}}{MS_{within}}$$
+
+---
+
+## 📝 Notas Importantes
+
+1. **Dados Reais:** A análise utiliza uma amostra de 100.000 registros de um total de 8.3 milhões
+2. **Distribuição Assimétrica:** Os dados possuem distribuição não-normal, o que valida ainda mais o uso do TCL
+3. **Single Group ANOVA:** Com apenas 1 estado (MG), a análise ANOVA é adaptada para gerar visualizações descritivas
+4. **Reprodutibilidade:** Execute novamente o notebook para gerar novas análises (com diferentes amostras aleatórias)
+
+---
+
+## 👤 Autor
+
+**Leonardo Vieira Guimarães**  
+Doutorado em Planejamento e Análise Estatística de Experimentos  
+CEFET-MG
+
+---
+
+## 📜 Licença
+
+Este projeto é parte do programa de Doutorado em Engenharia e não possui restrições de uso interno.
+
+---
+
+## 📞 Suporte
+
+Para dúvidas ou problemas:
+1. Verifique se todas as dependências estão instaladas (`pip install -r requirements.txt`)
+2. Limpe a saída dos notebooks e execute novamente
+3. Certifique-se de que tem espaço em disco suficiente (>2 GB recomendado)
 
 Os resultados serão automaticamente salvos nesta pasta.
 

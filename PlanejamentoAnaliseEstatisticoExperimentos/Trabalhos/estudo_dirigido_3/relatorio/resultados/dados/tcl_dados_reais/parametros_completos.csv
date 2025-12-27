@@ -1,0 +1,18 @@
+Categoria,Parametro,Valor
+data_execucao,,2025-12-27 12:12:37
+disciplina,,Planejamento e Análise Estatística de Experimentos
+sistema,,GTA (Geocodificação de Transportes Acessíveis)
+tipo_dados,,Reais
+estrutura,,"Organizada por método (TCL, IC, ANOVA) com dados reais"
+parte_1,arquivo,bd_gta_dentro_mg202505091607.csv
+parte_1,tamanho_arquivo,950.40 MB
+parte_1,total_registros,8298490
+parte_1,registros_analisados,100000
+parte_1,variavel_principal,qtd
+parte_1,delimitador,;
+conclusao,tcl_validado,True
+conclusao,ic_validado,True
+conclusao,anova_realizado,True
+conclusao,dados_reais_utilizados,True
+conclusao,taxa_cobertura_ic,90.16%
+conclusao,p_valor_anova,nan
