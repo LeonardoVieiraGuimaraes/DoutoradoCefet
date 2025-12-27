@@ -1,0 +1,201 @@
+ARQUIVO ORIGINAL: estudos_dirigidos_1.pdf
+TAMANHO: 0.24 MB
+TOTAL DE PÁGINAS: 4
+================================================================================
+
+
+================================================================================
+PÁGINA 1
+================================================================================
+Exerc´ıcio de Simula¸ca˜o: TCL e IC em Distribuic¸o˜es Assim´etricas
+Aplica¸co˜es do Teorema Central do Limite
+10 de novembro de 2025
+Resumo
+Este exerc´ıcio pra´tico visa demonstrar numericamente a validade do Teorema Central do
+Limite (TCL) e a precisa˜o dos Intervalos de Confian¸ca (IC) baseados na distribuic¸˜ao t (ou
+z) mesmo quando a popula¸ca˜o original segue uma distribui¸ca˜o assim´etrica, como a Exponencial.
+1 Simulac¸a˜o do TCL para Populac¸a˜o Assim´etrica (Exponencial)
+1.1 Setup Inicial
+Utilizaremos a Distribuic¸˜ao Exponencial com paraˆmetro de taxa λ = 0.2.
+M´edia Populacional: µ = 1/λ = 1/0.2 = 5
+O objetivo´e observar como a distribui¸c˜ao das m´edias amostrais se aproxima da Normalidade `a medida
+que o tamanho da amostra (n) aumenta, apesar da forte assimetria da popula¸c˜ao.
+• Populac¸˜ao Gerada: Distribui¸ca˜o Exponencial, N = 100.000, λ = 0.2 (µ = 5).
+• Tamanhos Amostrais: n = 5 (Pequena) e n = 50 (Grande).
+• Nu´mero de Simulac¸˜oes: k = 10.000.
+1.2 Tarefa 1: Implementac¸˜ao do TCL
+Implemente a simula¸ca˜o nos dois ambientes (R e Python). Em ambos os casos, vocˆe deve gerar a
+popula¸c˜ao, coletar as 10.000 m´edias amostrais para n = 5 e n = 50, e gerar os histogramas para
+compara¸c˜ao.
+1.2.1 Co´digo em R
+Listing 1: Simulacao do TCL em R (Assimetria)
+(cid:7) (cid:4)
+1 # Instale o pacote ’moments’ se necessario (install.packages("moments"))
+2 library(moments)
+3
+4 # 1. Gerar a populacao Exponencial (lambda=0.2 -> mu=5)
+5 pop_assim = rexp(100000, rate = 0.2)
+6 mu_verdadeiro = 5
+7 print(paste("Assimetria da Populacao:", skewness(pop_assim)))
+8 # Popula ao original deve ter assimetria proxima de 2
+9
+10 # 2. Simular o TCL para n=5 e n=50
+11 num_simulacoes = 10000
+12 medias_n5 = NULL
+13 medias_n50 = NULL
+14
+15 for(i in 1:num_simulacoes){
+16 amostra_n5 = sample(pop_assim, 5)
+17 amostra_n50 = sample(pop_assim, 50)
+1
+
+================================================================================
+PÁGINA 2
+================================================================================
+18
+19 medias_n5[i] = mean(amostra_n5)
+20 medias_n50[i] = mean(amostra_n50)
+21 }
+22
+23 # 3. Analise dos resultados (Visual e Quantitativa)
+24 # Crie a figura dos histogramas (pode ser executado fora do Overleaf)
+25 # par(mfrow=c(1, 2))
+26 # hist(medias_n5, main = "Dist. Medias (n=5)", breaks = 50, col="skyblue")
+27 # hist(medias_n50, main = "Dist. Medias (n=50)", breaks = 50, col="lightcoral")
+28
+29 print(paste("Assimetria da Dist. Medias (n=5):", skewness(medias_n5)))
+30 print(paste("Assimetria da Dist. Medias (n=50):", skewness(medias_n50)))
+31(cid:6) # Espera-se que n=50 tenha assimetria proxima de zero (cid:5)
+1.2.2 Co´digo em Python
+Listing 2: Simulacao do TCL em Python (Assimetria)
+(cid:7) (cid:4)
+1 import numpy as np
+2 from scipy.stats import skew
+3
+4 # 1. Parametros e Geracao da Populacao Exponencial (mu=5)
+5 TRUE_MEAN = 5
+6 RATE = 0.2
+7 POP_SIZE = 100000
+8 NUM_SIMULATIONS = 10000
+9
+10 np.random.seed(42)
+11 # np.random.exponential usa scale=1/rate, entao scale=5
+12 population = np.random.exponential(scale=1/RATE, size=POP_SIZE)
+13 print(f"Assimetria da Populacao: {skew(population):.4f}")
+14
+15 # 2. Simular o TCL para n=5 e n=50
+16 SAMPLE_SIZE_SMALL = 5
+17 SAMPLE_SIZE_LARGE = 50
+18
+19 means_n5 = []
+20 means_n50 = []
+21
+22 for _ in range(NUM_SIMULATIONS):
+23 sample_n5 = np.random.choice(population, SAMPLE_SIZE_SMALL, replace=False)
+24 sample_n50 = np.random.choice(population, SAMPLE_SIZE_LARGE, replace=False)
+25
+26 means_n5.append(np.mean(sample_n5))
+27 means_n50.append(np.mean(sample_n50))
+28
+29 # 3. Analise dos resultados (Quantitativa)
+30 print(f"Assimetria da Dist. Medias (n=5): {skew(means_n5):.4f}")
+31 print(f"Assimetria da Dist. Medias (n=50): {skew(means_n50):.4f}")
+32(cid:6) # O valor para n=50 deve estar muito proximo de 0. (cid:5)
+2 Simulac¸a˜o da Cobertura do Intervalo de Confianc¸a (IC)
+2.1 Tarefa 2: Cobertura do IC
+Usando a mesma popula¸ca˜o assim´etrica (µ = 5) e o tamanho de amostra grande (n = 50), simule a
+constru¸c˜ao do IC para verificar se o N´ıvel de Confianc¸a Nominal (95%) ´e mantido, gra¸cas ao TCL.
+• M´edia Populacional: µ = 5.
+• Tamanho da Amostra: n = 50.
+2
+
+================================================================================
+PÁGINA 3
+================================================================================
+• N´ıvel de Confianc¸a: 95%.
+2.1.1 Co´digo em R
+Listing 3: Cobertura do IC em R para Assimetria
+(cid:7) (cid:4)
+1 # Populacao e parametros do Item 1
+2 pop_assim = rexp(100000, rate = 0.2)
+3 mu_verdadeiro = 5
+4 num_simulacoes = 10000
+5 SAMPLE_SIZE = 50
+6
+7 cobertura_ic = 0
+8
+9 for(i in 1:num_simulacoes){
+10 amostra = sample(pop_assim, SAMPLE_SIZE)
+11
+12 # Calcula o IC de 95% usando t.test (baseado na distribuicao t)
+13 intervalo = t.test(amostra, conf.level = 0.95)$conf.int
+14
+15 # Verifica se a verdadeira media (mu=5) esta contida
+16 if(intervalo[1] < mu_verdadeiro && intervalo[2] > mu_verdadeiro) {
+17 cobertura_ic = cobertura_ic + 1
+18 }
+19 }
+20
+21 # Proporcao de Sucesso (Taxa de Cobertura)
+22 proporcao_sucesso = cobertura_ic / num_simulacoes
+23(cid:6) print(paste("Taxa de Cobertura do IC (Esperada 0.95):", proporcao_sucesso)) (cid:5)
+2.1.2 Co´digo em Python
+Listing 4: Cobertura do IC em Python para Assimetria
+(cid:7) (cid:4)
+1 import numpy as np
+2 from scipy.stats import t
+3
+4 # Populacao e parametros do Item 1
+5 TRUE_MEAN = 5
+6 RATE = 0.2
+7 POP_SIZE = 100000
+8 CONFIDENCE_LEVEL = 0.95
+9 SAMPLE_SIZE = 50
+10 NUM_SIMULATIONS = 10000
+11
+12 np.random.seed(42)
+13 population = np.random.exponential(scale=1/RATE, size=POP_SIZE)
+14 ic_contains_mean = 0
+15
+16 for _ in range(NUM_SIMULATIONS):
+17 sample = np.random.choice(population, SAMPLE_SIZE, replace=False)
+18
+19 # Calculo do IC
+20 sample_mean = np.mean(sample)
+21 sample_std = np.std(sample, ddof=1)
+22 standard_error = sample_std / np.sqrt(SAMPLE_SIZE)
+23 degrees_freedom = SAMPLE_SIZE - 1
+24
+25 # Usa t.interval da scipy para calcular o IC
+26 ic_lower, ic_upper = t.interval(
+27 confidence=CONFIDENCE_LEVEL,
+28 df=degrees_freedom,
+29 loc=sample_mean,
+30 scale=standard_error
+3
+
+================================================================================
+PÁGINA 4
+================================================================================
+31 )
+32
+33 # Verifica se o IC contem a media populacional
+34 if (ic_lower <= TRUE_MEAN) and (TRUE_MEAN <= ic_upper):
+35 ic_contains_mean += 1
+36
+37 # Proporcao de Sucesso (Taxa de Cobertura)
+38 proportion_success = ic_contains_mean / NUM_SIMULATIONS
+39
+40(cid:6) print(f"Taxa de Cobertura do IC (Esperada 0.95): {proportion_success:.4f}") (cid:5)
+3 Ana´lise dos Resultados (Relato´rio)
+Os alunos dever˜ao incluir no relat´orio as seguintes conclus˜oes baseadas nos resultados do c´odigo:
+1. Assimetria da Populac¸˜ao vs. Amostragem: Compare a assimetria da popula¸c˜ao Exponen-
+cial original com a assimetria das distribui¸c˜oes de m´edias para n = 5 e n = 50. Explique como o
+TCL se manifesta nesse cena´rio (redu¸ca˜o da assimetria e aproxima¸c˜ao `a Normalidade).
+2. Efeito do n no TCL: Descreva as diferen¸cas visuais (histogramas) e quantitativas (assime-
+tria calculada) entre as distribui¸c˜oes amostrais para n = 5 e n = 50. Por que a variaˆncia da
+distribui¸ca˜o das m´edias diminui com o aumento de n?
+3. Validac¸˜ao do IC: Comente o resultado da Taxa de Cobertura obtida na Tarefa 2. Explique por
+que, mesmo partindo de uma popula¸c˜ao n˜ao-Normal e usando a distribui¸c˜ao t (que teoricamente
+exige Normalidade populacional), a taxa de cobertura se mant´em pr´oxima do 95% nominal.
+4

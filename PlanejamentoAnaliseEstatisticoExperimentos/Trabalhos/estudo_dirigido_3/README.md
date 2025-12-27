@@ -1,36 +1,91 @@
-# 📊 Resultados da Análise Estatística
+# 📊 Estudo Dirigido 3: Planejamento, Análise e Estatística de Experimentos
+
+> **⚠️ IMPORTANTE**: Este trabalho é a continuação dos **Estudos Dirigidos 1 e 2** e marca a transição para o **Trabalho Final com Dados Reais**
+
+---
+
+## 📚 Progresso dos Estudos
+
+### 📖 **Estudo Dirigido 1** 
+Fundamentos teóricos e conceitos básicos de planejamento experimental:
+- Conceitos estatísticos fundamentais
+- Distribuições de probabilidade
+- Amostragem e estimação
+- Testes de hipóteses
+
+### 📖 **Estudo Dirigido 2**
+Aprofundamento em técnicas estatísticas:
+- Teorema Central do Limite (TCL)
+- Intervalos de confiança
+- Análise de variância (ANOVA)
+- Análise de regressão
+- Testes de normalidade
+
+### 🎯 **Estudo Dirigido 3** (ATUAL)
+**Aplicação Prática: Análise Estatística com Dados Reais**
+
+Este estudo marca a transição da teoria para a prática, integrando todos os conceitos aprendidos nos estudos dirigidos 1 e 2 para análise de **dados reais**.
+
+---
 
 ## 📁 Estrutura de Diretórios
 
 ```
-resultados/
-├── dados/                          # Arquivos de dados (CSV e TXT)
-│   ├── populacao_exponencial.csv   # Dados da população exponencial simulada
-│   ├── estatisticas_tcl.csv        # Resultados do Teorema Central do Limite
-│   ├── intervalos_confianca.csv    # Intervalos de confiança calculados
-│   ├── dados_gta.csv               # Dados reais do GTA
-│   └── resumo_resultados.txt       # Resumo textual de todas as análises
+estudo_dirigido_3/
 │
-├── imagens/                         # Figuras e gráficos
-│   ├── 01_exponencial_simulada/    # Imagens da análise com dados simulados
-│   │   ├── populacao_exponencial.png
-│   │   ├── tcl_convergencia.png
-│   │   ├── intervalos_confianca.png
-│   │   ├── anova_resultados.png
-│   │   └── analise_integrada.png
-│   │
-│   └── 02_dados_reais_gta/         # Imagens da análise com dados reais
-│       ├── distribuicao_gta.png
-│       ├── tcl_dados_reais.png
-│       ├── intervalos_confianca_gta.png
-│       ├── anova_gta.png
-│       └── resumo_analise_gta.png
+├── 01_analise_exponencial_simulada.ipynb    # Análise com dados simulados
+├── 02_analise_dados_reais_gta.ipynb         # Análise com dados reais
+├── requirements.txt                          # Dependências Python
+├── README.md                                 # Este arquivo
 │
-└── README.md                        # Este arquivo
+├── relatorio/
+│   └── resultados/
+│       ├── dados/                           # Arquivos de dados (CSV e TXT)
+│       │   ├── populacao_exponencial.csv    # Dados da população exponencial simulada
+│       │   ├── estatisticas_tcl.csv         # Resultados do Teorema Central do Limite
+│       │   ├── intervalos_confianca.csv     # Intervalos de confiança calculados
+│       │   ├── dados_gta.csv                # Dados reais do GTA
+│       │   └── resumo_resultados.txt        # Resumo textual de todas as análises
+│       │
+│       └── imagens/                         # Figuras e gráficos
+│           ├── 01_exponencial_simulada/    # Imagens da análise com dados simulados
+│           │   ├── populacao_exponencial.png
+│           │   ├── tcl_convergencia.png
+│           │   ├── intervalos_confianca.png
+│           │   ├── anova_resultados.png
+│           │   └── analise_integrada.png
+│           │
+│           └── 02_dados_reais_gta/         # Imagens da análise com dados reais
+│               ├── distribuicao_gta.png
+│               ├── tcl_dados_reais.png
+│               ├── intervalos_confianca_gta.png
+│               ├── anova_gta.png
+│               └── resumo_analise_gta.png
+│
+└── _arquivos_antigos/                       # Versões anteriores dos notebooks
 
 ```
 
 ## 📝 Descrição dos Arquivos
+
+### Notebooks
+
+#### 1. **01_analise_exponencial_simulada.ipynb**
+- Análise inicial com **dados simulados** de uma distribuição exponencial
+- Aplicação dos conceitos aprendidos nos Estudos Dirigidos 1 e 2
+- Validação de técnicas estatísticas em ambiente controlado
+
+**Tópicos cobertos:**
+- Geração de dados simulados
+- Verificação do Teorema Central do Limite
+- Cálculo de intervalos de confiança
+- Análise de variância (ANOVA)
+- Visualização e interpretação de resultados
+
+#### 2. **02_analise_dados_reais_gta.ipynb**
+- Análise com **dados reais** coletados do sistema GTA
+- Aplicação prática de todas as técnicas aprendidas
+- **Esta é a ponte para o Trabalho Final**
 
 ### Dados (CSV/TXT)
 
@@ -113,3 +168,56 @@ Os resultados serão automaticamente salvos nesta pasta.
 **Data de geração**: 16 de dezembro de 2025  
 **Disciplina**: Planejamento e Análise Estatística de Experimentos  
 **Universidade**: CEFET-MG
+
+---
+
+## 🎓 TRABALHO FINAL: ANÁLISE COM DADOS REAIS
+
+### 📌 Objetivo
+
+O **Estudo Dirigido 3** é a preparação para o **Trabalho Final**, que consiste em:
+
+✅ **Aplicar todos os conceitos aprendidos nos Estudos Dirigidos 1 e 2**  
+✅ **Analisar dados reais utilizando técnicas estatísticas avançadas**  
+✅ **Gerar relatório completo com interpretação dos resultados**  
+
+### 🔍 Escopo do Trabalho Final
+
+A partir deste estudo dirigido, você irá:
+
+1. **Selecionar um conjunto de dados reais** (pode ser dos dados GTA ou outro dataset)
+2. **Aplicar todas as técnicas aprendidas**:
+   - Análise exploratória de dados
+   - Testes de normalidade
+   - Teorema Central do Limite
+   - Intervalo de Confiança
+   - Análise de Variância (ANOVA)
+   - Regressão Linear (se aplicável)
+   - Testes de hipóteses
+
+3. **Gerar visualizações** para comunicar os resultados
+4. **Escrever relatório técnico** com:
+   - Descrição dos dados
+   - Metodologia utilizada
+   - Resultados e discussão
+   - Conclusões e interpretações
+
+### 📋 Próximos Passos
+
+1. ✅ Completar este Estudo Dirigido 3
+2. 📝 Revisar os conceitos dos Estudos Dirigidos 1 e 2
+3. 🔧 Preparar o ambiente (notebooks, bibliotecas, dados)
+4. 🎯 Iniciar o Trabalho Final com dados reais
+
+### 💡 Dicas
+
+- Revise regularmente os conceitos teóricos
+- Execute os notebooks e experimente com os parâmetros
+- Tente reproduzir os resultados com diferentes dados
+- Documente suas análises e descobertas
+- Consulte a literatura sobre interpretação de resultados
+
+---
+
+**Sucesso em seu trabalho final! 🚀**
+

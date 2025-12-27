@@ -1,0 +1,257 @@
+ARQUIVO ORIGINAL: estudos_dirigidos_2.pdf
+TAMANHO: 0.35 MB
+TOTAL DE PÁGINAS: 5
+================================================================================
+
+
+================================================================================
+PÁGINA 1
+================================================================================
+Estudo Dirigido Completo: Simulac¸a˜o Estat´ıstica, TCL e ANOVA
+F´abio Rocha da Silva / Estat´ıstica Computacional e Planejamento Experimental
+10 de novembro de 2025
+Resumo
+EstedocumentointegraconceitosfundamentaisdeInferˆenciaEstat´ısticaePlanejamentoExpe-
+rimental. A primeira parte explora a simula¸ca˜o do Teorema Central do Limite (TCL) em distri-
+bui¸co˜es assim´etricas. A segunda parte foca na Ana´lise de Variaˆncia (ANOVA) em delineamentos
+Simples, emBlocoseFatorial, comˆenfasenasimula¸ca˜oeinterpreta¸ca˜odostestesPost-Hoc(Tukey
+HSD).
+1 Parte I: Simulac¸a˜o do TCL, IC e Distribuic¸o˜es Assim´etricas
+1.1 Exerc´ıcio: TCL em Populac¸˜ao Assim´etrica (Exponencial)
+O objetivo ´e simular o TCL para uma popula¸ca˜o com Distribui¸c˜ao Exponencial (λ = 0.2, µ = 5) e
+verificar a taxa de cobertura do Intervalo de Confian¸ca (IC) para n grande.
+• Populac¸˜ao Gerada: Distribui¸ca˜o Exponencial, µ = 5.
+• Tamanhos Amostrais: n = 5 (pequena) e n = 50 (grande).
+• Nu´mero de Simulac¸˜oes: k = 10.000.
+1.1.1 Co´digo em R: Simulac¸˜ao TCL e Cobertura do IC
+Listing 1: TCL e IC para Distribui¸c˜ao Exponencial em R
+(cid:7) (cid:4)
+1 # Instale o pacote ’moments’ se necessario (install.packages("moments"))
+2 # library(moments)
+3
+4 set.seed(1)
+5 pop_assim = rexp(100000, rate = 0.2)
+6 mu_verdadeiro = 5
+7 num_simulacoes = 10000
+8
+9 # 1. Simular o TCL
+10 medias_n50 = NULL
+11 for(i in 1:num_simulacoes){
+12 amostra_n50 = sample(pop_assim, 50)
+13 medias_n50[i] = mean(amostra_n50)
+14 }
+15 # print(paste("Assimetria da Dist. Medias (n=50):", moments::skewness(medias_n50)))
+16 # hist(medias_n50) # Espera-se forma Normal
+17
+18 # 2. Simular Cobertura do IC (n=50)
+19 cobertura_ic = 0
+20 for(i in 1:num_simulacoes){
+21 amostra = sample(pop_assim, 50)
+22 # Calcula o IC de 95% usando t.test
+23 intervalo = t.test(amostra, conf.level = 0.95)$conf.int
+24
+25 if(intervalo[1] < mu_verdadeiro && intervalo[2] > mu_verdadeiro) {
+26 cobertura_ic = cobertura_ic + 1
+1
+
+================================================================================
+PÁGINA 2
+================================================================================
+27 }
+28 }
+29
+30 proporcao_sucesso = cobertura_ic / num_simulacoes
+31(cid:6) print(paste("Taxa de Cobertura do IC (Esperada 0.95):", proporcao_sucesso)) (cid:5)
+1.1.2 Co´digo em Python: Simulac¸˜ao TCL e Cobertura do IC
+Listing 2: TCL e IC para Distribui¸c˜ao Exponencial em Python
+(cid:7) (cid:4)
+1 import numpy as np
+2 from scipy.stats import t, skew
+3
+4 TRUE_MEAN = 5
+5 RATE = 0.2
+6 POP_SIZE = 100000
+7 NUM_SIMULATIONS = 10000
+8 SAMPLE_SIZE = 50
+9 CONFIDENCE_LEVEL = 0.95
+10
+11 np.random.seed(1)
+12 population = np.random.exponential(scale=1/RATE, size=POP_SIZE)
+13 ic_contains_mean = 0
+14
+15 # 1. Simular TCL (Assimetria)
+16 # print(f"Assimetria da Populacao: {skew(population):.4f}")
+17 # meios_n50 = [np.mean(np.random.choice(population, SAMPLE_SIZE)) for _ in range(
+NUM_SIMULATIONS)]
+18 # print(f"Assimetria Dist. Medias (n=50): {skew(meios_n50):.4f}")
+19
+20 # 2. Simular Cobertura do IC
+21 for _ in range(NUM_SIMULATIONS):
+22 sample = np.random.choice(population, SAMPLE_SIZE, replace=False)
+23
+24 sample_mean = np.mean(sample)
+25 sample_std = np.std(sample, ddof=1)
+26 standard_error = sample_std / np.sqrt(SAMPLE_SIZE)
+27 degrees_freedom = SAMPLE_SIZE - 1
+28
+29 ic_lower, ic_upper = t.interval(
+30 confidence=CONFIDENCE_LEVEL,
+31 df=degrees_freedom,
+32 loc=sample_mean,
+33 scale=standard_error
+34 )
+35
+36 if (ic_lower <= TRUE_MEAN) and (TRUE_MEAN <= ic_upper):
+37 ic_contains_mean += 1
+38
+39 proportion_success = ic_contains_mean / NUM_SIMULATIONS
+40(cid:6) print(f"Taxa de Cobertura do IC (Esperada 0.95): {proportion_success:.4f}") (cid:5)
+—
+2 Parte II: Exerc´ıcios de ANOVA e Planejamento Experimental
+2.1 Exerc´ıcio 1: ANOVA de Fator U´nico (One-Way) com Tukey HSD
+**Cen´ario:** Compara¸c˜ao do tempo de secagem de 3 revestimentos (A, B, C) com n = 10 repeti¸c˜oes.
+µ ≈ µ ̸= µ .
+A B C
+Listing 3: ANOVA One-Way com Tukey HSD em R
+(cid:7) (cid:4)
+1 set.seed(123)
+2
+
+================================================================================
+PÁGINA 3
+================================================================================
+2 n_rep <- 10
+3 # Definindo as medias: A=20, B=21 (similares), C=28 (diferente)
+4 Revestimento <- factor(rep(c("A", "B", "C"), each = n_rep))
+5 Media_A <- 20 + rnorm(n_rep, 0, 1.5)
+6 Media_B <- 21 + rnorm(n_rep, 0, 1.5)
+7 Media_C <- 28 + rnorm(n_rep, 0, 1.5)
+8 Tempo_Secagem <- c(Media_A, Media_B, Media_C)
+9
+10 dados_one_way <- data.frame(Revestimento, Tempo_Secagem)
+11
+12 # Ajuste do Modelo ANOVA
+13 modelo_one_way <- aov(Tempo_Secagem ~ Revestimento, data = dados_one_way)
+14 summary(modelo_one_way)
+15
+16 # Teste Post-Hoc de Tukey HSD
+17 tukey_one_way <- TukeyHSD(modelo_one_way, conf.level = 0.95)
+18(cid:6) print(tukey_one_way) (cid:5)
+2.2 Exerc´ıcio 2: Delineamento em Blocos Casualizados (RCBD)
+**Cen´ario:**Testede4dietas(D1-D4)em3gaiolas(G1-G3)comoblocos. Forteefeitodebloco(Gaiola)
+e efeito de tratamento (D4 superior).
+Listing 4: RCBD em R: Efeito de Blocagem
+(cid:7) (cid:4)
+1 set.seed(456)
+2 Tratamento <- factor(rep(c("D1", "D2", "D3", "D4"), times = 3)) # 4 dietas x 3 blocos
+3 Bloco <- factor(rep(c("G1", "G2", "G3"), each = 4)) # 3 gaiolas (blocos)
+4
+5 # Efeitos: Bloco (G1=0, G2=5, G3=10); Tratamento (D1,D2,D3=0, D4=8)
+6 efeito_bloco_val <- c(0, 5, 10)
+7 efeito_tratamento_val <- c(0, 0, 0, 8)
+8
+9 Ganho_Peso <- numeric(length(Tratamento))
+10 for (i in 1:3) { # Loop pelas gaiolas
+11 for (j in 1:4) { # Loop pelas dietas
+12 idx <- (i - 1) * 4 + j
+13 Ganho_Peso[idx] <- 50 + efeito_bloco_val[i] + efeito_tratamento_val[j] + rnorm(1,
+0, 1)
+14 }
+15 }
+16
+17 dados_rcbd <- data.frame(Ganho_Peso, Tratamento, Bloco)
+18
+19 # Modelo RCBD e CRD para comparacao
+20 modelo_rcbd <- aov(Ganho_Peso ~ Tratamento + Bloco, data = dados_rcbd)
+21 print("ANOVA RCBD:")
+22 summary(modelo_rcbd)
+23 print("ANOVA CRD (Ignorando Blocos):")
+24(cid:6) summary(aov(Ganho_Peso ~ Tratamento, data = dados_rcbd)) (cid:5)
+2.3 Exerc´ıcio 3: ANOVA Fatorial Completa com Interac¸˜ao Forte
+**Cen´ario:** Produtividade em fun¸c˜ao de 2 n´ıveis de Temperatura (T1, T2) e 2 n´ıveis de Irrigacao
+(I1, I2), com n = 5 repeti¸c˜oes. Intera¸c˜ao forte: µ ≫ µ (inversa˜o do efeito).
+T1,I2 T2,I2
+Listing 5: ANOVA Fatorial com Interacao e Tukey HSD em Python
+(cid:7) (cid:4)
+1 import pandas as pd
+2 import numpy as np
+3 from statsmodels.formula.api import ols
+4 from statsmodels.stats.anova import anova_lm
+5 from statsmodels.stats.multicomp import pairwise_tukeyhsd
+6
+3
+
+================================================================================
+PÁGINA 4
+================================================================================
+7 np.random.seed(789)
+8 n_rep = 5
+9
+10 Temperatura = np.repeat([’T1’, ’T2’], n_rep * 2)
+11 Irrigacao = np.tile(np.repeat([’I1’, ’I2’], n_rep), 2)
+12
+13 # Medias: T1 I1: 100, T1 I2: 120 ; T2 I1: 110, T2 I2: 95
+14 mu_vector_int = np.array(
+15 [100] * n_rep + [120] * n_rep +
+16 [110] * n_rep + [95] * n_rep
+17 )
+18
+19 Produtividade = mu_vector_int + np.random.normal(0, 3, size=len(mu_vector_int))
+20 dados_fatorial = pd.DataFrame({’Y’: Produtividade, ’Temperatura’: Temperatura, ’
+Irrigacao’: Irrigacao})
+21
+22 # Ajuste do Modelo Fatorial (Modelo Tipo II)
+23 modelo_fatorial = ols(’Y ~ C(Temperatura) * C(Irrigacao)’, data=dados_fatorial).fit()
+24 anova_table_fatorial = anova_lm(modelo_fatorial, typ=2)
+25 print("Tabela ANOVA Fatorial:")
+26 print(anova_table_fatorial)
+27
+28 # Preparacao para Tukey HSD (Combinacao dos Grupos)
+29 dados_fatorial[’Grupo’] = dados_fatorial[’Temperatura’].astype(str) + ’ x ’ +
+dados_fatorial[’Irrigacao’].astype(str)
+30
+31 # Aplicacao do Tukey HSD nas 4 combinacoes
+32 tukey_fatorial = pairwise_tukeyhsd(endog=dados_fatorial[’Y’],
+33 groups=dados_fatorial[’Grupo’],
+34 alpha=0.05)
+35 print("\nTeste Post-Hoc de Tukey HSD (Combinacoes):")
+36(cid:6) print(tukey_fatorial) (cid:5)
+—
+3 Parte III: An´alise de Resultados Esperados e Concluso˜es
+3.1 An´alise do TCL em Distribuic¸˜ao Assim´etrica
+A simula¸c˜ao da Parte I dever´a produzir uma Taxa de Cobertura do IC pr´oxima de 0.95.
+1. Efeito da Assimetria: A popula¸ca˜o Exponencial original ´e fortemente assim´etrica (skewness
+≈ 2).
+2. Validac¸˜ao do TCL: A distribui¸c˜ao das m´edias amostrais para n = 50 deve ter sua assimetria
+pr´oxima de zero, e a forma do histograma deve ser aproximadamente Normal. O TCL garante
+que, para um n grande o suficiente, a distribui¸ca˜o amostral se torna normal.
+3. Validac¸˜ao do IC: A taxa de cobertura do 95% IC ´e mantida (≈ 0.95), comprovando que a
+Normalidade da distribui¸c˜ao das m´edias amostrais (via TCL) permite o uso confi´avel do m´etodo
+do IC baseado na distribui¸c˜ao t ou z, independentemente da distribui¸c˜ao populacional.
+3.2 An´alise da ANOVA de Planejamento Experimental
+3.2.1 Exerc´ıcio 2: RCBD (Blocagem)
+A compara¸c˜ao entre a ANOVA RCBD e CRD ilustrar´a o ganho de poder estat´ıstico.
+• Efeito do Bloco: O Bloco (Gaiola) ter´a um P-valor muito baixo, indicando que a varia¸c˜ao
+entre as gaiolas ´e significativa.
+• Erro Residual (MS ): O valor do MS ser´a significativamente menor no modelo
+Residuo Residuo
+RCBD do que no modelo CRD.
+4
+
+================================================================================
+PÁGINA 5
+================================================================================
+• Tratamento (Dieta): O P-valor da Dieta ser´a menor no modelo RCBD, confirmando a
+rejei¸c˜ao de H de forma mais robusta, pois a varia¸c˜ao sistem´atica do bloco foi isolada do erro
+0
+aleat´orio.
+3.2.2 Exerc´ıcio 3: ANOVA Fatorial (Interac¸˜ao)
+• Interac¸˜ao T×I: O P-valor para o termo de intera¸ca˜o (Temperatura:Irrigacao) ser´a signi-
+ficativamente baixo (P ≪ 0.05), indicando que o efeito da Irriga¸c˜ao depende criticamente da
+Temperatura.
+• Tukey HSD: A an´alise do Tukey HSD nas 4 combina¸c˜oes (T1 x I1, T1 x I2, T2 x I1, T2 x
+I2) confirmar´a o padr˜ao de invers˜ao: a Irriga¸c˜ao M´axima (I2) ´e a melhor escolha apenas na
+Temperatura Baixa (T1), sendo uma das piores na Temperatura Alta (T2).
+• Conclus˜ao: A significaˆncia da intera¸c˜ao impede a interpreta¸c˜ao isolada dos efeitos princi-
+pais, exigindo uma recomenda¸c˜ao baseada na combina¸c˜ao ´otima (T1 x I2).
+5
