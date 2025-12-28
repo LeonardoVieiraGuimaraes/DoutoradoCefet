@@ -1,0 +1,43 @@
+
+======================================================================
+📊 PARTE 1: EXPLORAÇÃO DE DADOS REAIS
+======================================================================
+
+Data de Execução: 27/12/2025 16:26:49
+Disciplina: Planejamento e Análise Estatística de Experimentos
+Sistema: GTA (Geocodificação de Transportes Acessíveis)
+
+──────────────────────────────────────────────────────────────────────
+📂 CARREGAMENTO DOS DADOS
+──────────────────────────────────────────────────────────────────────
+
+Arquivo: bd_gta_dentro_mg202505091607.csv
+Amostra: 100,000 registros (para análise rápida)
+Status: ✅ Carregado com sucesso (100,000 linhas × 15 colunas)
+
+──────────────────────────────────────────────────────────────────────
+📊 ESTATÍSTICAS DA VARIÁVEL 'QTD' (QUANTIDADE DE BOVINOS)
+──────────────────────────────────────────────────────────────────────
+
+Observações válidas: 100,000
+Média: 18.8562
+Mediana: 11.0000
+Desvio padrão: 31.4902
+Coeficiente de Variação: 167.00%
+
+Assimetria (skewness): 16.6981 ⚠️ DISTRIBUIÇÃO MUITO ASSIMÉTRICA!
+Curtose (kurtosis): 687.4347 ⚠️ CAUDAS MUITO PESADAS!
+
+Mínimo: 1.0000
+Máximo: 2266.0000
+Intervalo: 2265.0000
+
+──────────────────────────────────────────────────────────────────────
+🎯 CONCLUSÕES DA EXPLORAÇÃO
+──────────────────────────────────────────────────────────────────────
+
+✅ Os dados apresentam distribuição altamente não-normal
+✅ Ideal para validar robustez dos métodos estatísticos
+✅ Asimetria e curtose extremas justificam aplicação do TCL
+
+======================================================================

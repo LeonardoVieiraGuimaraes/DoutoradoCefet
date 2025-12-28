@@ -1,0 +1,578 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(relatorio.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilia
+n.ldf
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel
+-brazilian.tex)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\times.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefine
+keys.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
+ty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds
+.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
+ty)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettit
+lestring.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stringenc.s
+ty) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc
+.sty)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
+echeck.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquec
+ounter.sty)))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
+))
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/tools\indentfirst.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/cite\cite.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def) (relatorio.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg)) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+)
+[1{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/le
+ona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 \newpage
+               [1]
+No file relatorio.toc.
+
+[2] (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd)
+[3]
+
+LaTeX Warning: Citation `Devore2015' on page 4 undefined on input line 173.
+
+
+LaTeX Warning: Citation `Devore2015' on page 4 undefined on input line 177.
+
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+
+LaTeX Warning: Citation `Montgomery2016' on page 4 undefined on input line 181.
+
+
+
+[4]
+
+LaTeX Warning: Citation `Devore2015' on page 5 undefined on input line 199.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 199.
+
+
+
+LaTeX Warning: Citation `Devore2015' on page 5 undefined on input line 213.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 213.
+
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 222.
+
+
+
+[5]
+
+LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 229.
+
+
+LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 241.
+
+
+LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 245.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 6 undefined on input line 257.
+
+
+
+[6]
+
+LaTeX Warning: Citation `Devore2015' on page 7 undefined on input line 284.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 7 undefined on input line 298.
+
+
+
+[7]
+
+LaTeX Warning: Citation `Devore2015' on page 8 undefined on input line 318.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 318.
+
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 328.
+
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 332.
+
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 336.
+
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 350.
+
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 350.
+
+
+
+[8]
+
+LaTeX Warning: Citation `Montgomery2013' on page 9 undefined on input line 370.
+
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 9 undefined on input line 393.
+
+
+
+[9]
+
+LaTeX Warning: Citation `Montgomery2013' on page 10 undefined on input line 433
+.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 10 undefined on input line 433
+.
+
+
+[10]
+
+LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 467
+.
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 479
+.
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 507
+.
+
+
+LaTeX Warning: Citation `Montgomery2016' on page 11 undefined on input line 507
+.
+
+
+[11]
+
+LaTeX Warning: Citation `Montgomery2016' on page 12 undefined on input line 519
+.
+
+
+[12]
+
+LaTeX Warning: Reference `tab:stats_dados' on page 13 undefined on input line 5
+55.
+
+
+[13]
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.606 \subsubsection
+                    {Bibliotecas Estatísticas Utilizadas}]
+[15]
+Overfull \hbox (33.95789pt too wide) in paragraph at lines 697--713
+ [][] 
+
+[16
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.714 
+      ]
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.764     \item \textbf
+                       {Análise de Amplitude}: Avaliar se os intervalos tê...
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.764     \item \textbf
+                       {Análise de Amplitude}: Avaliar se os intervalos tê...
+]
+Overfull \hbox (101.51614pt too wide) in paragraph at lines 772--787
+ [][] 
+
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.833     $$F = \frac{SQE/(k-1)}{SQD/(n-k)}$$
+                                             
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.833     $$F = \frac{SQE/(k-1)}{SQD/(n-k)}$$
+                                             ]
+Overfull \hbox (26.94357pt too wide) in paragraph at lines 856--873
+ [][] 
+
+LaTeX Warning: Reference `tab:parametros_metodologia' on page 19 undefined on i
+nput line 877.
+
+
+[19
+pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.902     \item I
+                 dentificação de outliers extremos (mantidos para análise...
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.902     \item I
+                 dentificação de outliers extremos (mantidos para análise...
+]
+[20]
+
+LaTeX Warning: Reference `tab:tcl_resultados' on page 21 undefined on input lin
+e 942.
+
+(resultados/tabelas_latex/tab_02_tcl_resultados.tex
+! Undefined control sequence.
+l.2 \toprule
+            
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Tamanho_
+            Amostra & Média_das_Médias & Desvio_Padrão_das_Médias & Erro...
+
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.3 Tamanho_Amostra &
+                      Média_das_Médias & Desvio_Padrão_das_Médias & Erro...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Tamanho_Amostra &
+                      Média_das_Médias & Desvio_Padrão_das_Médias & Erro...
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.3 Tamanho_Amostra &
+                      Média_das_Médias & Desvio_Padrão_das_Médias & Erro...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Tamanho_Amostra & Média_
+                             das_Médias & Desvio_Padrão_das_Médias & Erro...
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 3.
+
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.3 Tamanho_Amostra & Média_das_Médias &
+                                           Desvio_Padrão_das_Médias & Erro...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Tamanho_Amostra & Média_das_Médias &
+                                           Desvio_Padrão_das_Médias & Erro...
+
+Missing character: There is no � in font cmr12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.3 Tamanho_Amostra & Média_das_Médias &
+                                           Desvio_Padrão_das_Médias & Erro...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Tamanho_Amostra & Média_das_Médias & Desvio_
+                                                  Padrão_das_Médias & Erro...
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 3.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 3.
+
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.3 ..._das_Médias & Desvio_Padrão_das_Médias &
+                                                   Erro_Padrão_Teórico & A...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 ..._das_Médias & Desvio_Padrão_das_Médias &
+                                                   Erro_Padrão_Teórico & A...
+
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.3 ..._das_Médias & Desvio_Padrão_das_Médias &
+                                                   Erro_Padrão_Teórico & A...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 ...édias & Desvio_Padrão_das_Médias & Erro_
+                                                  Padrão_Teórico & Assimet...
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 3.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 3.
+
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.3 ...drão_das_Médias & Erro_Padrão_Teórico &
+                                                   Assimetria & P_valor_Shap...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 ...drão_das_Médias & Erro_Padrão_Teórico &
+                                                   Assimetria & P_valor_Shap...
+
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.3 ...drão_das_Médias & Erro_Padrão_Teórico &
+                                                   Assimetria & P_valor_Shap...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 ...s & Erro_Padrão_Teórico & Assimetria & P_
+                                                  valor_Shapiro \\
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.4 \midrule
+            
+! Missing $ inserted.
+<inserted text> 
+                $
+l.4 \midrule
+            
+! Missing } inserted.
+<inserted text> 
+                }
+l.4 \midrule
+            
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.4 \midrule
+            
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.7 \bottomrule
+               
+)
+Overfull \hbox (141.17036pt too wide) in paragraph at lines 1--945
+[][]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--945
+
+
+LaTeX Warning: Reference `tab:ic_resultados' on page 21 undefined on input line
+ 972.
+
+
+[21] (resultados/tabelas_latex/tab_03_ic_resumo.tex
+! Undefined control sequence.
+l.2 \toprule
+            
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.4 \midrule
+            
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.7 Taxa Cobertura Real &
+                          90.50% \\
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.9 Diferença &
+                 4.50% \\
+! Undefined control sequence.
+l.10 \bottomrule
+                
+)
+[22] (resultados/tabelas_latex/tab_04_anova_estatisticas_grupo.tex
+! Undefined control sequence.
+l.2 \toprule
+            
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Origem & N & Média & Desvio_
+                                 Padrão & Mínimo & Máximo \\
+
+LaTeX Warning: Command \~ invalid in math mode on input line 3.
+
+! Extra }, or forgotten $.
+<template> \unskip }
+                    \hskip \tabcolsep \endtemplate 
+l.3 Origem & N & Média & Desvio_Padrão &
+                                           Mínimo & Máximo \\
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3 Origem & N & Média & Desvio_Padrão &
+                                           Mínimo & Máximo \\
+Missing character: There is no � in font cmr12!
+! Missing } inserted.
+<inserted text> 
+                }
+l.3 Origem & N & Média & Desvio_Padrão &
+                                           Mínimo & Máximo \\
+! Undefined control sequence.
+<recently read> \midrule 
+                         
+l.4 \midrule
+            
+! Undefined control sequence.
+<recently read> \bottomrule 
+                            
+l.6 \bottomrule
+               
+)
+[23]
+[24]
+[25]
+[26]
+[27] (relatorio.bbl)
+[28] (relatorio.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)<C:/Users/leona/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/U
+sers/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.
+pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/leona/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/le
+ona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/le
+ona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/le
+ona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (29 pages, 304497 bytes).
+Transcript written on relatorio.log.

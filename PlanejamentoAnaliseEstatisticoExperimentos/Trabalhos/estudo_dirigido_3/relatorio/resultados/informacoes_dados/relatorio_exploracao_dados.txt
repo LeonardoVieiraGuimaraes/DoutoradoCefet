@@ -1,0 +1,213 @@
+================================================================================
+📊 RELATÓRIO COMPLETO DE EXPLORAÇÃO DE DADOS GTA
+================================================================================
+
+Data de Execução: 27/12/2025 16:25:12
+Disciplina: Planejamento e Análise Estatística de Experimentos
+Sistema: GTA (Geocodificação de Transportes Acessíveis)
+Pasta Analisada: D:\OneDrive\Pessoais\Doutorado\Cefet\data
+
+================================================================================
+📂 RESUMO GERAL
+================================================================================
+
+Total de arquivos CSV encontrados: 7
+Status: ✅ Análise concluída com sucesso
+
+
+────────────────────────────────────────────────────────────────────────────────
+1. 📄 ARQUIVO: bd_gta_dentro_mg202505091607.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 950.40 MB
+📊 Dimensões: 8,298,490 linhas × 15 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (15):
+    1. nr_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    2. nr_serie                       | Tipo: object     | Únicos:       18 | Nulos:        0
+    3. id_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    4. dt_emissao_gta                 | Tipo: object     | Únicos:      100 | Nulos:        0
+    5. cod_produtor_origem            | Tipo: int64      | Únicos:      100 | Nulos:        0
+    6. cod_produtor_destino           | Tipo: int64      | Únicos:      100 | Nulos:        0
+    7. id_tipo_finalidade_gta         | Tipo: int64      | Únicos:        6 | Nulos:        0
+    8. ds_meio_transporte             | Tipo: object     | Únicos:        2 | Nulos:        0
+    9. cod_municipio_origem           | Tipo: int64      | Únicos:       79 | Nulos:        0
+   10. nome_municipio_origem          | Tipo: object     | Únicos:       79 | Nulos:        0
+   11. estado_origem                  | Tipo: object     | Únicos:        1 | Nulos:        0
+   12. cod_municipio_destino          | Tipo: int64      | Únicos:       78 | Nulos:        0
+   13. nome_municipio_destino         | Tipo: object     | Únicos:       78 | Nulos:        0
+   14. estado_destino                 | Tipo: object     | Únicos:        1 | Nulos:        0
+   15. qtd                            | Tipo: int64      | Únicos:       34 | Nulos:        0
+
+
+────────────────────────────────────────────────────────────────────────────────
+2. 📄 ARQUIVO: bd_gta_dentro_mg_faixa_etaria202505091602.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 652.78 MB
+📊 Dimensões: 11,838,896 linhas × 5 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (5):
+    1. id_gta                         | Tipo: int64      | Únicos:       70 | Nulos:        0
+    2. dt_emissao_gta                 | Tipo: object     | Únicos:       70 | Nulos:        0
+    3. ds_faixa_etaria                | Tipo: object     | Únicos:        4 | Nulos:        0
+    4. tp_sexo                        | Tipo: object     | Únicos:        2 | Nulos:        0
+    5. qt_animais                     | Tipo: int64      | Únicos:       24 | Nulos:        0
+
+
+────────────────────────────────────────────────────────────────────────────────
+3. 📄 ARQUIVO: bd_gta_oe202505091618.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 6.46 MB
+📊 Dimensões: 64,677 linhas × 14 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (14):
+    1. nr_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    2. nr_serie                       | Tipo: object     | Únicos:       26 | Nulos:        0
+    3. id_gta_origem_outro_estado     | Tipo: int64      | Únicos:      100 | Nulos:        0
+    4. dt_emissao_gta                 | Tipo: object     | Únicos:      100 | Nulos:        0
+    5. cod_produtor_origem            | Tipo: int64      | Únicos:       97 | Nulos:        0
+    6. cod_produtor_destino           | Tipo: int64      | Únicos:       89 | Nulos:        0
+    7. id_tipo_finalidade_gta         | Tipo: int64      | Únicos:        6 | Nulos:        0
+    8. municipio_origem               | Tipo: object     | Únicos:       92 | Nulos:        0
+    9. cod_municipio_origem           | Tipo: int64      | Únicos:       92 | Nulos:        0
+   10. estado_origem                  | Tipo: object     | Únicos:       18 | Nulos:        0
+   11. municipio_destino              | Tipo: object     | Únicos:       63 | Nulos:        0
+   12. cod_municipio_destino          | Tipo: int64      | Únicos:       63 | Nulos:        0
+   13. estado_destino                 | Tipo: object     | Únicos:        1 | Nulos:        0
+   14. qtd                            | Tipo: int64      | Únicos:       51 | Nulos:        0
+
+
+────────────────────────────────────────────────────────────────────────────────
+4. 📄 ARQUIVO: bd_gta_oe_faixa_etaria202505091630.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 4.55 MB
+📊 Dimensões: 87,560 linhas × 5 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (5):
+    1. id_gta_origem_outro_estado     | Tipo: int64      | Únicos:       76 | Nulos:        0
+    2. dt_emissao_gta                 | Tipo: object     | Únicos:       29 | Nulos:        0
+    3. ds_faixa_etaria                | Tipo: object     | Únicos:        4 | Nulos:        0
+    4. tp_sexo                        | Tipo: object     | Únicos:        2 | Nulos:        0
+    5. qt_animais                     | Tipo: int64      | Únicos:       35 | Nulos:        0
+
+
+────────────────────────────────────────────────────────────────────────────────
+5. 📄 ARQUIVO: gtas_com_distancias.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 1156.59 MB
+📊 Dimensões: 8,363,167 linhas × 21 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (21):
+    1. nr_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    2. nr_serie                       | Tipo: object     | Únicos:       18 | Nulos:        0
+    3. id_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    4. dt_emissao_gta                 | Tipo: object     | Únicos:      100 | Nulos:        0
+    5. cod_produtor_origem            | Tipo: int64      | Únicos:      100 | Nulos:        0
+    6. cod_produtor_destino           | Tipo: int64      | Únicos:      100 | Nulos:        0
+    7. id_tipo_finalidade_gta         | Tipo: int64      | Únicos:        6 | Nulos:        0
+    8. ds_meio_transporte             | Tipo: object     | Únicos:        2 | Nulos:        0
+    9. cod_municipio_origem           | Tipo: int64      | Únicos:       79 | Nulos:        0
+   10. nome_municipio_origem          | Tipo: object     | Únicos:       79 | Nulos:        0
+   11. estado_origem                  | Tipo: object     | Únicos:        1 | Nulos:        0
+   12. cod_municipio_destino          | Tipo: int64      | Únicos:       78 | Nulos:        0
+   13. nome_municipio_destino         | Tipo: object     | Únicos:       78 | Nulos:        0
+   14. estado_destino                 | Tipo: object     | Únicos:        1 | Nulos:        0
+   15. qtd                            | Tipo: int64      | Únicos:       34 | Nulos:        0
+   16. Acima de 36 meses              | Tipo: int64      | Únicos:       15 | Nulos:        0
+   17. De 0 até 12 meses              | Tipo: int64      | Únicos:       22 | Nulos:        0
+   18. De 13 até 24 meses             | Tipo: int64      | Únicos:       20 | Nulos:        0
+   19. De 25 até 36 meses             | Tipo: int64      | Únicos:       13 | Nulos:        0
+   20. distancia_km                   | Tipo: float64    | Únicos:       61 | Nulos:        0
+   21. duracao_min                    | Tipo: float64    | Únicos:       61 | Nulos:        0
+
+
+────────────────────────────────────────────────────────────────────────────────
+6. 📄 ARQUIVO: matriz_distancias.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 370.34 MB
+📊 Dimensões: 4,751,210 linhas × 6 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (6):
+    1. municipio_origem               | Tipo: object     | Únicos:        1 | Nulos:        0
+    2. municipio_destino              | Tipo: object     | Únicos:      100 | Nulos:        0
+    3. dist_rod_km                    | Tipo: float64    | Únicos:      100 | Nulos:        0
+    4. dist_rod_min                   | Tipo: float64    | Únicos:      100 | Nulos:        0
+    5. dist_ped_km                    | Tipo: float64    | Únicos:       96 | Nulos:        4
+    6. dist_ped_min                   | Tipo: float64    | Únicos:       96 | Nulos:        4
+
+
+────────────────────────────────────────────────────────────────────────────────
+7. 📄 ARQUIVO: possiveis_fraudes.csv
+────────────────────────────────────────────────────────────────────────────────
+
+💾 Tamanho do Arquivo: 0.02 MB
+📊 Dimensões: 311 linhas × 7 colunas
+🔍 Delimitador Detectado: ';'
+
+📋 COLUNAS (7):
+    1. id_gta                         | Tipo: int64      | Únicos:      100 | Nulos:        0
+    2. dt_emissao_gta                 | Tipo: object     | Únicos:      100 | Nulos:        0
+    3. cod_produtor_origem            | Tipo: int64      | Únicos:       95 | Nulos:        0
+    4. cod_produtor_destino           | Tipo: int64      | Únicos:       67 | Nulos:        0
+    5. qtd                            | Tipo: int64      | Únicos:       87 | Nulos:        0
+    6. distancia_km                   | Tipo: float64    | Únicos:       64 | Nulos:        0
+    7. data_seconds                   | Tipo: int64      | Únicos:      100 | Nulos:        0
+
+
+================================================================================
+📈 RESUMO CONSOLIDADO
+================================================================================
+
+Total de Arquivos: 7
+Total de Linhas: 33,404,311
+Total de Colunas: 73
+Tamanho Total: 3141.15 MB
+
+================================================================================
+✅ VALIDAÇÃO DE DADOS
+================================================================================
+
+✅ Detecção de Delimitador: Automática (;, , ou |)
+✅ Leitura de Tipos de Dados: Sucesso em todos os arquivos
+✅ Contagem de Nulos: Mapeados por coluna
+✅ Análise de Únicos: Realizados
+
+================================================================================
+📁 ARQUIVOS GERADOS DURANTE EXPLORAÇÃO
+================================================================================
+
+1. relatorio_dados_detalhado.csv
+   └─ Contém: Arquivo, Tamanho_MB, Linhas, Colunas, Delimitador, Descrição
+
+2. arquivos_colunas_detalhadas.csv
+   └─ Contém: Arquivo, Total_Colunas, Colunas
+
+3. EXPLICACAO_DADOS.txt
+   └─ Contém: Explicação detalhada de cada arquivo e suas colunas
+
+4. relatorio_exploracao_dados.txt (Este arquivo)
+   └─ Contém: Relatório completo em formato texto
+
+================================================================================
+🎯 CONCLUSÕES
+================================================================================
+
+✅ Todos os arquivos foram explorados com sucesso
+✅ Delimitadores foram detectados automaticamente
+✅ Estrutura de dados validada e documentada
+✅ Relatórios organizados em pasta relatorio/resultados/informacoes_dados/
+
+================================================================================
+Gerado em: 27/12/2025 16:25:40
+================================================================================
