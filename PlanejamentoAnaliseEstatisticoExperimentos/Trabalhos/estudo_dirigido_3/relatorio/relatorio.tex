@@ -158,7 +158,9 @@ O trabalho utiliza tanto simulações estatísticas quanto dados reais para vali
 % =====================================================
 \section{Fundamentação Teórica}
 
-A fundamentação teórica desta trabalho repousa sobre três pilares metodológicos interdependentes que formam a base da estatística inferencial moderna. Esta seção apresenta a exposição detalhada de cada um desses conceitos, organizados segundo uma progressão lógica que vai do mais fundamental (comportamento das distribuições amostrais) ao mais aplicado (comparação de múltiplos grupos).
+Esta seção estabelece a base teórica necessária para compreender os três pilares da análise: o Teorema Central do Limite, que justifica a normalidade em grandes amostras; o Intervalo de Confiança, que quantifica a incerteza; e a Análise de Variância, que permite comparações entre múltiplos grupos.
+
+A fundamentação teórica deste trabalho repousa sobre três pilares metodológicos interdependentes que formam a base da estatística inferencial moderna. Esta seção apresenta a exposição detalhada de cada um desses conceitos, organizados segundo uma progressão lógica que vai do mais fundamental (comportamento das distribuições amostrais) ao mais aplicado (comparação de múltiplos grupos).
 
 \subsubsection*{Organização e Interdependência dos Conceitos}
 
@@ -176,7 +178,9 @@ Compreender esta progressão é essencial para entender como a teoria estatísti
 
 \subsection{Teorema Central do Limite (TCL)}
 
-O Teorema Central do Limite é um dos pilares fundamentais da estatística inferencial moderna. Ele estabelece que a distribuição amostral da média de uma amostra aleatória segue uma distribuição aproximadamente normal, desde que o tamanho da amostra seja suficientemente grande, \textit{independentemente completamente da forma da distribuição original da população} \cite{Devore2015}. Este resultado é extraordinário porque permite utilizar métodos estatísticos baseados na distribuição normal mesmo quando a população não é normal.
+Esta subseção apresenta o fundamento teórico mais importante da estatística inferencial: como a distribuição das médias amostrais converge para a normalidade independentemente da distribuição original da população.
+
+O Teorema Central do Limite é um dos pilares fundamentais da estatística inferencial moderna. Ele estabelece que a distribuição amostral da média de uma amostra aleatória segue uma distribuição aproximadamente normal, desde que o tamanho da amostra seja suficientemente grande, \textit{independentemente da forma da distribuição original da população} \cite{Devore2015}. Este resultado é extraordinário porque permite utilizar métodos estatísticos baseados na distribuição normal mesmo quando a população não é normal.
 
 \subsubsection{Contexto Histórico e Importância}
 
@@ -225,7 +229,7 @@ As implicações práticas do TCL são profundas e revolucionárias para a estat
     
     \item \textbf{Proporcionalidade à Raiz Quadrada}: O erro padrão da média é $\sigma/\sqrt{n}$. Isto significa que para reduzir o erro padrão pela metade, é necessário quadruplicar o tamanho da amostra. Esta relação é fundamental no cálculo de tamanho amostral.
     
-    \item \textbf{Justificação de Métodos Paramétricos}: O TCL justifica theoricamente o uso de métodos paramétricos (que assumem normalidade) mesmo quando a população não é normal, desde que a amostra seja suficientemente grande \cite{Montgomery2016}.
+    \item \textbf{Justificação de Métodos Paramétricos}: O TCL justifica teoricamente o uso de métodos paramétricos (que assumem normalidade) mesmo quando a população não é normal, desde que a amostra seja suficientemente grande \cite{Montgomery2016}.
     
     \item \textbf{Previsibilidade}: Conhecendo a média $\mu$ e desvio padrão $\sigma$ da população, podemos prever o comportamento da média amostral para qualquer tamanho $n$, sem conhecer a forma exata da população.
 \end{itemize}
@@ -243,6 +247,8 @@ O TCL aplica-se a praticamente todas as distribuições encontradas em aplicaç�
 \end{itemize}
 
 \subsection{Intervalo de Confiança (IC)}
+
+Esta subseção aborda como construir intervalos que contêm o parâmetro populacional verdadeiro com nível de confiança pré-especificado, fornecendo uma medida de incerteza para estimadores.
 
 Um intervalo de confiança é um intervalo numérico calculado a partir dos dados amostrais que, com um nível de confiança pré-especificado (tipicamente 90\%, 95\% ou 99\%), conterá o parâmetro populacional verdadeiro desconhecido \cite{Devore2015}. Diferentemente de um simples estimador pontual (um único valor), o intervalo de confiança fornece um \textit{intervalo de valores plausíveis} e quantifica a incerteza associada à estimação.
 
@@ -388,8 +394,7 @@ H_0: \mu_1 = \mu_2 = \cdots = \mu_k
 \textbf{Interpretação}: A hipótese nula $H_0$ estabelece que todos os grupos têm a mesma média populacional, ou seja, não há efeito de grupo.
 
 \begin{equation}
-H_1: \text{Pelo menos um } \tau_i \neq 0 \quad \text{(equivalentemente: Pelo menos uma} \\
-\text{média de grupo é diferente)}
+H_1: \text{Pelo menos um } \tau_i \neq 0 \quad \text{(equivalentemente: Pelo menos uma média de grupo é diferente)}
 \end{equation}
 
 \textbf{Interpretação}: A hipótese alternativa $H_1$ estabelece que ao menos um grupo difere dos demais em média. Note que $H_1$ não especifica quais grupos diferem, apenas que há diferenças.
@@ -534,6 +539,8 @@ Métodos alternativos ou complementares, como testes não-paramétricos (ex: Kru
 
 Esta seção descreve os procedimentos, parâmetros e abordagens utilizadas para validar empiricamente as três técnicas estatísticas. A metodologia segue um fluxo lógico estruturado que vai desde a caracterização dos dados, passando pela configuração dos testes, até as métricas de comparação.
 
+Esta subseção descreve a origem, características e qualidade dos dados utilizados. Compreender os dados é fundamental para validar a adequação das técnicas estatísticas escolhidas.
+
 \subsection{Dados Utilizados}
 
 \subsubsection{Fonte e Caracterização dos Dados}
@@ -545,6 +552,9 @@ Os dados foram obtidos do arquivo consolidado \textit{gtas\_com\_distancias.csv}
 A variável principal analisada é \textbf{duracao\_min} (duração em minutos), que registra o tempo necessário para realizar o transporte de bovinos entre pontos de origem (produtor de origem) e destino (produtor de destino). Este é um conjunto de dados altamente desafiador para pressupostos estatísticos, sendo ideal para validar a robustez de métodos paramétricos em contextos reais do setor agropecuário.
 
 \textbf{Informações Técnicas da Base:}
+
+Seguem os detalhes técnicos essenciais sobre a origem e composição dos dados:
+
 \begin{itemize}
     \item \textbf{Sistema}: GTA - Geocodificação de Transportes Acessíveis (Sistema Nacional de Gestão Agropecuária)
     \item \textbf{Arquivo Original}: bd\_gta\_dentro\_mg202505091607.csv
@@ -558,7 +568,7 @@ A variável principal analisada é \textbf{duracao\_min} (duração em minutos),
 
 \subsubsection{Características Estatísticas dos Dados}
 
-Os dados apresentam as seguintes características descritivas (Tabela \ref{tab:stats_dados}), que os tornam especialmente apropriados para validar a robustez dos métodos estatísticos quando aplicados a distribuições que violam pressupostos de normalidade:
+Os dados apresentam as seguintes características descritivas, que os tornam especialmente apropriados para validar a robustez dos métodos estatísticos quando aplicados a distribuições que violam pressupostos de normalidade:
 
 \input{resultados/tabelas_latex/tab_01_estatisticas_descritivas.tex}
 
@@ -583,6 +593,8 @@ Os dados apresentam as seguintes características descritivas (Tabela \ref{tab:s
     \end{itemize}
 \end{enumerate}
 
+Esta subseção documenta as tecnologias utilizadas para executar as análises, garantindo reprodutibilidade e transparência.
+
 \subsection{Ambiente Computacional e Ferramentas}
 
 \subsubsection{Linguagem de Programação}
@@ -603,6 +615,12 @@ O trabalho foi desenvolvido integralmente em \textbf{Python 3.13.9}, utilizando 
     \item \textbf{Scikit-learn}: Algumas operações de preprocessing quando necessário.
 \end{itemize}
 
+As bibliotecas complementares utilizadas para testes e cálculos estatísticos avançados incluem:
+
+\begin{itemize}
+    \item \textbf{Statsmodels}: Modelos estatísticos avançados e testes específicos.
+\end{itemize}
+
 \subsection{Fluxo Geral de Execução}
 
 O trabalho segue um fluxo lógico estruturado em três etapas principais, descrito no diagrama conceitual abaixo:
@@ -614,6 +632,8 @@ O trabalho segue um fluxo lógico estruturado em três etapas principais, descri
     
     \item \textbf{Etapa 3 - Síntese de Resultados}: Compilação de resultados em tabelas e gráficos para apresentação final.
 \end{enumerate}
+
+Esta subseção apresenta um framework de 4 componentes aplicado a cada técnica, garantindo consistência entre métodos.
 
 \subsection{Estrutura Padronizada para Análises Estatísticas}
 
@@ -677,9 +697,11 @@ O procedimento segue as seguintes etapas ordenadas:
 
 \textbf{\large{Componente 4: Métricas de Avaliação}}
 
-\input{resultados/tabelas_latex/tab_03_tcl_metricas.tex}
+Os resultados da validação do Teorema Central do Limite são apresentados na seção de Resultados.
 
 \subsubsection{Intervalo de Confiança (IC)}
+
+A análise de Intervalo de Confiança segue a mesma estrutura padronizada. Os componentes são descritos a seguir:
 
 \textbf{\large{Componente 1: Configuração e Parâmetros}}
 
@@ -733,11 +755,15 @@ O procedimento segue as seguintes etapas:
 
 \textbf{\large{Componente 4: Métricas de Avaliação}}
 
-\input{resultados/tabelas_latex/tab_05_ic_metricas.tex}
+Os resultados da validação do Intervalo de Confiança são apresentados na seção de Resultados.
 
 \subsubsection{Análise de Variância (ANOVA)}
 
+A ANOVA é implementada seguindo a estrutura padronizada de 4 componentes. Seguem os detalhes:
+
 \textbf{\large{Componente 1: Configuração e Parâmetros}}
+
+A Tabela a seguir sintetiza os parâmetros essenciais para execução da análise ANOVA:
 
 \begin{table}[H]
 \centering
@@ -799,13 +825,15 @@ O procedimento segue as seguintes etapas:
 
 \textbf{\large{Componente 4: Métricas de Avaliação}}
 
-\input{resultados/tabelas_latex/tab_07_anova_metricas.tex}
+Esta subseção sintetiza os principais parâmetros utilizados em cada análise realizada.
+
+Os resultados da validação da Análise de Variância são apresentados na seção de Resultados.
 
 \subsection{Parâmetros Configurados}
 
-A Tabela \ref{tab:parametros_metodologia} sumariza os principais parâmetros utilizados em cada análise:
+Esta subseção descreve o processamento dos dados e os critérios para tomada de decisões estatísticas.
 
-\input{resultados/tabelas_latex/tab_08_parametros.tex}
+Os principais parâmetros utilizados em cada análise foram detalhados nas seções anteriores de configuração específica para cada técnica (TCL, IC e ANOVA).
 
 \subsection{Tratamento de Dados e Critérios de Análise}
 
@@ -824,6 +852,8 @@ A Tabela \ref{tab:parametros_metodologia} sumariza os principais parâmetros uti
     
     \item \textbf{IC}: Taxa de cobertura é considerada adequada se está entre 90\% e 98\% (intervalo razoável considerando flutuação amostral).
     
+
+Esta subseção documenta como os resultados podem ser reproduzidos de forma independente através do código disponível.
     \item \textbf{ANOVA}: F-ratio significativo se p-valor $< 0.05$ (rejeita $H_0$ de igualdade de médias).
 \end{itemize}
 
@@ -844,6 +874,8 @@ A utilização de notebooks Jupyter garante \textit{reproducible research}, perm
 % =====================================================
 % SEÇÃO 5: RESULTADOS E DISCUSSÃO
 % =====================================================
+
+Esta subseção apresenta os resultados empíricos validando o TCL, demonstrando convergência para normalidade mesmo em distribuições altamente não-normais.
 \newpage
 \section{Resultados e Discussão}
 
@@ -883,7 +915,7 @@ As métricas quantitativas confirmam a convergência:
 
 \subsubsection{Resultado 2: Validação da Propriedade de Cobertura do IC}
 
-O teste de cobertura validou que o IC com 95\% de confiança contém corretamente a média populacional na proporção esperada. Os resultados são apresentados na Tabela \ref{tab:ic_resultados}, gerada automaticamente a partir dos dados de análise:
+O teste de cobertura validou que o IC com 95\% de confiança contém corretamente a média populacional na proporção esperada. Os resultados são apresentados a seguir, gerados automaticamente a partir dos dados de análise:
 
 \input{resultados/tabelas_latex/tab_03_ic_resumo.tex}
 
@@ -927,7 +959,9 @@ A taxa observada (89,90\%) é ligeiramente inferior à esperada (95\%), uma dife
 \end{enumerate}
 
 \textbf{\large{Conclusão do IC:}}
-\textbf{O Intervalo de Confiança foi validado}, com taxa de cobertura (89,90\%) próxima à esperada (95\%). A pequena diferença é aceitável e explica-se pela não-normalidade dos dados. O método é robusto e apropriado para inferência sobre a média populacional mesmo em contextos desafiadores.
+\textbf{O Intervalo de Confiança foi validado}, com tax
+
+Esta subseção apresenta os resultados da ANOVA, demonstrando diferenças entre grupos e quais diferem significativamente.a de cobertura (89,90\%) próxima à esperada (95\%). A pequena diferença é aceitável e explica-se pela não-normalidade dos dados. O método é robusto e apropriado para inferência sobre a média populacional mesmo em contextos desafiadores.
 
 \subsection{Resultados da Análise de Variância (ANOVA)}
 
@@ -973,8 +1007,10 @@ A análise de ANOVA não foi completamente executada nesta fase pelos seguintes 
     
     \item \textbf{Oportunidade Futura}: Quando dados de outros estados (São Paulo, Rio de Janeiro, etc.) forem inclusos, a ANOVA será extremamente relevante para determinar se há diferenças significativas em quantidades de animais transportados conforme origem/destino.
     
-    \item \textbf{Robustez Presumida}: Com base no desempenho do TCL e IC com dados não-normais, espera-se que ANOVA será robusto quando aplicado a múltiplos grupos, mesmo considerando a não-normalidade.
+    \item \textbf{Robustez Presumida}: Com base no desempenho do TCL e IC com dados não-normais, espera-se que ANOVA será robusto quando aplicado a múltiplos grupos, mesmo com não-normalidade.
 \end{enumerate}
+
+Esta subseção integra e interpreta os achados das três análises, demonstrando como complementam-se e validam a aplicabilidade prática dos métodos.
 
 \textbf{\large{Conclusão da ANOVA:}}
 \textbf{ANOVA não foi plenamente aplicada nesta fase}, mas as estatísticas preparatórias foram calculadas e validadas. Quando dados com múltiplos grupos estiverem disponíveis, a análise será realizada seguindo rigorosamente o procedimento de 4 componentes descrito na Metodologia.
@@ -983,7 +1019,7 @@ A análise de ANOVA não foi completamente executada nesta fase pelos seguintes 
 
 \subsubsection{Validação dos Métodos Estatísticos em Contexto Desafiador}
 
-Os resultados obtidos demonstram que \textbf{os métodos estatísticos tradicionais (TCL, IC, ANOVA) são robusto mesmo quando aplicados a dados altamente não-normais}. Este achado é especialmente relevante para aplicações práticas em engenharia e agropecuária, onde dados raramente seguem distribuição perfeita.
+Os resultados obtidos demonstram que \textbf{os métodos estatísticos tradicionais (TCL, IC, ANOVA) são robustos mesmo quando aplicados a dados altamente não-normais}. Este achado é especialmente relevante para aplicações práticas em engenharia e agropecuária, onde dados raramente seguem distribuição perfeita.
 
 \begin{enumerate}
     \item \textbf{TCL - Fundamento Teórico Validado}: O resultado do TCL justifica, empiricamente, por que métodos paramétricos funcionam mesmo com não-normalidade. A convergência para normalidade das médias amostrais é rápida e efetiva.
@@ -1058,9 +1094,9 @@ Para profissionais em engenharia, agropecuária e análise de dados:
 \begin{enumerate}
     \item \textbf{Confiança na Inferência}: Pode-se fazer inferências estatísticas com confiança mesmo quando dados reais violam pressupostos teóricos ideais, desde que tamanhos amostrais sejam adequados.
     
-    \item \textbf{Seleção de Ferramentas}: Não é necessário se restringir a métodos não-paramétricos apenas porque dados não são normais. Os testes paramétricos tradicionais funcionam bem.
+    \item \textbf{Seleção de Ferramentas}: Não é necessário restringir-se a métodos não-paramétricos apenas porque dados não são normais. Testes paramétricos funcionam bem na prática.
     
-    \item \textbf{Otimização Operacional}: No contexto do sistema GTA (transportes de bovinos), os achados permitem otimização de rotas, planejamento de capacidades e análise de padrões regionais com rigor estatístico.
+    \item \textbf{Otimização Operacional}: No contexto do sistema GTA (transportes de bovinos), os achados permitem otimização de rotas, planejamento de capacidades e análise de padrões regionais com rigor apropriado.
 \end{enumerate}
 
 \subsection{Limitações e Oportunidades Futuras}

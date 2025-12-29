@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  27 DEC 2025 17:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  28 DEC 2025 09:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -314,7 +314,10 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
-) (relatorio.aux)
+) (relatorio.aux
+Package babel Info: 'brazilian' activates 'portuges' shorthands.
+(babel)             Reported  on input line 9.
+)
 \openout1 = `relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -335,8 +338,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
 LaTeX Font Info:    ... okay on input line 64.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
 LaTeX Font Info:    ... okay on input line 64.
-Package babel Info: 'brazilian' activates 'portuges' shorthands.
-(babel)             Reported  on input line 64.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -409,181 +410,133 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 <to be read again> 
                    \relax 
 l.113 \newpage
-               [1]
-No file relatorio.toc.
+               [1] (relatorio.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[2])
 \tf@toc=\write3
 \openout3 = `relatorio.toc'.
 
 
 
-[2]
+[3]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 145.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[3]
-
-LaTeX Warning: Citation `Devore2015' on page 4 undefined on input line 179.
-
-
-LaTeX Warning: Citation `Devore2015' on page 4 undefined on input line 183.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 187.
-(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 187.
- (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Citation `Montgomery2016' on page 4 undefined on input line 187.
-
-
-
 [4]
-
-LaTeX Warning: Citation `Devore2015' on page 5 undefined on input line 205.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 205.
-
-
-LaTeX Warning: Citation `Devore2015' on page 5 undefined on input line 219.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 219.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 228.
-
-
 
 [5]
 
-LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 235.
-
-
-LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 247.
-
-
-LaTeX Warning: Citation `Devore2015' on page 6 undefined on input line 251.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 6 undefined on input line 263.
-
-
-
 [6]
-
-LaTeX Warning: Citation `Devore2015' on page 7 undefined on input line 290.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 7 undefined on input line 304.
-
-
 
 [7]
 
-LaTeX Warning: Citation `Devore2015' on page 8 undefined on input line 324.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 324.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 334.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 338.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 342.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 8 undefined on input line 356.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 8 undefined on input line 356.
-
-
-
 [8]
-
-LaTeX Warning: Citation `Montgomery2013' on page 9 undefined on input line 376.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 9 undefined on input line 399.
-
-
 
 [9]
 
-LaTeX Warning: Citation `Montgomery2013' on page 10 undefined on input line 439.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 10 undefined on input line 439.
-
-
-
 [10]
-
-LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 473.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 485.
-
-
-LaTeX Warning: Citation `Montgomery2013' on page 11 undefined on input line 513.
-
-
-LaTeX Warning: Citation `Montgomery2016' on page 11 undefined on input line 513.
-
-
 
 [11]
 
-LaTeX Warning: Citation `Montgomery2016' on page 12 undefined on input line 525.
-
-
-
 [12]
 
-LaTeX Warning: Reference `tab:stats_dados' on page 13 undefined on input line 561.
+[13] (resultados/tabelas_latex/tab_01_estatisticas_descritivas.tex)
 
-(resultados/tabelas_latex/tab_01_estatisticas_descritivas.tex)
+[14]
 
-[13]
-
-[14
+[15
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.597     \item \textbf
-                       {Pandas (2.0+)}: Manipulação e análise de dados ta...]
+l.604 \subsubsection
+                    {Bibliotecas Estatísticas Utilizadas}]
 
-[15]
+[16]
 
-! LaTeX Error: File `resultados/tabelas_latex/tab_03_tcl_metricas.tex' not found.
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.706 ...ponente 1: Configuração e Parâmetros}}
+                                                  ]
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.764 ...ponente 1: Configuração e Parâmetros}}
+                                                  ]
 
-Enter file name: 
-d:/GitHub/DoutoradoCefet/PlanejamentoAnaliseEstatisticoExperimentos/Trabalhos/estudo_dirigido_3/relatorio/relatorio.tex:680: Emergency stop.
-<read *> 
-         
-l.680 ...os/tabelas_latex/tab_03_tcl_metricas.tex}
-                                                  ^^M
-*** (cannot \read from terminal in nonstop modes)
+[19
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.824 \end{itemize}
+                   ]
 
- 
+[20]
+
+[21] (resultados/tabelas_latex/tab_02_tcl_resultados.tex)
+
+[22
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.914 \subsection
+                 {Resultados do Intervalo de Confiança (IC)}] (resultados/tabelas_latex/tab_03_ic_resumo.tex)
+
+[23
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.954     \item \textbf
+                       {Não-normalidade dos Dados}: Os dados originais são...] (resultados/tabelas_latex/tab_04_anova_estatisticas_grupo.tex)
+
+[24
+pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.996     \item M
+                 édia = 18,856, Mediana = 11,0 (diferença confirma assimet...]
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29] (relatorio.bbl)
+
+[30] (relatorio.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-06-09>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 12267 strings out of 468221
- 191533 string characters out of 5432892
- 610109 words of memory out of 5000000
- 40505 multiletter control sequences out of 15000+600000
- 664623 words of font info for 87 fonts, out of 8000000 for 9000
+ 12448 strings out of 468221
+ 194823 string characters out of 5432892
+ 616460 words of memory out of 5000000
+ 40575 multiletter control sequences out of 15000+600000
+ 674695 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,944b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
-d:/GitHub/DoutoradoCefet/PlanejamentoAnaliseEstatisticoExperimentos/Trabalhos/estudo_dirigido_3/relatorio/relatorio.tex:680:  ==> Fatal error occurred, no output PDF file produced!
+ 75i,12n,79p,1002b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (31 pages, 327194 bytes).
+PDF statistics:
+ 697 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
+ 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+

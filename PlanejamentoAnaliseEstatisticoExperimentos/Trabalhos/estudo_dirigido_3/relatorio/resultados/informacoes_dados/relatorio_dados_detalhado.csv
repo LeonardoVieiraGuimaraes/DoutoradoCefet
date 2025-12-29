@@ -1,8 +1,0 @@
-﻿Arquivo,Tamanho_MB,Linhas,Colunas,Delimitador,Descricao
-bd_gta_dentro_mg202505091607.csv,950.4,8298490,15,;,Base principal de GTAs dentro de Minas Gerais
-bd_gta_dentro_mg_faixa_etaria202505091602.csv,652.78,11838896,5,;,Faixa etária dos bovinos por sexo
-bd_gta_oe202505091618.csv,6.46,64677,14,;,Importações de bovinos de outros estados
-bd_gta_oe_faixa_etaria202505091630.csv,4.55,87560,5,;,Faixa etária dos bovinos importados
-gtas_com_distancias.csv,1156.59,8363167,21,;,Consolidação com distâncias e durações
-matriz_distancias.csv,370.34,4751210,6,;,Matriz de distâncias entre municípios
-possiveis_fraudes.csv,0.02,311,7,;,Registros identificados como fraudes

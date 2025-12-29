@@ -1,0 +1,106 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              RELATÓRIO DE EXPLORAÇÃO DE DADOS - possiveis_fraudes.csv         ║
+║                                                                              ║
+║  Data de Geração: 29/12/2025 00:27:00                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+ARQUIVO: possiveis_fraudes.csv
+════════════════════════════════════════════════════════════════════════════════════════════════════
+Dimensões: 311 linhas × 7 colunas
+Tamanho: 0.02 MB | Delimitador: ';'
+
+----------------------------------------------------------------------------------------------------
+COLUNAS ANALISADAS:
+----------------------------------------------------------------------------------------------------
+
+
+   Coluna: id_gta (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [6216, 1.80723e+07] (Amplitude: 1.80661e+07)
+   Centro: Média=8.32541e+06 | Mediana=8.10521e+06
+   Dispersão: Desvio Padrão=5.46187e+06 | Variância=2.9832e+13
+   Variação: CV=65.6048%
+   Quartis: Q1=3.31467e+06 | Q3=1.31747e+07 | IQR=9.86001e+06
+   Forma: Assimetria=0.1279 | Curtose=-1.2378
+   Limites Outliers: [-1.14753e+07, 2.79647e+07]
+
+   Coluna: dt_emissao_gta (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 311
+   Valor mais frequente: '2017-09-15 08:43:07.588' (1 ocorrências)
+   Comprimento: mín=23 | médio=23.0 | máx=23
+   Diversidade: 1.0000
+   Top 5 valores: {'2017-09-15 08:43:07.588': 1, '2021-06-16 08:12:09.641': 1, '2013-09-04 08:59:57.521': 1, '2016-12-07 09:29:34.062': 1, '2016-12-20 15:53:01.167': 1}
+
+   Coluna: cod_produtor_origem (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [736, 3.35922e+06] (Amplitude: 3.35849e+06)
+   Centro: Média=980431 | Mediana=288691
+   Dispersão: Desvio Padrão=1.32872e+06 | Variância=1.76549e+12
+   Variação: CV=135.5236%
+   Quartis: Q1=73247 | Q3=3.07422e+06 | IQR=3.00098e+06
+   Forma: Assimetria=1.0445 | Curtose=-0.8576
+   Limites Outliers: [-4.42822e+06, 7.57569e+06]
+
+   Coluna: cod_produtor_destino (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [2190, 3.31046e+06] (Amplitude: 3.30827e+06)
+   Centro: Média=963563 | Mediana=290259
+   Dispersão: Desvio Padrão=1.30963e+06 | Variância=1.71512e+12
+   Variação: CV=135.9150%
+   Quartis: Q1=73024 | Q3=3.05102e+06 | IQR=2.97799e+06
+   Forma: Assimetria=1.0816 | Curtose=-0.7753
+   Limites Outliers: [-4.39396e+06, 7.518e+06]
+
+   Coluna: qtd (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [1, 4603] (Amplitude: 4602)
+   Centro: Média=350.039 | Mediana=170
+   Dispersão: Desvio Padrão=520.856 | Variância=271291
+   Variação: CV=148.7997%
+   Quartis: Q1=40 | Q3=421.5 | IQR=381.5
+   Forma: Assimetria=3.4687 | Curtose=18.0603
+   Limites Outliers: [-532.25, 993.75]
+
+   Coluna: distancia_km (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [0, 2469.95] (Amplitude: 2469.95)
+   Centro: Média=292.31 | Mediana=55.08
+   Dispersão: Desvio Padrão=449.943 | Variância=202449
+   Variação: CV=153.9268%
+   Quartis: Q1=0 | Q3=476.735 | IQR=476.735
+   Forma: Assimetria=2.0502 | Curtose=4.7183
+   Limites Outliers: [-715.102, 1191.84]
+
+   Coluna: data_seconds (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 311 | Nulos: 0
+   Intervalo: [1.33614e+09, 1.74447e+09] (Amplitude: 4.08321e+08)
+   Centro: Média=1.55203e+09 | Mediana=1.55983e+09
+   Dispersão: Desvio Padrão=1.20164e+08 | Variância=1.44393e+16
+   Variação: CV=7.7424%
+   Quartis: Q1=1.4435e+09 | Q3=1.66046e+09 | IQR=2.16963e+08
+   Forma: Assimetria=-0.0844 | Curtose=-1.2332
+   Limites Outliers: [1.11806e+09, 1.98591e+09]
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            RESUMO DO ARQUIVO                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Nome do Arquivo: possiveis_fraudes.csv
+Dimensões: 311 linhas × 7 colunas
+Tamanho: 0.02 MB
+Total de Colunas Analisadas: 7
+Colunas Numéricas: 6
+Colunas Categóricas: 1
+
+═══════════════════════════════════════════════════════════════════════════════
+Fim do Relatório - 29/12/2025 00:27:00
+═══════════════════════════════════════════════════════════════════════════════
