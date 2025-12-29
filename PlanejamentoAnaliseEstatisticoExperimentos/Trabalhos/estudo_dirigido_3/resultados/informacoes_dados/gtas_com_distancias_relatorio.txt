@@ -1,0 +1,242 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              RELATÓRIO DE EXPLORAÇÃO DE DADOS - gtas_com_distancias.csv       ║
+║                                                                              ║
+║  Data de Geração: 29/12/2025 17:00:48                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+ARQUIVO: gtas_com_distancias.csv
+════════════════════════════════════════════════════════════════════════════════════════════════════
+Dimensões: 8,363,167 linhas × 21 colunas
+Tamanho: 1156.59 MB | Delimitador: ';'
+
+----------------------------------------------------------------------------------------------------
+COLUNAS ANALISADAS:
+----------------------------------------------------------------------------------------------------
+
+
+   Coluna: nr_gta (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [1, 6.67608e+07] (Amplitude: 6.67608e+07)
+   Centro: Média=495055 | Mediana=493920
+   Dispersão: Desvio Padrão=293024 | Variância=8.58633e+10
+   Variação: CV=59.1902%
+   Quartis: Q1=241777 | Q3=746996 | IQR=505219
+   Forma: Assimetria=3.7872 | Curtose=756.2359
+   Limites Outliers: [-516052, 1.50482e+06]
+
+   Coluna: nr_serie (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 51
+   Valor mais frequente: 'B' (538325 ocorrências)
+   Comprimento: mín=1 | médio=1.0 | máx=2
+   Diversidade: 0.0000
+   Top 5 valores: {'B': 538325, 'C': 532592, 'A': 526540, 'L': 488731, 'D': 486189}
+
+   Coluna: id_gta (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [6, 1.82224e+07] (Amplitude: 1.82224e+07)
+   Centro: Média=8.81687e+06 | Mediana=8.792e+06
+   Dispersão: Desvio Padrão=5.41761e+06 | Variância=2.93505e+13
+   Variação: CV=61.4459%
+   Quartis: Q1=3.87157e+06 | Q3=1.35428e+07 | IQR=9.67127e+06
+   Forma: Assimetria=0.0456 | Curtose=-1.2544
+   Limites Outliers: [-1.06353e+07, 2.80498e+07]
+
+   Coluna: dt_emissao_gta (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 8268228
+   Valor mais frequente: '2012-04-19 00:00:00.0' (1753 ocorrências)
+   Comprimento: mín=21 | médio=22.9 | máx=23
+   Diversidade: 0.9886
+   Top 5 valores: {'2012-04-19 00:00:00.0': 1753, '2012-04-18 00:00:00.0': 1297, '2012-08-30 00:00:00.0': 456, '2019-06-01 00:00:00.0': 396, '2013-09-16 00:00:00.0': 338}
+
+   Coluna: cod_produtor_origem (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [1, 3.39395e+06] (Amplitude: 3.39395e+06)
+   Centro: Média=882200 | Mediana=290281
+   Dispersão: Desvio Padrão=1.2372e+06 | Variância=1.53066e+12
+   Variação: CV=140.2401%
+   Quartis: Q1=110921 | Q3=491227 | IQR=380306
+   Forma: Assimetria=1.2906 | Curtose=-0.2632
+   Limites Outliers: [-459538, 1.06169e+06]
+
+   Coluna: cod_produtor_destino (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [2, 3.39403e+06] (Amplitude: 3.39403e+06)
+   Centro: Média=1.0417e+06 | Mediana=322326
+   Dispersão: Desvio Padrão=1.33131e+06 | Variância=1.77239e+12
+   Variação: CV=127.8015%
+   Quartis: Q1=112684 | Q3=3.07104e+06 | IQR=2.95836e+06
+   Forma: Assimetria=0.9697 | Curtose=-1.0051
+   Limites Outliers: [-4.32485e+06, 7.50858e+06]
+
+   Coluna: id_tipo_finalidade_gta (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [2, 37] (Amplitude: 35)
+   Centro: Média=13.6278 | Mediana=8
+   Dispersão: Desvio Padrão=11.7889 | Variância=138.978
+   Variação: CV=86.5061%
+   Quartis: Q1=2 | Q3=30 | IQR=28
+   Forma: Assimetria=0.4822 | Curtose=-1.2964
+   Limites Outliers: [-40, 72]
+
+   Coluna: ds_meio_transporte (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 99.23% | Valores únicos: 5
+   Valor mais frequente: 'RODOVIÁRIO' (7322115 ocorrências)
+   Comprimento: mín=4 | médio=9.3 | máx=16
+   Diversidade: 0.0000
+   Top 5 valores: {'RODOVIÁRIO': 7322115, 'A PÉ': 968445, 'FERROVIÁRIO': 4297, 'MARÍTIMO/FLUVIAL': 2938, 'AÉREO': 695}
+
+   Coluna: cod_municipio_origem (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [1.10002e+06, 5.30011e+06] (Amplitude: 4.20009e+06)
+   Centro: Média=3.14289e+06 | Mediana=3.13781e+06
+   Dispersão: Desvio Padrão=123939 | Variância=1.53609e+10
+   Variação: CV=3.9435%
+   Quartis: Q1=3.1208e+06 | Q3=3.15431e+06 | IQR=33504
+   Forma: Assimetria=10.3163 | Curtose=226.1990
+   Limites Outliers: [3.07055e+06, 3.20456e+06]
+
+   Coluna: nome_municipio_origem (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 2955
+   Valor mais frequente: 'FRUTAL' (284929 ocorrências)
+   Comprimento: mín=3 | médio=10.8 | máx=32
+   Diversidade: 0.0004
+   Top 5 valores: {'FRUTAL': 284929, 'UBERLÂNDIA': 236250, 'PATOS DE MINAS': 198900, 'PRATA': 166060, 'UBERABA': 163394}
+
+   Coluna: estado_origem (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 25
+   Valor mais frequente: 'MG' (8298490 ocorrências)
+   Comprimento: mín=2 | médio=2.0 | máx=2
+   Diversidade: 0.0000
+   Top 5 valores: {'MG': 8298490, 'SP': 14320, 'GO': 11257, 'MT': 8098, 'BA': 6859}
+
+   Coluna: cod_municipio_destino (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [1.10012e+06, 5.30011e+06] (Amplitude: 4.19999e+06)
+   Centro: Média=3.13735e+06 | Mediana=3.13711e+06
+   Dispersão: Desvio Padrão=22949.8 | Variância=5.26691e+08
+   Variação: CV=0.7315%
+   Quartis: Q1=3.1193e+06 | Q3=3.1534e+06 | IQR=34098
+   Forma: Assimetria=10.2556 | Curtose=1140.7260
+   Limites Outliers: [3.06816e+06, 3.20455e+06]
+
+   Coluna: nome_municipio_destino (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 1136
+   Valor mais frequente: 'FRUTAL' (210168 ocorrências)
+   Comprimento: mín=3 | médio=10.9 | máx=30
+   Diversidade: 0.0001
+   Top 5 valores: {'FRUTAL': 210168, 'PRATA': 207093, 'CAMPINA VERDE': 192091, 'UBERABA': 140418, 'UNAÍ': 133672}
+
+   Coluna: estado_destino (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 20
+   Valor mais frequente: 'MG' (8362585 ocorrências)
+   Comprimento: mín=2 | médio=2.0 | máx=2
+   Diversidade: 0.0000
+   Top 5 valores: {'MG': 8362585, 'SP': 236, 'GO': 73, 'BA': 61, 'RJ': 44}
+
+   Coluna: qtd (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [1, 10676] (Amplitude: 10675)
+   Centro: Média=19.0263 | Mediana=11
+   Dispersão: Desvio Padrão=32.5728 | Variância=1060.99
+   Variação: CV=171.1986%
+   Quartis: Q1=4 | Q3=24 | IQR=20
+   Forma: Assimetria=28.6642 | Curtose=3855.4209
+   Limites Outliers: [-26, 54]
+
+   Coluna: Acima de 36 meses (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [0, 5861] (Amplitude: 5861)
+   Centro: Média=3.86258 | Mediana=0
+   Dispersão: Desvio Padrão=13.3565 | Variância=178.396
+   Variação: CV=345.7921%
+   Quartis: Q1=0 | Q3=2 | IQR=2
+   Forma: Assimetria=38.9686 | Curtose=7956.5110
+   Limites Outliers: [-3, 5]
+
+   Coluna: De 0 até 12 meses (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [0, 7282] (Amplitude: 7282)
+   Centro: Média=6.32984 | Mediana=0
+   Dispersão: Desvio Padrão=17.6055 | Variância=309.955
+   Variação: CV=278.1353%
+   Quartis: Q1=0 | Q3=5 | IQR=5
+   Forma: Assimetria=36.0187 | Curtose=9045.2457
+   Limites Outliers: [-7.5, 12.5]
+
+   Coluna: De 13 até 24 meses (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [0, 3000] (Amplitude: 3000)
+   Centro: Média=5.55173 | Mediana=0
+   Dispersão: Desvio Padrão=17.5086 | Variância=306.551
+   Variação: CV=315.3721%
+   Quartis: Q1=0 | Q3=3 | IQR=3
+   Forma: Assimetria=19.9571 | Curtose=1319.1297
+   Limites Outliers: [-4.5, 7.5]
+
+   Coluna: De 25 até 36 meses (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 8,363,167 | Nulos: 0
+   Intervalo: [0, 3968] (Amplitude: 3968)
+   Centro: Média=3.28219 | Mediana=0
+   Dispersão: Desvio Padrão=13.63 | Variância=185.777
+   Variação: CV=415.2719%
+   Quartis: Q1=0 | Q3=0 | IQR=0
+   Forma: Assimetria=32.6136 | Curtose=3991.2020
+   Limites Outliers: [0, 0]
+
+   Coluna: distancia_km (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 99.19% | Valores válidos: 8,295,186 | Nulos: 67,981
+   Intervalo: [0, 5321.43] (Amplitude: 5321.43)
+   Centro: Média=87.8809 | Mediana=29.7449
+   Dispersão: Desvio Padrão=167.173 | Variância=27946.9
+   Variação: CV=190.2272%
+   Quartis: Q1=0 | Q3=91.6114 | IQR=91.6114
+   Forma: Assimetria=3.5667 | Curtose=17.4131
+   Limites Outliers: [-137.417, 229.029]
+
+   Coluna: duracao_min (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 99.19% | Valores válidos: 8,295,186 | Nulos: 67,981
+   Intervalo: [0, 19076.7] (Amplitude: 19076.7)
+   Centro: Média=100.229 | Mediana=33.9633
+   Dispersão: Desvio Padrão=285.867 | Variância=81720.1
+   Variação: CV=285.2142%
+   Quartis: Q1=0 | Q3=99.9017 | IQR=99.9017
+   Forma: Assimetria=21.3238 | Curtose=774.0778
+   Limites Outliers: [-149.852, 249.754]
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            RESUMO DO ARQUIVO                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Nome do Arquivo: gtas_com_distancias.csv
+Dimensões: 8,363,167 linhas × 21 colunas
+Tamanho: 1156.59 MB
+Total de Colunas Analisadas: 21
+Colunas Numéricas: 14
+Colunas Categóricas: 7
+
+═══════════════════════════════════════════════════════════════════════════════
+Fim do Relatório - 29/12/2025 17:00:48
+═══════════════════════════════════════════════════════════════════════════════

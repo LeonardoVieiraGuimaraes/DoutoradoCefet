@@ -1,0 +1,78 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              RELATÓRIO DE EXPLORAÇÃO DE DADOS - bd_gta_dentro_mg_faixa_etaria202505091602.csv║
+║                                                                              ║
+║  Data de Geração: 29/12/2025 16:57:49                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+ARQUIVO: bd_gta_dentro_mg_faixa_etaria202505091602.csv
+════════════════════════════════════════════════════════════════════════════════════════════════════
+Dimensões: 11,838,896 linhas × 5 colunas
+Tamanho: 652.78 MB | Delimitador: ';'
+
+----------------------------------------------------------------------------------------------------
+COLUNAS ANALISADAS:
+----------------------------------------------------------------------------------------------------
+
+
+   Coluna: id_gta (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 11,838,896 | Nulos: 0
+   Intervalo: [6, 1.82224e+07] (Amplitude: 1.82224e+07)
+   Centro: Média=8.70216e+06 | Mediana=8.59165e+06
+   Dispersão: Desvio Padrão=5.38444e+06 | Variância=2.89922e+13
+   Variação: CV=61.8747%
+   Quartis: Q1=3.75017e+06 | Q3=1.3357e+07 | IQR=9.6068e+06
+   Forma: Assimetria=0.0838 | Curtose=-1.2485
+   Limites Outliers: [-1.066e+07, 2.77672e+07]
+
+   Coluna: dt_emissao_gta (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 8267864
+   Valor mais frequente: '2012-04-19 00:00:00.0' (2777 ocorrências)
+   Comprimento: mín=21 | médio=22.9 | máx=23
+   Diversidade: 0.6984
+   Top 5 valores: {'2012-04-19 00:00:00.0': 2777, '2012-04-18 00:00:00.0': 2041, '2012-08-30 00:00:00.0': 619, '2019-06-01 00:00:00.0': 519, '2013-09-16 00:00:00.0': 470}
+
+   Coluna: ds_faixa_etaria (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 4
+   Valor mais frequente: 'De 0 até 12 meses' (3884463 ocorrências)
+   Comprimento: mín=17 | médio=17.4 | máx=18
+   Diversidade: 0.0000
+   Top 5 valores: {'De 0 até 12 meses': 3884463, 'Acima de 36 meses': 3007839, 'De 13 até 24 meses': 2944075, 'De 25 até 36 meses': 2002519}
+
+   Coluna: tp_sexo (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 2
+   Valor mais frequente: 'F' (6059997 ocorrências)
+   Comprimento: mín=1 | médio=1.0 | máx=1
+   Diversidade: 0.0000
+   Top 5 valores: {'F': 6059997, 'M': 5778899}
+
+   Coluna: qt_animais (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores válidos: 11,838,896 | Nulos: 0
+   Intervalo: [1, 7282] (Amplitude: 7281)
+   Centro: Média=13.2381 | Mediana=6
+   Dispersão: Desvio Padrão=23.2619 | Variância=541.114
+   Variação: CV=175.7186%
+   Quartis: Q1=2 | Q3=17 | IQR=15
+   Forma: Assimetria=24.2133 | Curtose=3187.9134
+   Limites Outliers: [-20.5, 39.5]
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            RESUMO DO ARQUIVO                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Nome do Arquivo: bd_gta_dentro_mg_faixa_etaria202505091602.csv
+Dimensões: 11,838,896 linhas × 5 colunas
+Tamanho: 652.78 MB
+Total de Colunas Analisadas: 5
+Colunas Numéricas: 2
+Colunas Categóricas: 3
+
+═══════════════════════════════════════════════════════════════════════════════
+Fim do Relatório - 29/12/2025 16:57:49
+═══════════════════════════════════════════════════════════════════════════════

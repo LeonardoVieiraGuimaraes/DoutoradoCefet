@@ -1,0 +1,29 @@
+%% ÍNDICE DE TABELAS LaTeX
+%% Arquivo gerado automaticamente
+%% Data: 29/12/2025 17:25:33
+
+\section{Tabelas de Resultados}
+
+Nesta seção são apresentadas as tabelas com os resultados das análises estatísticas.
+
+
+% Para incluir cada tabela no relatório, use:
+% \input{relatorio/tabelas_latex/tab_XX_nome_tabela.tex}
+
+% TABELAS DISPONÍVEIS:
+% 1. \input{relatorio/tabelas_latex/tab_01_Parametros_Analise.tex} % Parametros_Analise
+% 2. \input{relatorio/tabelas_latex/tab_02_Estatisticas_Descritivas_Gerais.tex} % Estatisticas_Descritivas_Gerais
+% 3. \input{relatorio/tabelas_latex/tab_03_TCL_Resumo_Comparativo.tex} % TCL_Resumo_Comparativo
+% 4. \input{relatorio/tabelas_latex/tab_04_TCL_Validacao_10mil_simulacoes.tex} % TCL_Validacao_10mil_simulacoes
+% 5. \input{relatorio/tabelas_latex/tab_05_IC_95_Por_Ano_Detalhado.tex} % IC_95_Por_Ano_Detalhado
+% 6. \input{relatorio/tabelas_latex/tab_06_IC_95_Por_Mes_Detalhado.tex} % IC_95_Por_Mes_Detalhado
+% 7. \input{relatorio/tabelas_latex/tab_07_ANOVA_Efeitos_Principais_Interacao.tex} % ANOVA_Efeitos_Principais_Interacao
+% 8. \input{relatorio/tabelas_latex/tab_08_ANOVA_Qualidade_Modelo.tex} % ANOVA_Qualidade_Modelo
+% 9. \input{relatorio/tabelas_latex/tab_09_Conclusoes_Finais_Interpretacao.tex} % Conclusoes_Finais_Interpretacao
+% 10. \input{relatorio/tabelas_latex/tab_10_bd_gta_dentro_mg202505091607_analise.tex} % bd_gta_dentro_mg202505091607_analise
+% 11. \input{relatorio/tabelas_latex/tab_11_bd_gta_dentro_mg_faixa_etaria202505091602_analise.tex} % bd_gta_dentro_mg_faixa_etaria202505091602_analise
+% 12. \input{relatorio/tabelas_latex/tab_12_bd_gta_oe202505091618_analise.tex} % bd_gta_oe202505091618_analise
+% 13. \input{relatorio/tabelas_latex/tab_13_bd_gta_oe_faixa_etaria202505091630_analise.tex} % bd_gta_oe_faixa_etaria202505091630_analise
+% 14. \input{relatorio/tabelas_latex/tab_14_gtas_com_distancias_analise.tex} % gtas_com_distancias_analise
+% 15. \input{relatorio/tabelas_latex/tab_15_matriz_distancias_analise.tex} % matriz_distancias_analise
+% 16. \input{relatorio/tabelas_latex/tab_16_possiveis_fraudes_analise.tex} % possiveis_fraudes_analise
