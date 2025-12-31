@@ -1,9 +1,9 @@
 Medida,Valor
-Média das Médias Amostrais,18.946946
-DP Empírico,4.537419
+Média das Médias Amostrais,19.025482
+DP Empírico,4.461574
 DP Teórico,4.487380
 Assimetria Original,17.699826
-Assimetria das Médias,2.624231
-p-value Shapiro (Original),1.4194e-77
-p-value Shapiro (Médias),3.6975e-71
+Assimetria das Médias,2.298200
+p-value Shapiro (Original),5.7340e-90
+p-value Shapiro (Médias),1.2849e-68
 TCL Validado?,NÃO

@@ -1,28 +1,20 @@
 \babel@toc {brazilian}{}\relax 
 \contentsline {section}{\numberline {1}Introdução}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Objetivo Geral}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Justificativa}{3}{subsection.1.2}%
 \contentsline {section}{\numberline {2}Fundamentação Teórica}{4}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Teorema Central do Limite (TCL)}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Intervalo de Confiança (IC)}{5}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Análise de Variância (ANOVA)}{5}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.1}Teorema Central do Limite (TCL): Fundamento da Inferência Estatística}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Intervalo de Confiança (IC): Quantificação de Incerteza}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Análise de Variância (ANOVA): Teste de Múltiplos Grupos}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}ANOVA Fatorial: Análise de Múltiplos Fatores}{5}{subsubsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.4}Robustez de Métodos Paramétricos com Dados Não-Normais}{5}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Metodologia}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Dados Utilizados}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Ambiente Computacional}{8}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Estrutura Padronizada para Análises Estatísticas}{8}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Teorema Central do Limite (TCL)}{9}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Intervalo de Confiança (IC) - Análise por Mês e Ano}{9}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}Análise de Variância Fatorial (ANOVA 2-way)}{10}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Teste Post-Hoc: Tukey HSD}{10}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Critérios de Análise e Reprodutibilidade}{11}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Resultados e Discussão}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Resultados do Teorema Central do Limite (TCL)}{12}{subsection.4.1}%
-\contentsline {paragraph}{Interpretação}{13}{section*.4}%
-\contentsline {subsection}{\numberline {4.2}Resultados do Intervalo de Confiança (IC)}{13}{subsection.4.2}%
-\contentsline {paragraph}{Interpretação}{15}{section*.5}%
-\contentsline {subsection}{\numberline {4.3}Resultados da Análise de Variância (ANOVA)}{15}{subsection.4.3}%
-\contentsline {paragraph}{Interpretação}{16}{section*.6}%
-\contentsline {subsection}{\numberline {4.4}Discussão e Validação}{16}{subsection.4.4}%
-\contentsline {paragraph}{Robustez dos Métodos Estatísticos}{16}{section*.7}%
-\contentsline {paragraph}{Implicações Práticas para o Sistema GTA}{16}{section*.8}%
-\contentsline {section}{\numberline {5}Conclusão}{17}{section.5}%
+\contentsline {subsection}{\numberline {3.1}Questão de Pesquisa}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Design e Dados}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Hipóteses}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Pressupostos}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Estratégia de Análise}{7}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Ferramentas}{8}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Resultados e Discussão}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Etapa 1: Validação do Teorema Central do Limite}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Etapa 2: Validação do Intervalo de Confiança}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Etapa 3: ANOVA Fatorial - Resposta Direta}{12}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusão}{14}{section.5}%

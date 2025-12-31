@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  31 DEC 2025 02:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  31 DEC 2025 17:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -312,7 +312,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 Package hyperref Info: Option `colorlinks' set `true' on input line 45.
 Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 45.
 Package hyperref Info: Option `breaklinks' set `true' on input line 45.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 69.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 68.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -324,24 +324,24 @@ Package babel Info: 'brazilian' activates 'portuges' shorthands.
 )
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 69.
-LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -402,34 +402,34 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 69.
+Package hyperref Info: Link coloring ON on input line 68.
 
 
 [1
 
 {C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 137.
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 137.
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.118 \newpage
-               [1] (relatorio.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
- (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
- (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+l.141 \newpage
+               [1] (relatorio.toc)
 \tf@toc=\write3
 \openout3 = `relatorio.toc'.
 
 
 
 [2]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 150.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 160.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
@@ -437,251 +437,133 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 [3]
 
 [4]
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ptm in TS1 encoding.
-            Default family used instead on input line 229.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ptm in TS1 encoding.
-            Default family used instead on input line 230.
-LaTeX Info: Symbol \textrightarrow not provided by
-            font family ptm in TS1 encoding.
-            Default family used instead on input line 231.
-
 
 [5]
 
-[6] (tabelas_latex/tab_01_01_Parametros_Metodologia.tex)
+[6] (tabelas_latex/tab_01_01_Parametros_Metodologia.tex
 
-[7]
+[7])
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 305.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 305.
+
 
 [8
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.352 
-      ]
-
-[9
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.393     \item \textbf
-                       {ConsistÃªncia Temporal}: Verificar padrÃµes nas mÃ©d...
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.393     \item \textbf
-                       {ConsistÃªncia Temporal}: Verificar padrÃµes nas mÃ©d...]
-
-[10
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.440     \item E
-                 xtraÃ§Ã£o automÃ¡tica de mÃªs e ano]
-Underfull \hbox (badness 2189) in paragraph at lines 454--454
-[]\T1/ptm/b/n/12 Reprodutibilidade: \T1/ptm/m/n/12 To-das as aná-li-ses fo-ram exe-cu-ta-das em no-te-book Jupy-ter
- []
-
-
-
-[11] (tabelas_latex/tab_02_02_Estatisticas_Descritivas.tex) (tabelas_latex/tab_04_03_TCL_validacao.tex)
-<img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png, id=152, 860.013pt x 425.9112pt>
+l.310 \newpage
+              ]
+<img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png, id=112, 860.013pt x 425.9112pt>
 File: img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png Graphic file (type png)
 <use img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png>
-Package pdftex.def Info: img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png  used on input line 476.
-(pdftex.def)             Requested size: 364.19667pt x 180.36322pt.
-
-
-[12
-pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.480 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.480 
-      ]
-<img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png, id=161, 860.013pt x 425.6703pt>
+Package pdftex.def Info: img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png  used on input line 328.
+(pdftex.def)             Requested size: 386.96027pt x 191.63876pt.
+<img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png, id=114, 860.013pt x 425.6703pt>
 File: img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png Graphic file (type png)
 <use img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png>
-Package pdftex.def Info: img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png  used on input line 483.
-(pdftex.def)             Requested size: 364.19667pt x 180.2612pt.
- (tabelas_latex/tab_05_04_IC_por_ano.tex)
+Package pdftex.def Info: img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png  used on input line 336.
+(pdftex.def)             Requested size: 386.96027pt x 191.53036pt.
 
-[13
+
+[9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.497 
-      
+l.341 
+       <./img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png>] (tabelas_latex/tab_05_04_IC_por_ano.tex)
+<img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png, id=121, 1004.553pt x 425.9112pt>
+File: img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png Graphic file (type png)
+<use img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png>
+Package pdftex.def Info: img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png  used on input line 350.
+(pdftex.def)             Requested size: 386.96027pt x 164.06404pt.
+
+
+[10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.497 
-       <./img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png> <./img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png>]
-<img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png, id=171, 1004.553pt x 425.9112pt>
-File: img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png Graphic file (type png)
-<use img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png>
-Package pdftex.def Info: img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png  used on input line 500.
-(pdftex.def)             Requested size: 386.96027pt x 164.06404pt.
- (tabelas_latex/tab_06_04_IC_por_mes.tex)
-<img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png, id=172, 1004.553pt x 425.1885pt>
+l.355 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.355 
+       <./img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png>] (tabelas_latex/tab_06_04_IC_por_mes.tex)
+<img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png, id=129, 1004.553pt x 425.1885pt>
 File: img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png Graphic file (type png)
 <use img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png>
-Package pdftex.def Info: img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png  used on input line 509.
+Package pdftex.def Info: img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png  used on input line 360.
 (pdftex.def)             Requested size: 386.96027pt x 163.78566pt.
 
 
-[14
-pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.513 
-      
+[11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.513 
+l.365 
       
-pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.513 
-       <./img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png>] (tabelas_latex/tab_07_05_ANOVA_fatorial_efeitos.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--8
-[]\T1/ptm/b/n/10.95 p-
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 10--10
-[]\T1/ptm/m/n/10.95 1.0000| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 11--11
-[]\T1/ptm/m/n/10.95 1.0000| 
- []
-
-
-Overfull \hbox (1.6597pt too wide) in paragraph at lines 12--12
-[]\T1/ptm/m/n/10.95 0.9934| 
- []
-
-)
-<img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png, id=181, 1005.0348pt x 425.1885pt>
+l.365 
+       <./img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png>]
+<img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png, id=137, 1005.0348pt x 425.1885pt>
 File: img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png Graphic file (type png)
 <use img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png>
-Package pdftex.def Info: img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png  used on input line 526.
+Package pdftex.def Info: img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png  used on input line 385.
 (pdftex.def)             Requested size: 386.96027pt x 163.70131pt.
 
 
-[15
+[12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.534 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.534 
-      
+l.390 
+       <./img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png>]
+
+[13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.534 
-       <./img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png> <./img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png>]
+l.394 \newpage
+               <./img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png>]
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 429.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 429.
 
-[16] (tabelas_latex/tab_09_06_Resumo_Executivo.tex
-Underfull \hbox (badness 3179) in paragraph at lines 10--10
-[]\T1/ptm/m/n/8 Estatísticas Des-
+Overfull \hbox (0.43904pt too wide) in paragraph at lines 429--430
+\T1/ptm/b/n/12 Fundamento: \T1/ptm/m/n/12 Me-to-do-lo-gia bem pla-ne-jada, cla-ra-mente des-crita e em-pi-ri-ca-mente va-li-dada (TCL
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 10--11
-[]\T1/ptm/m/n/8 Distribuição as-si-mé-trica com
- []
 
+[14] (relatorio.bbl)
 
-Underfull \hbox (badness 2435) in paragraph at lines 11--11
-[]\T1/ptm/m/n/8 Teorema Cen-tral
- []
-
-
-Underfull \hbox (badness 7433) in paragraph at lines 11--12
-[]\T1/ptm/m/n/8 Médias se-guem dis-tri-bu-i-ção
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--12
-[]\T1/ptm/m/n/8 Intervalos de
- []
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 12--12
-[]\T1/ptm/m/n/8 95% de con-fi-ança cal-cu-lado
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
-[]\T1/ptm/m/n/8 Normalidade -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
-[]\T1/ptm/m/n/8 Normalidade -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
-[]\T1/ptm/m/n/8 Homogeneidade
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 16--16
-[]\T1/ptm/m/n/8 ANOVA Fa-to-rial
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 17--17
-[]\T1/ptm/m/n/8 ANOVA Fa-to-rial
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 18--18
-[]\T1/ptm/m/n/8 ANOVA Fa-to-rial
- []
-
-)
-
-[17
-pdfTeX warning (ext4): destination with the same identifier (name{table.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.576 \newpage
-              ] (relatorio.bbl)
-
-[18] (relatorio.aux)
+[15] (relatorio.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 12403 strings out of 468221
- 197600 string characters out of 5432892
- 626533 words of memory out of 5000000
- 40616 multiletter control sequences out of 15000+600000
- 672648 words of font info for 97 fonts, out of 8000000 for 9000
+ 12331 strings out of 468221
+ 195470 string characters out of 5432892
+ 614276 words of memory out of 5000000
+ 40591 multiletter control sequences out of 15000+600000
+ 667741 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1307b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (19 pages, 1051149 bytes).
+ 75i,11n,79p,1174b,553s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (16 pages, 1001756 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 202 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 286 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
