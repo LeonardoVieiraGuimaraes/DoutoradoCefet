@@ -1,10 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1767214816.77867 "d:/GitHub/DoutoradoCefet/TeoriaGrafos/praticas/pratica03/relatorio/relatorio.tex" "relatorio.pdf" "relatorio" 1767214817.79769 2
+["pdflatex"] 1767214884.78221 "d:/GitHub/DoutoradoCefet/TeoriaGrafos/praticas/pratica03/relatorio/relatorio.tex" "relatorio.pdf" "relatorio" 1767214885.56414 0
   "C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1767214811 83947 d4e7c1766bda3afe01c5a7c9d7c52cb2 ""
   "C:/Users/leona/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1751473353 13235207 a8fcb0fadce60a361a300f1222ea3e3c ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmr17.tfm" 1136765053 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1247596666 32080 340ef9bf63678554ee606688e7b5339d ""
+  "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifpdf.sty" 1734114575 480 5778104efadad304ced77548ca2184b1 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1734114575 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
@@ -41,9 +44,9 @@
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1749468414 15912 618223a798a4d829f4d8e1ccf24e518f ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "d:/GitHub/DoutoradoCefet/TeoriaGrafos/praticas/pratica03/relatorio/relatorio.tex" 1766495447 945 942940674e4bffc1dcf7c560a08c24f3 ""
-  "relatorio.aux" 1767214817 40 412870b9fc1f757adc9a11783933ca92 "pdflatex"
-  "relatorio.tex" 1766495447 945 942940674e4bffc1dcf7c560a08c24f3 ""
+  "d:/GitHub/DoutoradoCefet/TeoriaGrafos/praticas/pratica03/relatorio/relatorio.tex" 1767214883 963 daddc9bd3566a9c148b0a0293d0857ab ""
+  "relatorio.aux" 1767214885 87 f946e04c19529016d6e9d70d3574629a "pdflatex"
+  "relatorio.tex" 1767214883 963 daddc9bd3566a9c148b0a0293d0857ab ""
   (generated)
   "relatorio.aux"
   "relatorio.log"
