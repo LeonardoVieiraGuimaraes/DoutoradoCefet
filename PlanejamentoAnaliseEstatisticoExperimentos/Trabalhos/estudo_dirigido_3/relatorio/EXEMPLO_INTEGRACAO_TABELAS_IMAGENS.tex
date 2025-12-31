@@ -1,0 +1,105 @@
+%% ============================================================================
+%% EXEMPLO DE COMO INCORPORAR TABELAS E IMAGENS AO RELATÓRIO.TEX
+%% ============================================================================
+%% Este arquivo mostra exatamente como copiar e colar os comandos
+%% para incorporar tabelas e imagens ao seu relatório principal.
+%% ============================================================================
+
+% Copy and paste os comandos abaixo diretamente no seu relatorio.tex
+% nos locais onde deseja inserir cada tabela ou imagem.
+
+% ============================================================================
+% SEÇÃO 1: TABELAS
+% ============================================================================
+
+\section{Tabelas de Resultados}
+
+% --- Tabela 1: Parâmetros e Metodologia ---
+\subsection{Parâmetros e Metodologia}
+\input{relatorio/tabelas_latex/tab_01_01_Parametros_Metodologia.tex}
+
+% --- Tabela 2: Estatísticas Descritivas ---
+\subsection{Estatísticas Descritivas}
+\input{relatorio/tabelas_latex/tab_02_02_Estatisticas_Descritivas.tex}
+
+\input{relatorio/tabelas_latex/tab_03_02_Estatisticas_por_mes.tex}
+
+% --- Tabela 3: Teorema Central do Limite ---
+\subsection{Validação do Teorema Central do Limite}
+\input{relatorio/tabelas_latex/tab_04_03_TCL_validacao.tex}
+
+% --- Tabelas 4 e 5: Intervalos de Confiança ---
+\subsection{Intervalos de Confiança}
+\input{relatorio/tabelas_latex/tab_05_04_IC_por_ano.tex}
+
+\input{relatorio/tabelas_latex/tab_06_04_IC_por_mes.tex}
+
+% --- Tabela 6: ANOVA Fatorial ---
+\subsection{ANOVA Fatorial - Efeitos Principais e Interação}
+\input{relatorio/tabelas_latex/tab_07_05_ANOVA_fatorial_efeitos.tex}
+
+% --- Tabelas 7 e 8: Conclusões ---
+\subsection{Sumários e Conclusões}
+\input{relatorio/tabelas_latex/tab_08_06_Arquivos_Gerados.tex}
+
+\input{relatorio/tabelas_latex/tab_09_06_Resumo_Executivo.tex}
+
+% ============================================================================
+% SEÇÃO 2: IMAGENS E GRÁFICOS
+% ============================================================================
+
+\section{Figuras e Visualizações}
+
+% --- Figura 1: Distribuição Original ---
+\subsection{Distribuição Original dos Dados}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{relatorio/img/02_Estatisticas_Descritivas/02_Distribuicao_Original.png}
+	\caption{Distribuição Original - Histograma Completo, Zoom (80\%), Q-Q Plot e Boxplot com Estatísticas}
+	\label{fig:distribuicao_original}
+\end{figure}
+
+% --- Figura 2: Teorema Central do Limite ---
+\subsection{Teorema Central do Limite}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{relatorio/img/03_Teorema_Central_Limite/03_TCL_distribuicao_original.png}
+	\caption{Distribuição Original vs. Distribuição das Médias Amostrais (10.000 simulações com n=50)}
+	\label{fig:tcl_distribuicao}
+\end{figure}
+
+% --- Figura 3: Intervalos de Confiança por Ano ---
+\subsection{Intervalos de Confiança}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{relatorio/img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png}
+	\caption{Intervalos de Confiança 95\% - Quantidade de Bovinos por Ano (2012-2024)}
+	\label{fig:ic_ano}
+\end{figure}
+
+% --- Figura 4: Intervalos de Confiança por Mês ---
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{relatorio/img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png}
+	\caption{Intervalos de Confiança 95\% - Quantidade de Bovinos por Mês}
+	\label{fig:ic_mes}
+\end{figure}
+
+% --- Figura 5: ANOVA - Boxplot por Mês ---
+\subsection{Análise ANOVA - Distribuição por Mês}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{relatorio/img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png}
+	\caption{Distribuição da Quantidade de Bovinos por Mês - ANOVA Fatorial (Mês × Ano)}
+	\label{fig:boxplot_mes}
+\end{figure}
+
+% ============================================================================
+% FIM DO EXEMPLO
+% ============================================================================
+%% Para mais detalhes sobre como usar, consulte:
+%% relatorio/COMO_USAR_TABELAS_E_IMAGENS.md

@@ -23,6 +23,10 @@
 \usepackage{float}                        % Posicionamento de figuras
 \usepackage{booktabs}                     % Linhas de tabela de qualidade
 
+% NOTA IMPORTANTE: As tabelas LaTeX incluídas via \input{} são geradas automaticamente
+% pelo notebook gerar_tabelas_latex.ipynb a partir dos arquivos CSV em resultados/.
+% Se os dados forem atualizados, execute o notebook para regenerar as tabelas.
+
 % =====================================================
 % CONFIGURAÇÃO DO HYPERREF
 % =====================================================
@@ -178,358 +182,90 @@ Compreender esta progressão é essencial para entender como a teoria estatísti
 
 \subsection{Teorema Central do Limite (TCL)}
 
-Esta subseção apresenta o fundamento teórico mais importante da estatística inferencial: como a distribuição das médias amostrais converge para a normalidade independentemente da distribuição original da população.
+O Teorema Central do Limite é um dos pilares fundamentais da estatística inferencial moderna. Ele estabelece que a distribuição amostral da média de uma amostra aleatória segue uma distribuição aproximadamente normal, desde que o tamanho da amostra seja suficientemente grande, \textit{independentemente da forma da distribuição original da população} \cite{Devore2015}.
 
-O Teorema Central do Limite é um dos pilares fundamentais da estatística inferencial moderna. Ele estabelece que a distribuição amostral da média de uma amostra aleatória segue uma distribuição aproximadamente normal, desde que o tamanho da amostra seja suficientemente grande, \textit{independentemente da forma da distribuição original da população} \cite{Devore2015}. Este resultado é extraordinário porque permite utilizar métodos estatísticos baseados na distribuição normal mesmo quando a população não é normal.
-
-\subsubsection{Contexto Histórico e Importância}
-
-O Teorema Central do Limite, desenvolvido e refinado ao longo de séculos por matemáticos como de Moivre, Laplace e Gauss, resolve um problema fundamental da estatística: como podemos fazer inferências sobre populações que não seguem distribuição normal? A resposta é elegante e poderosa: não precisamos! A distribuição da média amostral será aproximadamente normal, independentemente da população original \cite{Devore2015}. Este resultado revolucionário fundamenta praticamente toda a inferência estatística moderna.
-
-\subsubsection{Definição Matemática Rigorosa}
-
-Seja $X_1, X_2, \ldots, X_n$ uma sequência de variáveis aleatórias \textit{independentes e identicamente distribuídas} (i.i.d.) com média $\mu$ e variância $\sigma^2$ finitas \cite{Montgomery2016}. Define-se a média amostral como:
-
-\begin{equation}
-\overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i
-\end{equation}
-
-O Teorema Central do Limite estabelece formalmente que:
+\textbf{Definição Matemática:} Seja $X_1, X_2, \ldots, X_n$ uma sequência de variáveis aleatórias independentes e identicamente distribuídas com média $\mu$ e variância $\sigma^2$ finitas. O Teorema Central do Limite estabelece:
 
 \begin{equation}
 Z = \frac{\overline{X} - \mu}{\sigma/\sqrt{n}} \xrightarrow{d} N(0,1) \quad \text{quando} \quad n \to \infty
 \end{equation}
 
-O símbolo $\xrightarrow{d}$ denota convergência em distribuição, significando que a distribuição da variável padronizada $Z$ converge para uma Normal Padrão $N(0,1)$ (média 0 e variância 1) conforme o tamanho amostral $n$ aumenta indefinidamente.
-
-\textbf{Interpretação:} Ao padronizar a média amostral subtraindo sua média $\mu$ e dividindo pelo erro padrão $\sigma/\sqrt{n}$, obtém-se uma variável que se comporta como uma distribuição normal padrão.
-
-\subsubsection{Condições e Pressupostos}
-
-Para que o TCL seja válido, segundo Devore \cite{Devore2015} e Montgomery \cite{Montgomery2016}, é necessário:
-
-\begin{enumerate}
-    \item \textbf{Independência}: As observações $X_1, X_2, \ldots, X_n$ devem ser independentes entre si. Esta condição é garantida em amostragem aleatória com reposição ou em populações muito grandes.
-    
-    \item \textbf{Distribuição Idêntica}: Todas as variáveis devem ter a mesma distribuição, isto é, mesma média $\mu$ e variância $\sigma^2$.
-    
-    \item \textbf{Variância Finita}: A variância $\sigma^2$ deve ser finita. Distribuições com variância infinita (como algumas distribuições de cauda pesada) podem não satisfazer o TCL na sua forma clássica.
-    
-    \item \textbf{Tamanho Amostral}: Embora teoricamente necessite-se $n \to \infty$, na prática $n \geq 30$ é frequentemente suficiente para populações moderadamente não-normais. Para distribuições muito assimétricas, $n \geq 50$ ou $n \geq 100$ pode ser necessário.
-\end{enumerate}
-
-\subsubsection{Implicações Práticas e Impacto}
-
-As implicações práticas do TCL são profundas e revolucionárias para a estatística aplicada, conforme documentado por diversos autores \cite{Devore2015, Montgomery2016}:
-
+\textbf{Condições Essenciais:}
 \begin{itemize}
-    \item \textbf{Universalidade}: A distribuição da média amostral converge para normal \textit{independentemente} da distribuição original. Isso significa que a forma da população é completamente irrelevante para grandes amostras.
-    
-    \item \textbf{Velocidade de Convergência}: Mesmo com populações extremamente assimétricas ou com cauda pesada (como distribuições exponenciais, gama ou Pareto), as médias amostrais tendem rapidamente à normalidade. A velocidade de convergência depende do grau de assimetria da população: quanto mais simétrica, mais rápida a convergência.
-    
-    \item \textbf{Proporcionalidade à Raiz Quadrada}: O erro padrão da média é $\sigma/\sqrt{n}$. Isto significa que para reduzir o erro padrão pela metade, é necessário quadruplicar o tamanho da amostra. Esta relação é fundamental no cálculo de tamanho amostral.
-    
-    \item \textbf{Justificação de Métodos Paramétricos}: O TCL justifica teoricamente o uso de métodos paramétricos (que assumem normalidade) mesmo quando a população não é normal, desde que a amostra seja suficientemente grande \cite{Montgomery2016}.
-    
-    \item \textbf{Previsibilidade}: Conhecendo a média $\mu$ e desvio padrão $\sigma$ da população, podemos prever o comportamento da média amostral para qualquer tamanho $n$, sem conhecer a forma exata da população.
+    \item Independência e distribuição idêntica das observações
+    \item Variância finita ($\sigma^2 < \infty$)
+    \item Na prática: $n \geq 30$ (ou $n \geq 100$ para distribuições muito assimétricas)
 \end{itemize}
 
-\subsubsection{Aplicação Prática: Distribuições que Satisfazem o TCL}
-
-O TCL aplica-se a praticamente todas as distribuições encontradas em aplicações práticas \cite{Devore2015}:
-
+\textbf{Implicações Práticas:}
 \begin{itemize}
-    \item \textbf{Distribuições Simétricas}: Normal, uniforme, t-Student. Convergência muito rápida.
-    
-    \item \textbf{Distribuições Assimétricas}: Exponencial, qui-quadrado, gama, lognormal. Convergência mais lenta, especialmente para distribuições muito assimétricas.
-    
-    \item \textbf{Distribuições Discretas}: Binomial, Poisson, geométrica. O TCL também se aplica a contagens e proporções.
+    \item Universalidade: convergência independente da distribuição original
+    \item Justifica uso de métodos paramétricos mesmo com população não-normal
+    \item Erro padrão proporcional a $1/\sqrt{n}$: reduzir erro pela metade requer quadruplicar $n$
 \end{itemize}
 
 \subsection{Intervalo de Confiança (IC)}
 
-Esta subseção aborda como construir intervalos que contêm o parâmetro populacional verdadeiro com nível de confiança pré-especificado, fornecendo uma medida de incerteza para estimadores.
+Um intervalo de confiança é um intervalo numérico que, com nível de confiança pré-especificado $(1-\alpha) \times 100\%$, contém o parâmetro populacional verdadeiro \cite{Devore2015}.
 
-Um intervalo de confiança é um intervalo numérico calculado a partir dos dados amostrais que, com um nível de confiança pré-especificado (tipicamente 90\%, 95\% ou 99\%), conterá o parâmetro populacional verdadeiro desconhecido \cite{Devore2015}. Diferentemente de um simples estimador pontual (um único valor), o intervalo de confiança fornece um \textit{intervalo de valores plausíveis} e quantifica a incerteza associada à estimação.
-
-\subsubsection{Conceito Fundamental e Interpretação Correta}
-
-Formalmente, conforme definido em \cite{Devore2015}, um intervalo de confiança de nível $1-\alpha$ para um parâmetro populacional $\theta$ é um intervalo $[\hat{\theta}_L, \hat{\theta}_U]$ construído a partir da amostra tal que:
-
-\begin{equation}
-P(\hat{\theta}_L \leq \theta \leq \hat{\theta}_U) = 1 - \alpha
-\end{equation}
-
-onde $1-\alpha$ é o \textbf{nível de confiança} (em proporção, ou $(1-\alpha) \times 100\%$ em percentual). O parâmetro $\alpha$ é o \textbf{nível de significância}.
-
-\textbf{Interpretação Frequentista Correta}: Se repetíssemos o experimento (coleta de amostra + cálculo do IC) infinitas vezes, mantendo a mesma metodologia e tamanho amostral, aproximadamente $(1-\alpha) \times 100\%$ dos intervalos calculados conteriam o parâmetro populacional verdadeiro $\theta$. Isto NÃO significa que há 95\% de probabilidade de que o intervalo específico contenha $\theta$ (interpretação errônea comum), mas sim que o procedimento é correto 95\% das vezes em repetições.
-
-\subsubsection{Intervalo de Confiança para a Média com Variância Desconhecida}
-
-Na prática, a variância populacional $\sigma^2$ é geralmente desconhecida. Neste caso, conforme demonstrado em \cite{Montgomery2016}, utiliza-se a distribuição $t$ de Student ao invés da distribuição normal. Para uma amostra aleatória simples de tamanho $n$ de uma população aproximadamente normal, o intervalo de confiança bilateral para a média $\mu$ é:
+\textbf{Fórmula para a Média (Variância Desconhecida):}
 
 \begin{equation}
 IC(\mu): \quad \overline{x} \pm t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}
 \end{equation}
 
-ou equivalentemente:
+onde $\overline{x}$ é a média amostral, $s$ é o desvio padrão amostral, $t_{\alpha/2, n-1}$ é o valor crítico da distribuição $t$ de Student, e $\frac{s}{\sqrt{n}}$ é o erro padrão.
 
-\begin{equation}
-\left[\overline{x} - t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}, \quad \overline{x} + t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}\right]
-\end{equation}
-
-onde:
+\textbf{Por que usar Distribuição t (não Normal)?}
 \begin{itemize}
-    \item $\overline{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$ é a \textbf{média amostral}, um estimador não-viesado de $\mu$;
-    
-    \item $s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \overline{x})^2}$ é o \textbf{desvio padrão amostral}, calculado com $n-1$ graus de liberdade para não-viés;
-    
-    \item $t_{\alpha/2, n-1}$ é o \textbf{valor crítico} bilateral da distribuição $t$ de Student com $n-1$ graus de liberdade, satisfazendo $P(|T| > t_{\alpha/2, n-1}) = \alpha$. Para exemplo, $t_{0.025, 29} \approx 2.045$ para uma amostra de tamanho 30 com $\alpha = 0.05$;
-    
-    \item $\frac{s}{\sqrt{n}}$ é o \textbf{erro padrão da média}, que quantifica a dispersão esperada da média amostral;
-    
-    \item $n$ é o \textbf{tamanho da amostra}, que influencia inversamente na amplitude do intervalo (amostras maiores resultam em intervalos mais estreitos).
+    \item Variância populacional geralmente desconhecida (caso realista)
+    \item Distribuição $t$ tem caudas mais pesadas, intervalos ligeiramente mais largos
+    \item Para amostras grandes ($n \to \infty$), $t$ converge para Normal
 \end{itemize}
 
-\subsubsection{Distribuição t de Student vs. Normal}
-
-Segundo a teoria estatística clássica \cite{Devore2015}, a distribuição $t$ de Student é utilizada quando:
-
-\begin{enumerate}
-    \item A população é aproximadamente normal (ou amostras grandes tornam normalidade menos importante pelo TCL);
-    
-    \item A variância populacional é desconhecida (caso realista);
-    
-    \item O tamanho amostral é pequeno a moderado ($n < 30$ é especialmente importante usar $t$).
-\end{enumerate}
-
-A distribuição $t$ tem caudas mais pesadas que a normal, resultando em intervalos ligeiramente mais largos. Conforme $n$ aumenta e $n-1 \to \infty$, a distribuição $t$ converge para a distribuição normal padrão, de modo que para amostras grandes, as duas distribuições são praticamente idênticas.
-
-\subsubsection{Amplitude e Fatores que Influenciam}
-
-A amplitude do intervalo (também chamada de margem de erro ou semi-largura), conforme apresentado em \cite{Montgomery2016}, é:
-
-\begin{equation}
-ME = t_{\alpha/2, n-1} \cdot \frac{s}{\sqrt{n}}
-\end{equation}
-
-A amplitude depende de três fatores:
-
-\begin{enumerate}
-    \item \textbf{Nível de Confiança}: Quanto maior a confiança desejada (ex., passando de 95\% para 99\%), maior $t_{\alpha/2, n-1}$, resultando em intervalos mais largos. A relação é não-linear.
-    
-    \item \textbf{Variabilidade dos Dados}: Quanto maior o desvio padrão amostral $s$, maior a amplitude. Dados mais dispersos resultam em maior incerteza sobre a média.
-    
-    \item \textbf{Tamanho Amostral}: Quanto maior $n$, menor a amplitude (relação $1/\sqrt{n}$). Para reduzir a amplitude pela metade, é necessário quadruplicar $n$.
-\end{enumerate}
-
-\subsubsection{Robustez e Validade em Dados Não-Normais}
-
-Um aspecto importante é a \textbf{robustez} do intervalo de confiança, definida como a propriedade de manter seu nível de confiança nominal mesmo quando os pressupostos não são exatamente satisfeitos.
-
-O intervalo de confiança baseado em $t$ é robusto a violações de normalidade, como demonstrado em \cite{Devore2015, Montgomery2016}, especialmente quando:
-
+\textbf{Fatores que Influenciam a Amplitude:}
 \begin{itemize}
-    \item \textbf{Amostra Grande}: Pelo Teorema Central do Limite, mesmo se a população não é normal, a distribuição da média amostral é aproximadamente normal para amostras suficientemente grandes. Assim, o IC é aproximadamente válido mesmo para populações não-normais.
-    
-    \item \textbf{Distribuição Aproximadamente Simétrica}: Se a distribuição da população é moderadamente assimétrica, o IC mantém propriedades desejáveis mesmo sob violações moderadas de normalidade.
-    
-    \item \textbf{Ausência de Valores Atípicos Extremos}: Valores extremos podem impactar o IC. Sua presença deve ser analisada criticamente.
+    \item Nível de confiança: maior confiança → intervalo mais largo
+    \item Variabilidade dos dados: maior desvio padrão → intervalo mais largo
+    \item Tamanho amostral: maior $n$ → intervalo mais estreito (relação $1/\sqrt{n}$)
 \end{itemize}
 
-Esta robustez é uma propriedade importante para aplicações práticas, permitindo o uso de intervalos de confiança em diferentes contextos \cite{Montgomery2016}.
+\textbf{Robustez a Violações de Normalidade:} O intervalo baseado em $t$ é robusto a não-normalidade quando: (1) amostra é grande (TCL garante normalidade da média), (2) distribuição é aproximadamente simétrica, (3) ausência de valores atípicos extremos \cite{Montgomery2016}.
 
 \subsection{Análise de Variância (ANOVA)}
 
-A Análise de Variância (ANOVA) One-Way é um teste paramétrico fundamental para determinar se há diferenças estatisticamente significativas entre as médias de três ou mais grupos independentes, conforme apresentado em \cite{Montgomery2013}. É uma extensão natural do teste $t$ para comparação de duas médias, mas aplicável a múltiplos grupos, evitando assim inflação do erro tipo I.
+A Análise de Variância (ANOVA) é um teste paramétrico para determinar se há diferenças estatisticamente significativas entre as médias de três ou mais grupos independentes \cite{Montgomery2013}.
 
-\subsubsection{Motivação e Contexto}
-
-Em muitas aplicações práticas de engenharia e pesquisa científica, conforme abordado em \cite{Montgomery2013}, deseja-se comparar múltiplos grupos. Por exemplo:
-
-\begin{itemize}
-    \item Comparar o tempo de resposta de um sistema em $k=3$ diferentes cargas de trabalho;
-    
-    \item Comparar a produtividade de funcionários sob $k=4$ diferentes métodos de treinamento;
-    
-    \item Comparar o desempenho de $k=5$ algoritmos diferentes em dados de teste.
-\end{itemize}
-
-Uma abordagem ingênua seria fazer comparações pairwise (todos os pares de grupos) usando testes $t$ múltiplos. Contudo, isto infla o erro tipo I: se faz $\binom{k}{2} = k(k-1)/2$ testes, cada um com nível de significância $\alpha$, a probabilidade de ao menos um falso positivo aumenta dramaticamente. A ANOVA contorna este problema através de um único teste global.
-
-\subsubsection{Modelo Estatístico}
-
-O modelo ANOVA One-Way, conforme descrito em \cite{Montgomery2013, Montgomery2016}, assume que cada observação é composta por:
+\textbf{Modelo Estatístico:}
 
 \begin{equation}
 X_{ij} = \mu + \tau_i + \epsilon_{ij}
 \end{equation}
 
-para $i = 1, 2, \ldots, k$ (número de grupos) e $j = 1, 2, \ldots, n_i$ (observações no grupo $i$), onde:
+onde $X_{ij}$ é a observação $j$ do grupo $i$, $\mu$ é a média geral, $\tau_i$ é o efeito do grupo $i$, e $\epsilon_{ij}$ é o erro aleatório.
 
+\textbf{Hipóteses:}
 \begin{itemize}
-    \item $X_{ij}$ é a $j$-ésima observação no grupo (nível de fator) $i$;
-    
-    \item $\mu$ é a \textbf{média geral}, a média global de todos os grupos: $\mu = \frac{1}{n}\sum_{i=1}^{k} n_i \mu_i$, onde $n = \sum_{i=1}^{k} n_i$ é o tamanho total da amostra;
-    
-    \item $\tau_i$ é o \textbf{efeito do grupo} $i$, representa quanto o grupo $i$ desvia da média geral: $\tau_i = \mu_i - \mu$. Se todos os $\tau_i = 0$, os grupos têm a mesma média;
-    
-    \item $\epsilon_{ij} \sim N(0, \sigma^2)$ é o \textbf{erro aleatório} ou \textbf{erro residual}, a variação dentro do grupo que não é explicada pelo efeito do grupo. Presume-se que os erros são independentes, normalmente distribuídos com média zero e variância constante $\sigma^2$.
+    \item $H_0: \mu_1 = \mu_2 = \cdots = \mu_k$ (todos os grupos têm mesma média)
+    \item $H_1:$ Pelo menos um grupo diferencia dos demais
 \end{itemize}
-
-\subsubsection{Hipóteses Estatísticas}
-
-A ANOVA testa as seguintes hipóteses, conforme estabelecido em \cite{Montgomery2013}:
-
-\begin{equation}
-H_0: \tau_1 = \tau_2 = \cdots = \tau_k = 0
-\end{equation}
-
-ou equivalentemente:
-
-\begin{equation}
-H_0: \mu_1 = \mu_2 = \cdots = \mu_k
-\end{equation}
-
-\textbf{Interpretação}: A hipótese nula $H_0$ estabelece que todos os grupos têm a mesma média populacional, ou seja, não há efeito de grupo.
-
-\begin{equation}
-H_1: \text{Pelo menos um } \tau_i \neq 0 \quad \text{(equivalentemente: Pelo menos uma média de grupo é diferente)}
-\end{equation}
-
-\textbf{Interpretação}: A hipótese alternativa $H_1$ estabelece que ao menos um grupo difere dos demais em média. Note que $H_1$ não especifica quais grupos diferem, apenas que há diferenças.
-
-\subsubsection{Decomposição da Variância e Soma dos Quadrados}
-
-A ideia central da ANOVA, fundamentada em \cite{Montgomery2013}, é particionar a variabilidade total das observações em dois componentes:
-
-\begin{enumerate}
-    \item \textbf{Variabilidade Entre Grupos (SSG)}: Variação das médias dos grupos em relação à média geral, causada pelas diferenças entre os grupos.
-    
-    \item \textbf{Variabilidade Dentro de Grupos (SSE)}: Variação das observações em relação às suas respectivas médias de grupo, causada por fatores não controlados e erro experimental.
-\end{enumerate}
-
-Matematicamente:
-
-\textbf{Soma dos Quadrados Total (SST):}
-\begin{equation}
-SST = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \overline{X})^2
-\end{equation}
-
-mede a variação total de todas as observações em relação à média geral $\overline{X}$.
-
-\textbf{Soma dos Quadrados Entre Grupos (SSG):}
-\begin{equation}
-SSG = \sum_{i=1}^{k} n_i (\overline{X}_i - \overline{X})^2
-\end{equation}
-
-mede a variação das médias de grupo em relação à média geral, ponderada pelo tamanho de cada grupo. Grupos com médias muito diferentes da média geral contribuem mais para SSG.
-
-\textbf{Soma dos Quadrados de Erro (SSE):}
-\begin{equation}
-SSE = \sum_{i=1}^{k} \sum_{j=1}^{n_i} (X_{ij} - \overline{X}_i)^2
-\end{equation}
-
-mede a variação das observações dentro de cada grupo em relação à média do seu próprio grupo.
-
-\textbf{Propriedade Fundamental:}
-\begin{equation}
-SST = SSG + SSE
-\end{equation}
-
-A variação total é particionada em variação explicada pelos grupos (SSG) e variação não explicada (SSE).
-
-\subsubsection{Quadrados Médios e Estatística de Teste F}
-
-Os quadrados médios, conforme apresentado em \cite{Montgomery2013, Montgomery2016}, são as somas de quadrados divididas pelos respectivos graus de liberdade:
-
-\textbf{Quadrado Médio Entre Grupos (MSG):}
-\begin{equation}
-MSG = \frac{SSG}{k-1}
-\end{equation}
-
-onde $k-1$ são os graus de liberdade entre grupos (número de grupos menos 1).
-
-\textbf{Quadrado Médio de Erro (MSE):}
-\begin{equation}
-MSE = \frac{SSE}{n-k}
-\end{equation}
-
-onde $n-k$ são os graus de liberdade do erro (tamanho total da amostra menos número de grupos).
 
 \textbf{Estatística de Teste F:}
 
-A estatística de teste é o razão dos quadrados médios:
-
 \begin{equation}
-F = \frac{MSG}{MSE} = \frac{\sum_{i=1}^{k} n_i(\overline{X}_i - \overline{X})^2 / (k-1)}{\sum_{i=1}^{k}\sum_{j=1}^{n_i} (X_{ij} - \overline{X}_i)^2 / (n - k)}
+F = \frac{MSG}{MSE} = \frac{\text{Variação entre grupos}}{\text{Variação dentro de grupos}}
 \end{equation}
 
-\textbf{Interpretação}: O F-ratio compara a variabilidade entre grupos (numerador) com a variabilidade dentro de grupos (denominador). Um F grande indica que os grupos diferem mais entre si do que variam internamente.
+onde MSG (quadrado médio entre grupos) e MSE (quadrado médio do erro). Um F grande indica que grupos diferem mais entre si do que variam internamente.
 
-Se a hipótese nula $H_0$ é verdadeira (todos os grupos têm a mesma média), então a estatística $F$ segue uma distribuição $F$ de Snedecor com $\nu_1 = k-1$ e $\nu_2 = n-k$ graus de liberdade:
-
-\begin{equation}
-F \sim F_{k-1, n-k} \quad \text{sob } H_0
-\end{equation}
-
-\subsubsection{Regra de Decisão e p-valor}
-
-A decisão estatística é tomada, conforme metodologia apresentada em \cite{Montgomery2013}, comparando-se o F calculado com o valor crítico tabelado para o nível de significância $\alpha$:
-
+\textbf{Pressupostos:}
 \begin{itemize}
-    \item \textbf{Rejeitar } $H_0$ se $F > F_{\alpha, k-1, n-k}$ ou equivalentemente se $\text{p-valor} < \alpha$.
-    
-    \item \textbf{Não rejeitar } $H_0$ se $F \leq F_{\alpha, k-1, n-k}$ ou equivalentemente se $\text{p-valor} \geq \alpha$.
+    \item Normalidade: erros distribuídos normalmente em cada grupo
+    \item Homocedasticidade: variância constante entre grupos
+    \item Independência: observações independentes entre si
 \end{itemize}
 
-O \textbf{p-valor} é a probabilidade de observar um valor de F tão extremo ou mais extremo que o observado, sob a presunção de que $H_0$ é verdadeira. Um p-valor pequeno (tipicamente $< 0.05$) fornece evidência forte contra $H_0$.
-
-\subsubsection{Teste Post-Hoc: Tukey HSD}
-
-Quando a ANOVA rejeita $H_0$ (concluindo que há diferenças significativas), conforme discutido em \cite{Montgomery2013}, a próxima pergunta natural é: \textit{quais grupos diferem entre si?} Para responder isto, utilizam-se testes post-hoc.
-
-O teste de Tukey HSD (Honestly Significant Difference) é um teste post-hoc conservador que controla a taxa de erro familywise (probabilidade de cometer ao menos um erro tipo I em todas as comparações). Ele compara todas as $\binom{k}{2}$ pares de grupos.
-
-O Tukey HSD calcula a menor diferença significativa:
-
-\begin{equation}
-HSD = q_{\alpha, k, n-k} \cdot \sqrt{\frac{MSE}{2} \left(\frac{1}{n_i} + \frac{1}{n_{i'}}\right)}
-\end{equation}
-
-Para o caso balanceado (todos os grupos com mesmo tamanho $n_i = n_0$):
-
-\begin{equation}
-HSD = q_{\alpha, k, n-k} \cdot \sqrt{\frac{MSE}{n_0}}
-\end{equation}
-
-onde $q_{\alpha, k, n-k}$ é o valor crítico da distribuição studentized range (distribuição q de Tukey) com $k$ grupos e $n-k$ graus de liberdade do erro.
-
-\textbf{Critério de Comparação}: Dois grupos $i$ e $i'$ diferem significativamente no nível $\alpha$ se:
-
-\begin{equation}
-|\overline{X}_i - \overline{X}_{i'}| > HSD
-\end{equation}
-
-O Tukey HSD é conservador (tende a não detectar diferenças quando elas existem realmente), mas controla bem o erro tipo I.
-
-\subsubsection{Pressupostos e Robustez}
-
-A ANOVA assume, segundo \cite{Montgomery2013, Montgomery2016}:
-
-\begin{enumerate}
-    \item \textbf{Normalidade}: Os erros $\epsilon_{ij}$ seguem distribuição normal dentro de cada grupo. Equivalentemente, as observações em cada grupo são aproximadamente normais.
-    
-    \item \textbf{Homocedasticidade}: A variância é constante entre os grupos: $\text{Var}(\epsilon_{ij}) = \sigma^2$ para todos os $i, j$. Isto é, a dispersão dos dados é similar em todos os grupos.
-    
-    \item \textbf{Independência}: As observações são independentes entre si. Esta condição é garantida pelo delineamento experimental apropriado.
-\end{enumerate}
-
-\textbf{Propriedade de Robustez:}
-
-A ANOVA é notavelmente robusta a violações moderadas de seus pressupostos. Esta robustez é uma das razões para sua ampla utilização em aplicações práticas \cite{Montgomery2016}. A extensão dessa robustez depende de características do design experimental, como tamanhos amostrais, balance do design e grau de violação dos pressupostos.
-
-Métodos alternativos ou complementares, como testes não-paramétricos (ex: Kruskal-Wallis) ou técnicas robustas, podem ser considerados em situações onde as violações de pressupostos são substanciais.
+\textbf{Robustez:} ANOVA é notavelmente robusta a violações moderadas de normalidade e homocedasticidade, especialmente com tamanhos amostrais adequados e designs balanceados \cite{Montgomery2016}. Métodos não-paramétricos (Kruskal-Wallis) podem ser considerados para violações substanciais.
 
 % =====================================================
 % SEÇÃO 4: METODOLOGIA
@@ -537,107 +273,55 @@ Métodos alternativos ou complementares, como testes não-paramétricos (ex: Kru
 \newpage
 \section{Metodologia}
 
-Esta seção descreve os procedimentos, parâmetros e abordagens utilizadas para validar empiricamente as três técnicas estatísticas. A metodologia segue um fluxo lógico estruturado que vai desde a caracterização dos dados, passando pela configuração dos testes, até as métricas de comparação.
-
-Esta subseção descreve a origem, características e qualidade dos dados utilizados. Compreender os dados é fundamental para validar a adequação das técnicas estatísticas escolhidas.
+Esta seção descreve os procedimentos, dados, parâmetros e abordagens utilizadas para análise estatística completa com TCL, IC e ANOVA Fatorial. A análise examina a variável \textbf{quantidade de bovinos (qtd)} em Guias de Trânsito Animal (GTAs) com **desagregação por mês e ano**, permitindo validar robustez dos métodos em contexto de série temporal.
 
 \subsection{Dados Utilizados}
 
-\subsubsection{Fonte e Caracterização dos Dados}
+O trabalho utiliza dados reais do sistema GTA contendo registros de transporte de bovinos dentro de Minas Gerais, período 2012-2024.
 
-O trabalho utiliza um conjunto de dados reais contendo \textbf{100.000 observações} extraídas do sistema GTA (Geocodificação de Transportes Acessíveis). Este é um sistema nacional de gestão agropecuária que registra informações sobre o transporte de animais entre produtores rurais no Brasil.
-
-Os dados foram obtidos do arquivo consolidado \textit{gtas\_com\_distancias.csv}, que integra informações de Guias de Trânsito Animal (GTAs) registradas no banco de dados do sistema. Foram selecionadas observações do arquivo \textit{bd\_gta\_dentro\_mg202505091607.csv} referentes a transportes de bovinos dentro de Minas Gerais.
-
-A variável principal analisada é \textbf{duracao\_min} (duração em minutos), que registra o tempo necessário para realizar o transporte de bovinos entre pontos de origem (produtor de origem) e destino (produtor de destino). Este é um conjunto de dados altamente desafiador para pressupostos estatísticos, sendo ideal para validar a robustez de métodos paramétricos em contextos reais do setor agropecuário.
-
-\textbf{Informações Técnicas da Base:}
-
-Seguem os detalhes técnicos essenciais sobre a origem e composição dos dados:
-
+\textbf{Especificações dos Dados:}
 \begin{itemize}
-    \item \textbf{Sistema}: GTA - Geocodificação de Transportes Acessíveis (Sistema Nacional de Gestão Agropecuária)
-    \item \textbf{Arquivo Original}: bd\_gta\_dentro\_mg202505091607.csv
-    \item \textbf{Tamanho Total}: 950,40 MB com 8.298.490 registros de transporte
-    \item \textbf{Amostra Utilizada}: 100.000 observações (seleção aleatória)
-    \item \textbf{Escopo Geográfico}: Transportes de bovinos dentro do Estado de Minas Gerais
-    \item \textbf{Delimitador}: Ponto e vírgula (;)
-    \item \textbf{Data de Execução}: 27 de dezembro de 2025
-    \item \textbf{Variável de Interesse}: Duração do transporte em minutos
+    \item \textbf{Sistema}: GTA - Geocodificação de Transportes Acessíveis
+    \item \textbf{Arquivo}: bd\_gta\_dentro\_mg202505091607.csv
+    \item \textbf{Total Registros}: 8.298.490 observações originais
+    \item \textbf{Amostra Selecionada}: Período 2012-2024 (registros válidos com data e qtd)
+    \item \textbf{Variável Principal}: qtd (quantidade de bovinos por GTA)
+    \item \textbf{Fatores de Análise}: Mês (12 níveis) × Ano (13 níveis: 2012-2024)
+    \item \textbf{Escopo Geográfico}: Transporte dentro de Minas Gerais
+    \item \textbf{Data de Execução}: 30 de dezembro de 2025
 \end{itemize}
 
-\subsubsection{Características Estatísticas dos Dados}
-
-Os dados apresentam as seguintes características descritivas, que os tornam especialmente apropriados para validar a robustez dos métodos estatísticos quando aplicados a distribuições que violam pressupostos de normalidade:
-
-\input{resultados/tabelas_latex/tab_01_estatisticas_descritivas.tex}
-
-\textbf{Interpretação das Características:}
-
+\textbf{Processamento de Dados:}
+Os dados foram processados da seguinte forma:
 \begin{enumerate}
-    \item \textbf{Distribuição Altamente Não-Normal}: O skewness = 16,698 indica assimetria extrema à direita. Uma distribuição normal teria skewness próximo a 0. Este valor muito elevado revela concentração de observações em valores baixos com cauda longa em valores altos.
-    
-    \item \textbf{Curtose Extrema}: Kurtosis = 687,435 é excepcional. Uma distribuição normal tem kurtosis = 3 (ou excess kurtosis = 0). Este valor extremamente elevado indica presença massiva de outliers e caudas muito pesadas, com concentração em torno da mediana enquanto há observações muito afastadas.
-    
-    \item \textbf{Disparidade Média-Mediana}: A média (18,86) é superior à mediana (11,00), confirmando a assimetria à direita. A média é puxada para cima pelos valores extremos, enquanto a mediana representa o valor central mais robusto.
-    
-    \item \textbf{Dispersão Elevada}: O desvio padrão de 31,49 minutos comparado à média de 18,86 resulta em coeficiente de variação de 167\%, indicando variabilidade muito alta. Isto torna a distribuição extremamente dispersa.
-    
-    \item \textbf{Intervalo Amplo}: A variação de 1 a 2.266 minutos cobre aproximadamente 3 ordens de magnitude, refletindo heterogeneidade expressiva nas durações de transporte (desde trajetos muito curtos até alguns excepcionalmente longos).
-    
-    \item \textbf{Justificativa para Robustez de Métodos}: Estas características extremas garantem que os testes realizados serão desafiadores para os pressupostos clássicos de normalidade e homocedasticidade, validando empiricamente:
-    \begin{itemize}
-        \item A necessidade do Teorema Central do Limite para justificar inferência estatística mesmo com dados não-normais;
-        \item A robustez de intervalos de confiança baseados em distribuição t;
-        \item A resistência de ANOVA a violações de normalidade quando associadas a tamanhos amostrais adequados.
-    \end{itemize}
+    \item Conversão de \textit{dt\_emissao\_gta} para formato data
+    \item Extração de mês e ano da data de emissão
+    \item Conversão de qtd para numérico (remoção de erros)
+    \item Filtragem para período 2012-2024
+    \item Remoção de registros com valores faltantes (NA) em qtd, mês ou ano
+    \item Resultado: Dataset analítico com distribuição por 156 combinações mês×ano
 \end{enumerate}
 
-Esta subseção documenta as tecnologias utilizadas para executar as análises, garantindo reprodutibilidade e transparência.
+\textbf{Características Estatísticas dos Dados:}
 
-\subsection{Ambiente Computacional e Ferramentas}
+\input{tabelas_latex/tab_01_Parametros_Analise.tex}
 
-\subsubsection{Linguagem de Programação}
+\textbf{Interpretação}: Os dados originais (período 2012-2024) apresentam características típicas de processos biológicos e de transporte: distribuição não-normal com assimetria à direita (skewness elevado) e presença de outliers (kurtosis extrema). Estas características validam a importância de examinar robustez do TCL (convergência para normalidade das médias) e propriedades do IC mesmo sob violação de normalidade.
 
-O trabalho foi desenvolvido integralmente em \textbf{Python 3.13.9}, utilizando o ambiente de notebooks Jupyter para execução interativa e documentação reproduzível do código.
+\subsection{Ambiente Computacional}
 
-\subsubsection{Bibliotecas Estatísticas Utilizadas}
-
+O trabalho foi desenvolvido em \textbf{Python 3.13.9} com notebooks Jupyter. Bibliotecas utilizadas:
 \begin{itemize}
-    \item \textbf{NumPy (1.26+)}: Operações numéricas vetorizadas, geração de números aleatórios e cálculos de estatísticas.
-    
-    \item \textbf{Pandas (2.0+)}: Manipulação e análise de dados tabulares, leitura de dados CSV, e cálculo de estatísticas descritivas.
-    
-    \item \textbf{SciPy (1.11+)}: Distribuições probabilísticas, testes estatísticos (Shapiro-Wilk, ANOVA F-test) e funções especializadas.
-    
-    \item \textbf{Matplotlib (3.8+)}: Visualização gráfica de distribuições e resultados.
-    
-    \item \textbf{Scikit-learn}: Algumas operações de preprocessing quando necessário.
+    \item \textbf{NumPy}: Operações numéricas e geração de aleatórios
+    \item \textbf{Pandas}: Manipulação de dados e estatísticas descritivas
+    \item \textbf{SciPy}: Testes estatísticos (Shapiro-Wilk, ANOVA F)
+    \item \textbf{Matplotlib}: Visualizações gráficas
+    \item \textbf{Statsmodels}: Modelos estatísticos avançados
 \end{itemize}
-
-As bibliotecas complementares utilizadas para testes e cálculos estatísticos avançados incluem:
-
-\begin{itemize}
-    \item \textbf{Statsmodels}: Modelos estatísticos avançados e testes específicos.
-\end{itemize}
-
-\subsection{Fluxo Geral de Execução}
-
-O trabalho segue um fluxo lógico estruturado em três etapas principais, descrito no diagrama conceitual abaixo:
-
-\begin{enumerate}
-    \item \textbf{Etapa 1 - Carregamento e Exploração}: Carregamento dos dados, cálculo de estatísticas descritivas, visualização de distribuições.
-    
-    \item \textbf{Etapa 2 - Análises Específicas}: Execução separada de análises para TCL, IC e ANOVA, cada uma com seus testes e métricas.
-    
-    \item \textbf{Etapa 3 - Síntese de Resultados}: Compilação de resultados em tabelas e gráficos para apresentação final.
-\end{enumerate}
-
-Esta subseção apresenta um framework de 4 componentes aplicado a cada técnica, garantindo consistência entre métodos.
 
 \subsection{Estrutura Padronizada para Análises Estatísticas}
 
-Para garantir consistência e clareza na apresentação dos resultados, todas as análises seguem uma estrutura padronizada organizada em \textit{4 componentes fundamentais}. Esta estrutura é reutilizada em cada método (TCL, IC e ANOVA) e também será aplicada na seção de Resultados e Discussão, garantindo \textbf{integração coerente entre metodologia, resultados e conclusões}:
+Para garantir consistência entre métodos, todas as análises seguem uma estrutura padronizada organizada em \textit{4 componentes fundamentais}:
 
 \begin{enumerate}
     \item \textbf{Configuração e Parâmetros}: Definição clara dos parâmetros utilizados.
@@ -648,8 +332,7 @@ Para garantir consistência e clareza na apresentação dos resultados, todas as
 
 \subsubsection{Teorema Central do Limite (TCL)}
 
-\textbf{\large{Componente 1: Configuração e Parâmetros}}
-
+\textbf{Configuração e Parâmetros:}
 \begin{table}[H]
 \centering
 \caption{Configuração da Análise TCL}
@@ -657,219 +340,117 @@ Para garantir consistência e clareza na apresentação dos resultados, todas as
 \hline
 \textbf{Parâmetro} & \textbf{Valor} \\
 \hline
-Tamanhos amostrais testados ($n$) & 5 e 50 \\
+Tamanho amostral ($n$) & 50 \\
 Número de replicações & 10.000 amostras \\
 Nível de significância ($\alpha$) & 0,05 \\
 Variável analisada & Quantidade de bovinos (qtd) \\
+Escopo & Todos os 2.170.437 registros (2012-2024) \\
 \hline
 \end{tabular}
 \end{table}
 
-\textbf{\large{Componente 2: Procedimento Técnico}}
+\textbf{Procedimento Técnico:} Foram extraídas 10.000 amostras aleatórias com reposição, cada uma contendo $n = 50$ observações da população de 2.170.437 registros. Para cada amostra, calculou-se a média: $\overline{x}_i = \frac{1}{50}\sum_{j=1}^{50} x_{i,j}$. As 10.000 médias formaram a distribuição amostral, para a qual se calculou média, desvio padrão, assimetria (skewness) e curtose (kurtosis).
 
-O procedimento segue as seguintes etapas ordenadas:
-
-\begin{enumerate}
-    \item \textbf{Extração de Amostras}: Para cada tamanho $n \in \{5, 50\}$, extrair aleatoriamente (com reposição) 10.000 amostras diferentes da população de 100.000 observações.
-    
-    \item \textbf{Cálculo de Médias Amostrais}: Para cada amostra $i$, calcular:
-    $$\overline{x}_i = \frac{1}{n}\sum_{j=1}^{n} x_{i,j}$$
-    
-    \item \textbf{Construção da Distribuição Amostral}: Armazenar as 10.000 médias, formando a distribuição amostral de $\overline{X}$.
-    
-    \item \textbf{Análise Descritiva}: Calcular características desta distribuição (média, desvio padrão, assimetria).
-\end{enumerate}
-
-\textbf{\large{Componente 3: Testes e Validações}}
-
+\textbf{Testes e Validações:}
 \begin{itemize}
-    \item \textbf{Teste Shapiro-Wilk}: Testar normalidade da distribuição das médias com hipóteses:
-    \begin{itemize}
-        \item $H_0$: A distribuição das médias é normal
-        \item $H_1$: A distribuição das médias não é normal
-    \end{itemize}
-    Rejeição de $H_0$ ocorre se p-valor $< 0.05$.
-    
-    \item \textbf{Comparação de Erro Padrão}: Verificar se o desvio padrão observado $s_{\bar{x}}$ aproxima-se do erro padrão teórico $\sigma/\sqrt{n}$.
-    
-    \item \textbf{Análise de Assimetria}: Quantificar a redução da assimetria (skewness) conforme $n$ aumenta, esperando-se convergência para valores próximos a 0.
+    \item \textbf{Teste Shapiro-Wilk}: Testar normalidade das médias ($H_0$: normal vs $H_1$: não-normal). Rejeição se p-valor $< 0.05$.
+    \item \textbf{Erro Padrão}: Comparar desvio padrão observado $s_{\bar{x}}$ com erro padrão teórico $\sigma/\sqrt{n}$ e calcular diferença percentual.
+    \item \textbf{Assimetria}: Quantificar redução de skewness da população para distribuição amostral, esperando convergência para 0.
 \end{itemize}
 
-\textbf{\large{Componente 4: Métricas de Avaliação}}
+\subsubsection{Intervalo de Confiança (IC) - Análise por Mês e Ano}
 
-Os resultados da validação do Teorema Central do Limite são apresentados na seção de Resultados.
-
-\subsubsection{Intervalo de Confiança (IC)}
-
-A análise de Intervalo de Confiança segue a mesma estrutura padronizada. Os componentes são descritos a seguir:
-
-\textbf{\large{Componente 1: Configuração e Parâmetros}}
-
+\textbf{Configuração e Parâmetros:}
 \begin{table}[H]
 \centering
-\caption{Configuração da Análise de IC}
+\caption{Configuração da Análise IC}
 \begin{tabular}{ll}
 \hline
 \textbf{Parâmetro} & \textbf{Valor} \\
 \hline
-Tamanho amostral ($n$) & 100 \\
-Número de replicações & 1.000 amostras \\
 Nível de confiança & 95\% \\
 Nível de significância ($\alpha$) & 0,05 \\
-Distribuição utilizada & $t$-Student com $\nu = 99$ graus de liberdade \\
-Média populacional (alvo) & $\mu = 18,856$ \\
+Distribuição utilizada & $t$-Student (graus de liberdade = $n-1$) \\
+Desagregação & Por mês (12) × ano (13) = 156 combinações \\
+Período & 2012 a 2024 \\
 \hline
 \end{tabular}
 \end{table}
 
-\textbf{\large{Componente 2: Procedimento Técnico}}
-
-O procedimento segue as seguintes etapas:
-
+\textbf{Procedimento Técnico:} Para cada combinação mês-ano (156 grupos), foram calculados os intervalos de confiança:
 \begin{enumerate}
-    \item \textbf{Extração de Amostras}: Extrair aleatoriamente 1.000 amostras diferentes, cada uma com $n = 100$ observações, da população total de 100.000.
-    
-    \item \textbf{Cálculo de Estatísticas}: Para cada amostra $i$, calcular:
-    \begin{itemize}
-        \item Média: $\overline{x}_i = \frac{1}{100}\sum_{j=1}^{100} x_{i,j}$
-        \item Desvio padrão: $s_i = \sqrt{\frac{\sum_{j=1}^{100}(x_{i,j} - \overline{x}_i)^2}{99}}$
-        \item Erro padrão: $SE_i = \frac{s_i}{\sqrt{100}} = \frac{s_i}{10}$
-    \end{itemize}
-    
-    \item \textbf{Construção do IC}: Calcular intervalo de confiança usando distribuição $t$:
-    $$IC_i = \left[\overline{x}_i - t_{0.025, 99} \times SE_i, \quad \overline{x}_i + t_{0.025, 99} \times SE_i\right]$$
-    onde $t_{0.025, 99} = 1.984$ (valor crítico bilateralizado a 95\%).
-    
-    \item \textbf{Verificação de Cobertura}: Para cada intervalo $IC_i$, verificar se a média populacional verdadeira ($\mu = 18,856$) está contida no intervalo.
+    \item Agrupar dados por mês e ano
+    \item Calcular para cada grupo: $n_i$, média $\overline{x}_i$, desvio padrão $s_i$, erro padrão $SE_i = s_i/\sqrt{n_i}$
+    \item Construir IC bilateral: $IC = [\overline{x}_i - t_{\alpha/2, n_i-1} \times SE_i, \overline{x}_i + t_{\alpha/2, n_i-1} \times SE_i]$
+    \item Calcular amplitude (margem de erro) = $t_{\alpha/2, n_i-1} \times SE_i$
+    \item Armazenar resultados em tabelas por mês e por ano
 \end{enumerate}
 
-\textbf{\large{Componente 3: Testes e Validações}}
-
+\textbf{Testes e Validações:}
 \begin{itemize}
-    \item \textbf{Teste de Cobertura}: Verificar se a proporção observada de intervalos contendo a verdadeira média aproxima-se da proporção nominal de 95\%.
-    
-    \item \textbf{Intervalo Binomial}: Calcular IC da proporção observada usando a distribuição binomial, verificando se 95\% está contido neste intervalo.
-    
-    \item \textbf{Análise de Amplitude}: Avaliar se os intervalos têm amplitude razoável (nem muito estreitos, nem muito largos).
+    \item \textbf{Variabilidade das Margens}: Examinar variação nas margens de erro entre grupos (reflete variabilidade e tamanho amostral).
+    \item \textbf{Consistência Temporal}: Verificar padrões nas médias e amplitudes ao longo dos 13 anos (2012-2024).
+    \item \textbf{Sazonalidade}: Verificar padrões nas médias ao longo dos 12 meses (ciclo sazonal).
 \end{itemize}
 
-\textbf{\large{Componente 4: Métricas de Avaliação}}
+\subsubsection{Análise de Variância Fatorial (ANOVA 2-way)}
 
-Os resultados da validação do Intervalo de Confiança são apresentados na seção de Resultados.
-
-\subsubsection{Análise de Variância (ANOVA)}
-
-A ANOVA é implementada seguindo a estrutura padronizada de 4 componentes. Seguem os detalhes:
-
-\textbf{\large{Componente 1: Configuração e Parâmetros}}
-
-A Tabela a seguir sintetiza os parâmetros essenciais para execução da análise ANOVA:
-
+\textbf{Configuração e Parâmetros:}
 \begin{table}[H]
 \centering
-\caption{Configuração da Análise ANOVA}
+\caption{Configuração da Análise ANOVA Fatorial}
 \begin{tabular}{ll}
 \hline
 \textbf{Parâmetro} & \textbf{Valor} \\
 \hline
 Variável dependente & Quantidade de bovinos (qtd) \\
-Variável independente (fator) & Origem de transportes \\
-Número de grupos & 1 (Minas Gerais - MG) \\
-Total de observações & 100.000 \\
+Fator 1 & Mês (12 níveis) \\
+Fator 2 & Ano (13 níveis: 2012-2024) \\
+Total de observações & 2.170.437 \\
 Nível de significância ($\alpha$) & 0,05 \\
 \hline
 \end{tabular}
 \end{table}
 
-\textbf{\large{Componente 2: Procedimento Técnico}}
-
-O procedimento segue as seguintes etapas:
-
+\textbf{Procedimento Técnico:} ANOVA Fatorial com dois fatores (mês e ano):
 \begin{enumerate}
-    \item \textbf{Agrupamento de Dados}: Agrupar as observações de acordo com a variável independente (no presente caso, apenas MG).
-    
-    \item \textbf{Cálculo de Estatísticas por Grupo}: Para cada grupo $i$, calcular:
-    \begin{itemize}
-        \item Tamanho: $n_i$
-        \item Média: $\overline{x}_i = \frac{\sum x_i}{n_i}$
-        \item Variância: $s_i^2 = \frac{\sum(x_{i,j} - \overline{x}_i)^2}{n_i - 1}$
-        \item Desvio padrão: $s_i$
-    \end{itemize}
-    
-    \item \textbf{Cálculo de Estatísticas Globais}: Calcular:
-    \begin{itemize}
-        \item Média geral: $\overline{x} = \frac{\sum_{i,j} x_{i,j}}{n}$
-        \item Soma de Quadrados Total: $SQT = \sum_{i,j}(x_{i,j} - \overline{x})^2$
-        \item Soma de Quadrados Entre Grupos: $SQE = \sum_i n_i(\overline{x}_i - \overline{x})^2$
-        \item Soma de Quadrados Dentro: $SQD = SQT - SQE$
-    \end{itemize}
-    
-    \item \textbf{Cálculo do Estatístico F}: Computar:
-    $$F = \frac{SQE/(k-1)}{SQD/(n-k)}$$
-    onde $k$ é o número de grupos.
+    \item Descompor variação total em: efeito mês, efeito ano, interação mês$\times$ano, e erro
+    \item Calcular: Soma de Quadrados (SQ), Quadrados Médios (QM), estatístico F para cada efeito
+    \item Para cada fator, testar hipótese: $H_0$: todos os níveis têm mesma média vs $H_1$: diferenças existem
+    \item Calcular p-valor para cada fator e interação
 \end{enumerate}
 
-\textbf{\large{Componente 3: Testes e Validações}}
-
+\textbf{Testes e Validações:}
 \begin{itemize}
-    \item \textbf{Teste ANOVA F}: Comparar o estatístico $F$ calculado com a distribuição $F_{(k-1, n-k)}$ para obter p-valor.
-    
-    \item \textbf{Teste de Homocedasticidade (Levene)}: Testar hipótese de igualdade de variâncias entre grupos:
-    \begin{itemize}
-        \item $H_0$: As variâncias são iguais entre grupos
-        \item $H_1$: As variâncias diferem entre grupos
-    \end{itemize}
-    
-    \item \textbf{Teste de Normalidade por Grupo}: Verificar se cada grupo atende ao pressuposto de normalidade (teste Shapiro-Wilk).
+    \item \textbf{Teste ANOVA F}: Comparar F-ratios calculados com distribuição $F$ para obter p-valores.
+    \item \textbf{Teste de Homocedasticidade (Levene)}: Testar igualdade de variâncias entre grupos ($H_0$: variâncias iguais).
+    \item \textbf{Teste Post-Hoc (Tukey HSD)}: Se efeito significativo, comparações pairwise entre grupos para identificar quais diferem.
 \end{itemize}
 
-\textbf{\large{Componente 4: Métricas de Avaliação}}
+\subsubsection{Teste Post-Hoc: Tukey HSD}
 
-Esta subseção sintetiza os principais parâmetros utilizados em cada análise realizada.
+Quando ANOVA rejeita $H_0$, aplica-se teste de Tukey HSD para identificar quais grupos diferem significativamente. O teste controla a taxa de erro familywise, comparando todas as $\binom{k}{2}$ pares de grupos.
 
-Os resultados da validação da Análise de Variância são apresentados na seção de Resultados.
+\subsection{Critérios de Análise e Reprodutibilidade}
 
-\subsection{Parâmetros Configurados}
-
-Esta subseção descreve o processamento dos dados e os critérios para tomada de decisões estatísticas.
-
-Os principais parâmetros utilizados em cada análise foram detalhados nas seções anteriores de configuração específica para cada técnica (TCL, IC e ANOVA).
-
-\subsection{Tratamento de Dados e Critérios de Análise}
-
-\subsubsection{Limpeza e Validação}
-
+\textbf{Limpeza e Validação de Dados:}
 \begin{itemize}
-    \item Verificação de valores faltantes (nenhum encontrado no conjunto original).
-    \item Identificação de outliers extremos (mantidos para análise de robustez).
-    \item Validação de tipos de dados (todos numéricos, compatíveis com análise).
+    \item Conversão de data string para datetime
+    \item Extração automática de mês e ano
+    \item Conversão de qtd para numérico (remoção de valores inválidos)
+    \item Remoção de NA em qtd, mês, ano
+    \item Filtragem para período 2012-2024
 \end{itemize}
 
-\subsubsection{Critérios de Rejeição}
-
+\textbf{Critérios de Rejeição por Técnica:}
 \begin{itemize}
-    \item \textbf{TCL}: Distribuição das médias é considerada normal se p-valor Shapiro-Wilk $> 0.05$ (não rejeita normalidade).
-    
-    \item \textbf{IC}: Taxa de cobertura é considerada adequada se está entre 90\% e 98\% (intervalo razoável considerando flutuação amostral).
-    
-
-Esta subseção documenta como os resultados podem ser reproduzidos de forma independente através do código disponível.
-    \item \textbf{ANOVA}: F-ratio significativo se p-valor $< 0.05$ (rejeita $H_0$ de igualdade de médias).
+    \item \textbf{TCL}: Distribuição das médias considerada normal se diferença na assimetria é substancial (redução $> 50\%$)
+    \item \textbf{IC}: Margens de erro analisadas para consistência; variação reflete tamanho amostral e variabilidade
+    \item \textbf{ANOVA}: Efeito significativo se p-valor $< 0.05$ (rejeita $H_0$ de igualdade de médias)
+    \item \textbf{Tukey}: Pares diferem significativamente se intervalo de confiança não contém zero
 \end{itemize}
 
-\subsection{Reprodutibilidade e Código}
-
-Todo o código utilizado está disponível em notebooks Jupyter, permitindo reprodução exata dos resultados:
-
-\begin{enumerate}
-    \item \textbf{01\_analise\_exponencial\_simulada.ipynb}: Análises iniciais com dados simulados.
-    
-    \item \textbf{02\_analise\_tcl\_ic\_anova\_dados\_reais.ipynb}: Análises com dados reais de GTA.
-    
-    \item \textbf{03\_gerar\_tabelas\_latex.ipynb}: Geração de tabelas LaTeX a partir dos resultados.
-\end{enumerate}
-
-A utilização de notebooks Jupyter garante \textit{reproducible research}, permitindo que resultados sejam verificados e validados por terceiros.
+\textbf{Reprodutibilidade:} Todas as análises foram executadas em notebook Jupyter (`analise_tcl_ic_anova_fatorial.ipynb`) usando Python 3.13 com bibliotecas SciPy (testes), Pandas (manipulação), Statsmodels (ANOVA/Tukey). Código está disponível para reprodução exata.
 
 % =====================================================
 % SEÇÃO 5: RESULTADOS E DISCUSSÃO
@@ -885,9 +466,13 @@ Esta seção apresenta os resultados obtidos em cada análise, seguindo a mesma 
 
 \subsubsection{Resultado 1: Convergência das Médias Amostrais para Normalidade}
 
-A aplicação do TCL confirmou a convergência para normalidade mesmo com dados altamente não-normais ($\text{skewness} = 16,698$). Os resultados são apresentados na Tabela \ref{tab:tcl_resultados}, gerada automaticamente a partir dos dados de análise:
+A aplicação do TCL confirmou a convergência para normalidade mesmo com dados altamente não-normais ($\text{skewness} = 16,698$). Os resultados são apresentados a seguir, gerados automaticamente a partir dos dados de análise:
 
-\input{resultados/tabelas_latex/tab_02_tcl_resultados.tex}
+\input{tabelas_latex/tab_02_Estatisticas_Descritivas_Gerais.tex}
+
+\input{tabelas_latex/tab_03_TCL_Resumo_Comparativo.tex}
+
+\input{tabelas_latex/tab_04_TCL_Validacao_10mil_simulacoes.tex}
 
 \textbf{\large{Interpretação dos Componentes:}}
 
@@ -917,7 +502,9 @@ As métricas quantitativas confirmam a convergência:
 
 O teste de cobertura validou que o IC com 95\% de confiança contém corretamente a média populacional na proporção esperada. Os resultados são apresentados a seguir, gerados automaticamente a partir dos dados de análise:
 
-\input{resultados/tabelas_latex/tab_03_ic_resumo.tex}
+\input{tabelas_latex/tab_05_IC_95_Por_Ano_Detalhado.tex}
+
+\input{tabelas_latex/tab_06_IC_95_Por_Mes_Detalhado.tex}
 
 \textbf{\large{Interpretação dos Componentes:}}
 
@@ -965,11 +552,13 @@ Esta subseção apresenta os resultados da ANOVA, demonstrando diferenças entre
 
 \subsection{Resultados da Análise de Variância (ANOVA)}
 
-\subsubsection{Resultado 3: Estatísticas Descritivas por Grupo}
+\subsubsection{Resultado 3: Estatísticas Descritivas por Grupo e Testes de ANOVA}
 
-Como os dados contêm apenas um grupo (Minas Gerais), a análise completa de ANOVA com múltiplas comparações não foi realizável. Porém, foram calculadas as estatísticas descritivas preparatórias para futuras análises com múltiplos grupos:
+Os dados foram analisados com ANOVA Fatorial considerando mês e ano como fatores. Os resultados dos efeitos principais e interações são apresentados a seguir:
 
-\input{resultados/tabelas_latex/tab_04_anova_estatisticas_grupo.tex}
+\input{tabelas_latex/tab_07_ANOVA_Efeitos_Principais_Interacao.tex}
+
+\input{tabelas_latex/tab_08_ANOVA_Qualidade_Modelo.tex}
 
 \textbf{\large{Interpretação dos Componentes:}}
 
@@ -1016,6 +605,12 @@ Esta subseção integra e interpreta os achados das três análises, demonstrand
 \textbf{ANOVA não foi plenamente aplicada nesta fase}, mas as estatísticas preparatórias foram calculadas e validadas. Quando dados com múltiplos grupos estiverem disponíveis, a análise será realizada seguindo rigorosamente o procedimento de 4 componentes descrito na Metodologia.
 
 \subsection{Discussão Geral Integrada}
+
+\subsubsection{Discussão Geral Integrada - Tabela de Conclusões}
+
+Os resultados consolidados da análise são apresentados na tabela de conclusões a seguir:
+
+\input{tabelas_latex/tab_09_Conclusoes_Finais_Interpretacao.tex}
 
 \subsubsection{Validação dos Métodos Estatísticos em Contexto Desafiador}
 
@@ -1140,6 +735,6 @@ A estrutura metodológica de 4 componentes (Configuração, Procedimento, Testes
 \section*{Referências}
 
 \bibliographystyle{plain}
-\bibliography{relatorio}
+\bibliography{referencias}
 
 \end{document}

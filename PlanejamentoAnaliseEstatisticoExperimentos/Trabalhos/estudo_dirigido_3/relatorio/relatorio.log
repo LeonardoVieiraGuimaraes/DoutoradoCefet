@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  28 DEC 2025 09:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.7.2)  30 DEC 2025 10:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -305,39 +305,38 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@lastruleclass=\count317
 \@thisrulewidth=\dimen185
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 40.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 40.
-Package hyperref Info: Option `breaklinks' set `true' on input line 40.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 64.
+Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 44.
+Package hyperref Info: Option `breaklinks' set `true' on input line 44.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 68.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
-) (relatorio.aux
-Package babel Info: 'brazilian' activates 'portuges' shorthands.
-(babel)             Reported  on input line 9.
-)
+) (relatorio.aux)
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+Package babel Info: 'brazilian' activates 'portuges' shorthands.
+(babel)             Reported  on input line 68.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -398,7 +397,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 64.
+Package hyperref Info: Link coloring ON on input line 68.
 
 
 [1
@@ -409,134 +408,225 @@ Package hyperref Info: Link coloring ON on input line 64.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.113 \newpage
-               [1] (relatorio.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
- (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
- (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-[2])
+l.117 \newpage
+               [1]
+No file relatorio.toc.
 \tf@toc=\write3
 \openout3 = `relatorio.toc'.
 
 
 
-[3]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 145.
+[2]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 149.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
+[3]
+
+LaTeX Warning: Citation `Devore2015' on page 4 undefined on input line 185.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 187.
+(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 187.
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
 [4]
+
+LaTeX Warning: Citation `Devore2015' on page 5 undefined on input line 209.
+
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 228.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 229.
+LaTeX Info: Symbol \textrightarrow not provided by
+            font family ptm in TS1 encoding.
+            Default family used instead on input line 230.
+
+LaTeX Warning: Citation `Montgomery2016' on page 5 undefined on input line 233.
+
+
+LaTeX Warning: Citation `Montgomery2013' on page 5 undefined on input line 237.
+
+
 
 [5]
 
-[6]
+LaTeX Warning: Citation `Montgomery2016' on page 6 undefined on input line 268.
+
+
+
+[6] (tabelas_latex/tab_01_Parametros_Analise.tex)
 
 [7]
 
-[8]
-
-[9]
-
-[10]
-
-[11]
-
-[12]
-
-[13] (resultados/tabelas_latex/tab_01_estatisticas_descritivas.tex)
-
-[14]
-
-[15
+[8
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604 \subsubsection
-                    {Bibliotecas Estatísticas Utilizadas}]
+l.351 
+      ]
+
+[9
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.393     \item \textbf
+                       {Sazonalidade}: Verificar padrões nas médias ao lon...
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.393     \item \textbf
+                       {Sazonalidade}: Verificar padrões nas médias ao lon...]
+
+[10
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.441     \item R
+                 emoção de NA em qtd, mês, ano]
+d:/GitHub/DoutoradoCefet/PlanejamentoAnaliseEstatisticoExperimentos/Trabalhos/estudo_dirigido_3/relatorio/relatorio.tex:453: Missing $ inserted.
+<inserted text> 
+                $
+l.453 ...executadas em notebook Jupyter (`analise_
+                                                  tcl_ic_anova_fatorial.ipyn...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \c invalid in math mode on input line 453.
+
+
+LaTeX Warning: Command \~ invalid in math mode on input line 453.
+
+d:/GitHub/DoutoradoCefet/PlanejamentoAnaliseEstatisticoExperimentos/Trabalhos/estudo_dirigido_3/relatorio/relatorio.tex:454: Missing $ inserted.
+<inserted text> 
+                $
+l.454 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+Missing character: There is no � in font cmr12!
+
+Overfull \hbox (844.90096pt too wide) in paragraph at lines 453--454
+[]\T1/ptm/b/n/12 Reprodutibilidade: \T1/ptm/m/n/12 To-das as an�-li-ses fo-ram exe-cu-ta-das em no-te-book Jupy-ter (`analise$[]\OML/cmm/m/it/12 cl[]c[]nova[]atorial:ipynb\OT1/cmr/m/n/12 `)\OML/cmm/m/it/12 usandoPython\OT1/cmr/m/n/12 3\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 13\OML/cmm/m/it/12 combibliotecasSciPy\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 testes\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; Pandas\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 manipulao\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; Statsmodels\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ANOVA=Tukey\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :Cdigoestdisponvelparareproduoexata:$ 
+ []
+
+
+
+[11] (tabelas_latex/tab_02_Estatisticas_Descritivas_Gerais.tex) (tabelas_latex/tab_03_TCL_Resumo_Comparativo.tex) (tabelas_latex/tab_04_TCL_Validacao_10mil_simulacoes.tex)
+
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.481 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.481 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.481 
+      ] (tabelas_latex/tab_05_IC_95_Por_Ano_Detalhado.tex) (tabelas_latex/tab_06_IC_95_Por_Mes_Detalhado.tex)
+
+[13]
+
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{table.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.542 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.542 
+      ] (tabelas_latex/tab_07_ANOVA_Efeitos_Principais_Interacao.tex) (tabelas_latex/tab_08_ANOVA_Qualidade_Modelo.tex)
+
+[15
+pdfTeX warning (ext4): destination with the same identifier (name{table.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.571 \textbf{Componente 3 - Testes}
+                                    :
+pdfTeX warning (ext4): destination with the same identifier (name{table.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.571 \textbf{Componente 3 - Testes}
+                                    :] (tabelas_latex/tab_09_Conclusoes_Finais_Interpretacao.tex)
 
 [16]
 
 [17
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.706 ...ponente 1: Configuração e Parâmetros}}
-                                                  ]
+l.642 \newpage
+              ]
 
-[18
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.764 ...ponente 1: Configuração e Parâmetros}}
-                                                  ]
+[18]
 
-[19
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.824 \end{itemize}
-                   ]
+[19]
 
-[20]
+[20] (relatorio.bbl)
 
-[21] (resultados/tabelas_latex/tab_02_tcl_resultados.tex)
-
-[22
-pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.914 \subsection
-                 {Resultados do Intervalo de Confiança (IC)}] (resultados/tabelas_latex/tab_03_ic_resumo.tex)
-
-[23
-pdfTeX warning (ext4): destination with the same identifier (name{table.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.954     \item \textbf
-                       {Não-normalidade dos Dados}: Os dados originais são...] (resultados/tabelas_latex/tab_04_anova_estatisticas_grupo.tex)
-
-[24
-pdfTeX warning (ext4): destination with the same identifier (name{table.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.996     \item M
-                 édia = 18,856, Mediana = 11,0 (diferença confirma assimet...]
-
-[25]
-
-[26]
-
-[27]
-
-[28]
-
-[29] (relatorio.bbl)
-
-[30] (relatorio.aux)
+[21] (relatorio.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 12448 strings out of 468221
- 194823 string characters out of 5432892
- 616460 words of memory out of 5000000
- 40575 multiletter control sequences out of 15000+600000
- 674695 words of font info for 101 fonts, out of 8000000 for 9000
+ 12361 strings out of 468221
+ 195642 string characters out of 5432892
+ 613109 words of memory out of 5000000
+ 40551 multiletter control sequences out of 15000+600000
+ 657887 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1002b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on relatorio.pdf (31 pages, 327194 bytes).
+ 75i,11n,79p,1026b,557s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on relatorio.pdf (22 pages, 225912 bytes).
 PDF statistics:
- 697 PDF objects out of 1000 (max. 8388607)
- 200 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 402 PDF objects out of 1000 (max. 8388607)
+ 130 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 
