@@ -8,6 +8,7 @@
 % =====================================================
 % PACOTES NECESSÁRIOS
 % =====================================================
+\usepackage[utf8]{inputenc}               % Encoding UTF-8
 \usepackage[T1]{fontenc}                  % Fonte T1
 \usepackage[brazilian]{babel}             % Idioma português brasileiro
 \usepackage[left=3cm,right=2cm,top=3cm,bottom=2cm]{geometry}  % Margens ABNT
@@ -304,7 +305,7 @@ Os dados foram processados da seguinte forma:
 
 \textbf{Características Estatísticas dos Dados:}
 
-\input{tabelas_latex/tab_01_Parametros_Analise.tex}
+\input{tabelas_latex/tab_01_01_Parametros_Metodologia.tex}
 
 \textbf{Interpretação}: Os dados originais (período 2012-2024) apresentam características típicas de processos biológicos e de transporte: distribuição não-normal com assimetria à direita (skewness elevado) e presença de outliers (kurtosis extrema). Estas características validam a importância de examinar robustez do TCL (convergência para normalidade das médias) e propriedades do IC mesmo sob violação de normalidade.
 
@@ -450,7 +451,7 @@ Quando ANOVA rejeita $H_0$, aplica-se teste de Tukey HSD para identificar quais 
     \item \textbf{Tukey}: Pares diferem significativamente se intervalo de confiança não contém zero
 \end{itemize}
 
-\textbf{Reprodutibilidade:} Todas as análises foram executadas em notebook Jupyter (`analise_tcl_ic_anova_fatorial.ipynb`) usando Python 3.13 com bibliotecas SciPy (testes), Pandas (manipulação), Statsmodels (ANOVA/Tukey). Código está disponível para reprodução exata.
+{\sloppy \textbf{Reprodutibilidade:} Todas as análises foram executadas em notebook Jupyter usando Python 3.13 com bibliotecas SciPy (testes), Pandas (manipulação), Statsmodels (ANOVA/Tukey). Código está disponível para reprodução exata.\par}
 
 % =====================================================
 % SEÇÃO 5: RESULTADOS E DISCUSSÃO
@@ -464,177 +465,92 @@ Esta seção apresenta os resultados obtidos em cada análise, seguindo a mesma 
 
 \subsection{Resultados do Teorema Central do Limite (TCL)}
 
-\subsubsection{Resultado 1: Convergência das Médias Amostrais para Normalidade}
+A aplicação do TCL confirmou a convergência para normalidade mesmo com dados altamente não-normais ($\text{skewness} = 16.698$). Os resultados são apresentados a seguir:
 
-A aplicação do TCL confirmou a convergência para normalidade mesmo com dados altamente não-normais ($\text{skewness} = 16,698$). Os resultados são apresentados a seguir, gerados automaticamente a partir dos dados de análise:
+\input{tabelas_latex/tab_02_02_Estatisticas_Descritivas.tex}
 
-\input{tabelas_latex/tab_02_Estatisticas_Descritivas_Gerais.tex}
+\input{tabelas_latex/tab_04_03_TCL_validacao.tex}
 
-\input{tabelas_latex/tab_03_TCL_Resumo_Comparativo.tex}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{img/03_Teorema_Central_Limite/03_TCL_1_Distribuicao_Original.png}
+\caption{Distribuição Original dos Dados (Altamente Não-Normal)}
+\label{fig:tcl_original}
+\end{figure}
 
-\input{tabelas_latex/tab_04_TCL_Validacao_10mil_simulacoes.tex}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{img/03_Teorema_Central_Limite/03_TCL_2_Medias_Amostrais.png}
+\caption{Distribuição das Médias Amostrais (Convergência para Normalidade)}
+\label{fig:tcl_medias}
+\end{figure}
 
-\textbf{\large{Interpretação dos Componentes:}}
+\paragraph{Interpretação}
 
-\textbf{Componente 1 - Configuração}:
-Os parâmetros utilizados (tamanhos amostrais $n = 5$ e $n = 50$, 10.000 replicações) foram suficientes para demonstrar a convergência para normalidade. A escolha de dois tamanhos diferentes permitiu visualizar como o aumento de $n$ melhora a aproximação à distribuição normal.
-
-\textbf{Componente 2 - Procedimento}:
-As 10.000 amostras de cada tamanho foram extraídas com reposição da população de 100.000 observações. Para cada amostra, calculou-se a média, formando a distribuição amostral. Este procedimento replicou exatamente o comportamento previsto pelo TCL.
-
-\textbf{Componente 3 - Testes}:
-O teste Shapiro-Wilk rejeitou a hipótese de normalidade para ambas as distribuições amostrais (p-valor $\approx 0,000$). \textbf{Este resultado pode parecer contraditório com o TCL}, mas é explicado pela grande quantidade de dados (10.000 observações) que fornece poder estatístico muito elevado para detectar até pequenas desvios. Na prática, distribuições com assimetria reduzida para 2,4 são consideradas \textit{aproximadamente normais} para fins de inferência.
-
-\textbf{Componente 4 - Métricas}:
-As métricas quantitativas confirmam a convergência:
-\begin{itemize}
-    \item A diferença relativa entre o erro padrão observado e teórico é muito pequena (2,60\% para $n=5$ e 1,68\% para $n=50$).
-    \item A assimetria foi reduzida em 68,35\% (para $n=5$) e 85,78\% (para $n=50$), demonstrando convergência para simetria.
-    \item Ao aumentar $n$ de 5 para 50, a assimetria reduz em 55\%, confirmando que tamanhos maiores levam a melhor aproximação à normalidade.
-\end{itemize}
-
-\textbf{\large{Conclusão do TCL:}}
-\textbf{O Teorema Central do Limite foi empiricamente validado}. Mesmo partindo de uma distribuição extremamente não-normal (skewness = 16,698), as distribuições das médias amostrais convergem rapidamente para aproximadamente normal, com redução dramática da assimetria conforme o tamanho amostral aumenta.
+O Teorema Central do Limite foi empiricamente validado. As métricas quantitativas confirmam a convergência: (i) diferença relativa entre erro padrão observado e teórico é mínima ($2.60\%$ para $n=5$, $1.68\%$ para $n=50$); (ii) assimetria foi reduzida em $68.35\%$ (n=5) e $85.78\%$ (n=50); (iii) ao aumentar $n$ de 5 para 50, assimetria reduz em $55\%$. Mesmo partindo de distribuição extremamente não-normal (skewness = 16,698), as distribuições das médias amostrais convergem rapidamente para aproximadamente normal.
 
 \subsection{Resultados do Intervalo de Confiança (IC)}
 
-\subsubsection{Resultado 2: Validação da Propriedade de Cobertura do IC}
+O teste de cobertura validou que o IC com 95\% de confiança contém a média populacional na proporção esperada. Os resultados desagregados por período são apresentados a seguir:
 
-O teste de cobertura validou que o IC com 95\% de confiança contém corretamente a média populacional na proporção esperada. Os resultados são apresentados a seguir, gerados automaticamente a partir dos dados de análise:
+\input{tabelas_latex/tab_05_04_IC_por_ano.tex}
 
-\input{tabelas_latex/tab_05_IC_95_Por_Ano_Detalhado.tex}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{img/04_Intervalos_Confianca/04_IC_por_ano_grafico.png}
+\caption{Intervalos de Confiança (95\%) para Média de Quantidade por Ano (2012-2024)}
+\label{fig:ic_ano}
+\end{figure}
 
-\input{tabelas_latex/tab_06_IC_95_Por_Mes_Detalhado.tex}
+\input{tabelas_latex/tab_06_04_IC_por_mes.tex}
 
-\textbf{\large{Interpretação dos Componentes:}}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{img/04_Intervalos_Confianca/04_IC_por_mes_grafico.png}
+\caption{Intervalos de Confiança (95\%) para Média de Quantidade por Mês}
+\label{fig:ic_mes}
+\end{figure}
 
-\textbf{Componente 1 - Configuração}:
-Foram utilizados os parâmetros planejados: $n = 100$, 1.000 replicações, nível de confiança de 95\%. Esta configuração permite avaliar a precisão do IC em contexto realista (tamanho amostral típico em pesquisa).
+\paragraph{Interpretação}
 
-\textbf{Componente 2 - Procedimento}:
-Para cada uma das 1.000 amostras de tamanho 100, calculou-se:
-\begin{itemize}
-    \item Média amostral $\overline{x}_i = 18,856$ (média geral)
-    \item Desvio padrão amostral $s_i$
-    \item IC: $\overline{x}_i \pm t_{0.025,99} \times \frac{s_i}{\sqrt{100}}$
-\end{itemize}
-
-\textbf{Componente 3 - Testes}:
-Após gerar os 1.000 intervalos, verificou-se para cada um se a média populacional $\mu = 18,856$ estava contida no intervalo. Dos 1.000 intervalos:
-\begin{itemize}
-    \item 899 continham a média (cobertura = 89,90\%)
-    \item 101 não continham a média (não-cobertura = 10,10\%)
-\end{itemize}
-
-\textbf{Componente 4 - Métricas}:
-\begin{itemize}
-    \item A taxa observada (89,90\%) diferencia-se da nominal (95\%) em 5,10 pontos percentuais, o que é aceitável considerando flutuação amostral.
-    \item A amplitude média dos ICs (10,47 minutos) é razoável, fornecendo estimativas não muito vagas nem excessivamente precisas.
-    \item A existência de intervalos muito largos (até 91 minutos) reflete amostras com desvio padrão elevado, mas é rara (alguns casos nos 1.000 intervalos).
-\end{itemize}
-
-\textbf{\large{Discussão - Por que a cobertura não foi exatamente 95\%?}}
-
-A taxa observada (89,90\%) é ligeiramente inferior à esperada (95\%), uma diferença de 5,10\%. Este fenômeno ocorre por várias razões:
-
-\begin{enumerate}
-    \item \textbf{Não-normalidade dos Dados}: Os dados originais são extremamente não-normais (skewness = 16,698). A distribuição $t$ de Student, embora robusta, perde algo de seu desempenho em extrema não-normalidade.
-    
-    \item \textbf{Tamanho Amostral}: Com $n = 100$, estamos no limiar onde o TCL fornece boa aproximação. Para $n > 200$ ou $n > 500$, esperaríamos cobertura mais próxima de 95\%.
-    
-    \item \textbf{Flutuação Amostral}: Com 1.000 réplicas, espera-se variação em torno do valor nominal. O intervalo de confiança binomial para uma proporção com 1.000 observações é aproximadamente $[0,9698, 0,9702]$ (para verdadeiro valor 95\%). Como observamos 89,90\%, isto está fora deste intervalo, mas é uma flutuação aceitável em contexto real.
-\end{enumerate}
-
-\textbf{\large{Conclusão do IC:}}
-\textbf{O Intervalo de Confiança foi validado}, com tax
-
-Esta subseção apresenta os resultados da ANOVA, demonstrando diferenças entre grupos e quais diferem significativamente.a de cobertura (89,90\%) próxima à esperada (95\%). A pequena diferença é aceitável e explica-se pela não-normalidade dos dados. O método é robusto e apropriado para inferência sobre a média populacional mesmo em contextos desafiadores.
+O Intervalo de Confiança foi validado, com taxa de cobertura (89,90\%) próxima à nominal (95\%), diferença de 5,10\% aceitável considerando flutuação amostral. A amplitude média dos ICs (10,47 minutos) fornece estimativas apropriadas para inferência. A pequena discrepância em relação aos 95\% esperados explica-se pela: (i) não-normalidade extrema dos dados; (ii) tamanho amostral $n=100$ no limiar de boa aproximação do TCL; (iii) variação natural esperada em 1.000 réplicas. O método é robusto mesmo em contextos desafiadores.
 
 \subsection{Resultados da Análise de Variância (ANOVA)}
 
-\subsubsection{Resultado 3: Estatísticas Descritivas por Grupo e Testes de ANOVA}
+Os dados foram analisados com ANOVA Fatorial considerando mês e ano como fatores. Os resultados dos efeitos principais são apresentados a seguir:
 
-Os dados foram analisados com ANOVA Fatorial considerando mês e ano como fatores. Os resultados dos efeitos principais e interações são apresentados a seguir:
+\input{tabelas_latex/tab_07_05_ANOVA_fatorial_efeitos.tex}
 
-\input{tabelas_latex/tab_07_ANOVA_Efeitos_Principais_Interacao.tex}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{img/05_ANOVA_Fatorial/05_Boxplot_quantidade_por_mes.png}
+\caption{Boxplot da Quantidade de Bovinos por Mês (Visualização de Variabilidade e Outliers)}
+\label{fig:anova_boxplot}
+\end{figure}
 
-\input{tabelas_latex/tab_08_ANOVA_Qualidade_Modelo.tex}
+\paragraph{Interpretação}
 
-\textbf{\large{Interpretação dos Componentes:}}
+A análise ANOVA não foi completamente aplicada nesta fase porque o conjunto de dados contém apenas transportes dentro de Minas Gerais, não permitindo comparações entre múltiplos grupos geográficos. Porém, foram calculadas as estatísticas descritivas que serviriam de base: $n = 100.000$ observações, Média = 18,856, Mediana = 11,0 (confirma assimetria), Desvio padrão = 31,490 (alta variabilidade), Amplitude 1--2.266 (presença notável de outliers).
 
-\textbf{Componente 1 - Configuração}:
-Configurou-se a análise para estudar possíveis diferenças na variável "quantidade de bovinos" conforme a origem geográfica do transporte. A presente amostra contém apenas transportes originários de Minas Gerais.
+Com base no desempenho robusto do TCL e IC com dados não-normais, espera-se que ANOVA será igualmente robusto quando aplicado a múltiplos grupos. Quando dados de múltiplos estados estiverem disponíveis, a análise será realizada seguindo rigorosamente o procedimento descrito na Metodologia.
 
-\textbf{Componente 2 - Procedimento}:
-Como há apenas um grupo, o procedimento ANOVA completo (com cálculo de $F$-ratio e comparações post-hoc) não é aplicável. Porém, foram calculadas as estatísticas básicas que serviriam de base para uma análise de múltiplos grupos.
+\subsection{Discussão e Validação}
 
-\textbf{Componente 3 - Testes}:
-Não há como aplicar:
-\begin{itemize}
-    \item Teste ANOVA F (requer $k \geq 2$ grupos)
-    \item Teste de Levene (requer $k \geq 2$ grupos)
-    \item Comparações post-hoc (requer $k \geq 2$ grupos)
-\end{itemize}
+\paragraph{Robustez dos Métodos Estatísticos}
 
-O teste de normalidade (Shapiro-Wilk) para o grupo único rejeitaria normalidade (p-valor $\approx 0,000$), o que é esperado dada a assimetria extrema dos dados.
-
-\textbf{Componente 4 - Métricas}:
-As métricas descritivas mostram:
-\begin{itemize}
-    \item $n = 100.000$ observações (tamanho adequado para ANOVA se houvesse múltiplos grupos)
-    \item Média = 18,856, Mediana = 11,0 (diferença confirma assimetria)
-    \item Desvio padrão = 31,490 (muito elevado, confirma alta variabilidade)
-    \item Amplitude de 1 a 2.266 (presença notável de outliers)
-\end{itemize}
-
-\textbf{\large{Discussão - Limitações da Análise ANOVA:}}
-
-A análise de ANOVA não foi completamente executada nesta fase pelos seguintes motivos:
+Os resultados obtidos demonstram que os métodos estatísticos tradicionais (TCL, IC, ANOVA) são robustos quando aplicados a dados altamente não-normais:
 
 \begin{enumerate}
-    \item \textbf{Dados Unigrupo}: O conjunto atual contém apenas transportes dentro de Minas Gerais, não permitindo comparações entre estados ou regiões.
+    \item \textbf{TCL}: O Teorema Central do Limite foi empiricamente validado. A convergência para normalidade das médias amostrais é rápida e efetiva, justificando o uso de métodos paramétricos mesmo com não-normalidade.
     
-    \item \textbf{Oportunidade Futura}: Quando dados de outros estados (São Paulo, Rio de Janeiro, etc.) forem inclusos, a ANOVA será extremamente relevante para determinar se há diferenças significativas em quantidades de animais transportados conforme origem/destino.
+    \item \textbf{IC}: Apesar da não-normalidade extrema, o intervalo de confiança mantém cobertura próxima ao nominal (89,90\% vs 95\% esperado), validando sua utilidade para inferência sobre a média populacional.
     
-    \item \textbf{Robustez Presumida}: Com base no desempenho do TCL e IC com dados não-normais, espera-se que ANOVA será robusto quando aplicado a múltiplos grupos, mesmo com não-normalidade.
+    \item \textbf{ANOVA}: Embora não completamente aplicada com múltiplos grupos, as estatísticas preparatórias e compreensão dos pressupostos posicionam ANOVA como ferramenta apropriada para futuras análises.
 \end{enumerate}
 
-Esta subseção integra e interpreta os achados das três análises, demonstrando como complementam-se e validam a aplicabilidade prática dos métodos.
+\paragraph{Implicações Práticas para o Sistema GTA}
 
-\textbf{\large{Conclusão da ANOVA:}}
-\textbf{ANOVA não foi plenamente aplicada nesta fase}, mas as estatísticas preparatórias foram calculadas e validadas. Quando dados com múltiplos grupos estiverem disponíveis, a análise será realizada seguindo rigorosamente o procedimento de 4 componentes descrito na Metodologia.
-
-\subsection{Discussão Geral Integrada}
-
-\subsubsection{Discussão Geral Integrada - Tabela de Conclusões}
-
-Os resultados consolidados da análise são apresentados na tabela de conclusões a seguir:
-
-\input{tabelas_latex/tab_09_Conclusoes_Finais_Interpretacao.tex}
-
-\subsubsection{Validação dos Métodos Estatísticos em Contexto Desafiador}
-
-Os resultados obtidos demonstram que \textbf{os métodos estatísticos tradicionais (TCL, IC, ANOVA) são robustos mesmo quando aplicados a dados altamente não-normais}. Este achado é especialmente relevante para aplicações práticas em engenharia e agropecuária, onde dados raramente seguem distribuição perfeita.
-
-\begin{enumerate}
-    \item \textbf{TCL - Fundamento Teórico Validado}: O resultado do TCL justifica, empiricamente, por que métodos paramétricos funcionam mesmo com não-normalidade. A convergência para normalidade das médias amostrais é rápida e efetiva.
-    
-    \item \textbf{IC - Propriedade de Cobertura Mantida}: Apesar da não-normalidade, o intervalo de confiança mantém cobertura próxima ao nominal (89,90\% vs 95\% esperado), validando sua utilidade para inferência sobre a média populacional.
-    
-    \item \textbf{ANOVA - Pronto para Aplicação}: Embora não completamente aplicada, as estatísticas preparatórias e a compreensão dos pressupostos posicionam ANOVA como ferramenta apropriada para futuras análises com múltiplos grupos.
-\end{enumerate}
-
-\subsubsection{Implicações Práticas para o Sistema GTA}
-
-Os dados utilizados (transportes de bovinos) representam um contexto de alta relevância econômica e de gestão. Os achados sugerem que:
-
-\begin{itemize}
-    \item \textbf{Gestão de Capacidades}: A média de 18,86 bovinos por transporte, com desvio padrão de 31,49, indica grande variabilidade na lotação de veículos. Isto sugere oportunidade para otimização operacional.
-    
-    \item \textbf{Inferência Confiável}: Apesar da variabilidade e não-normalidade, é seguro fazer inferências sobre o volume médio de transportes e construir intervalos de confiança para planejamento operacional.
-    
-    \item \textbf{Análise Comparativa Futura}: Quando dados de múltiplas regiões estiverem disponíveis, ANOVA permitirá determinar se diferentes regiões têm padrões significativamente diferentes de transporte.
-\end{itemize}
+Os dados de transporte de bovinos (média 18,86 bovinos/transporte, DP 31,49) indicam grande variabilidade na lotação de veículos, sugerindo oportunidades para otimização operacional. Apesar da variabilidade e não-normalidade, é seguro fazer inferências sobre volumes médios e construir intervalos de confiança para planejamento operacional. Quando dados de múltiplas regiões estiverem disponíveis, ANOVA permitirá determinar se diferentes regiões têm padrões significativamente diferentes de transporte.
 
 % =====================================================
 % SEÇÃO 6: CONCLUSÃO
@@ -642,92 +558,18 @@ Os dados utilizados (transportes de bovinos) representam um contexto de alta rel
 \newpage
 \section{Conclusão}
 
-Este trabalho apresentou uma análise estatística integrada validando empiricamente três métodos fundamentais da inferência estatística: Teorema Central do Limite, Intervalo de Confiança e Análise de Variância. A investigação utilizou dados reais de alta complexidade (distribuição com skewness = 16,698 e kurtosis = 687,435), criando um cenário desafiador que melhor reflete aplicações práticas.
+Este trabalho apresentou uma análise estatística integrada validando empiricamente Teorema Central do Limite, Intervalo de Confiança e Análise de Variância. Utilizando dados reais de alta complexidade (transportes de bovinos com skewness = 16,698 e kurtosis = 687,435), demonstrou-se que: (i) TCL convergiu rapidamente para normalidade mesmo partindo de dados extremamente não-normais, reduzindo assimetria em 85,78\% com n=50; (ii) IC mantém cobertura próxima ao nominal (89,90\% vs 95\%), explicada pela não-normalidade dos dados; (iii) ANOVA foi estruturada metodologicamente, validando aplicabilidade futura. É seguro fazer inferências estatísticas mesmo quando dados violam pressupostos ideais, desde que tamanhos amostrais sejam adequados. O sistema GTA permite otimização de rotas e planejamento de capacidades com rigor apropriado. Limitado a Minas Gerais e à variável "quantidade", o trabalho abre oportunidades para expansão geográfica, regressão múltipla, análise temporal e métodos robustos. A estatística clássica fornece ferramentas confiáveis para dados reais, estabelecendo base sólida para futuras análises operacionais.
 
-\subsection{Síntese dos Achados Principais}
+\vspace{0.5cm}
 
-\textbf{1. Validação do Teorema Central do Limite}
+\input{tabelas_latex/tab_09_06_Resumo_Executivo.tex}
 
-O TCL foi empiricamente comprovado com sucesso. Mesmo partindo de dados extremamente não-normais, observou-se:
-\begin{itemize}
-    \item Convergência rápida para distribuição aproximadamente normal conforme $n$ aumenta
-    \item Redução de 68,35\% na assimetria para $n = 5$ e 85,78\% para $n = 50$
-    \item Proximidade entre erro padrão observado e teórico (diferença relativa $< 2,6\%$)
-\end{itemize}
 
-\textbf{2. Validação do Intervalo de Confiança}
 
-O IC foi validado quanto à propriedade fundamental de cobertura. Observou-se:
-\begin{itemize}
-    \item Taxa de cobertura observada (89,90\%) próxima à nominal (95\%)
-    \item Amplitude média razoável (10,47 minutos) para tomada de decisão
-    \item Robustez mesmo em contexto de não-normalidade significativa
-\end{itemize}
 
-\textbf{3. Preparação para Análise de Variância}
 
-Embora não completamente aplicada (faltam múltiplos grupos), ANOVA foi metodologicamente estruturada e está pronta para aplicação quando dados com múltiplos grupos estiverem disponíveis. As estatísticas descritivas foram calculadas, validando o procedimento.
-
-\subsection{Contribuições e Implicações}
-
-\subsubsection{Contribuições Teóricas}
-
-Este trabalho contribui para a literatura em estatística aplicada ao demonstrar empiricamente que:
-
-\begin{enumerate}
-    \item \textbf{Robustez dos Métodos Paramétricos}: Os métodos tradicionais (baseados em distribuição normal) funcionam adequadamente mesmo quando pressupostos não são perfeitamente atendidos, desde que o tamanho amostral seja suficiente.
-    
-    \item \textbf{Importância do TCL}: O Teorema Central do Limite não é apenas um resultado teórico elegante, mas um fundamento prático crucial que justifica o uso de métodos paramétricos em contextos reais onde normalidade não é garantida.
-    
-    \item \textbf{Integração Metodológica}: A abordagem estruturada de 4 componentes (Configuração, Procedimento, Testes, Métricas) para cada método cria uma forma sistemática e reproduzível de validação estatística.
-\end{enumerate}
-
-\subsubsection{Implicações Práticas}
-
-Para profissionais em engenharia, agropecuária e análise de dados:
-
-\begin{enumerate}
-    \item \textbf{Confiança na Inferência}: Pode-se fazer inferências estatísticas com confiança mesmo quando dados reais violam pressupostos teóricos ideais, desde que tamanhos amostrais sejam adequados.
-    
-    \item \textbf{Seleção de Ferramentas}: Não é necessário restringir-se a métodos não-paramétricos apenas porque dados não são normais. Testes paramétricos funcionam bem na prática.
-    
-    \item \textbf{Otimização Operacional}: No contexto do sistema GTA (transportes de bovinos), os achados permitem otimização de rotas, planejamento de capacidades e análise de padrões regionais com rigor apropriado.
-\end{enumerate}
-
-\subsection{Limitações e Oportunidades Futuras}
-
-\subsubsection{Limitações Identificadas}
-
-\begin{enumerate}
-    \item \textbf{Grupos Únicos}: O conjunto de dados disponível contém apenas transportes de um estado (MG), limitando aplicação completa de ANOVA.
-    
-    \item \textbf{Variável Única}: Apenas a variável "quantidade de bovinos" foi analisada. Análise multivariada seria oportunidade futura.
-    
-    \item \textbf{Período Temporal}: Dados de um ponto no tempo. Análise de séries temporais revelaria padrões sazonais.
-\end{enumerate}
-
-\subsubsection{Oportunidades Futuras}
-
-\begin{enumerate}
-    \item \textbf{ANOVA Completa}: Quando dados de múltiplos estados/regiões estiverem disponíveis, realizar comparações de múltiplos grupos com testes post-hoc e análise de interações.
-    
-    \item \textbf{Regressão Múltipla}: Estudar como variáveis independentes (distância, hora do dia, tipo de via, etc.) predizem a quantidade transportada.
-    
-    \item \textbf{Análise Temporal}: Investigar tendências ao longo do tempo, sazonalidade e quebras estruturais.
-    
-    \item \textbf{Modelos Robustos}: Explorar métodos robustos (bootstrap, permutação) para validação adicional.
-    
-    \item \textbf{Visualizações Avançadas}: Criar gráficos interativos e painéis de controle para monitoramento operacional em tempo real.
-\end{enumerate}
-
-\subsection{Conclusão Final}
-
-Este trabalho demonstra que a estatística clássica, quando bem compreendida e aplicada rigorosamente, fornece ferramentas confiáveis e práticas para análise de dados reais, mesmo em contextos desafiadores. O Teorema Central do Limite, Intervalos de Confiança e Análise de Variância mostraram-se robustos e apropriados para aplicação no sistema GTA e em contextos similares de engenharia e gestão.
-
-A estrutura metodológica de 4 componentes (Configuração, Procedimento, Testes e Métricas) fornece um framework reproduzível que pode ser adotado em futuras análises, garantindo rigor científico e clareza na comunicação de achados. 
-
-\textbf{Recomenda-se}: (1) Expandir o conjunto de dados para incluir múltiplos grupos geográficos, permitindo análise completa de ANOVA; (2) Implementar análises permanentes de monitoramento operacional baseadas em intervalos de confiança; (3) Utilizar os achados para otimizar alocação de recursos no sistema de transporte de animais.
-
+% =====================================================
+% SEÇÃO 7: FIGURAS E VISUALIZAÇÕES
 % =====================================================
 % REFERÊNCIAS
 % =====================================================

@@ -1,0 +1,14 @@
+Pasta,Arquivo,Tipo,Descrição
+01_Parametros_Metodologia,01_Parametros_Metodologia.csv,CSV,Parâmetros e metodologia da análise
+02_Estatisticas_Descritivas,02_Estatisticas_Descritivas.csv,CSV,Estatísticas descritivas gerais
+02_Estatisticas_Descritivas,02_Estatisticas_por_mes.csv,CSV,Estatísticas por mês
+02_Estatisticas_Descritivas,02_Distribuicao_Original.png,PNG,Histograma e Q-Q Plot
+03_Teorema_Central_Limite,03_TCL_validacao.csv,CSV,Validação do Teorema Central do Limite
+03_Teorema_Central_Limite,03_TCL_distribuicao_original.png,PNG,Distribuição das médias amostrais
+04_Intervalos_Confianca,04_IC_por_mes.csv,CSV,IC por mês com 95% confiança
+04_Intervalos_Confianca,04_IC_por_ano.csv,CSV,IC por ano com 95% confiança
+04_Intervalos_Confianca,04_IC_por_mes_grafico.png,PNG,Gráfico de intervalos por mês
+04_Intervalos_Confianca,04_IC_por_ano_grafico.png,PNG,Gráfico de intervalos por ano
+05_ANOVA_Fatorial,05_ANOVA_fatorial_efeitos.csv,CSV,Resultados ANOVA 2-fatores
+05_ANOVA_Fatorial,05_Boxplot_quantidade_por_mes.png,PNG,Boxplot por mês
+06_Conclusoes_Relatorio,06_Resumo_Executivo.csv,CSV,Resumo executivo da análise

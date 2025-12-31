@@ -10,28 +10,19 @@
 \contentsline {subsection}{\numberline {3.1}Dados Utilizados}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Ambiente Computacional}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Estrutura Padronizada para Análises Estatísticas}{8}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Teorema Central do Limite (TCL)}{8}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Teorema Central do Limite (TCL)}{9}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Intervalo de Confiança (IC) - Análise por Mês e Ano}{9}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Análise de Variância Fatorial (ANOVA 2-way)}{10}{subsubsection.3.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.4}Teste Post-Hoc: Tukey HSD}{10}{subsubsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.4}Critérios de Análise e Reprodutibilidade}{11}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Resultados e Discussão}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Resultados do Teorema Central do Limite (TCL)}{12}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Resultado 1: Convergência das Médias Amostrais para Normalidade}{12}{subsubsection.4.1.1}%
+\contentsline {paragraph}{Interpretação}{13}{section*.4}%
 \contentsline {subsection}{\numberline {4.2}Resultados do Intervalo de Confiança (IC)}{13}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Resultado 2: Validação da Propriedade de Cobertura do IC}{13}{subsubsection.4.2.1}%
+\contentsline {paragraph}{Interpretação}{15}{section*.5}%
 \contentsline {subsection}{\numberline {4.3}Resultados da Análise de Variância (ANOVA)}{15}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Resultado 3: Estatísticas Descritivas por Grupo e Testes de ANOVA}{15}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Discussão Geral Integrada}{16}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Discussão Geral Integrada - Tabela de Conclusões}{16}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Validação dos Métodos Estatísticos em Contexto Desafiador}{17}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Implicações Práticas para o Sistema GTA}{17}{subsubsection.4.4.3}%
-\contentsline {section}{\numberline {5}Conclusão}{18}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Síntese dos Achados Principais}{18}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Contribuições e Implicações}{18}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Contribuições Teóricas}{18}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Implicações Práticas}{19}{subsubsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.3}Limitações e Oportunidades Futuras}{19}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Limitações Identificadas}{19}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Oportunidades Futuras}{19}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}Conclusão Final}{19}{subsection.5.4}%
+\contentsline {paragraph}{Interpretação}{16}{section*.6}%
+\contentsline {subsection}{\numberline {4.4}Discussão e Validação}{16}{subsection.4.4}%
+\contentsline {paragraph}{Robustez dos Métodos Estatísticos}{16}{section*.7}%
+\contentsline {paragraph}{Implicações Práticas para o Sistema GTA}{16}{section*.8}%
+\contentsline {section}{\numberline {5}Conclusão}{17}{section.5}%

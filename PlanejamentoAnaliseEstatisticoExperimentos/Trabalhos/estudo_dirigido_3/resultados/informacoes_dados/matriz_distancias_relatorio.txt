@@ -1,0 +1,92 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║              RELATÓRIO DE EXPLORAÇÃO DE DADOS - matriz_distancias.csv         ║
+║                                                                              ║
+║  Data de Geração: 31/12/2025 00:50:24                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+ARQUIVO: matriz_distancias.csv
+════════════════════════════════════════════════════════════════════════════════════════════════════
+Dimensões: 4,751,210 linhas × 6 colunas
+Tamanho: 370.34 MB | Delimitador: ';'
+
+----------------------------------------------------------------------------------------------------
+COLUNAS ANALISADAS:
+----------------------------------------------------------------------------------------------------
+
+
+   Coluna: municipio_origem (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 853
+   Valor mais frequente: 'Abadia dos Dourados' (5570 ocorrências)
+   Comprimento: mín=3 | médio=12.0 | máx=30
+   Diversidade: 0.0002
+   Top 5 valores: {'Abadia dos Dourados': 5570, 'Abaeté': 5570, 'Abre Campo': 5570, 'Acaiaca': 5570, 'Açucena': 5570}
+
+   Coluna: municipio_destino (CATEGÓRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 100.00% | Valores únicos: 5299
+   Valor mais frequente: 'Bom Jesus' (4265 ocorrências)
+   Comprimento: mín=3 | médio=11.6 | máx=32
+   Diversidade: 0.0011
+   Top 5 valores: {'Bom Jesus': 4265, 'São Domingos': 4265, 'Santa Luzia': 3412, 'Santa Helena': 3412, 'Planalto': 3412}
+
+   Coluna: dist_rod_km (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 99.86% | Valores válidos: 4,744,386 | Nulos: 6,824
+   Intervalo: [0, 6083.52] (Amplitude: 6083.52)
+   Centro: Média=1446.33 | Mediana=1385.71
+   Dispersão: Desvio Padrão=810.292 | Variância=656573
+   Variação: CV=56.0238%
+   Quartis: Q1=825.454 | Q3=1965.57 | IQR=1140.12
+   Forma: Assimetria=0.8743 | Curtose=1.7009
+   Limites Outliers: [-884.722, 3675.75]
+
+   Coluna: dist_rod_min (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 99.86% | Valores válidos: 4,744,386 | Nulos: 6,824
+   Intervalo: [0, 23235.4] (Amplitude: 23235.4)
+   Centro: Média=1285.82 | Mediana=1166.85
+   Dispersão: Desvio Padrão=1143.6 | Variância=1.30783e+06
+   Variação: CV=88.9394%
+   Quartis: Q1=698.765 | Q3=1680.25 | IQR=981.482
+   Forma: Assimetria=9.0758 | Curtose=133.9071
+   Limites Outliers: [-773.457, 3152.47]
+
+   Coluna: dist_ped_km (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 98.05% | Valores válidos: 4,658,376 | Nulos: 92,834
+   Intervalo: [0, 8121.13] (Amplitude: 8121.13)
+   Centro: Média=1458.41 | Mediana=1405.29
+   Dispersão: Desvio Padrão=871.259 | Variância=759092
+   Variação: CV=59.7402%
+   Quartis: Q1=825.832 | Q3=1972.68 | IQR=1146.85
+   Forma: Assimetria=1.7734 | Curtose=8.5815
+   Limites Outliers: [-894.437, 3692.95]
+
+   Coluna: dist_ped_min (NUMÉRICO)
+   ────────────────────────────────────────────────────────────────────────────────────────────────
+   Preenchimento: 98.05% | Valores válidos: 4,658,376 | Nulos: 92,834
+   Intervalo: [0, 89479.2] (Amplitude: 89479.2)
+   Centro: Média=17309.2 | Mediana=16741.4
+   Dispersão: Desvio Padrão=9988.41 | Variância=9.97683e+07
+   Variação: CV=57.7059%
+   Quartis: Q1=9892.93 | Q3=23482.2 | IQR=13589.3
+   Forma: Assimetria=1.4370 | Curtose=6.3250
+   Limites Outliers: [-10491, 43866.2]
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            RESUMO DO ARQUIVO                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Nome do Arquivo: matriz_distancias.csv
+Dimensões: 4,751,210 linhas × 6 colunas
+Tamanho: 370.34 MB
+Total de Colunas Analisadas: 6
+Colunas Numéricas: 4
+Colunas Categóricas: 2
+
+═══════════════════════════════════════════════════════════════════════════════
+Fim do Relatório - 31/12/2025 00:50:24
+═══════════════════════════════════════════════════════════════════════════════
