@@ -1,0 +1,8 @@
+Parâmetro,Valor
+Tamanhos Testados (min),10
+Tamanhos Testados (max),14
+Número de Tamanhos,3
+Probabilidade de Aresta,0.3
+Repetições por Tamanho,1
+Total de Testes Realizados,9
+Algoritmos Comparados,"Força Bruta, Greedy (Welsh-Powell), DSATUR"
