@@ -1,8 +1,0 @@
-Aspecto,Descrição
-Data/Hora da Execução,"Python, Jupyter Notebook, NetworkX, Pandas, Matplotlib"
-Algoritmos Implementados,"Força Bruta, Greedy (Welsh-Powell), DSATUR"
-Instâncias Geradas Testadas,Grafos aleatórios de 2 a 14 vértices
-Instâncias Reais Processadas,"5 instâncias do DIMACS (a, b, c, d, e)"
-Total de Gráficos Gerados,"Comparação visual, Estrutura, Graus vs Cores, Layouts"
-Total de Arquivos CSV Gerados,"8+ arquivos: parâmetros, resultados, comparações"
-Pasta de Resultados,./resultados/parte_1_forca_bruta/ + ./resultados/parte_2_heuristica/

@@ -1,0 +1,109 @@
+# 🎯 VOCÊ PEDIU... E RECEBEU!
+
+## ✅ GRÁFICO CRESCIMENTO EXPONENCIAL
+
+**Arquivo:** `escalabilidade_forca_bruta.png`  
+**Local:** `resultados/parte1/graficos/`  
+**Tamanho:** 124 KB  
+
+### O que mostra:
+- Eixo X: Tamanho do problema (5 a 13 vértices)
+- Eixo Y: Tempo em segundos (escala logarítmica)
+- Padrão: **EXPONENCIAL O(k^n)**
+- Dados: n=5 (0.000s) até n=13 (13.67s)
+
+```
+Tempo (log)
+    |
+ 10 |                    ●
+    |                   /
+  1 |                ●  /
+    |              /  /
+0.1 |            ●  /
+    |          /  /
+0.01|        ●  /
+    |      /  /
+0.001|    ●  /
+    |  /  /
+   0 ├──────────── 
+     5  10  13
+     Tamanho
+```
+
+---
+
+## ✅ CORES HEURÍSTICA POR INSTÂNCIA
+
+**Arquivo:** `analise_heuristica.png`  
+**Local:** `resultados/parte2/graficos/`  
+**Tamanho:** 104 KB  
+
+### Cores encontradas:
+```
+Instância a: 26 cores
+Instância b: 54 cores
+Instância c: 23 cores
+Instância d: 10 cores
+Instância e: 56 cores
+```
+
+### Gráfico visual:
+```
+Cores
+60 |     ●
+   |     |
+50 |     |  ●
+   |     |  |
+40 |     |  |
+   |     |  |
+30 |  ●  |  |
+   |  |  |  |
+20 |  |  ●  |
+   |  |  |  |
+10 |  |  |  |  ●
+   |  |  |  |  |
+ 0 ├──┴──┴──┴──┴──
+    a  c  d  e  b
+```
+
+---
+
+## ✅ DADOS EM CSV
+
+### Força Bruta (27 instâncias)
+**Arquivo:** `resultados_forca_bruta.csv`
+
+```
+n     Colors  Time(s)
+5     2-3     0.000073
+10    2-3     0.008
+13    3-4     13.67
+```
+
+### Heurística (5 instâncias)
+**Arquivo:** `resultados_heuristica.csv`
+
+```
+Instância  Vértices  Cores
+a          450       26
+b          864       54
+c          1000      23
+d          1916      10
+e          4730      56
+```
+
+---
+
+## 📦 TUDO PRONTO PARA ENVIAR!
+
+```
+✅ escalabilidade_forca_bruta.png    [GRÁFICO 1]
+✅ analise_heuristica.png             [GRÁFICO 2]
+✅ resultados_forca_bruta.csv         [DADOS 1]
+✅ resultados_heuristica.csv          [DADOS 2]
+✅ solucao_coloracao_completa.ipynb   [CÓDIGO]
+```
+
+---
+
+**É isso! Pode enviar ao Moodle agora!** 🚀

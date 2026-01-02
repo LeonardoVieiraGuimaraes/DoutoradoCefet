@@ -1,8 +1,0 @@
-Parâmetro,Valor
-Total de Instâncias Reais,"5 (a, b, c, d, e)"
-Instâncias Processadas,5
-Algoritmos Heurísticos Testados,"Greedy (Welsh-Powell), DSATUR"
-Tamanho Mínimo (vértices),450
-Tamanho Máximo (vértices),4730
-Formato de Entrada,DIMACS Graph Coloring Format (.col.txt)
-Fonte das Instâncias,DIMACS Benchmark Repository

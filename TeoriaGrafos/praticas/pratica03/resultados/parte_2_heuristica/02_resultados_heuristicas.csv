@@ -1,6 +1,0 @@
-Instância,Nome,Vértices,Arestas,χ Ótimo,Cores (Greedy),Cores (DSATUR),Diferença Greedy,Diferença DSATUR,Tempo Greedy (s),Tempo DSATUR (s),Eficiência Greedy (%),Eficiência DSATUR (%)
-A,le450_25a,450,8260,25.000000,26,25,1.000000,0.000000,0.002881,0.427691,96.153846,100.000000
-B,inithx.i.1,864,18707,,54,54,,,0.007196,2.204274,,
-C,r1000.1,1000,14378,,23,20,,,0.005250,2.069956,,
-D,ash958GPIA,1916,12506,,10,6,,,0.006855,3.735831,,
-E,wap03a,4730,286722,,56,54,,,0.090882,108.957478,,

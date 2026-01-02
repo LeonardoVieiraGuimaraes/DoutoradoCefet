@@ -1,0 +1,298 @@
+{
+    "projeto": "Prática 03 - Coloração de Vértices",
+    "instituição": "CEFET-MG",
+    "disciplina": "Tópicos em Teoria dos Grafos",
+    "professor": "Thiago de Souza Rodrigues",
+    "aluno": "Leonardo Vieira Guimarães",
+    "data_conclusão": "01 de janeiro de 2026",
+    "status": "✅ PRONTO PARA ENTREGA AO MOODLE",
+    "deadline": "04 de janeiro de 2025",
+    "requisitos_atendidos": {
+        "gráfico_crescimento_exponencial": {
+            "status": "✅ CONCLUÍDO",
+            "arquivo": "escalabilidade_forca_bruta.png",
+            "caminho": "resultados/parte1/graficos/escalabilidade_forca_bruta.png",
+            "tamanho": "124 KB",
+            "mostra": "Crescimento exponencial O(k^n) da força bruta",
+            "eixo_x": "Tamanho do problema (n=5 a 13 vértices)",
+            "eixo_y": "Tempo em segundos (escala logarítmica)",
+            "tempo_máximo": "13.67 segundos em n=13"
+        },
+        "cores_heurística": {
+            "status": "✅ CONCLUÍDO",
+            "arquivo": "analise_heuristica.png",
+            "caminho": "resultados/parte2/graficos/analise_heuristica.png",
+            "tamanho": "104 KB",
+            "mostra": "4 subgráficos com análise completa",
+            "subgráfico_1": "Cores encontradas para cada instância",
+            "subgráfico_2": "Tempos de execução",
+            "subgráfico_3": "Relação vértices vs cores",
+            "subgráfico_4": "Densidade vs cores",
+            "cores_por_instância": {
+                "a": 26,
+                "b": 54,
+                "c": 23,
+                "d": 10,
+                "e": 56
+            }
+        }
+    },
+    "dados_força_bruta": {
+        "arquivo": "resultados_forca_bruta.csv",
+        "caminho": "resultados/parte1/csv/resultados_forca_bruta.csv",
+        "tamanho": "1.119 KB",
+        "instâncias": 27,
+        "faixa_tamanho": "5 a 13 vértices",
+        "instâncias_por_tamanho": 3,
+        "colunas": [
+            "id_grafo",
+            "tamanho",
+            "instancia",
+            "numero_cromatico",
+            "tempo_segundos",
+            "arestas"
+        ],
+        "exemplo": "n13_i01,13,1,4,13.670654296875,24",
+        "tempo_máximo": "13.67 segundos em n=13"
+    },
+    "dados_heurística": {
+        "arquivo": "resultados_heuristica.csv",
+        "caminho": "resultados/parte2/csv/resultados_heuristica.csv",
+        "tamanho": "635 bytes",
+        "instâncias": 5,
+        "instâncias_ids": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ],
+        "colunas": [
+            "instancia_id",
+            "caminho",
+            "num_vertices",
+            "num_arestas",
+            "cores_heuristica",
+            "tempo_segundos",
+            "densidade",
+            "grau_medio"
+        ],
+        "resultados": [
+            {
+                "id": "a",
+                "vértices": 450,
+                "arestas": 8260,
+                "cores": 26,
+                "tempo": 0.00202
+            },
+            {
+                "id": "b",
+                "vértices": 864,
+                "arestas": 18707,
+                "cores": 54,
+                "tempo": 0.00410
+            },
+            {
+                "id": "c",
+                "vértices": 1000,
+                "arestas": 14378,
+                "cores": 23,
+                "tempo": 0.00422
+            },
+            {
+                "id": "d",
+                "vértices": 1916,
+                "arestas": 12506,
+                "cores": 10,
+                "tempo": 0.00524
+            },
+            {
+                "id": "e",
+                "vértices": 4730,
+                "arestas": 286722,
+                "cores": 56,
+                "tempo": 0.08936
+            }
+        ]
+    },
+    "código": {
+        "arquivo": "solucao_coloracao_completa.ipynb",
+        "tamanho": "124 KB",
+        "células": 32,
+        "status": "Todas executadas com sucesso",
+        "linguagem": "Python 3",
+        "bibliotecas": [
+            "networkx",
+            "pandas",
+            "matplotlib",
+            "seaborn"
+        ],
+        "documentação": "Código totalmente comentado com docstrings",
+        "algoritmos_implementados": [
+            "Força Bruta (Busca Exaustiva)",
+            "Heurística Welsh-Powell"
+        ]
+    },
+    "visualizações_grafos": {
+        "parte1": {
+            "quantidade": 27,
+            "padrão": "grafo_nXX_iYY.png",
+            "exemplo": "grafo_n05_i01.png até grafo_n13_i03.png",
+            "caminho": "resultados/parte1/grafos/",
+            "descrição": "Grafos aleatórios coloridos com força bruta"
+        },
+        "parte2": {
+            "quantidade": 1,
+            "padrão": "instancia_X.png",
+            "exemplo": "instancia_a.png",
+            "caminho": "resultados/parte2/grafos/",
+            "descrição": "Grafo DIMACS colorido com heurística"
+        }
+    },
+    "documentação": {
+        "relatorios": [
+            {
+                "arquivo": "RELATORIO_MOODLE.md",
+                "descrição": "Relatório completo com análises e gráficos",
+                "seções": [
+                    "Introdução",
+                    "Metodologia Força Bruta",
+                    "Resultados Força Bruta (27 instâncias)",
+                    "Metodologia Heurística",
+                    "Resultados Heurística (5 instâncias)",
+                    "Gráficos e análises",
+                    "Dados brutos completos",
+                    "Conclusões"
+                ]
+            },
+            {
+                "arquivo": "VERIFICACAO_FINAL.md",
+                "descrição": "Checklist de verificação final"
+            },
+            {
+                "arquivo": "GUIA_ENTREGA_MOODLE.md",
+                "descrição": "Guia completo para entrega"
+            },
+            {
+                "arquivo": "PRONTO_PARA_MOODLE.md",
+                "descrição": "Guia rápido de entrega"
+            },
+            {
+                "arquivo": "ENTREGA_MOODLE_RESUMO.md",
+                "descrição": "Resumo visual para entrega"
+            },
+            {
+                "arquivo": "STATUS_ENTREGA.json",
+                "descrição": "Este arquivo"
+            }
+        ]
+    },
+    "arquivos_para_enviar": [
+        {
+            "nome": "solucao_coloracao_completa.ipynb",
+            "tipo": "Código",
+            "categoria": "ESSENCIAL",
+            "tamanho": "124 KB"
+        },
+        {
+            "nome": "escalabilidade_forca_bruta.png",
+            "tipo": "Gráfico",
+            "categoria": "ESSENCIAL",
+            "tamanho": "124 KB",
+            "requisito_atendido": "Crescimento exponencial"
+        },
+        {
+            "nome": "analise_heuristica.png",
+            "tipo": "Gráfico",
+            "categoria": "ESSENCIAL",
+            "tamanho": "104 KB",
+            "requisito_atendido": "Cores heurística por instância"
+        },
+        {
+            "nome": "resultados_forca_bruta.csv",
+            "tipo": "Dados",
+            "categoria": "ESSENCIAL",
+            "tamanho": "1.119 KB"
+        },
+        {
+            "nome": "resultados_heuristica.csv",
+            "tipo": "Dados",
+            "categoria": "ESSENCIAL",
+            "tamanho": "635 bytes"
+        },
+        {
+            "nome": "RELATORIO_MOODLE.md",
+            "tipo": "Documentação",
+            "categoria": "COMPLEMENTAR"
+        }
+    ],
+    "estrutura_diretórios": {
+        "raiz": "pratica03/",
+        "conteúdo": {
+            "código": "solucao_coloracao_completa.ipynb",
+            "documentação": [
+                "RELATORIO_MOODLE.md",
+                "VERIFICACAO_FINAL.md",
+                "GUIA_ENTREGA_MOODLE.md",
+                "PRONTO_PARA_MOODLE.md",
+                "ENTREGA_MOODLE_RESUMO.md",
+                "STATUS_ENTREGA.json"
+            ],
+            "resultados": {
+                "parte1": {
+                    "csv": [
+                        "resultados_forca_bruta.csv",
+                        "parametros_grafos.csv"
+                    ],
+                    "graficos": [
+                        "escalabilidade_forca_bruta.png"
+                    ],
+                    "grafos": 27
+                },
+                "parte2": {
+                    "csv": [
+                        "resultados_heuristica.csv"
+                    ],
+                    "graficos": [
+                        "analise_heuristica.png"
+                    ],
+                    "grafos": 1
+                }
+            }
+        }
+    },
+    "validação": {
+        "código_python": "✅ Válido",
+        "gráficos": "✅ Gerados em alta resolução (150 dpi)",
+        "dados_csv": "✅ Formatados corretamente",
+        "documentação": "✅ Completa",
+        "requisitos": "✅ 100% atendidos"
+    },
+    "resumo_resultados": {
+        "força_bruta": {
+            "instâncias": 27,
+            "tamanho_mínimo": 5,
+            "tamanho_máximo": 13,
+            "tempo_mínimo": "0.000051 segundos",
+            "tempo_máximo": "13.67 segundos",
+            "padrão": "Exponencial O(k^n)"
+        },
+        "heurística": {
+            "instâncias": 5,
+            "vértices_mínimo": 450,
+            "vértices_máximo": 4730,
+            "cores_mínimo": 10,
+            "cores_máximo": 56,
+            "tempo_máximo": "0.089 segundos",
+            "padrão": "Linear O(n+m)"
+        }
+    },
+    "próximos_passos": [
+        "1. Abra o Moodle da CEFET",
+        "2. Navegue até Tópicos em Teoria dos Grafos",
+        "3. Clique em Prática 03",
+        "4. Faça upload dos arquivos essenciais",
+        "5. Clique em Enviar"
+    ],
+    "status_final": "✅ 100% COMPLETO E PRONTO PARA ENTREGA"
+}
