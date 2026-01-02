@@ -142,6 +142,7 @@ def visualizar_e_salvar_grafo(grafo: nx.Graph, coloracao: Dict, caminho_saida: s
     
     Função auxiliar comum que cria visualização dos grafos coloridos em ambas
     as partes da solução. Adapta a visualização conforme o tamanho do grafo.
+    Implementa visualização adaptativa com estatísticas visuais.
     
     Args:
         grafo: Grafo NetworkX
@@ -149,41 +150,146 @@ def visualizar_e_salvar_grafo(grafo: nx.Graph, coloracao: Dict, caminho_saida: s
         caminho_saida: Caminho para salvar arquivo PNG
     """
     num_vertices = grafo.number_of_nodes()
+    num_arestas = grafo.number_of_edges()
     cores_set = set(coloracao.values())
+    num_cores = max(cores_set) + 1
     cores_lista = [coloracao[node] for node in grafo.nodes()]
+    densidade = nx.density(grafo)
     
-    # Adaptar visualização conforme tamanho do grafo
-    if num_vertices <= 500:
-        # Grafos pequenos: visualização completa com spring layout
-        plt.figure(figsize=(10, 8))
+    # Calcular distribuição de cores
+    distribuicao_cores = {}
+    for cor in cores_set:
+        distribuicao_cores[cor] = sum(1 for v in coloracao.values() if v == cor)
+    
+    # Criar figura com subplot para grafos grandes (inclui estatísticas)
+    if num_vertices <= 100:
+        # ======= GRAFOS MUITO PEQUENOS (≤100): Visualização Completa com Labels =======
+        fig = plt.figure(figsize=(12, 8))
+        
+        # Subplot principal: grafo
+        ax_grafo = plt.subplot(1, 2, 1)
         pos = nx.spring_layout(grafo, seed=42, iterations=50)
-        node_size = 500
-        font_size = 8
+        
+        nx.draw_networkx_edges(grafo, pos, alpha=0.3, width=0.8, ax=ax_grafo)
+        nx.draw_networkx_nodes(grafo, pos, node_color=cores_lista, 
+                              node_size=500, cmap='Set3', vmin=0, 
+                              vmax=max(cores_set), ax=ax_grafo)
+        nx.draw_networkx_labels(grafo, pos, font_size=7, ax=ax_grafo)
+        
+        ax_grafo.set_title(f'Coloração de Vértices\n{num_vertices} vértices, {num_arestas} arestas',
+                          fontsize=12, fontweight='bold')
+        ax_grafo.axis('off')
+        
+        # Subplot de estatísticas: distribuição de cores
+        ax_stats = plt.subplot(1, 2, 2)
+        cores_ids = sorted(distribuicao_cores.keys())
+        contagens = [distribuicao_cores[c] for c in cores_ids]
+        colors_bar = plt.cm.Set3(np.linspace(0, 1, num_cores))
+        
+        bars = ax_stats.bar(cores_ids, contagens, color=colors_bar[:len(cores_ids)], 
+                            edgecolor='black', linewidth=1.5)
+        ax_stats.set_xlabel('Cor', fontsize=11, fontweight='bold')
+        ax_stats.set_ylabel('Número de Vértices', fontsize=11, fontweight='bold')
+        ax_stats.set_title('Distribuição de Cores', fontsize=12, fontweight='bold')
+        ax_stats.grid(True, alpha=0.3, axis='y')
+        
+        # Adicionar valores nas barras
+        for bar, count in zip(bars, contagens):
+            height = bar.get_height()
+            ax_stats.text(bar.get_x() + bar.get_width()/2., height,
+                         f'{int(count)}', ha='center', va='bottom', fontweight='bold')
+        
+        # Adicionar informações estatísticas
+        info_text = f"χ(G) = {num_cores} cores\nDensidade: {densidade:.4f}\nGrau médio: {2*num_arestas/num_vertices:.2f}"
+        ax_stats.text(0.02, 0.98, info_text, transform=ax_stats.transAxes,
+                     fontsize=10, verticalalignment='top',
+                     bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+        
         dpi = 150
         
-    else:
-        # Grafos grandes: layout otimizado com figura menor
-        plt.figure(figsize=(8, 6))
-        # Usar layout kamada-kawai mais rápido para grafos grandes
+    elif num_vertices <= 1000:
+        # ======= GRAFOS MÉDIOS (501-1000): Layout Otimizado + Stats =======
+        fig = plt.figure(figsize=(14, 6))
+        
+        # Subplot principal: grafo
+        ax_grafo = plt.subplot(1, 3, (1, 2))
         try:
             pos = nx.kamada_kawai_layout(grafo)
         except:
-            # Se kamada-kawai falhar, usar spring com menos iterações
-            pos = nx.spring_layout(grafo, seed=42, iterations=20, k=0.1)
-        node_size = 100
-        font_size = 0  # Sem labels para não poluir
-        dpi = 100
+            pos = nx.spring_layout(grafo, seed=42, iterations=30, k=0.15)
+        
+        nx.draw_networkx_edges(grafo, pos, alpha=0.15, width=0.3, ax=ax_grafo)
+        nx.draw_networkx_nodes(grafo, pos, node_color=cores_lista,
+                              node_size=150, cmap='Set3', vmin=0,
+                              vmax=max(cores_set), ax=ax_grafo, edgecolors='black', linewidths=0.5)
+        
+        ax_grafo.set_title(f'Coloração de Vértices - {num_vertices} vértices\nχ(G) = {num_cores} cores',
+                          fontsize=12, fontweight='bold')
+        ax_grafo.axis('off')
+        
+        # Subplot de estatísticas
+        ax_stats = plt.subplot(1, 3, 3)
+        cores_ids = sorted(distribuicao_cores.keys())
+        contagens = [distribuicao_cores[c] for c in cores_ids]
+        colors_bar = plt.cm.Set3(np.linspace(0, 1, num_cores))
+        
+        ax_stats.barh(cores_ids, contagens, color=colors_bar[:len(cores_ids)],
+                     edgecolor='black', linewidth=1)
+        ax_stats.set_ylabel('Cor', fontsize=10, fontweight='bold')
+        ax_stats.set_xlabel('Vértices', fontsize=10, fontweight='bold')
+        ax_stats.set_title('Distribuição', fontsize=11, fontweight='bold')
+        ax_stats.grid(True, alpha=0.3, axis='x')
+        ax_stats.invert_yaxis()
+        
+        info_text = f"Vértices: {num_vertices}\nArestas: {num_arestas}\nχ(G): {num_cores}\nDensidade: {densidade:.5f}\nGrau médio: {2*num_arestas/num_vertices:.2f}"
+        ax_stats.text(0.02, 0.02, info_text, transform=ax_stats.transAxes,
+                     fontsize=9, verticalalignment='bottom',
+                     bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+        
+        dpi = 120
+        
+    else:
+        # ======= GRAFOS GRANDES (>1000): Layout Consistente com Médios =======
+        fig = plt.figure(figsize=(14, 6))
+        
+        # Subplot principal: grafo
+        ax_grafo = plt.subplot(1, 3, (1, 2))
+        try:
+            # Para grafos muito grandes, usar layout mais rápido
+            pos = nx.spring_layout(grafo, seed=42, iterations=15, k=0.2)
+        except:
+            pos = nx.random_layout(grafo, seed=42)
+        
+        nx.draw_networkx_edges(grafo, pos, alpha=0.08, width=0.2, ax=ax_grafo)
+        nx.draw_networkx_nodes(grafo, pos, node_color=cores_lista,
+                              node_size=50, cmap='Set3', vmin=0,
+                              vmax=max(cores_set), ax=ax_grafo, linewidths=0)
+        
+        ax_grafo.set_title(f'Coloração de Vértices - {num_vertices} vértices\nχ(G) = {num_cores} cores',
+                          fontsize=12, fontweight='bold')
+        ax_grafo.axis('off')
+        
+        # Subplot de estatísticas: distribuição de cores (barras horizontais)
+        ax_stats = plt.subplot(1, 3, 3)
+        cores_ids = sorted(distribuicao_cores.keys())
+        contagens = [distribuicao_cores[c] for c in cores_ids]
+        colors_bar = plt.cm.Set3(np.linspace(0, 1, num_cores))
+        
+        ax_stats.barh(cores_ids, contagens, color=colors_bar[:len(cores_ids)],
+                     edgecolor='black', linewidth=1)
+        ax_stats.set_ylabel('Cor', fontsize=10, fontweight='bold')
+        ax_stats.set_xlabel('Vértices', fontsize=10, fontweight='bold')
+        ax_stats.set_title('Distribuição', fontsize=11, fontweight='bold')
+        ax_stats.grid(True, alpha=0.3, axis='x')
+        ax_stats.invert_yaxis()
+        
+        info_text = f"Vértices: {num_vertices}\nArestas: {num_arestas}\nχ(G): {num_cores}\nDensidade: {densidade:.5f}\nGrau médio: {2*num_arestas/num_vertices:.2f}"
+        ax_stats.text(0.02, 0.02, info_text, transform=ax_stats.transAxes,
+                     fontsize=9, verticalalignment='bottom',
+                     bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+        
+        dpi = 120
     
-    # Desenhar grafo
-    nx.draw_networkx_edges(grafo, pos, alpha=0.2, width=0.5)
-    nx.draw_networkx_nodes(grafo, pos, node_color=cores_lista, 
-                          node_size=node_size, cmap='Set3', vmin=0, vmax=max(cores_set))
-    
-    if font_size > 0:
-        nx.draw_networkx_labels(grafo, pos, font_size=font_size)
-    
-    plt.title(f"Coloração de Vértices ({num_vertices} vértices)\n(χ(G) = {max(cores_set) + 1})")
-    plt.axis('off')
     plt.tight_layout()
     plt.savefig(caminho_saida, dpi=dpi, bbox_inches='tight')
     plt.close()
@@ -605,6 +711,52 @@ def salvar_resultados_csv_parte2(resultados_list: List):
         print(f"✓ Resultados heurística salvos em: {caminho}")
 
 
+def salvar_informacoes_instancias(resultados_list: List):
+    """
+    Salva informações estruturais das instâncias DIMACS em CSV.
+    
+    Gera um CSV com metadados de cada instância:
+    - Nome da instância
+    - Número de vértices
+    - Número de arestas
+    - Densidade do grafo
+    - Grau médio
+    - Número de cores encontradas
+    - Tempo de execução
+    
+    Args:
+        resultados_list: Lista de dicionários com resultados da heurística
+    """
+    if not resultados_list:
+        print("⚠ Sem dados para gerar CSV de informações das instâncias")
+        return
+    
+    # Extrair e calcular informações relevantes
+    info_instancias = []
+    for res in resultados_list:
+        n = res['num_vertices']
+        m = res['num_arestas']
+        densidade = (2 * m) / (n * (n - 1)) if n > 1 else 0
+        grau_medio = (2 * m) / n if n > 0 else 0
+        
+        info_instancias.append({
+            'instancia': res['instancia_id'],
+            'num_vertices': n,
+            'num_arestas': m,
+            'densidade': round(densidade, 4),
+            'grau_medio': round(grau_medio, 2),
+            'cores_encontradas': res['cores_heuristica'],
+            'tempo_segundos': res['tempo_segundos']
+        })
+    
+    df_info = pd.DataFrame(info_instancias)
+    caminho = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte2', 'csv', 'informacoes_instancias.csv'
+    )
+    df_info.to_csv(caminho, index=False)
+    print(f"✓ Informações das instâncias salvas em: informacoes_instancias.csv")
+
+
 # ============================================================================
 # GERAÇÃO DE GRÁFICOS
 # ============================================================================
@@ -613,7 +765,7 @@ def gerar_graficos_parte1(resultados_list: List):
     """
     Gera gráficos de análise para Parte 1.
     
-    Gera:
+    Gera 2 gráficos separados:
     1. Gráfico de escalabilidade (tempo vs tamanho)
     2. Gráfico de número cromático (χ(G) vs tamanho)
     
@@ -632,52 +784,66 @@ def gerar_graficos_parte1(resultados_list: List):
         'numero_cromatico': 'mean'
     }).reset_index()
     
-    # Gráfico 1: Escalabilidade (Tempo vs Tamanho)
-    plt.figure(figsize=(12, 6))
-    
-    plt.subplot(1, 2, 1)
     tamanhos = df_agrupado['tamanho'].values
     tempos_media = df_agrupado[('tempo_segundos', 'mean')].values
     tempos_min = df_agrupado[('tempo_segundos', 'min')].values
     tempos_max = df_agrupado[('tempo_segundos', 'max')].values
-    
-    plt.semilogy(tamanhos, tempos_media, 'o-', label='Média', linewidth=2, markersize=8)
-    plt.fill_between(tamanhos, tempos_min, tempos_max, alpha=0.2, label='Min-Max')
-    
-    plt.xlabel('Tamanho do Grafo (número de vértices)', fontsize=11, fontweight='bold')
-    plt.ylabel('Tempo de Execução (segundos)', fontsize=11, fontweight='bold')
-    plt.title('Escalabilidade: Crescimento Exponencial do Tempo', fontsize=12, fontweight='bold')
-    plt.grid(True, alpha=0.3)
-    plt.legend()
-    
-    # Gráfico 2: Número cromático vs Tamanho
-    plt.subplot(1, 2, 2)
     cores_media = df_agrupado[('numero_cromatico', 'mean')].values
     
-    plt.plot(tamanhos, cores_media, 's-', color='green', linewidth=2, markersize=8)
-    plt.xlabel('Tamanho do Grafo (número de vértices)', fontsize=11, fontweight='bold')
-    plt.ylabel('Número Cromático χ(G)', fontsize=11, fontweight='bold')
-    plt.title('Número Cromático Encontrado', fontsize=12, fontweight='bold')
-    plt.grid(True, alpha=0.3)
+    # Gráfico 1: Escalabilidade (Tempo vs Tamanho)
+    plt.figure(figsize=(12, 7))
+    
+    plt.semilogy(tamanhos, tempos_media, 'o-', label='Média', linewidth=2.5, markersize=10, color='#2E86AB')
+    plt.fill_between(tamanhos, tempos_min, tempos_max, alpha=0.25, label='Min-Max', color='#2E86AB')
+    
+    plt.xlabel('Tamanho do Grafo (número de vértices)', fontsize=13, fontweight='bold')
+    plt.ylabel('Tempo de Execução (segundos)', fontsize=13, fontweight='bold')
+    plt.title('Escalabilidade: Crescimento Exponencial do Tempo', fontsize=15, fontweight='bold')
+    plt.grid(True, alpha=0.3, linestyle='--')
+    plt.legend(fontsize=11)
     
     plt.tight_layout()
-    caminho = ConfiguradorDiretorios.obter_caminho_arquivo(
-        'parte1', 'graficos', 'escalabilidade_forca_bruta.png'
+    caminho1 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte1', 'graficos', 'grafico1_escalabilidade_tempo.png'
     )
-    plt.savefig(caminho, dpi=150, bbox_inches='tight')
+    plt.savefig(caminho1, dpi=150, bbox_inches='tight')
     plt.close()
+    print(f"  ✓ Gráfico 1 salvo: grafico1_escalabilidade_tempo.png")
     
-    print(f"✓ Gráficos Parte 1 salvos em: {caminho.split('/graficos/')[0]}/graficos/")
+    # Gráfico 2: Número cromático vs Tamanho
+    plt.figure(figsize=(12, 7))
+    
+    plt.plot(tamanhos, cores_media, 's-', color='#06A77D', linewidth=2.5, markersize=10, markeredgecolor='black', markeredgewidth=1.5)
+    
+    # Adicionar valores nos pontos
+    for i, (x, y) in enumerate(zip(tamanhos, cores_media)):
+        plt.text(x, y + 0.15, f'{y:.1f}', ha='center', va='bottom', fontweight='bold', fontsize=10)
+    
+    plt.xlabel('Tamanho do Grafo (número de vértices)', fontsize=13, fontweight='bold')
+    plt.ylabel('Número Cromático χ(G)', fontsize=13, fontweight='bold')
+    plt.title('Número Cromático Encontrado', fontsize=15, fontweight='bold')
+    plt.grid(True, alpha=0.3, linestyle='--')
+    
+    plt.tight_layout()
+    caminho2 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte1', 'graficos', 'grafico2_numero_cromatico.png'
+    )
+    plt.savefig(caminho2, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"  ✓ Gráfico 2 salvo: grafico2_numero_cromatico.png")
+    
+    print(f"\n✓ Todos os gráficos Parte 1 salvos em: resultados/parte1/graficos/")
 
 
 def gerar_graficos_parte2(resultados_list: List):
     """
     Gera gráficos de análise para Parte 2.
     
-    Gera:
+    Gera 4 gráficos separados:
     1. Número de cores por instância
     2. Tempo de execução por instância
-    3. Comparação densidade vs cores
+    3. Número de vértices vs cores
+    4. Densidade vs cores
     
     Args:
         resultados_list: Lista de resultados da heurística
@@ -687,66 +853,216 @@ def gerar_graficos_parte2(resultados_list: List):
         return
     
     df = pd.DataFrame(resultados_list)
-    
-    fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+    instancias = df['instancia_id'].values
     
     # Gráfico 1: Número de cores por instância
-    ax1 = axes[0, 0]
-    instancias = df['instancia_id'].values
+    plt.figure(figsize=(10, 6))
     cores = df['cores_heuristica'].values
     cores_sorted_idx = np.argsort(cores)
     
-    ax1.bar(instancias[cores_sorted_idx], cores[cores_sorted_idx], color='steelblue')
-    ax1.set_xlabel('Instância DIMACS', fontsize=11, fontweight='bold')
-    ax1.set_ylabel('Número de Cores (Heurística)', fontsize=11, fontweight='bold')
-    ax1.set_title('Cores Encontradas por Instância', fontsize=12, fontweight='bold')
-    ax1.grid(True, alpha=0.3, axis='y')
+    plt.bar(instancias[cores_sorted_idx], cores[cores_sorted_idx], color='steelblue', edgecolor='black', linewidth=1.5)
+    plt.xlabel('Instância DIMACS', fontsize=12, fontweight='bold')
+    plt.ylabel('Número de Cores (Heurística)', fontsize=12, fontweight='bold')
+    plt.title('Cores Encontradas por Instância', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3, axis='y')
+    
+    # Adicionar valores nas barras
+    for idx in cores_sorted_idx:
+        plt.text(instancias[idx], cores[idx] + 1, str(int(cores[idx])), 
+                ha='center', va='bottom', fontweight='bold', fontsize=11)
+    
+    plt.tight_layout()
+    caminho1 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte2', 'graficos', 'grafico1_cores_por_instancia.png'
+    )
+    plt.savefig(caminho1, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"  ✓ Gráfico 1 salvo: grafico1_cores_por_instancia.png")
     
     # Gráfico 2: Tempo de execução por instância
-    ax2 = axes[0, 1]
+    plt.figure(figsize=(10, 6))
     tempos = df['tempo_segundos'].values
     tempos_sorted_idx = np.argsort(tempos)
     
-    ax2.bar(instancias[tempos_sorted_idx], tempos[tempos_sorted_idx], color='coral')
-    ax2.set_xlabel('Instância DIMACS', fontsize=11, fontweight='bold')
-    ax2.set_ylabel('Tempo (segundos)', fontsize=11, fontweight='bold')
-    ax2.set_title('Tempo de Execução por Instância', fontsize=12, fontweight='bold')
-    ax2.grid(True, alpha=0.3, axis='y')
+    plt.bar(instancias[tempos_sorted_idx], tempos[tempos_sorted_idx], color='coral', edgecolor='black', linewidth=1.5)
+    plt.xlabel('Instância DIMACS', fontsize=12, fontweight='bold')
+    plt.ylabel('Tempo (segundos)', fontsize=12, fontweight='bold')
+    plt.title('Tempo de Execução por Instância', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3, axis='y')
     
-    # Gráfico 3: Número de vértices vs Cores
-    ax3 = axes[1, 0]
-    ax3.scatter(df['num_vertices'], df['cores_heuristica'], s=200, alpha=0.6, 
-               c=df['num_vertices'], cmap='viridis')
-    for i, txt in enumerate(df['instancia_id']):
-        ax3.annotate(txt, (df['num_vertices'].iloc[i], df['cores_heuristica'].iloc[i]),
-                    fontsize=10, fontweight='bold')
-    
-    ax3.set_xlabel('Número de Vértices', fontsize=11, fontweight='bold')
-    ax3.set_ylabel('Número de Cores', fontsize=11, fontweight='bold')
-    ax3.set_title('Vértices vs Cores (Tamanho = Cores)', fontsize=12, fontweight='bold')
-    ax3.grid(True, alpha=0.3)
-    
-    # Gráfico 4: Densidade vs Cores
-    ax4 = axes[1, 1]
-    ax4.scatter(df['densidade'], df['cores_heuristica'], s=200, alpha=0.6,
-               c=df['cores_heuristica'], cmap='Reds')
-    for i, txt in enumerate(df['instancia_id']):
-        ax4.annotate(txt, (df['densidade'].iloc[i], df['cores_heuristica'].iloc[i]),
-                    fontsize=10, fontweight='bold')
-    
-    ax4.set_xlabel('Densidade do Grafo', fontsize=11, fontweight='bold')
-    ax4.set_ylabel('Número de Cores', fontsize=11, fontweight='bold')
-    ax4.set_title('Densidade vs Cores', fontsize=12, fontweight='bold')
-    ax4.grid(True, alpha=0.3)
+    # Adicionar valores nas barras
+    for idx in tempos_sorted_idx:
+        plt.text(instancias[idx], tempos[idx] + max(tempos)*0.02, f'{tempos[idx]:.4f}s', 
+                ha='center', va='bottom', fontweight='bold', fontsize=10)
     
     plt.tight_layout()
-    caminho = ConfiguradorDiretorios.obter_caminho_arquivo(
-        'parte2', 'graficos', 'analise_heuristica.png'
+    caminho2 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte2', 'graficos', 'grafico2_tempo_execucao.png'
     )
-    plt.savefig(caminho, dpi=150, bbox_inches='tight')
+    plt.savefig(caminho2, dpi=150, bbox_inches='tight')
     plt.close()
+    print(f"  ✓ Gráfico 2 salvo: grafico2_tempo_execucao.png")
     
-    print(f"✓ Gráficos Parte 2 salvos em: {caminho.split('/graficos/')[0]}/graficos/")
+    # Gráfico 3: Número de vértices vs Cores
+    plt.figure(figsize=(10, 7))
+    scatter = plt.scatter(df['num_vertices'], df['cores_heuristica'], s=300, alpha=0.7, 
+               c=df['num_vertices'], cmap='viridis', edgecolors='black', linewidth=2)
+    
+    for i, txt in enumerate(df['instancia_id']):
+        plt.annotate(txt, (df['num_vertices'].iloc[i], df['cores_heuristica'].iloc[i]),
+                    fontsize=12, fontweight='bold', ha='center', va='center')
+    
+    plt.xlabel('Número de Vértices', fontsize=12, fontweight='bold')
+    plt.ylabel('Número de Cores', fontsize=12, fontweight='bold')
+    plt.title('Vértices vs Cores', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3)
+    plt.colorbar(scatter, label='Número de Vértices')
+    
+    plt.tight_layout()
+    caminho3 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte2', 'graficos', 'grafico3_vertices_vs_cores.png'
+    )
+    plt.savefig(caminho3, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"  ✓ Gráfico 3 salvo: grafico3_vertices_vs_cores.png")
+    
+    # Gráfico 4: Densidade vs Cores
+    plt.figure(figsize=(10, 7))
+    scatter = plt.scatter(df['densidade'], df['cores_heuristica'], s=300, alpha=0.7,
+               c=df['cores_heuristica'], cmap='Reds', edgecolors='black', linewidth=2)
+    
+    for i, txt in enumerate(df['instancia_id']):
+        plt.annotate(txt, (df['densidade'].iloc[i], df['cores_heuristica'].iloc[i]),
+                    fontsize=12, fontweight='bold', ha='center', va='center')
+    
+    plt.xlabel('Densidade do Grafo', fontsize=12, fontweight='bold')
+    plt.ylabel('Número de Cores', fontsize=12, fontweight='bold')
+    plt.title('Densidade vs Cores', fontsize=14, fontweight='bold')
+    plt.grid(True, alpha=0.3)
+    plt.colorbar(scatter, label='Número de Cores')
+    
+    plt.tight_layout()
+    caminho4 = ConfiguradorDiretorios.obter_caminho_arquivo(
+        'parte2', 'graficos', 'grafico4_densidade_vs_cores.png'
+    )
+    plt.savefig(caminho4, dpi=150, bbox_inches='tight')
+    plt.close()
+    print(f"  ✓ Gráfico 4 salvo: grafico4_densidade_vs_cores.png")
+    
+    print(f"\n✓ Todos os gráficos Parte 2 salvos em: resultados/parte2/graficos/")
+
+
+# ============================================================================
+# CONSOLIDAÇÃO E VERIFICAÇÃO DE CSVs
+# ============================================================================
+
+def consolidar_dados_csv():
+    """
+    Consolida e verifica todos os arquivos CSV gerados.
+    
+    Função modular que:
+    1. Cria diretório de resultados
+    2. Localiza todos os arquivos CSV gerados
+    3. Exibe origem e conteúdo de cada CSV
+    4. Confirma que os dados estão prontos para gerar tabelas LaTeX
+    
+    Returns:
+        dict: Dicionário com informações sobre os CSVs encontrados
+    """
+    
+    print("\n" + "="*70)
+    print("CONSOLIDANDO E VERIFICANDO CSVs GERADOS")
+    print("="*70)
+    
+    # Criar diretório se não existir
+    Path('resultados').mkdir(exist_ok=True)
+    
+    print("\n📊 ORIGEM DOS DADOS (CSVs gerados automaticamente):\n")
+    
+    print("PARTE 1 - FORÇA BRUTA:")
+    print("  1️⃣  parametros_grafos.csv")
+    print("      Origem: processar_instancias_por_tamanho()")
+    print("      Conteúdo: Parâmetros estruturais dos 27 grafos aleatórios")
+    print("      (tamanho: 5-13 vértices, 3 instâncias cada)\n")
+    
+    print("  2️⃣  resultados_forca_bruta.csv")
+    print("      Origem: algoritmo_forca_bruta_coloracao()")
+    print("      Conteúdo: Número cromático encontrado e tempo para cada grafo\n")
+    
+    print("PARTE 2 - HEURÍSTICA WELSH-POWELL:")
+    print("  3️⃣  resultados_heuristica.csv")
+    print("      Origem: processar_instancias_dimacs() → algoritmo_welsh_powell()")
+    print("      Conteúdo: Cores encontradas, tempo e parâmetros das 5 instâncias DIMACS\n")
+    
+    print("  4️⃣  informacoes_instancias.csv")
+    print("      Origem: salvar_informacoes_instancias()")
+    print("      Conteúdo: Informações consolidadas das instâncias DIMACS")
+    print("      (densidade, grau médio, cores, tempo)\n")
+    
+    # Verificar quais arquivos CSV foram gerados
+    csv_files = []
+    csv_info = {}
+    
+    print("-" * 70)
+    print("Verificando arquivos CSV gerados...\n")
+    
+    for root, dirs, files in os.walk('resultados'):
+        for file in sorted(files):
+            if file.endswith('.csv'):
+                path = os.path.join(root, file)
+                csv_files.append(path)
+                
+                try:
+                    df = pd.read_csv(path)
+                    csv_info[file] = {
+                        'path': path,
+                        'linhas': len(df),
+                        'colunas': len(df.columns),
+                        'colunas_nomes': list(df.columns),
+                        'status': '✓'
+                    }
+                    
+                    print(f"✓ {path}")
+                    print(f"    Linhas: {len(df)} | Colunas: {len(df.columns)}")
+                    print(f"    Campos: {', '.join(df.columns[:3])}...")
+                    print()
+                    
+                except Exception as e:
+                    csv_info[file] = {
+                        'path': path,
+                        'status': '⚠',
+                        'erro': str(e)
+                    }
+                    print(f"⚠️  {path}")
+                    print(f"    Erro: {e}\n")
+    
+    # Resumo final
+    print("-" * 70)
+    if csv_files:
+        print(f"\n✅ Total de arquivos CSV gerados: {len(csv_files)}")
+        print("\n📁 Arquivos prontos para gerar tabelas LaTeX:")
+        for csv_path in sorted(csv_files):
+            print(f"   - {csv_path}")
+    else:
+        print("\n⚠️  Nenhum CSV encontrado!")
+        print("   Execute as células de solução primeiro para gerar os dados.")
+    
+    print("\n" + "="*70)
+    print("PRÓXIMAS ETAPAS")
+    print("="*70)
+    print("""
+1. Abra o notebook: gerar_tabelas_latex.ipynb
+2. Execute as células para gerar as tabelas LaTeX
+3. Os CSVs acima serão automaticamente lidos e convertidos em tabelas
+
+Este fluxo garante que:
+✓ Dados são calculados uma única vez (neste script)
+✓ CSVs armazenam os resultados (fonte de verdade única)
+✓ Tabelas LaTeX são geradas automaticamente (sempre sincronizadas)
+✓ Relatório LaTeX usa as tabelas (dados sempre atualizados)
+""")
+    
+    return csv_info
 
 
 # ============================================================================
@@ -802,6 +1118,7 @@ def executar_solucao_completa():
     print("\n[4/5] Exportando resultados em CSV...")
     salvar_resultados_csv_parte1(parametros_parte1, resultados_parte1)
     salvar_resultados_csv_parte2(resultados_parte2)
+    salvar_informacoes_instancias(resultados_parte2)
     
     # ==================================================================
     # ETAPA 5: Gerar Gráficos
@@ -848,6 +1165,12 @@ def executar_solucao_completa():
     print("\n" + "="*70)
     print("✓ EXECUÇÃO CONCLUÍDA COM SUCESSO")
     print("="*70 + "\n")
+    
+    # ==================================================================
+    # ETAPA 6: Consolidar e Verificar CSVs para Tabelas LaTeX
+    # ==================================================================
+    print("\n[6/6] Consolidando dados em CSVs...")
+    consolidar_dados_csv()
 
 
 # ============================================================================

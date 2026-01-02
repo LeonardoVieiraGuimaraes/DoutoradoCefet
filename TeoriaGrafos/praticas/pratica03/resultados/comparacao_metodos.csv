@@ -1,0 +1,6 @@
+Critério,Força Bruta,Welsh-Powell
+Otimalidade,Garantida ($\chi(G)$ exato),Aproximada
+Complexidade,$O(n^{n+1})$ (exponencial),$O(n \log n + m)$ (polinomial)
+Tempo (n=13),$\sim$ 4.0 segundos,$<$ 0.001 segundo
+Tamanho máximo viável,$n \leq 13$,"$n \geq 10\,000$"
+Aplicabilidade,Instâncias pequenas,Problemas reais
