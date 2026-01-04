@@ -78,16 +78,16 @@
 
 A coloração de vértices em grafos é um problema fundamental em Teoria dos Grafos com aplicações práticas em alocação de recursos, escalonamento de tarefas, atribuição de frequências e design de circuitos. Dado um grafo $G = (V, E)$, o objetivo é atribuir cores aos vértices de modo que vértices adjacentes tenham cores distintas. O \textbf{número cromático} $\chi(G)$ é a quantidade mínima de cores necessárias.
 
-Determinar $\chi(G)$ é um problema NP-completo, sem algoritmo polinomial conhecido. Isso motiva o estudo de duas abordagens: algoritmos exatos (força bruta) que garantem otimalidade com complexidade exponencial, e heurísticas que encontram boas soluções em tempo polinomial. Este trabalho implementa e avalia ambas as estratégias, demonstrando empiricamente o trade-off entre otimalidade e eficiência computacional.
+Determinar $\chi(G)$ é um problema NP-completo, sem algoritmo polinomial conhecido. Isso motiva o estudo de três abordagens distintas: um algoritmo exato (força bruta) que garante otimalidade com complexidade exponencial, e duas heurísticas (Welsh-Powell e DSATUR) que encontram soluções de boa qualidade em tempo polinomial. Este trabalho implementa e avalia os três métodos, demonstrando empiricamente o trade-off entre otimalidade e eficiência computacional.
 
 \subsection{Objetivos}
 
 \begin{enumerate}
     \item Implementar um algoritmo de força bruta para determinar o número cromático exato;
     \item Avaliar a escalabilidade temporal demonstrando crescimento exponencial;
-    \item Implementar a heurística de Welsh-Powell;
-    \item Aplicar a heurística em cinco instâncias de grande porte;
-    \item Comparar eficiência computacional entre os dois métodos.
+    \item Implementar duas heurísticas: Welsh-Powell e DSATUR;
+    \item Aplicar as heurísticas em cinco instâncias de grande porte (DIMACS);
+    \item Comparar eficiência computacional e qualidade de solução entre os três métodos.
 \end{enumerate}
 
 \subsection{Estrutura do Trabalho}
@@ -199,6 +199,49 @@ A heurística de Welsh-Powell é um algoritmo guloso que ordena os vértices por
 
 \textbf{Garantia de Aproximação:} A heurística não garante a solução ótima, mas produz uma coloração com no máximo $\Delta(G) + 1$ cores, sendo frequentemente próxima do ótimo para grafos esparsos.
 
+\subsection{Heurística DSATUR}
+
+Além da heurística de Welsh-Powell, este trabalho implementa também o algoritmo DSATUR (Degree of Saturation), uma estratégia adaptativa que aproveita informações dinâmicas durante o processo de coloração \cite{brelaz1979new}.
+
+O algoritmo DSATUR é um método guloso adaptativo que considera, para cada vértice não colorido, o número de cores diferentes já utilizadas por seus vizinhos (chamado de "saturação"). O algoritmo opera da seguinte forma:
+
+\begin{enumerate}
+    \item Inicializar $k \leftarrow 0$ (número de cores utilizado)
+    \item Enquanto existem vértices não coloridos:
+    \begin{enumerate}
+        \item Selecionar o vértice com maior saturação (ou maior grau em caso de empate)
+        \item Atribuir a menor cor disponível (não utilizada por vizinhos) ao vértice selecionado
+        \item Se nenhuma cor disponível existe, incrementar $k$ e criar nova cor
+    \end{enumerate}
+    \item Retornar o número total de cores utilizadas
+\end{enumerate}
+
+\textbf{Complexidade:} O algoritmo possui complexidade de $O(n^2)$ no pior caso, uma vez que para cada um dos $n$ vértices, é necessário encontrar o de maior saturação (operação $O(n)$). Embora mais lento que Welsh-Powell, DSATUR geralmente produz colorações com melhor qualidade.
+
+\textbf{Vantagens:} A seleção adaptativa de vértices (baseada em saturação) permite que o algoritmo responda melhor à estrutura local do grafo, produzindo frequentemente colorações com menos cores que Welsh-Powell.
+
+\subsection{Comparação Teórica dos Três Algoritmos}
+
+A Tabela a seguir resume as características teóricas dos três métodos:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+    \hline
+    \textbf{Propriedade} & \textbf{Força Bruta} & \textbf{Welsh-Powell} & \textbf{DSATUR} \\
+    \hline
+    Complexidade & Exponencial $O(k^n)$ & Polinomial $O(n \log n + m)$ & Polinomial $O(n^2)$ \\
+    \hline
+    Optimalidade & Garantida & Não garantida & Não garantida \\
+    \hline
+    Qualidade & Ótima & Boa & Melhor que WP \\
+    \hline
+    Limite superior & $\chi(G)$ exato & $\leq \Delta(G) + 1$ & $\leq \Delta(G) + 1$ \\
+    \hline
+    Aplicação prática & Instâncias pequenas & Instâncias grandes & Instâncias médias/grandes \\
+    \hline
+    \end{tabular}
+\end{table}
 % ============================================================================
 % 3. METODOLOGIA
 % ============================================================================
@@ -232,13 +275,13 @@ Para avaliação do algoritmo exato, geramos instâncias controladas de tamanho 
 Foram geradas instâncias aleatórias de grafos com as seguintes características:
 
 \begin{itemize}
-    \item \textbf{Tamanhos}: $n \in \{5, 6, 7, 8, 9, 10\}$ vértices
+    \item \textbf{Tamanhos}: $n \in \{5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20\}$ vértices
     \item \textbf{Probabilidade de aresta}: $p = 0.3$ (densidade esperada)
     \item \textbf{Replicações}: 3 instâncias por tamanho
-    \item \textbf{Total}: 18 instâncias
+    \item \textbf{Total}: 48 instâncias
 \end{itemize}
 
-A geração utilizou o modelo de Erdős-Rényi $G(n, p)$, onde cada par de vértices possui probabilidade $p$ de estar conectado. Este modelo produz grafos com densidade aproximada de 0.3, equilibrando grafos esparsos e densos.
+A geração utilizou o modelo de Erdős-Rényi $G(n, p)$, onde cada par de vértices possui probabilidade $p$ de estar conectado. Este modelo produz grafos com densidade aproximada de 0.3, equilibrando grafos esparsos e densos. A expansão de 5-10 vértices para 5-20 vértices permite demonstrar a inviabilidade prática da força bruta para instâncias maiores.
 
 \subsubsection{Coleta de Dados}
 
@@ -260,18 +303,27 @@ Todos os dados foram organizados em tabelas estruturadas, permitindo análise qu
 
 Para validar a heurística em cenários realistas, utilizamos instâncias de grande porte do problema de coloração de grafos. Apresentamos aqui as características dessas instâncias e os critérios de avaliação.
 
-\subsubsection{Escolha da Heurística}
+\subsubsection{Escolha das Heurísticas}
 
-A heurística de Welsh-Powell foi selecionada por apresentar as seguintes vantagens práticas:
+Duas heurísticas foram implementadas para demonstrar diferentes abordagens ao problema:
 
+\textbf{Welsh-Powell:}
 \begin{enumerate}
     \item Simplicidade de implementação e compreensão
-    \item Complexidade polinomial $O(n \log n + m)$, viável para instâncias de milhares de vértices
+    \item Complexidade polinomial $O(n \log n + m)$, a mais rápida dentre as heurísticas
     \item Garantia teórica de usar no máximo $\Delta(G) + 1$ cores
-    \item Histórico de produzir soluções de boa qualidade em grafos esparsos e reais
+    \item Histórico de produzir soluções de boa qualidade em grafos esparsos
 \end{enumerate}
 
-Além disso, sua estrutura gulosa (ordenação por grau decrescente) permite análise clara de como propriedades estruturais influenciam a qualidade das soluções.
+\textbf{DSATUR:}
+\begin{enumerate}
+    \item Complexidade $O(n^2)$, aceitável para instâncias médias/grandes
+    \item Seleção adaptativa baseada em saturação (cores já usadas por vizinhos)
+    \item Frequentemente produz colorações com menos cores que Welsh-Powell
+    \item Equilíbrio entre qualidade e velocidade
+\end{enumerate}
+
+Comparar as duas heurísticas permite avaliar o impacto da estratégia de seleção de vértices na qualidade da solução.
 
 \subsubsection{Instâncias do Benchmark}
 
@@ -343,13 +395,16 @@ A Figura \ref{fig:escalabilidade} apresenta o crescimento do tempo de execução
 \textbf{Observações:}
 
 \begin{itemize}
-    \item Para $n = 5$: tempo médio $\approx 3.7 \times 10^{-5}$ segundos (desprezível)
-    \item Para $n = 10$: tempo médio $\approx 1.3$ segundos
-    \item Crescimento exponencial claramente visível na escala logarítmica
-    \item Variabilidade (faixa min-max) aumenta com $n$, indicando dependência da estrutura do grafo
+    \item Para $n = 5$: tempo médio $\approx 3.24 \times 10^{-5}$ segundos (0,0000324 ms, desprezível)
+    \item Para $n = 10$: tempo médio $\approx 9.33 \times 10^{-5}$ segundos (0,0933 ms, muito rápido)
+    \item Para $n = 13$: tempo médio $\approx 8.32 \times 10^{-3}$ segundos (8,32 ms)
+    \item Para $n = 18$: tempo médio $\approx 159$ segundos (quase 3 minutos)
+    \item Para $n = 20$: tempo médio $\approx 8.064$ mil segundos (2,24 horas)
+    \item Crescimento exponencial dramaticamente visível na escala logarítmica
+    \item Variabilidade (faixa min-max) aumenta exponencialmente com $n$, indicando forte dependência da estrutura do grafo
 \end{itemize}
 
-A curva evidencia a \textbf{inviabilidade prática} do método exato para $n > 10$. Extrapolando os dados, uma instância com $n = 13$ levaria aproximadamente 100-200 segundos, enquanto $n = 15$ exigiria vários minutos de processamento.
+A curva evidencia a \textbf{inviabilidade prática} do método exato para $n > 13$. O tempo total para processar as 48 instâncias (5-20 vértices) foi de aproximadamente 25.421 segundos (7,06 horas), sendo que as instâncias maiores (n=18,19,20) consumiram a maioria deste tempo.
 
 \subsubsection{Número Cromático Encontrado}
 
@@ -405,38 +460,80 @@ Estas visualizações demonstram a eficácia do algoritmo de força bruta em enc
     \item As diferentes estruturas topológicas entre os três exemplos ilustram por que grafos de mesmo tamanho podem ter números cromáticos distintos, dependendo da densidade e do padrão de conexões.
 \end{enumerate}
 
-\subsection{Parte 2: Desempenho da Heurística Welsh-Powell}
+\subsection{Parte 2: Desempenho das Heurísticas Welsh-Powell e DSATUR}
 
-Ao contrário do método de força bruta, a heurística de Welsh-Powell utiliza uma estratégia gulosa com complexidade polinomial $O(n \log n + m)$, viabilizando a aplicação em instâncias com milhares de vértices. Embora não garanta a solução ótima, oferece um trade-off adequado entre tempo de execução e qualidade das soluções. Nesta seção avaliamos:
+Ao contrário do método de força bruta, as heurísticas de Welsh-Powell e DSATUR utilizam estratégias gulosas com complexidade polinomial, viabilizando a aplicação em instâncias com milhares de vértices. Embora não garantam a solução ótima, oferecem um trade-off adequado entre tempo de execução e qualidade das soluções. Nesta seção avaliamos:
 
 \begin{enumerate}
     \item O desempenho computacional em instâncias de grande porte;
     \item A qualidade das colorações obtidas;
-    \item Como propriedades estruturais dos grafos influenciam o número de cores necessárias.
+    \item Como propriedades estruturais dos grafos influenciam o número de cores necessárias;
+    \item A comparação entre as duas heurísticas quanto a velocidade vs qualidade.
 \end{enumerate}
 
-Para demonstrar a eficácia prática da heurística, utilizamos cinco instâncias DIMACS reais de tamanhos variados (450 a 4\,730 vértices). As características estruturais dessas instâncias são apresentadas na Tabela \ref{tab:informacoes_dimacs_2}. Os resultados são apresentados em tabelas estruturadas, seguidas de visualizações gráficas e análises comparativas que destacam o desempenho superior em relação à força bruta.
+Para demonstrar a eficácia prática das heurísticas, utilizamos cinco instâncias DIMACS reais de tamanhos variados (450 a 4\,730 vértices). As características estruturais dessas instâncias são apresentadas na Tabela \ref{tab:informacoes_dimacs_2}. Os resultados são apresentados em tabelas estruturadas, seguidas de visualizações gráficas e análises comparativas que destacam o desempenho superior em relação à força bruta.
 
 \input{tabelas/tabela_informacoes_dimacs_02.tex}
 
-\subsubsection{Resultados Obtidos}
+\subsubsection{Resultados da Heurística Welsh-Powell}
 
 A Tabela \ref{tab:resultados_welsh_powell_2} apresenta os resultados da aplicação da heurística nas cinco instâncias de grande porte.
 
 \input{tabelas/tabela_resultados_welsh_powell_02.tex}
 
-\textbf{Destaques:}
+\subsubsection{Resultados da Heurística DSATUR}
+
+A heurística DSATUR (Degree of Saturation) é um algoritmo adaptativo que seleciona o vértice de maior grau de saturação (número de cores distintas entre seus vizinhos já coloridos) para colori-lo a seguir. Este método oferece maior capacidade de adaptação à estrutura local do grafo e frequentemente obtém colorações com qualidade superior ao Welsh-Powell. A Tabela \ref{tab:resultados_dsatur_2} apresenta os resultados da aplicação de DSATUR aos 5 problemas DIMACS.
+
+Os resultados demonstram que DSATUR produz colorações com melhor qualidade em 3 das 5 instâncias:
 
 \begin{itemize}
-    \item A instância \textbf{e} (4\,730 vértices) foi resolvida em apenas 49 milissegundos, tempo inviável para força bruta
-    \item A instância \textbf{d}, apesar de ter 1\,916 vértices, requer apenas 10 cores devido à sua baixíssima densidade (0.68\%) e grau médio de apenas 13,05
-    \item A instância \textbf{e}, apesar de esparsa (densidade 2.56\%), necessita de 56 cores porque seu grau médio é extremamente alto (121,24), tornando-a topologicamente muito mais conectada
-    \item Instâncias mais densas (a e b) requerem mais cores, como esperado
+    \item \textbf{Instância a}: DSATUR 25 cores vs Welsh-Powell 26 cores (melhoria de 4\%)
+    \item \textbf{Instância c}: DSATUR 20 cores vs Welsh-Powell 23 cores (melhoria de 13\%)
+    \item \textbf{Instância d}: DSATUR 6 cores vs Welsh-Powell 10 cores (melhoria de 40\%)
+    \item \textbf{Instância b}: Ambas encontram 54 cores (empate)
+    \item \textbf{Instância e}: Ambas encontram 56 cores (empate)
 \end{itemize}
 
-\subsubsection{Análise Comparativa de Desempenho}
+\input{tabelas/tabela_resultados_dsatur_02.tex}
 
-Os tempos de execução demonstram que a Welsh-Powell é extremamente eficiente mesmo em instâncias com milhares de vértices. A instância \textbf{a} (450 vértices) levou apenas 1 ms, enquanto instâncias maiores também mantêm desempenho excelente: \textbf{b} em 3 ms (864 vértices), \textbf{c} em 3 ms (1.000 vértices), \textbf{d} em 2 ms (1.916 vértices) e \textbf{e} em 49 ms (4.730 vértices). Este comportamento confirma a complexidade polinomial $O(n \log n + m)$ da heurística, tornando-a adequada para aplicações práticas onde tempo de resposta é crítico.
+\subsubsection{Análise Comparativa: Welsh-Powell vs DSATUR}
+
+Comparando os desempenhos das duas heurísticas, observamos um trade-off significativo entre velocidade e qualidade:
+
+\textbf{Tempos de Execução:}
+
+\begin{itemize}
+    \item Welsh-Powell: Tempo médio de 0,021156 segundos (21,16 ms)
+    \item DSATUR: Tempo médio de 13,634775 segundos (13.634,775 ms)
+    \item Razão: DSATUR é \textbf{645 vezes mais lento} que Welsh-Powell
+\end{itemize}
+
+\textbf{Detalhamento dos Tempos (Welsh-Powell):}
+
+\begin{itemize}
+    \item Instância \textbf{a} (450 vértices): 3,5 ms (0,0035 s)
+    \item Instância \textbf{b} (864 vértices): 4,4 ms (0,0044 s)
+    \item Instância \textbf{c} (1.000 vértices): 5,6 ms (0,0056 s)
+    \item Instância \textbf{d} (1.916 vértices): 4,5 ms (0,0045 s)
+    \item Instância \textbf{e} (4.730 vértices): 87,7 ms (0,0877 s)
+\end{itemize}
+
+\textbf{Detalhamento dos Tempos (DSATUR):}
+
+\begin{itemize}
+    \item Instância \textbf{a} (450 vértices): 244,6 ms (0,2446 s)
+    \item Instância \textbf{b} (864 vértices): 597,8 ms (0,5978 s)
+    \item Instância \textbf{c} (1.000 vértices): 2.288 ms (2,2880 s)
+    \item Instância \textbf{d} (1.916 vértices): 1.781,7 ms (1,7817 s)
+    \item Instância \textbf{e} (4.730 vértices): 63.261,8 ms (63,2618 s)
+\end{itemize}
+
+\textbf{Qualidade das Soluções:}
+
+DSATUR oferece melhor qualidade em grafos esparsos com estrutura irregular (instâncias a, c, d), onde a adaptatividade da seleção de vértices por grau de saturação é mais eficaz. Em instâncias muito densas ou altamente regulares (b, e), ambas encontram o mesmo número de cores.
+
+\input{tabelas/tabela_comparacao_algoritmos_02.tex}
 
 \subsubsection{Visualizações das Colorações Obtidas}
 
@@ -519,18 +616,58 @@ A Figura \ref{fig:tempo_heuristica} demonstra a eficiência da heurística: mesm
 
 A Figura \ref{fig:vertices_cores} mostra que não há correlação linear direta entre número de vértices e cores necessárias. A densidade é o fator determinante: instâncias esparsas (baixa densidade) requerem menos cores independentemente do tamanho. Note como a instância \textbf{d} (ponto inferior direito: 1\,916 vértices, 10 cores) contrasta com \textbf{b} (ponto superior esquerdo: 864 vértices, 54 cores), confirmando que a estrutura topológica é mais relevante que a escala do grafo.
 
-\subsubsection{Impacto da Densidade}
+\subsubsection{Visualizações das Colorações DSATUR}
+
+Para demonstrar a qualidade das colorações produzidas pela heurística DSATUR, apresentamos as Figuras \ref{fig:inst_dsatur_a} a \ref{fig:inst_dsatur_e}. Estas visualizações permitirão comparar as diferenças visuais com as colorações de Welsh-Powell apresentadas anteriormente.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.88\textwidth]{img/resultados-2-parte2_grafico4_densidade_vs_cores.png}
-    \caption{Impacto da densidade no número de cores}
-    \label{fig:densidade_cores}
+    \includegraphics[width=0.85\textwidth]{img/resultados-1-parte2_dsatur_inst_a.png}
+    \caption{Coloração DSATUR da instância \textbf{a}: 450 vértices, 25 cores (uma a menos que WP)}
+    \label{fig:inst_dsatur_a}
 \end{figure}
 
-A Figura \ref{fig:densidade_cores} evidencia a relação positiva entre densidade e número cromático: grafos mais densos tendem a requerer mais cores, pois possuem mais restrições de adjacência. A forte correlação linear visível na linha de tendência (quase perfeita neste conjunto de dados) confirma que a densidade é o principal preditor do número cromático para a heurística de Welsh-Powell, explicando aproximadamente 95\% da variabilidade observada nos resultados.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/resultados-1-parte2_dsatur_inst_b.png}
+    \caption{Coloração DSATUR da instância \textbf{b}: 864 vértices, 54 cores (igual a WP)}
+    \label{fig:inst_dsatur_b}
+\end{figure}
 
-\subsection{Discussão Geral}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/resultados-1-parte2_dsatur_inst_c.png}
+    \caption{Coloração DSATUR da instância \textbf{c}: 1.000 vértices, 20 cores (3 a menos que WP)}
+    \label{fig:inst_dsatur_c}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/resultados-1-parte2_dsatur_inst_d.png}
+    \caption{Coloração DSATUR da instância \textbf{d}: 1.916 vértices, 6 cores (4 a menos que WP)}
+    \label{fig:inst_dsatur_d}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{img/resultados-1-parte2_dsatur_inst_e.png}
+    \caption{Coloração DSATUR da instância \textbf{e}: 4.730 vértices, 56 cores (igual a WP)}
+    \label{fig:inst_dsatur_e}
+\end{figure}
+
+\textbf{Análise Comparativa DSATUR vs Welsh-Powell:}
+
+As visualizações de DSATUR demonstram sua superioridade em grafos esparsos e com estrutura irregular:
+
+\begin{enumerate}
+    \item A instância \textbf{d} (ash958GPIA) é particularmente ilustrativa: DSATUR encontra 6 cores enquanto Welsh-Powell necessita de 10, uma melhoria de 40\%. Este grafo de baixa densidade e grau médio (13,05) se beneficia da estratégia adaptativa de DSATUR.
+    \item A instância \textbf{c} (r1000.1) mostra melhoria de 13\% (20 vs 23 cores), evidenciando que DSATUR é mais eficaz em grafos com variação de grau entre vértices.
+    \item A instância \textbf{a} (le450\_25a) apresenta melhoria modesta de 4\% (25 vs 26 cores), sugerindo que grafos com estrutura mais regular têm menos a ganhar com a adaptatividade.
+    \item Em instâncias muito densas (\textbf{b} e \textbf{e}), ambas as heurísticas encontram o mesmo número de cores, indicando que a estrutura não oferece margem para adaptação.
+    \item A distribuição de cores em DSATUR tende a ser mais uniforme em grafos esparsos, enquanto Welsh-Powell produz distribuições mais desbalanceadas.
+\end{enumerate}
+
+\section{Discussão Geral}
 
 Os resultados demonstram claramente o \textbf{trade-off} entre otimalidade e eficiência computacional:
 
@@ -549,17 +686,40 @@ Os resultados demonstram claramente o \textbf{trade-off} entre otimalidade e efi
 \newpage
 \section{Conclusão}
 
-Este trabalho apresentou uma análise comparativa entre algoritmos exatos e heurísticos para o problema NP-completo de Coloração de Vértices em Grafos. A Tabela~\ref{tab:comparacao_algoritmos_2} consolida os resultados experimentais, evidenciando as diferenças fundamentais entre as duas abordagens.
+Este trabalho apresentou uma análise comparativa entre algoritmos exatos e heurísticos para o problema NP-completo de Coloração de Vértices em Grafos. A implementação compreendeu três métodos distintos:
 
-\input{tabelas/tabela_comparacao_algoritmos_02.tex}
+\begin{enumerate}
+    \item \textbf{Força Bruta}: Algoritmo exato que testa todas as combinações de coloração;
+    \item \textbf{Welsh-Powell}: Heurística gulosa clássica com complexidade $O(n \log n + m)$;
+    \item \textbf{DSATUR}: Heurística adaptativa com complexidade $O(n^2)$ que seleciona vértices pelo grau de saturação.
+\end{enumerate}
 
-O algoritmo de Força Bruta, testado em 18 grafos pequenos (5-10 vértices), garantiu soluções ótimas com tempo médio de 0,23 segundos por instância. A complexidade exponencial confirmada empiricamente torna este método viável apenas para validação teórica e problemas de escala muito reduzida — instâncias com mais de 13 vértices tornam-se computacionalmente inacessíveis.
+\textbf{Principais Resultados:}
 
-Em contraste, a heurística Welsh-Powell demonstrou eficiência excepcional ao processar as 5 instâncias DIMACS (139-4.730 vértices) em tempo médio de apenas 0,012 segundos. A maior instância, com 4.730 vértices e 27.928 arestas, foi colorida em 49 milissegundos, evidenciando a complexidade polinomial $O(n \log n + m)$ do algoritmo. Este desempenho torna Welsh-Powell a única alternativa viável para aplicações práticas em grafos reais.
+O algoritmo de Força Bruta foi testado em 48 grafos pequenos (5-20 vértices), garantindo soluções ótimas com tempo médio de 529,61 segundos. A complexidade exponencial confirmada empiricamente torna este método viável apenas para instâncias muito reduzidas — grafos com mais de 13 vértices tornam-se computacionalmente inacessíveis em tempo razoável. O tempo total para todas as 48 instâncias foi de 25.421 segundos (7,06 horas), sendo que as três maiores instâncias (n=18,19,20) consumiram mais de 99\% deste tempo.
 
-Uma descoberta importante foi o papel determinante da densidade estrutural: a instância \textbf{d} (1.916 vértices, densidade 0.68\%) necessitou apenas 10 cores, enquanto \textbf{c} (1.000 vértices, densidade 2.88\%) exigiu 23 cores — mais que o dobro, apesar de ter metade dos vértices. Esta observação confirma que as propriedades estruturais do grafo são mais relevantes que seu tamanho absoluto para determinar o número cromático.
+Em aplicações práticas, a heurística \textbf{Welsh-Powell} demonstrou eficiência excepcional ao processar as 5 instâncias DIMACS de grande porte (450 a 4.730 vértices) em tempo médio de apenas 0,021 segundos. A aceleração em relação à força bruta é de \textbf{25.034 vezes}, tornando Welsh-Powell a única alternativa viável para grafos reais. A maior instância, com 4.730 vértices e 286.722 arestas, foi colorida em apenas 87,7 milissegundos.
 
-Os resultados demonstram empiricamente o princípio fundamental em problemas NP-completos: métodos heurísticos bem projetados não são apenas preferíveis — são essenciais. Welsh-Powell oferece o equilíbrio ideal entre simplicidade de implementação, desempenho computacional e qualidade de solução, sendo capaz de processar em milissegundos instâncias que métodos exatos levariam séculos para resolver. Para problemas de Coloração de Vértices em grafos reais, a escolha não é entre otimalidade e eficiência, mas entre obter soluções boas rapidamente ou não obter solução alguma.
+A heurística \textbf{DSATUR}, embora 645 vezes mais lenta que Welsh-Powell (tempo médio 13,635 segundos), oferece qualidade superior em grafos esparsos:
+
+\begin{itemize}
+    \item Instância \textbf{d}: 40\% menos cores (6 vs 10) — melhoria significativa
+    \item Instância \textbf{c}: 13\% menos cores (20 vs 23) — melhoria considerável
+    \item Instância \textbf{a}: 4\% menos cores (25 vs 26) — melhoria modesta
+    \item Instâncias \textbf{b} e \textbf{e}: igual desempenho (estrutura muito regular)
+\end{itemize}
+
+\textbf{Conclusões Teóricas:}
+
+Uma descoberta fundamental foi o papel determinante da \textbf{densidade estrutural}: a instância d (1.916 vértices, densidade 0,68\%) necessitou apenas 10 cores, enquanto c (1.000 vértices, densidade 2,88\%) exigiu 23 cores — mais que o dobro, apesar de ter metade dos vértices. A forte correlação entre densidade e número cromático confirma que as propriedades estruturais são muito mais relevantes que o tamanho absoluto do grafo.
+
+O crescimento do grau médio também se mostrou crítico: a instância e (4.730 vértices, grau médio 121,24) necessitou de 56 cores — mais que a instância c com metade dos vértices e grau médio 28,76. Este resultado alinha-se com a teoria dos grafos aleatórios de Erdős-Rényi, onde o número cromático depende primariamente da densidade e distribuição de graus, não apenas do número de vértices.
+
+\textbf{Reflexão Final:}
+
+O desenvolvimento deste trabalho confirma empiricamente um princípio fundamental em Ciência da Computação: para problemas NP-completos, métodos heurísticos bem projetados não são apenas preferíveis — são \textbf{essenciais}. Welsh-Powell alcança o equilíbrio ideal entre simplicidade, desempenho e qualidade, sendo capaz de processar em milissegundos instâncias que algoritmos exatos levariam séculos para resolver. DSATUR complementa este panorama, oferecendo qualidade superior quando a estrutura do grafo permite explorar sua estratégia adaptativa. 
+
+Para aplicações práticas de Coloração de Vértices em grafos reais, a escolha entre esses três métodos não é entre otimalidade e eficiência — é entre usar a heurística adequada ao contexto ou não ter solução alguma. Este trabalho demonstra que conhecer as características estruturais do problema (densidade, distribuição de graus) permite escolher o algoritmo mais apropriado, maximizando o valor do trade-off entre tempo computacional e qualidade de solução.
 \newpage
 % ============================================================================
 % REFERÊNCIAS

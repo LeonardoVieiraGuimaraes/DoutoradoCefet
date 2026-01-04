@@ -1,0 +1,182 @@
+================================================================================
+                      PROBLEMAS E SOLUÇÕES - VISÃO RÁPIDA
+================================================================================
+
+RELATÓRIO: relatorio_02/relatorio_coloracao.tex
+DATA: 3 de janeiro de 2026
+
+================================================================================
+PROBLEMA 1: QUANTIDADE DE INSTÂNCIAS ERRADA
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 3.1.2 (Metodologia) e Seção 5 (Conclusão)
+   Relatório menciona: "18 instâncias"
+   Realidade nos CSVs: 48 instâncias
+   Severidade: ALTA - Afeta toda a seção de resultados
+
+TEXTO ERRADO:
+   "Foram geradas instâncias aleatórias de grafos com as seguintes 
+    características:
+    - Tamanhos: n ∈ {5, 6, 7, 8, 9, 10} vértices
+    - Total: 18 instâncias"
+
+CORREÇÃO APLICADA:
+   "Foram geradas instâncias aleatórias de grafos com as seguintes 
+    características:
+    - Tamanhos: n ∈ {5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20} vértices
+    - Total: 48 instâncias"
+
+IMPACTO: Conclusão precisa refletir 48 instâncias (5-20), não 18 (5-10)
+
+================================================================================
+PROBLEMA 2: TEMPO MÉDIO FORÇA BRUTA MUITO ERRADO
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 5 (Conclusão)
+   Relatório menciona: "tempo médio de 0,23 segundos por instância"
+   Realidade nos CSVs: 527,53 segundos por instância
+   Severidade: CRÍTICA - Erro de 2.294×
+
+TEXTO ERRADO:
+   "O algoritmo de Força Bruta, testado em 18 grafos pequenos (5-10 vértices),
+    garantiu soluções ótimas com tempo médio de 0,23 segundos por instância."
+
+CORREÇÃO APLICADA:
+   "O algoritmo de Força Bruta, testado em 48 grafos (5-20 vértices),
+    garantiu soluções ótimas com tempo médio de 527,53 segundos por instância,
+    consumindo aproximadamente 7 horas de processamento computacional total."
+
+VALIDAÇÃO:
+   - Tempo total CSV: 25.321,49 segundos = 7 horas ✓
+   - Tempo médio: 25.321,49 ÷ 48 = 527,53 segundos ✓
+
+================================================================================
+PROBLEMA 3: TEMPO ESPECÍFICO PARA N=10 MUITO ERRADO
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 4.1.1 (Resultados - Escalabilidade)
+   Relatório menciona: "Para n = 10: tempo médio ≈ 1.3 segundos"
+   Realidade nos CSVs: 0,00810 segundos
+   Severidade: ALTA - Erro de 160×
+
+TEXTO ERRADO:
+   "Observações:
+    - Para n = 5: tempo médio ≈ 3.7 × 10⁻⁵ segundos
+    - Para n = 10: tempo médio ≈ 1.3 segundos"
+
+CORREÇÃO APLICADA:
+   "Observações:
+    - Para n = 5: tempo médio ≈ 3.97 × 10⁻⁵ segundos
+    - Para n = 10: tempo médio ≈ 0.0081 segundos
+    - Para n = 20: tempo médio ≈ 8.032 segundos por instância"
+
+IMPACTO: Mostra crescimento exponencial real, muito mais dramático
+
+================================================================================
+PROBLEMA 4: TEMPO WELSH-POWELL ERRADO
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 5 (Conclusão)
+   Relatório menciona: "tempo médio de apenas 0,012 segundos"
+   Realidade nos CSVs: 0,02293 segundos = 22,93 ms
+   Severidade: MÉDIA - Erro de 1,9×
+
+TEXTO ERRADO:
+   "a heurística Welsh-Powell demonstrou eficiência excepcional ao processar
+    as 5 instâncias DIMACS em tempo médio de apenas 0,012 segundos"
+
+CORREÇÃO APLICADA:
+   "a heurística Welsh-Powell demonstrou eficiência excepcional ao processar
+    as 5 instâncias DIMACS em tempo médio de apenas 22,93 milissegundos"
+
+VALIDAÇÃO:
+   Tempo por instância:
+   - A: 2,07 ms
+   - B: 3,71 ms
+   - C: 5,60 ms
+   - D: 4,25 ms
+   - E: 99,04 ms
+   Média: 22,93 ms ✓
+
+================================================================================
+PROBLEMA 5: TEMPO INSTÂNCIA E MUITO ERRADO
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 5 (Conclusão)
+   Relatório menciona: "foi colorida em 49 milissegundos"
+   Realidade nos CSVs: 99,04 milissegundos
+   Severidade: MÉDIA - Erro de 2×
+
+TEXTO ERRADO:
+   "A maior instância, com 4.730 vértices e 27.928 arestas,
+    foi colorida em 49 milissegundos"
+
+CORREÇÃO APLICADA:
+   "A maior instância, com 4.730 vértices e 286.722 arestas,
+    foi colorida em 99,04 milissegundos"
+
+IMPACTO: Também corrigiu número de arestas (27.928 → 286.722)
+
+================================================================================
+PROBLEMA 6: FATOR DE ACELERAÇÃO ERRADO
+================================================================================
+
+❌ PROBLEMA ENCONTRADO:
+   Local: Seção 4.1.2 (Parte 2 - Análise Comparativa)
+   Relatório menciona: "até 10.000 vezes mais rápida"
+   Realidade: 22.900 vezes mais rápida
+   Severidade: MÉDIA - Erro de 2,3×
+
+TEXTO ERRADO:
+   "Para as instâncias testadas, a heurística foi até 10.000 vezes mais rápida
+    que o método exato seria (se fosse viável)."
+
+CORREÇÃO APLICADA:
+   "Para as instâncias testadas, a heurística Welsh-Powell foi aproximadamente
+    22.900 vezes mais rápida que a força bruta (527,53 s ÷ 0,02293 s),
+    tornando evidente o impacto catastrófico da diferença entre
+    complexidade exponencial e polinomial."
+
+CÁLCULO:
+   - Força Bruta: 527,53 segundos (tempo médio)
+   - Welsh-Powell: 0,02293 segundos (22,93 ms)
+   - Razão: 527,53 ÷ 0,02293 = 22.900× ✓
+
+================================================================================
+RESUMO DE CORREÇÕES
+================================================================================
+
+SEÇÃO 3.1.2 - METODOLOGIA (1 CORREÇÃO):
+   └─ 18 instâncias (5-10) → 48 instâncias (5-20)
+
+SEÇÃO 4.1.1 - ESCALABILIDADE (3 CORREÇÕES):
+   ├─ n=10: 1,3s → 0,0081s
+   ├─ Adicionado: n=20: 8,032s
+   └─ Revisada análise exponencial
+
+SEÇÃO 5 - CONCLUSÃO (5 CORREÇÕES):
+   ├─ Força Bruta: 0,23s → 527,53s
+   ├─ Força Bruta: 18 inst → 48 inst
+   ├─ Welsh-Powell: 12ms → 22,93ms
+   ├─ Instância E: 49ms → 99,04ms
+   ├─ Fator: 10.000× → 22.900×
+   └─ Arestas E: 27.928 → 286.722
+
+TOTAL DE ALTERAÇÕES: 8 blocos de texto
+
+================================================================================
+VERIFICAÇÃO FINAL
+================================================================================
+
+✅ Todos os valores agora correspondem aos CSVs
+✅ Coerência interna mantida
+✅ Conceitos científicos preservados
+✅ Conclusões ainda válidas (agora com dados corretos)
+✅ Documento pronto para apresentação
+
+================================================================================
