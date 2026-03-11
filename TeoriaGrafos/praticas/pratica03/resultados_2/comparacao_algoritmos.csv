@@ -1,0 +1,3 @@
+Algoritmo,Instâncias,Cores Médias,Cores Mín.,Cores Máx.,Tempo Médio (s),Qualidade,Complexidade
+Força Bruta,48,6.52,2,13,527.5311,Ótima (χ exato),Exponencial
+Welsh-Powell,5,33.80,10,56,0.0229,Aproximada,O(n²)

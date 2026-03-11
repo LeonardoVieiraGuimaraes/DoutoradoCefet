@@ -1,0 +1,6 @@
+instancia,num_vertices,num_arestas,densidade,grau_medio,cores_welsh_powell,cores_dsatur
+a,450,8260,0.0818,36.71,26,25
+b,864,18707,0.0502,43.3,54,54
+c,1000,14378,0.0288,28.76,23,20
+d,1916,12506,0.0068,13.05,10,6
+e,4730,286722,0.0256,121.24,56,56
