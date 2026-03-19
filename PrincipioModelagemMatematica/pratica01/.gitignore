@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.loa
+*.lof
+*.log
+*.loq
+*.lot
+*.out
+*.toc
+*.synctex.gz
+*.pdfsync
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Outros
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.swp
+*.swo
+*.pdf
