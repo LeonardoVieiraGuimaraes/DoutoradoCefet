@@ -6,7 +6,77 @@
 
 Cada capítulo deve conter uma pequena introdução (tipicamente, um ou dois parágrafos), que deve deixar claro o objetivo e o que será discutido no capítulo, bem como a organização do mesmo.
 
+Neste capítulo, são apresentados e analisados os resultados obtidos a partir das simulações computacionais do modelo de queda livre. São exibidos os principais gráficos gerados, bem como tabelas que sintetizam os dados numéricos relevantes para a avaliação do comportamento do sistema e da acurácia dos métodos utilizados. A seguir, são discutidos os resultados à luz dos objetivos propostos.
+
+\section{Apresentação dos Gráficos}
+\label{sec_graficos_resultados}
+
+Os gráficos a seguir ilustram a evolução das principais variáveis do sistema ao longo do tempo, bem como a comparação entre diferentes cenários simulados. Todos os arquivos de imagem foram gerados automaticamente e estão disponíveis na pasta \texttt{relatorioCefet/figuras/graficos}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_posicao_tempo.png}
+    \caption{Posição x Tempo para a queda livre sem resistência do ar.}
+    \label{fig:posicao_tempo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_velocidade_tempo.png}
+    \caption{Velocidade x Tempo para a queda livre sem resistência do ar.}
+    \label{fig:velocidade_tempo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_aceleracao_tempo.png}
+    \caption{Aceleração x Tempo para a queda livre.}
+    \label{fig:aceleracao_tempo}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_posicao_comparacao_resistencia.png}
+    \caption{Comparação da posição x tempo com e sem resistência do ar.}
+    \label{fig:comparacao_resistencia}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_velocidade_comparacao_resistencia.png}
+    \caption{Comparação da velocidade x tempo com e sem resistência do ar.}
+    \label{fig:comparacao_velocidade_resistencia}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_erro_absoluto_vs_dt.png}
+    \caption{Erro absoluto no tempo de queda em função do passo de tempo $\Delta t$.}
+    \label{fig:erro_absoluto}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figuras/graficos/grafico_comparacao_posicao_tempo.png}
+    \caption{Comparação da posição x tempo para diferentes valores de $\Delta t$ e solução analítica.}
+    \label{fig:comparacao_dt}
+\end{figure}
+
+\section{Tabelas de Resultados}
+\label{sec_tabelas_resultados}
+
+As tabelas a seguir apresentam os dados numéricos extraídos das simulações, permitindo uma análise quantitativa dos resultados. Todas as tabelas foram geradas automaticamente e estão disponíveis na pasta \texttt{relatorioCefet/tabelas}.
+
+%\input{tabelas/acuracia_queda_livre.tex}
+%\input{tabelas/entrada_queda_livre.tex}
+%\input{tabelas/saida_queda_livre.tex}
+%\input{tabelas/saida_queda_livre_dt_0_01.tex}
+%\input{tabelas/saida_queda_livre_dt_0_1.tex}
+%\input{tabelas/saida_queda_livre_dt_0_5.tex}
+%\input{tabelas/saida_queda_livre_dt_1_0.tex}
+%\input{tabelas/saida_queda_livre_resistencia.tex}
+
 \section{Discussão}
 \label{sec_discussao_resultados}
 
-Inserir seu texto aqui...
+A seguir, discute-se os principais resultados observados, destacando as diferenças entre os cenários simulados, a influência do passo de tempo na precisão dos métodos numéricos e o impacto da resistência do ar no comportamento do sistema.

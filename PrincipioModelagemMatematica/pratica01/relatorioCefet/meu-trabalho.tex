@@ -43,6 +43,7 @@
 \usepackage{icomma}                 % Utiliza vírgulas em expressões matemáticas
 \usepackage{subeqnarray}            % Subenumeração de equações
 \usepackage{amsmath}                % Funções matemáticas
+\usepackage{float}                  % Permite usar a opção [H] em figuras
 %\usepackage[charter]{mathdesign}   % Utiliza a fonte 'Charter BT' (excelente!)
 \usepackage{newtxtext,newtxmath}    % Utiliza a fonte 'Times New Roman' (clone)
 %\usepackage{palatino}              % Utiliza a fonte 'Palatino' (clone)
@@ -111,10 +112,10 @@
 % \input{elementos-pre-textuais/epigrafe.tex}             % Epígrafe
 % \input{elementos-pre-textuais/resumo-pt.tex}            % Resumo
 % \input{elementos-pre-textuais/resumo-en.tex}            % Abstract
-\imprimirlistafiguras                                   % Lista de figuras
-\imprimirlistatabelas                                   % Lista de tabelas
-\imprimirlistaquadros                                   % Lista de quadros
-\imprimirlistaalgoritmos                                % Lista de algoritmos
+% \imprimirlistafiguras                                   % Lista de figuras
+% \imprimirlistatabelas                                   % Lista de tabelas
+% \imprimirlistaquadros                                   % Lista de quadros
+% \imprimirlistaalgoritmos                                % Lista de algoritmos
 % \input{elementos-pre-textuais/lista-siglas.tex}         % Lista de siglas
 % \input{elementos-pre-textuais/lista-simbolos.tex}       % Lista de símbolos
 \imprimirsumario                                        % Sumário
@@ -130,9 +131,18 @@
 
 \postextual % Define o estilo de página para os elementos pós-textuais
 
-\imprimirreferencias{referencias.bib}                   % Referências
-\input{elementos-pos-textuais/apendices.tex}            % Apêndices
-\input{elementos-pos-textuais/anexos.tex}               % Anexos
+\imprimirreferencias{referencias.bib}                   % Referências (comentado para evitar duplicidade)
+% \input{elementos-pos-textuais/apendices.tex}            % Apêndices
+% \input{elementos-pos-textuais/anexos.tex}               % Anexos
 \printindex                                             % Índice remissivo
+
+% Exemplo de citação no texto
+% Para citar uma referência, use o comando \cite{exemplo2020}
+% Adicione o comando abaixo no local desejado do texto:
+% \cite{exemplo2020}
+
+% % Configuração da bibliografia (antes do \end{document})
+% \bibliographystyle{abntex2-alf}
+% \bibliography{referencias}
 
 \end{document}
