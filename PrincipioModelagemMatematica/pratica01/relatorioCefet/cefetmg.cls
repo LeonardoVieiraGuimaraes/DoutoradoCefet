@@ -340,7 +340,7 @@
 
 % Redefine nomes para o português
 % (redefinições da classe 'abntex2')
-\addto\captionsbrazil{%
+\addto\captionsbrazilian{%
     % Nomes definidos na classe 'babel'
     \renewcommand{\listadesiglasname}{Lista de Abreviaturas e Siglas}
     \renewcommand{\listadesimbolosname}{Lista de S\'{i}mbolos}
@@ -355,15 +355,17 @@
     \renewcommand{\paragraphautorefname}{Subse\c{c}\~ao}
     \renewcommand{\algorithmautorefname}{Algoritmo}
     \renewcommand{\backrefpagesname}{Citado na(s) p\'agina(s):~}
-    \renewcommand*{\backrefalt}[4]{%
-        \ifcase #1
-            Nenhuma cita\c{c}\~ao no texto.
-        \or
-            Citado na p\'agina #2.
-        \else
-            Citado #1 vezes nas p\'aginas #2.
-        \fi
-    }
+}
+
+% Redefinição de \backrefalt deve ser feita fora do bloco \captionsbrazilian
+\renewcommand*{\backrefalt}[4]{%
+    \ifcase #1
+        Nenhuma cita\c{c}\~ao no texto.
+    \or
+        Citado na p\'agina #2.
+    \else
+        Citado #1 vezes nas p\'aginas #2.
+    \fi
 }
 
 % ------------------------------------------------------------------------------

@@ -1,20 +1,20 @@
 # Fdb version 4
-["bibtex meu-trabalho"] 1773945299.61214 "meu-trabalho.aux" "meu-trabalho.bbl" "meu-trabalho" 1773945302.19404 0
-  "./referencias.bib" 1773944869 908 22cea57166bec0476386bde5267fd98e ""
+["bibtex meu-trabalho"] 0 "meu-trabalho.aux" "meu-trabalho.bbl" "meu-trabalho" 1774009815.74582 -1
+  "./referencias.bib" 1773960033 817 7a84f46d669380672a6c28c0ca30f913 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/bibtex/bib/abntex2/abntex2-options.bib" 1543103229 5396 4eb260dac60f150ae608d45252853090 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/bibtex/bst/abntex2/abntex2-alf.bst" 1543103230 60064 0819ac8568f9a482510a46e3a8a6f605 ""
-  "meu-trabalho.aux" 1773945301 15756 6e4442841fcbbd3659eab380b46bc056 "pdflatex"
+  "meu-trabalho.aux" 1774009814 16001 e8dfe3f5e18769976a07b1efd8e55516 "pdflatex"
   (generated)
   "meu-trabalho.bbl"
   "meu-trabalho.blg"
   (rewritten before read)
-["makeindex meu-trabalho.idx"] 1773945264.25287 "meu-trabalho.idx" "meu-trabalho.ind" "meu-trabalho" 1773945302.19371 0
-  "meu-trabalho.idx" 1773945300 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex meu-trabalho.idx"] 1774009559.84795 "meu-trabalho.idx" "meu-trabalho.ind" "meu-trabalho" 1774009815.7455 0
+  "meu-trabalho.idx" 1774009813 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "meu-trabalho.ilg"
   "meu-trabalho.ind"
   (rewritten before read)
-["pdflatex"] 1773945299.87997 "d:/GitHub/DoutoradoCefet/PrincipioModelagemMatematica/pratica01/relatorioCefet/meu-trabalho.tex" "meu-trabalho.pdf" "meu-trabalho" 1773945302.19464 0
+["pdflatex"] 1774009813.1497 "d:/GitHub/DoutoradoCefet/PrincipioModelagemMatematica/pratica01/relatorioCefet/meu-trabalho.tex" "meu-trabalho.pdf" "meu-trabalho" 1774009815.74641 0
   "C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1773935014 163260 f7138aa97b0a1dcae55100dabb7d9e7d ""
   "C:/Users/leona/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1773931578 13333849 43a0c9212ef35c83051f65446ab8a78a ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc" 1736607166 3136 bbe665bd0bb471a2da1e8fd326cff9fa ""
@@ -182,15 +182,15 @@
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "C:/Users/leona/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "cefetmg.cls" 1773930207 21708 23958519fbd28ee721f2c1d58d2732f8 ""
-  "d:/GitHub/DoutoradoCefet/PrincipioModelagemMatematica/pratica01/relatorioCefet/meu-trabalho.tex" 1773945222 6765 45ba5dd7cb0da671628b5980d12cde10 ""
-  "elementos-pre-textuais/preambulo.tex" 1773926605 4393 34d26e9ac88c00d595fcfdc08e097b11 ""
+  "cefetmg.cls" 1774009812 21755 9ce6aa34ba053c7b5477c161b45dddfa ""
+  "d:/GitHub/DoutoradoCefet/PrincipioModelagemMatematica/pratica01/relatorioCefet/meu-trabalho.tex" 1774007659 6767 bfb9c75f571f31daabbbbd4a8043f829 ""
+  "elementos-pre-textuais/preambulo.tex" 1774009198 4479 73cff50e1dd8696c4d9cbcb4570f1a72 ""
   "elementos-textuais/conclusao.tex" 1773926605 844 d24ddb76d1a8dc8c74f3e1cfa791c14b ""
-  "elementos-textuais/fundamentacao-teorica.tex" 1773943664 4225 0bbe3d5c811ae694104a6c7ccc1fc6fe ""
-  "elementos-textuais/introducao.tex" 1773944851 3456 1dbacf104a18db4fd12a04f710769c26 ""
+  "elementos-textuais/fundamentacao-teorica.tex" 1773960051 5200 5111f7051ecba2509de2e78548de4995 ""
+  "elementos-textuais/introducao.tex" 1773960087 3460 ec031a4e5c2752b45436037030cdfdb7 ""
   "elementos-textuais/metodologia.tex" 1773934593 2253 66b3a1285fc5b4c39c3204f042f1d338 ""
-  "elementos-textuais/resultados.tex" 1773945296 3851 ee3ca1002e5e75f47806d5d2405fb2b8 ""
-  "figuras/fig_logo_cefetmg.pdf" 1773934024 3039 397142c27547c2a86c536c934e73c5b9 ""
+  "elementos-textuais/resultados.tex" 1773945552 3978 02b7a5fe1f450132dc57b6708bff6367 ""
+  "figuras/cefet-mg.png" 1773947910 119777 b72b18c012d93bbb14d9b88f44dbea55 ""
   "figuras/graficos/grafico_aceleracao_tempo.png" 1773945258 19127 d77416c0bf4565cc646843c52b66df3f ""
   "figuras/graficos/grafico_comparacao_posicao_tempo.png" 1773945258 62295 65359f1b1bfd34eadfe0a3f2f47f56e8 ""
   "figuras/graficos/grafico_erro_absoluto_vs_dt.png" 1773945258 26426 f546182092eb759b9180e154a5c3145b ""
@@ -198,12 +198,12 @@
   "figuras/graficos/grafico_posicao_tempo.png" 1773945258 28790 7051bc2fc88077d43511deae8a72cce1 ""
   "figuras/graficos/grafico_velocidade_comparacao_resistencia.png" 1773945258 40016 5c43d16b3cf307168f3606aa43db15e7 ""
   "figuras/graficos/grafico_velocidade_tempo.png" 1773945258 28329 24fb4afc93e34bc394b51dc8fc9d6230 ""
-  "meu-trabalho.aux" 1773945301 15756 6e4442841fcbbd3659eab380b46bc056 "pdflatex"
-  "meu-trabalho.bbl" 1773945299 1357 74614825ec73c32d656c5c54c86584f3 "bibtex meu-trabalho"
-  "meu-trabalho.brf" 1773945301 453 53e9fc0672fc722cfac676251223e942 "pdflatex"
-  "meu-trabalho.ind" 1773945264 0 d41d8cd98f00b204e9800998ecf8427e "makeindex meu-trabalho.idx"
-  "meu-trabalho.tex" 1773945222 6765 45ba5dd7cb0da671628b5980d12cde10 ""
-  "meu-trabalho.toc" 1773945301 1903 f1cdf2e9c46ae30adf5a15a4ad9f1928 "pdflatex"
+  "meu-trabalho.aux" 1774009814 16001 e8dfe3f5e18769976a07b1efd8e55516 "pdflatex"
+  "meu-trabalho.bbl" 1774007663 1256 8b82fcc79e60cd6ee788d9c9490c6164 "bibtex meu-trabalho"
+  "meu-trabalho.brf" 1774009814 575 cb0909865a8402a6028e76b88396bfda "pdflatex"
+  "meu-trabalho.ind" 1774009560 0 d41d8cd98f00b204e9800998ecf8427e "makeindex meu-trabalho.idx"
+  "meu-trabalho.tex" 1774007659 6767 bfb9c75f571f31daabbbbd4a8043f829 ""
+  "meu-trabalho.toc" 1774009814 1903 92edcc71957452f351563ca2c2576f4c "pdflatex"
   (generated)
   "meu-trabalho.aux"
   "meu-trabalho.brf"

@@ -6,41 +6,59 @@
 \label{chap_fundamentacao_teorica}
 
 
+
+
 O estudo da queda livre representa um dos marcos fundamentais do desenvolvimento da ciência, sendo tema central desde Galileu Galilei até os dias atuais \cite{galilei1638}. A análise desse fenômeno não apenas permitiu a consolidação das leis do movimento \cite{halliday2011,tipler2009}, mas também serviu de base para o avanço da modelagem matemática aplicada à física e à engenharia. A queda livre é um exemplo clássico de sistema dinâmico de fácil observação, mas cuja descrição rigorosa exige o domínio de conceitos como aceleração, forças, equações diferenciais e métodos numéricos \cite{butcher2016}.
+
+
+O entendimento da dinâmica de sistemas físicos como a queda livre é essencial para a formação em ciências exatas e engenharias. Além disso, a modelagem matemática no ensino de física promove a integração entre teoria e prática.
 
 Neste capítulo, serão apresentados os principais conceitos teóricos que embasam a modelagem da queda livre, desde a formulação das equações do movimento até a implementação computacional de métodos de solução aproximada. Serão discutidas as hipóteses simplificadoras, como a ausência de resistência do ar, e as consequências de sua inclusão no modelo. Por fim, será abordada a importância da análise de precisão dos métodos numéricos, destacando o papel da escolha do passo de tempo na obtenção de resultados confiáveis.
 
 
 \section{Introdução à Queda Livre}
-A queda livre é um dos fenômenos clássicos da física, sendo fundamental para o entendimento das leis do movimento. Trata-se do movimento de um corpo sob a ação exclusiva da gravidade, desconsiderando-se, inicialmente, efeitos como resistência do ar. O estudo da queda livre permite compreender conceitos como aceleração constante, velocidade e posição em função do tempo.
+
+A queda livre é um dos fenômenos clássicos da física, sendo fundamental para o entendimento das leis do movimento. Trata-se do movimento de um corpo sob a ação exclusiva da gravidade, desconsiderando-se, inicialmente, efeitos como resistência do ar. O estudo da queda livre permite compreender conceitos como aceleração constante, velocidade e posição em função do tempo \cite{halliday2011,tipler2009}.
 
 \section{Modelagem Matemática}
+
 Para descrever matematicamente a queda livre, parte-se da segunda lei de Newton, considerando um corpo de massa $m$ sujeito apenas à força gravitacional \cite{halliday2011,tipler2009}:
 \begin{equation}
 	m \frac{d^2x}{dt^2} = -mg
+	\label{eq:newton}
 \end{equation}
-onde $x$ é a posição vertical e $g$ é a aceleração da gravidade. A solução analítica para a posição em função do tempo, com altura inicial $H$ e velocidade inicial $V$, é:
+onde $x$ é a posição vertical e $g$ é a aceleração da gravidade. A equação \ref{eq:newton} descreve a aceleração constante de um corpo em queda livre.
+
+A solução analítica para a posição em função do tempo, com altura inicial $H$ e velocidade inicial $V$, é dada por:
 \begin{equation}
 	x(t) = H + Vt - \frac{1}{2}gt^2
+	\label{eq:sol_analitica}
 \end{equation}
+Como mostrado na equação \ref{eq:sol_analitica}, a posição varia quadraticamente com o tempo.
 
 \section{Método de Euler para Solução Numérica}
-Em muitos casos, a solução analítica pode ser inviável ou pouco prática, especialmente quando há forças adicionais. Assim, utiliza-se métodos numéricos, como o método de Euler, para aproximar as soluções \cite{butcher2016}. O método de Euler consiste em discretizar o tempo em passos $\Delta t$ e atualizar as variáveis de acordo com:
+Em muitos casos, a solução analítica pode ser inviável ou pouco prática, especialmente quando há forças adicionais ou resistência do ar. Assim, utiliza-se métodos numéricos, como o método de Euler, para aproximar as soluções \cite{butcher2016}. O método de Euler é um dos mais simples e amplamente utilizados para a resolução de equações diferenciais ordinárias.
+
+O método consiste em discretizar o tempo em passos $\Delta t$ e atualizar as variáveis de acordo com:
 \begin{align}
-	v_{n+1} &= v_n - g\Delta t \\
-	x_{n+1} &= x_n + v_n\Delta t
+	v_{n+1} &= v_n - g\Delta t \label{eq:euler_v} \\
+	x_{n+1} &= x_n + v_n\Delta t \label{eq:euler_x}
 \end{align}
-Esse procedimento é repetido até que o corpo atinja o solo ($x \leq 0$).
+As equações \ref{eq:euler_v} e \ref{eq:euler_x} representam, respectivamente, a atualização da velocidade e da posição a cada passo do método de Euler. Esse procedimento é repetido até que o corpo atinja o solo ($x \leq 0$).
 
 \section{Considerações sobre Resistência do Ar}
+
 O modelo básico assume que o corpo é uma partícula e que não há resistência do ar. Para tornar o modelo mais realista, pode-se incluir uma força de resistência proporcional à velocidade, modificando a equação para \cite{batchelor2000}:
 \begin{equation}
 	m \frac{dv}{dt} = -mg + c v
+	\label{eq:resistencia}
 \end{equation}
-onde $c$ é o coeficiente de arrasto. A inclusão desse termo altera o comportamento do movimento, reduzindo a velocidade terminal e aumentando o tempo de queda.
+Na equação \ref{eq:resistencia}, $c$ é o coeficiente de arrasto. A inclusão desse termo altera o comportamento do movimento, reduzindo a velocidade terminal e aumentando o tempo de queda.
 
 \section{Acurácia e Escolha do Passo de Tempo}
-O passo de tempo $\Delta t$ influencia diretamente a precisão do método de Euler. Passos muito grandes podem introduzir erros significativos, enquanto passos menores aumentam a precisão, aproximando o resultado numérico do valor analítico. A análise da acurácia é fundamental para validar o modelo computacional.
+
+O passo de tempo $\Delta t$ influencia diretamente a precisão do método de Euler. Passos muito grandes podem introduzir erros significativos, enquanto passos menores aumentam a precisão, aproximando o resultado numérico do valor analítico \cite{butcher2016}. A análise da acurácia é fundamental para validar o modelo computacional e garantir a confiabilidade dos resultados.
 
 \section{Resumo}
+
 Neste capítulo, foram apresentados os fundamentos físicos e matemáticos da queda livre, a formulação do modelo computacional via método de Euler, as hipóteses simplificadoras e a importância da análise de precisão. Esses conceitos embasam o desenvolvimento e a análise dos experimentos computacionais realizados nos capítulos seguintes.

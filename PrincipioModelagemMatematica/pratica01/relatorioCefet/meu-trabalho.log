@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.19)  19 MAR 2026 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.19)  20 MAR 2026 09:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1067,11 +1067,11 @@ LaTeX Info: Command `\dddot' is already robust on input line 97.
 LaTeX Info: Command `\ddddot' is already robust on input line 97.
 \c@mv@tabular=\count409
 \c@mv@boldtabular=\count410
-<figuras/fig_logo_cefetmg.pdf, id=3, 508.71927pt x 324.1442pt>
-File: figuras/fig_logo_cefetmg.pdf Graphic file (type pdf)
-<use figuras/fig_logo_cefetmg.pdf>
-Package pdftex.def Info: figuras/fig_logo_cefetmg.pdf  used on input line 101.
-(pdftex.def)             Requested size: 89.30664pt x 56.9055pt.
+<figuras/cefet-mg.png, id=3, 722.7pt x 722.7pt>
+File: figuras/cefet-mg.png Graphic file (type png)
+<use figuras/cefet-mg.png>
+Package pdftex.def Info: figuras/cefet-mg.png  used on input line 101.
+(pdftex.def)             Requested size: 113.80379pt x 113.81102pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 101.
 Package microtype Info: Character `029' is missing
@@ -1086,11 +1086,6 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/sc' will be
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/ntxtlf/b/sc/20.74'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/sc' will be
-(Font)              scaled to size 17.28pt on input line 101.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/ntxtlf/b/sc/17.28'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 101.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
@@ -1103,92 +1098,89 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/sc' will be
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/ntxtlf/b/sc/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 101.
  [1
 
-{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./figuras/fig_logo_cefetmg.pdf>]
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 102.
+{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc} <./figuras/cefet-mg.png>]
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 24.88pt on input line 121.
+ (meu-trabalho.toc
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 3.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `minntx' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 3.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 102.
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 3.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 3.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
+(Font)              scaled to size 6.6pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 102.
+(Font)              scaled to size 12.0pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 102.
+(Font)              scaled to size 8.8pt on input line 3.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 102.
-
+(Font)              scaled to size 6.6pt on input line 3.
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.102 \imprimirfolhaderosto*{}
-                                                              % Folha de rosto [1
+l.121 \imprimirsumario
+                                                              % SumÃ¡rio [1
 
 
-
-]
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 121.
- (meu-trabalho.toc) [2] (elementos-textuais/introducao.tex
+{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}] (elementos-textuais/introducao.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 24.88pt on input line 5.
@@ -1197,8 +1189,8 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 18.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 38.
-[3
+(Font)              scaled to size 10.0pt on input line 43.
+[2
 
 
 ]) (elementos-textuais/fundamentacao-teorica.tex
@@ -1206,11 +1198,11 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.0pt on input line 5.
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 5.
- [4]
+ [3]
 Cap\'{\i }tulo 2.
-[5
+[4
 
-{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]) (elementos-textuais/metodologia.tex [6]
+{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]) (elementos-textuais/metodologia.tex [5] [6]
 Cap\'{\i }tulo 3.
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 16.
 (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd
@@ -1231,15 +1223,17 @@ Overfull \hbox (17.21478pt too wide) in paragraph at lines 14--15
 \T1/ntxtlf/m/n/12 (-20) fo-ram ge-ra-dos au-to-ma-ti-ca-mente e es-tão dis-po-ní-veis na pasta \T1/ntxtt/m/n/12 relatorioCefet/figuras/graficos\T1/ntxtlf/m/n/12 (-20) . 
  []
 
-<figuras/graficos/grafico_posicao_tempo.png, id=130, 578.16pt x 361.35pt>
+<figuras/graficos/grafico_posicao_tempo.png, id=136, 578.16pt x 361.35pt>
 File: figuras/graficos/grafico_posicao_tempo.png Graphic file (type png)
 <use figuras/graficos/grafico_posicao_tempo.png>
 Package pdftex.def Info: figuras/graficos/grafico_posicao_tempo.png  used on input line 18.
 (pdftex.def)             Requested size: 318.49861pt x 199.05739pt.
-<figuras/graficos/grafico_velocidade_tempo.png, id=132, 578.16pt x 361.35pt>
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 19.
+<figuras/graficos/grafico_velocidade_tempo.png, id=137, 578.16pt x 361.35pt>
 File: figuras/graficos/grafico_velocidade_tempo.png Graphic file (type png)
 <use figuras/graficos/grafico_velocidade_tempo.png>
-Package pdftex.def Info: figuras/graficos/grafico_velocidade_tempo.png  used on input line 25.
+Package pdftex.def Info: figuras/graficos/grafico_velocidade_tempo.png  used on input line 27.
 (pdftex.def)             Requested size: 318.49861pt x 199.05739pt.
 [8
 
@@ -1247,102 +1241,102 @@ Package pdftex.def Info: figuras/graficos/grafico_velocidade_tempo.png  used on 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.29 
+l.31 
       <./figuras/graficos/grafico_posicao_tempo.png>]
-<figuras/graficos/grafico_aceleracao_tempo.png, id=139, 578.16pt x 361.35pt>
+<figuras/graficos/grafico_aceleracao_tempo.png, id=144, 578.16pt x 361.35pt>
 File: figuras/graficos/grafico_aceleracao_tempo.png Graphic file (type png)
 <use figuras/graficos/grafico_aceleracao_tempo.png>
-Package pdftex.def Info: figuras/graficos/grafico_aceleracao_tempo.png  used on input line 32.
+Package pdftex.def Info: figuras/graficos/grafico_aceleracao_tempo.png  used on input line 34.
 (pdftex.def)             Requested size: 318.49861pt x 199.05739pt.
-<figuras/graficos/grafico_posicao_comparacao_resistencia.png, id=140, 578.16pt x 361.35pt>
+<figuras/graficos/grafico_posicao_comparacao_resistencia.png, id=145, 578.16pt x 361.35pt>
 File: figuras/graficos/grafico_posicao_comparacao_resistencia.png Graphic file (type png)
 <use figuras/graficos/grafico_posicao_comparacao_resistencia.png>
-Package pdftex.def Info: figuras/graficos/grafico_posicao_comparacao_resistencia.png  used on input line 39.
+Package pdftex.def Info: figuras/graficos/grafico_posicao_comparacao_resistencia.png  used on input line 41.
 (pdftex.def)             Requested size: 318.49861pt x 199.05739pt.
  [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.43 
+l.45 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.43 
+l.45 
       <./figuras/graficos/grafico_velocidade_tempo.png> <./figuras/graficos/grafico_aceleracao_tempo.png>]
-<figuras/graficos/grafico_velocidade_comparacao_resistencia.png, id=149, 578.16pt x 361.35pt>
+<figuras/graficos/grafico_velocidade_comparacao_resistencia.png, id=154, 578.16pt x 361.35pt>
 File: figuras/graficos/grafico_velocidade_comparacao_resistencia.png Graphic file (type png)
 <use figuras/graficos/grafico_velocidade_comparacao_resistencia.png>
-Package pdftex.def Info: figuras/graficos/grafico_velocidade_comparacao_resistencia.png  used on input line 46.
+Package pdftex.def Info: figuras/graficos/grafico_velocidade_comparacao_resistencia.png  used on input line 48.
 (pdftex.def)             Requested size: 318.49861pt x 199.05739pt.
-<figuras/graficos/grafico_erro_absoluto_vs_dt.png, id=150, 505.89pt x 361.35pt>
+<figuras/graficos/grafico_erro_absoluto_vs_dt.png, id=155, 505.89pt x 361.35pt>
 File: figuras/graficos/grafico_erro_absoluto_vs_dt.png Graphic file (type png)
 <use figuras/graficos/grafico_erro_absoluto_vs_dt.png>
-Package pdftex.def Info: figuras/graficos/grafico_erro_absoluto_vs_dt.png  used on input line 53.
+Package pdftex.def Info: figuras/graficos/grafico_erro_absoluto_vs_dt.png  used on input line 55.
 (pdftex.def)             Requested size: 318.49861pt x 227.50284pt.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 10.95pt on input line 54.
+(Font)              scaled to size 10.95pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 56.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.1pt on input line 54.
+(Font)              scaled to size 6.1pt on input line 56.
  [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.57 
+l.59 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.57 
+l.59 
       <./figuras/graficos/grafico_posicao_comparacao_resistencia.png> <./figuras/graficos/grafico_velocidade_comparacao_resistencia.png>]
-<figuras/graficos/grafico_comparacao_posicao_tempo.png, id=159, 650.43pt x 433.62pt>
+<figuras/graficos/grafico_comparacao_posicao_tempo.png, id=164, 650.43pt x 433.62pt>
 File: figuras/graficos/grafico_comparacao_posicao_tempo.png Graphic file (type png)
 <use figuras/graficos/grafico_comparacao_posicao_tempo.png>
-Package pdftex.def Info: figuras/graficos/grafico_comparacao_posicao_tempo.png  used on input line 60.
+Package pdftex.def Info: figuras/graficos/grafico_comparacao_posicao_tempo.png  used on input line 62.
 (pdftex.def)             Requested size: 318.49861pt x 212.33672pt.
 ) (elementos-textuais/conclusao.tex [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) has been already used, duplicate ignored
@@ -1376,20 +1370,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `meu-trabalho.brf' has not changed.
-(rerunfilecheck)             Checksum: 53E9FC0672FC722CFAC676251223E942;453.
+(rerunfilecheck)             Checksum: CB0909865A8402A6028E76B88396BFDA;575.
  ) 
 Here is how much of TeX's memory you used:
- 24716 strings out of 467867
- 395668 string characters out of 5418334
- 876090 words of memory out of 5000000
- 53034 multiletter control sequences out of 15000+600000
- 711558 words of font info for 179 fonts, out of 8000000 for 9000
+ 24710 strings out of 467867
+ 395410 string characters out of 5418334
+ 876149 words of memory out of 5000000
+ 53023 multiletter control sequences out of 15000+600000
+ 708877 words of font info for 182 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,13n,121p,1088b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,13n,121p,1088b,645s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/NewTXMI.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txmiaX.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/txsys.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmr.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmri.pfb>
-Output written on meu-trabalho.pdf (15 pages, 417194 bytes).
+Output written on meu-trabalho.pdf (15 pages, 533689 bytes).
 PDF statistics:
  319 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 36593 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 58 named destinations out of 1000 (max. 500000)
+ 34537 words of extra memory for PDF output out of 35830 (max. 10000000)
 

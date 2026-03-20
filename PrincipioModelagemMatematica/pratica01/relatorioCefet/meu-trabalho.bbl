@@ -7,31 +7,27 @@
 
 \bibitem[Batchelor 2000]{batchelor2000}
 \abntrefinfo{Batchelor}{BATCHELOR}{2000}
-{BATCHELOR, G. An introduction to fluid dynamics.
-\textbf{Cambridge University Press}, 2000.}
+{BATCHELOR, G.~K. \textbf{An Introduction to Fluid Dynamics}. [S.l.]: Cambridge
+  University Press, 2000.}
 
 \bibitem[Butcher 2016]{butcher2016}
 \abntrefinfo{Butcher}{BUTCHER}{2016}
-{BUTCHER, J. Numerical methods for ordinary differential equations.
-\textbf{Wiley}, 2016.}
-
-\bibitem[Exemplo 2020]{exemplo2020}
-\abntrefinfo{Exemplo}{EXEMPLO}{2020}
-{EXEMPLO, A. \textbf{Título do Livro Exemplo}. [S.l.]: Editora Exemplo, 2020.}
+{BUTCHER, J.~C. \textbf{Numerical Methods for Ordinary Differential Equations}.
+  [S.l.]: Wiley, 2016.}
 
 \bibitem[Galilei 1638]{galilei1638}
 \abntrefinfo{Galilei}{GALILEI}{1638}
-{GALILEI, G. Discorsi e dimostrazioni matematiche intorno a due nuove scienze.
-\textbf{Leiden: Elsevier}, 1638.}
+{GALILEI, G. \textbf{Dialogues Concerning Two New Sciences}. [S.l.]: University
+  of California Press, 1954 (tradução), 1638.}
 
 \bibitem[Halliday, Resnick e Walker 2011]{halliday2011}
 \abntrefinfo{Halliday, Resnick e Walker}{HALLIDAY; RESNICK; WALKER}{2011}
-{HALLIDAY, D.; RESNICK, R.; WALKER, J. \textbf{Fundamentos de Física}. [S.l.]:
-  LTC, 2011.}
+{HALLIDAY, D.; RESNICK, R.; WALKER, J. \textbf{Fundamentals of Physics}.
+  [S.l.]: Wiley, 2011.}
 
 \bibitem[Tipler e Mosca 2009]{tipler2009}
 \abntrefinfo{Tipler e Mosca}{TIPLER; MOSCA}{2009}
-{TIPLER, P.; MOSCA, G. \textbf{Física para Cientistas e Engenheiros}. [S.l.]:
-  LTC, 2009.}
+{TIPLER, P.~A.; MOSCA, G. \textbf{Physics for Scientists and Engineers}.
+  [S.l.]: W. H. Freeman, 2009.}
 
 \end{thebibliography}
