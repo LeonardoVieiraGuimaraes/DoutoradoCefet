@@ -25,8 +25,9 @@ Implementar computacionalmente um modelo de queda livre.
 
 # Modelo Computacional de Queda Livre
 
+
 ## Repositório
-O código-fonte completo deste projeto está disponível em: [https://github.com/LeonardoVieiraGuimaraes/DoutoradoCefet/tree/main/PrincipioModelagemMatematica/pratica01](https://github.com/LeonardoVieiraGuimaraes/DoutoradoCefet/tree/main/PrincipioModelagemMatematica/pratica01)
+O código-fonte completo deste projeto está disponível em: [https://github.com/LeonardoVieiraGuimaraes/DoutoradoCefet/tree/main/PrincipioModelagemMatematica/PraticaQuedaLIvre](https://github.com/LeonardoVieiraGuimaraes/DoutoradoCefet/tree/main/PrincipioModelagemMatematica/PraticaQuedaLIvre)
 
 Este projeto implementa, em Python, um modelo computacional para simular a queda livre de um objeto, conforme roteiro detalhado da disciplina de Princípios de Modelagem Matemática.
 

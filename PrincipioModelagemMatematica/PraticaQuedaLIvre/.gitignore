@@ -38,6 +38,9 @@ ENV/
 *.nav
 *.snm
 *.vrb
+# Dados e gráficos (não versionar)
+src/dados/
+src/graficos/
 *.xdv
 
 # Outros

@@ -22,40 +22,57 @@ Os experimentos computacionais foram realizados em três etapas sequenciais, cad
 Para cada caso, os parâmetros de entrada foram lidos dos arquivos de input e utilizados para configurar as simulações. O método de Euler foi empregado para resolver numericamente as equações diferenciais do movimento, permitindo o cálculo iterativo da posição, velocidade e tempo até o corpo atingir o solo.
 
 As simulações foram realizadas para diferentes valores de $\Delta t$ e, nos casos com resistência do ar, para diferentes valores de $c$. Foram analisados os resultados de posições, velocidades e tempos finais obtidos em cada experimento.
-\section{Observação dos Resultados, Cálculos Analíticos e Análise de Acurácia}
+\section{Parâmetros de Entrada das Simulações}
+\label{sec_parametros_entrada}
 
-Esta subseção reúne toda a análise dos resultados, os cálculos analíticos e a avaliação da acurácia dos métodos numéricos utilizados. A análise foi realizada a partir da comparação entre os valores numéricos obtidos nas simulações e as soluções analíticas conhecidas para cada caso físico. As principais equações utilizadas foram:
+
+\textbf{Tabela 1 — Parâmetros para Queda Livre Simples}
+
+A Tabela 1 apresenta os parâmetros utilizados para a simulação da queda livre simples. Os experimentos foram realizados variando a altura inicial, a velocidade inicial, a gravidade e o passo de tempo, conforme os valores listados.
+
+\input{../relatorioCefet/tabelas/input/entrada_queda_livre.tex}
+
+\textbf{Tabela 2 — Parâmetros para Queda Livre com Resistência Quadrática}
+
+A Tabela 2 mostra os parâmetros empregados na simulação da queda livre considerando resistência do ar quadrática. Foram utilizados diferentes valores para massa, coeficiente de arrasto, área, densidade do ar, tempo máximo e passo de tempo.
+
+\input{../relatorioCefet/tabelas/input/entrada_queda_livre_quadratica.tex}
+
+\textbf{Tabela 3 — Parâmetros para Queda Livre com Resistência Linear}
+
+A Tabela 3 apresenta os parâmetros adotados para a simulação da queda livre com resistência do ar linear. Os experimentos consideraram diferentes valores para o coeficiente de resistência, além das demais variáveis relevantes.
+
+\input{../relatorioCefet/tabelas/input/entrada_queda_livre_resistencia.tex}
+\section{Observação dos Resultados, Cálculos Analíticos, Análise de Acurácia e Estatística}
+\label{sec_analise_resultados}
+
+Esta seção reúne toda a análise dos resultados, os cálculos analíticos, a avaliação da acurácia dos métodos numéricos utilizados e a análise estatística dos experimentos. A análise foi realizada a partir da comparação entre os valores numéricos obtidos nas simulações e as soluções analíticas conhecidas para cada caso físico. As principais equações utilizadas foram:
 
 \begin{itemize}
-	\item \textbf{Velocidade final sem resistência do ar:}
-	\begin{equation}
-		v_{\text{final}} = V - g \cdot t
-	\end{equation}
-	onde $V$ é a velocidade inicial, $g$ a aceleração da gravidade e $t$ o tempo total de queda.
-	\item \textbf{Velocidade final com resistência do ar linear:}
-	\begin{equation}
-		v_{\text{final}} = (V + \frac{g}{c}) \cdot e^{c t} - \frac{g}{c}
-	\end{equation}
-	onde $c$ é o coeficiente de resistência do ar (linear).
-	\item \textbf{Erro relativo:}
-	\begin{equation}
-		E = \left| \frac{v_{\text{num}} - v_{\text{ana}}}{v_{\text{ana}}} \right|
-	\end{equation}
-	onde $E$ representa o erro relativo, $v_{\text{num}}$ é o valor numérico obtido na simulação e $v_{\text{ana}}$ o valor analítico.
+    \item \textbf{Velocidade final sem resistência do ar:}
+    \begin{equation}
+        v_{\text{final}} = V - g \cdot t
+    \end{equation}
+    onde $V$ é a velocidade inicial, $g$ a aceleração da gravidade e $t$ o tempo total de queda.
+    \item \textbf{Velocidade final com resistência do ar linear:}
+    \begin{equation}
+        v_{\text{final}} = (V + \frac{g}{c}) \cdot e^{c t} - \frac{g}{c}
+    \end{equation}
+    onde $c$ é o coeficiente de resistência do ar (linear).
+    \item \textbf{Erro relativo:}
+    \begin{equation}
+        E = \left| \frac{v_{\text{num}} - v_{\text{ana}}}{v_{\text{ana}}} \right|
+    \end{equation}
+    onde $E$ representa o erro relativo, $v_{\text{num}}$ é o valor numérico obtido na simulação e $v_{\text{ana}}$ o valor analítico.
 \end{itemize}
 
 Essas fórmulas foram implementadas em funções Python para automatizar o cálculo da acurácia dos métodos numéricos. A acurácia foi avaliada pela variação do erro relativo médio em função do passo de tempo ($\Delta t$) e do coeficiente de resistência do ar, permitindo identificar a convergência e a precisão do método empregado. Foram gerados gráficos dos principais resultados, incluindo:
 \begin{itemize}
-	\item Posição em função do tempo;
-	\item Velocidade em função do tempo;
-	\item Aceleração em função do tempo;
-	\item Erro relativo em função do passo de tempo ($\Delta t$).
+    \item Posição em função do tempo;
+    \item Velocidade em função do tempo;
+    \item Aceleração em função do tempo;
+    \item Erro relativo em função do passo de tempo ($\Delta t$).
 \end{itemize}
 Esses gráficos permitiram visualizar o comportamento do sistema sob diferentes condições e validar os modelos computacionais empregados.
 
-\section{Análise estatística}
-\label{sec_analise_estatistica}
-
-A análise dos resultados envolveu a comparação entre as soluções numéricas obtidas pelo método de Euler e a solução analítica do problema da queda livre. Foram avaliados diferentes valores de passo de tempo ($\Delta t$) para investigar o impacto na precisão dos resultados. O erro absoluto entre o tempo de queda simulado e o valor analítico foi calculado e representado graficamente, permitindo avaliar a acurácia do método numérico.
-
-Além disso, foram realizadas simulações considerando a resistência do ar, possibilitando a comparação entre diferentes cenários físicos e a análise do comportamento do sistema sob diferentes hipóteses.
+A análise estatística dos resultados envolveu a comparação entre as soluções numéricas obtidas pelo método de Euler e a solução analítica do problema da queda livre. Foram avaliados diferentes valores de passo de tempo ($\Delta t$) para investigar o impacto na precisão dos resultados. O erro absoluto entre o tempo de queda simulado e o valor analítico foi calculado e representado graficamente, permitindo avaliar a acurácia do método numérico. Além disso, foram realizadas simulações considerando a resistência do ar, possibilitando a comparação entre diferentes cenários físicos e a análise do comportamento do sistema sob diferentes hipóteses.
