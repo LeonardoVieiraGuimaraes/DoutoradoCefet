@@ -1,4 +1,4 @@
-Modelo,Altura,Massa,Cd,A,Rho,t_max,dt
+Modelo,Altura (m),Massa (kg),Cd,A (m²),Rho (kg/m³),t_max (s),dt (s)
 resistencia_quadratica,100,1.0000,0.4700,0.0100,1.2250,20,1.0000
 resistencia_quadratica,100,1.0000,0.4700,0.0100,1.2250,20,0.5000
 resistencia_quadratica,100,1.0000,0.4700,0.0100,1.2250,20,0.1000

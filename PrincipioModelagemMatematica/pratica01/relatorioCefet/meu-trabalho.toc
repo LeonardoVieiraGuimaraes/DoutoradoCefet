@@ -7,19 +7,18 @@
 \contentsline {section}{\numberline {1.4}Contribuições}{3}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Organização do trabalho}{3}{section.1.5}%
 \contentsline {chapter}{\chapternumberline {2}Fundamentação Teórica}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introdução à Queda Livre}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Modelagem Matemática}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Método de Euler para Solução Numérica}{5}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Considerações sobre Resistência do Ar}{5}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Acurácia e Escolha do Passo de Tempo}{5}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Resumo}{6}{section.2.6}%
-\contentsline {chapter}{\chapternumberline {3}Metodologia}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Coleta e tratamento de dados}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Análise estatística}{7}{section.3.2}%
-\contentsline {chapter}{\chapternumberline {4}Resultados}{8}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Apresentação dos Gráficos}{8}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Tabelas de Resultados}{11}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Discussão}{12}{section.4.3}%
-\contentsline {chapter}{\chapternumberline {5}Conclusão}{13}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Trabalhos futuros}{13}{section.5.1}%
-\contentsline {chapter}{Refer\^encias}{14}{chapter*.3}%
+\contentsline {section}{\numberline {2.1}Modelagem Matemática da Queda Livre}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Influência das Características do Corpo: Corpo Rígido em Queda Livre}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Efeitos da Resistência do Ar na Queda Livre}{5}{section.2.3}%
+\contentsline {chapter}{\chapternumberline {3}Metodologia}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Materiais Computacionais e Organização dos Dados}{6}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Procedimento Experimental}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Observação dos Resultados, Cálculos Analíticos e Análise de Acurácia}{7}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Análise estatística}{8}{section.3.4}%
+\contentsline {chapter}{\chapternumberline {4}Resultados}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Apresentação dos Gráficos}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Tabelas de Resultados}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Discussão}{9}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{10}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Trabalhos futuros}{10}{section.5.1}%
+\contentsline {chapter}{Refer\^encias}{11}{chapter*.3}%

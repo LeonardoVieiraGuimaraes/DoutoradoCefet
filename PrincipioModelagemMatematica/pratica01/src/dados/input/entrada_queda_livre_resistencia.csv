@@ -1,4 +1,4 @@
-modelo,H,V,g,dt,c
+modelo,H (m),V (m/s),g (m/s²),dt (s),c (1/s)
 resistencia_linear,100,0.0000,9.8100,1.0000,0.0100
 resistencia_linear,100,0.0000,9.8100,0.5000,0.0100
 resistencia_linear,100,0.0000,9.8100,0.1000,0.0100
