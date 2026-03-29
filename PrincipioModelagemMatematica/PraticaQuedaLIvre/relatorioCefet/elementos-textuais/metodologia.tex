@@ -22,31 +22,44 @@ Os experimentos computacionais foram realizados em três etapas sequenciais, cad
 Para cada caso, os parâmetros de entrada foram lidos dos arquivos de input e utilizados para configurar as simulações. O método de Euler foi empregado para resolver numericamente as equações diferenciais do movimento, permitindo o cálculo iterativo da posição, velocidade e tempo até o corpo atingir o solo.
 
 As simulações foram realizadas para diferentes valores de $\Delta t$ e, nos casos com resistência do ar, para diferentes valores de $c$. Foram analisados os resultados de posições, velocidades e tempos finais obtidos em cada experimento.
+
+
 \section{Parâmetros de Entrada das Simulações}
 \label{sec_parametros_entrada}
 
+Para cada simulação realizada, os parâmetros de entrada utilizados estão apresentados a seguir:
 
-\textbf{Tabela 1 — Parâmetros para Queda Livre Simples}
+\textbf{Queda Livre Simples:} Os experimentos deste cenário utilizaram os seguintes parâmetros:
+\input{./tabelas/input/parametros_sem_resistencia.tex}
 
-A Tabela 1 apresenta os parâmetros utilizados para a simulação da queda livre simples. Os experimentos foram realizados variando a altura inicial, a velocidade inicial, a gravidade e o passo de tempo, conforme os valores listados.
+\textbf{Resistência Linear Simplificada:} Os experimentos deste cenário utilizaram os seguintes parâmetros:
+\input{./tabelas/input/parametros_linear_simplificada.tex}
 
-\input{../relatorioCefet/tabelas/input/entrada_queda_livre.tex}
+\textbf{Resistência Linear Completa (Lei de Stokes):} Os experimentos deste cenário utilizaram os seguintes parâmetros:
+\input{./tabelas/input/parametros_linear_completa.tex}
 
-\textbf{Tabela 2 — Parâmetros para Queda Livre com Resistência Quadrática}
+\textbf{Resistência Quadrática Simplificada:} Os experimentos deste cenário utilizaram os seguintes parâmetros:
+\input{./tabelas/input/parametros_quadratica_simplificada.tex}
 
-A Tabela 2 mostra os parâmetros empregados na simulação da queda livre considerando resistência do ar quadrática. Foram utilizados diferentes valores para massa, coeficiente de arrasto, área, densidade do ar, tempo máximo e passo de tempo.
+\textbf{Resistência Quadrática Completa:} Os experimentos deste cenário utilizaram os seguintes parâmetros:
+\input{./tabelas/input/parametros_quadratica_completa.tex}
 
-\input{../relatorioCefet/tabelas/input/entrada_queda_livre_quadratica.tex}
 
-\textbf{Tabela 3 — Parâmetros para Queda Livre com Resistência Linear}
+\section{Método de Simulação}
 
-A Tabela 3 apresenta os parâmetros adotados para a simulação da queda livre com resistência do ar linear. Os experimentos consideraram diferentes valores para o coeficiente de resistência, além das demais variáveis relevantes.
+Essa estrutura permite rastreabilidade, comparação entre modelos e reprodutibilidade científica.
 
-\input{../relatorioCefet/tabelas/input/entrada_queda_livre_resistencia.tex}
 \section{Observação dos Resultados, Cálculos Analíticos, Análise de Acurácia e Estatística}
 \label{sec_analise_resultados}
 
-Esta seção reúne toda a análise dos resultados, os cálculos analíticos, a avaliação da acurácia dos métodos numéricos utilizados e a análise estatística dos experimentos. A análise foi realizada a partir da comparação entre os valores numéricos obtidos nas simulações e as soluções analíticas conhecidas para cada caso físico. As principais equações utilizadas foram:
+Esta seção reúne toda a análise dos resultados, os cálculos analíticos, a avaliação da acurácia dos métodos numéricos utilizados e a análise estatística dos experimentos. Para avaliar a acurácia dos métodos numéricos empregados, utilizou-se como referência a solução analítica da equação do movimento para cada caso físico considerado (queda livre simples, resistência linear e quadrática). A solução analítica fornece valores exatos de posição e velocidade ao longo do tempo, permitindo o cálculo do erro relativo entre o resultado numérico e o analítico. Assim, a análise de acurácia baseia-se na comparação direta entre as soluções, sem a necessidade de discutir explicitamente a velocidade terminal.
+
+\textbf{Parâmetros utilizados na análise de acurácia:}
+\input{./tabelas/input/entrada_acuracia.tex}
+\input{./tabelas/input/parametros_acuracia_sem_resistencia.tex}
+\input{./tabelas/input/parametros_acuracia_linear_simplificada.tex}
+
+As principais equações utilizadas foram:
 
 \begin{itemize}
     \item \textbf{Velocidade final sem resistência do ar:}
@@ -57,6 +70,7 @@ Esta seção reúne toda a análise dos resultados, os cálculos analíticos, a 
     \item \textbf{Velocidade final com resistência do ar linear:}
     \begin{equation}
         v_{\text{final}} = (V + \frac{g}{c}) \cdot e^{c t} - \frac{g}{c}
+        v_{\text{final}} = \left(V + \frac{g}{c}\right) \cdot e^{-c t} - \frac{g}{c}
     \end{equation}
     onde $c$ é o coeficiente de resistência do ar (linear).
     \item \textbf{Erro relativo:}

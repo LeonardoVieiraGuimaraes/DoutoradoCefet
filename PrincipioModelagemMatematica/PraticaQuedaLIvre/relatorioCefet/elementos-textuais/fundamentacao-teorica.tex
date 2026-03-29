@@ -1,5 +1,4 @@
 
-
 % ------------------------------------------------------------------------------
 % Fundamentação Teórica
 % ------------------------------------------------------------------------------
@@ -7,166 +6,101 @@
 \chapter{Fundamentação Teórica}
 \label{chap_fundamentacao_teorica}
 
-A fundamentação teórica apresenta os conceitos físicos e matemáticos necessários para compreender o fenômeno da queda livre e os modelos utilizados na simulação computacional. São discutidos: a dinâmica da queda livre sem resistência do ar, a distinção entre partícula e corpo rígido, e os modelos físicos de resistência do ar.
+Esta seção apresenta uma revisão aprofundada dos fundamentos físicos e matemáticos da queda livre, desde o modelo clássico sem resistência até abordagens modernas que consideram o corpo rígido e diferentes regimes de resistência do ar. São discutidas as principais equações, hipóteses e limitações de cada modelo, com base em literatura científica e livros-texto \cite{galilei1638,halliday2011,batchelor2000,tipler2009,butcher2016}.
 
-\section{Queda Livre Sem Resistência do Ar}
+\section{Queda Livre Clássica (Partícula no Vácuo)}
 
-A queda livre é o movimento de um corpo sujeito exclusivamente à força da gravidade. Nas proximidades da superfície da Terra, considera-se a aceleração gravitacional constante, denotada por $g$.
-
-A dinâmica do movimento é descrita pelas equações diferenciais:
+No contexto da mecânica clássica, a queda livre refere-se ao movimento de um corpo sob a ação exclusiva da gravidade, desconsiderando qualquer resistência do ar \cite{halliday2011,tipler2009}. Para uma partícula ideal, as equações do movimento são:
 \begin{equation}
-	a(t) = -g
-	\label{eq:aceleracao}
+    a(t) = -g
+    \label{eq:acel_queda_livre}
 \end{equation}
 \begin{equation}
-	v(t) = v_0 - g t
-	\label{eq:velocidade}
+    v(t) = v_0 - g t
+    \label{eq:vel_queda_livre}
 \end{equation}
 \begin{equation}
-	y(t) = H + v_0 t - \frac{1}{2} g t^2
-	\label{eq:posicao}
+    y(t) = y_0 + v_0 t - \frac{1}{2} g t^2
+    \label{eq:pos_queda_livre}
 \end{equation}
-onde $H$ é a altura inicial e $v_0$ a velocidade inicial.
+onde $g$ é a aceleração da gravidade (aproximadamente $9,81\,\text{m/s}^2$ na Terra), $v_0$ a velocidade inicial e $y_0$ a posição inicial. Essas equações são válidas para corpos pequenos ou densos, onde o efeito do ar é desprezível \cite[p.~36]{halliday2011,tipler2009}.
 
-\subsection*{Aproximação Discreta (Modelo Numérico)}
+\section{Queda Livre de Corpos Rígidos}
 
-Para implementar numericamente o movimento, utiliza-se a discretização temporal. O tempo é dividido em intervalos de tamanho $\Delta t$, e as equações diferenciais são aproximadas por diferenças finitas:
+Ao considerar um corpo rígido, fatores como área frontal, distribuição de massa e rotação podem influenciar o movimento, especialmente quando a resistência do ar não pode ser ignorada. No vácuo, o centro de massa do corpo rígido segue as mesmas equações da partícula \cite[p.~49]{halliday2011}.
+
+\section{Resistência do Ar: Modelos e Regimes}
+
+Na atmosfera, a resistência do ar (ou força de arrasto) é uma força que se opõe ao movimento do corpo e depende de sua velocidade, forma, área e propriedades do fluido. Os principais regimes são:
+
+\subsection{Arrasto Linear (Regime Laminar)}
+Para baixas velocidades e partículas pequenas, o arrasto é proporcional à velocidade:
 \begin{equation}
-	t_{i+1} = t_i + \Delta t
-	\label{eq:tempo_discreto}
-\end{equation}
-\begin{equation}
-	y_{i+1} = y_i + v_i \Delta t
-	\label{eq:posicao_discreta}
-\end{equation}
-\begin{equation}
-	v_{i+1} = v_i - g \Delta t
-	\label{eq:velocidade_discreta}
-\end{equation}
-Essas fórmulas (Eqs.~\ref{eq:tempo_discreto}--\ref{eq:velocidade_discreta}) permitem simular o movimento passo a passo até que a posição atinja o solo ($y_i \le 0$).
-
-\section{Partícula versus Corpo Rígido}
-
-No modelo básico, o corpo é tratado como uma \textbf{partícula}, ou seja, um ponto sem dimensões, sem forma e sem rotação. Essa simplificação é válida quando não há resistência do ar e apenas a força peso atua, sendo o interesse no movimento do centro de massa.
-
-Um \textbf{corpo rígido}, por outro lado, possui forma geométrica, área frontal, distribuição de massa, possibilidade de rotação e interação aerodinâmica com o ar. Sem resistência do ar, o centro de massa de um corpo rígido obedece exatamente às mesmas equações da partícula (Eqs.~\ref{eq:aceleracao}--\ref{eq:posicao}). Entretanto, ao considerar o ar, a forma e a orientação do corpo influenciam o movimento, exigindo modelos mais completos.
-
-\section{Resistência do Ar}
-
-Ao abandonar a hipótese de partícula ideal e considerar um corpo real, surge a necessidade de incluir a \textbf{força de arrasto}, que se opõe ao movimento. A resistência do ar depende da velocidade, da forma do corpo e das propriedades do fluido.
-
-\subsection{Modelo Linear de Arrasto}
-
-Adequado para baixas velocidades ou fluidos muito viscosos:
-\begin{equation}
-	F_d = -k v
-	\label{eq:arrasto_linear}
-\end{equation}
-onde $k$ é o coeficiente de arrasto linear. A equação do movimento torna-se:
-\begin{equation}
-	m \frac{dv}{dt} = -mg - k v
-	\label{eq:movimento_linear}
-\end{equation}
-
-\subsection{Modelo Quadrático de Arrasto}
-
-Modelo fisicamente mais realista para objetos caindo no ar:
-\begin{equation}
-	F_d = -c v |v|
-	\label{eq:arrasto_quadratico}
-\end{equation}
-ou, na forma aerodinâmica completa:
-\begin{equation}
-	F_d = \frac{1}{2} \rho C_d A v^2
-	\label{eq:arrasto_aerodinamico}
-\end{equation}
-onde $\rho$ é a densidade do ar, $C_d$ o coeficiente aerodinâmico e $A$ a área frontal do corpo. Esse modelo prevê a existência de uma \textbf{velocidade terminal}, quando o arrasto equilibra o peso.
-
-\section{Considerações sobre Acurácia Numérica}
-
-A simulação computacional utiliza aproximações discretas, o que introduz erro numérico. A precisão do método depende principalmente do tamanho do passo de tempo $\Delta t$ e da forma como as derivadas são aproximadas. Reduzir $\Delta t$ melhora a aproximação das equações contínuas e diminui o erro acumulado. Métodos mais avançados podem utilizar valores intermediários de velocidade para aumentar a precisão, mas o princípio fundamental permanece: quanto menor o passo, maior a acurácia.
-
-
-\section{Queda Livre Sem Resistência do Ar}
-
-A queda livre clássica considera que a única força atuante é a gravidade. Nesse caso, o movimento é uniformemente acelerado, com aceleração constante igual a $g$. Não há qualquer termo de resistência do ar. Esse modelo é válido para corpos pequenos, densos ou em situações onde o efeito do ar é desprezível.
-
-A equação diferencial fundamental desse movimento é:
-\begin{equation}
-	m \frac{d^2y}{dt^2} = -mg
-	\label{eq:movimento}
-\end{equation}
-onde $y$ é a posição vertical, $m$ a massa do corpo e $g$ a aceleração da gravidade. A solução analítica para a posição em função do tempo, considerando altura inicial $H$ e velocidade inicial $v_0$, é:
-\begin{equation}
-	y(t) = H + v_0 t - \frac{1}{2}gt^2
-	\label{eq:posicao}
-\end{equation}
-e para a velocidade:
-\begin{equation}
-	v(t) = v_0 - g t
-	\label{eq:velocidade}
-\end{equation}
-e para a aceleração:
-\begin{equation}
-	a(t) = -g
-	\label{eq:aceleracao}
-\end{equation}
-
-Essas expressões (Eqs.~\ref{eq:posicao}, \ref{eq:velocidade} e \ref{eq:aceleracao}) descrevem completamente o movimento de queda livre sem resistência do ar.
-
-\subsection*{Aproximação Discreta (Modelo Numérico)}
-
-Para simulação computacional, as equações diferenciais são aproximadas por diferenças finitas, discretizando o tempo em intervalos de tamanho $\Delta t$:
-\begin{equation}
-	t_{i+1} = t_i + \Delta t
-	\label{eq:tempo_discreto}
+    F_d = -k v
+    \label{eq:arrasto_linear_simp}
 \end{equation}
 \begin{equation}
-	y_{i+1} = y_i + v_i \Delta t
-	\label{eq:posicao_discreta}
+    m \frac{dv}{dt} = -mg - k v
+    \label{eq:mov_linear_simp}
+\end{equation}
+Esse modelo é adequado para regime laminar, como pequenas esferas em fluidos viscosos \cite[p.~246]{batchelor2000}.
+
+\subsection{Lei de Stokes (Arrasto Linear Completo)}
+Para esferas pequenas em fluido viscoso, a força de arrasto é dada por:
+\begin{equation}
+    F_d = -6 \pi \eta r v
+    \label{eq:stokes}
+\end{equation}
+onde $\eta$ é a viscosidade dinâmica do ar e $r$ o raio da esfera.
+
+\subsection{Arrasto Quadrático (Regime Turbulento)}
+Para velocidades mais altas, o arrasto é proporcional ao quadrado da velocidade:
+\begin{equation}
+    F_d = -c v |v|
+    \label{eq:arrasto_quad_simp}
 \end{equation}
 \begin{equation}
-	v_{i+1} = v_i - g \Delta t
-	\label{eq:velocidade_discreta}
+    m \frac{dv}{dt} = -mg - c v |v|
+    \label{eq:mov_quad_simp}
 \end{equation}
-Essas fórmulas (Eqs.~\ref{eq:tempo_discreto}--\ref{eq:velocidade_discreta}) permitem calcular iterativamente a trajetória do corpo até atingir o solo.
+Esse modelo prevê a existência de uma velocidade terminal, quando a força de arrasto equilibra o peso \cite[p.~49]{halliday2011}.
 
-
-
-
-\section{Queda Livre com Resistência do Ar}
-
-Quando o corpo possui área significativa, formato não esférico ou velocidade elevada, a resistência do ar não pode ser desprezada. Existem dois modelos principais para o arrasto:
-
-\subsection{Resistência Linear}
-Ocorre para baixas velocidades ou objetos pequenos, onde a força de resistência é proporcional à velocidade:
+\subsection{Arrasto Quadrático Completo (Equação Aerodinâmica)}
+O modelo mais realista para corpos em queda no ar é:
 \begin{equation}
-	m \frac{dv}{dt} = -mg - c v
-	\label{eq:linear}
+    F_d = \frac{1}{2} \rho C_d A v^2
+    \label{eq:arrasto_quad_completo}
 \end{equation}
-onde $c$ é o coeficiente de arrasto linear. A solução dessa equação mostra que a velocidade terminal é atingida quando a força de resistência iguala o peso.
-
-\subsection{Resistência Quadrática}
-Para velocidades mais altas ou corpos maiores, a força de resistência é proporcional ao quadrado da velocidade:
 \begin{equation}
-	m \frac{dv}{dt} = -mg - k v^2
-	\label{eq:quadratica}
+    m \frac{dv}{dt} = -mg - \frac{1}{2} \rho C_d A v^2
+    \label{eq:mov_quad_completo}
 \end{equation}
-onde $k$ é o coeficiente de arrasto quadrático, dependente da área, formato e densidade do ar. Esse modelo é mais realista para objetos em queda livre no ar. A solução dessa equação também leva a uma velocidade terminal, diferente do caso linear.
+onde $\rho$ é a densidade do ar, $C_d$ o coeficiente de arrasto e $A$ a área frontal do corpo \cite{batchelor2000}.
 
 
-
-\section{Influência das Características do Corpo: Corpo Rígido em Queda Livre}
-
-Ao considerar um corpo rígido, a modelagem se torna mais realista e abrangente. A resistência do ar passa a ser relevante para corpos com área significativa ou formas não esféricas \cite[p.~49]{halliday2011}. Além disso, a rotação pode alterar a área de contato com o ar, modificando o arrasto e tornando o movimento mais complexo. Em situações práticas, a velocidade terminal depende das características do corpo, como massa, área, formato e coeficiente de arrasto, exigindo abordagens matemáticas e computacionais mais sofisticadas. Assim, a escolha entre resistência linear (Eq.~\ref{eq:linear}) ou quadrática (Eq.~\ref{eq:quadratica}) depende do regime de movimento e das propriedades do corpo.
+\section{Modelagem Computacional e Métodos Numéricos}
 
 
+Em muitos casos práticos, especialmente quando a resistência do ar está presente, as equações diferenciais do movimento não admitem solução analítica fechada \cite[p.~246]{batchelor2000}. Nesses cenários, recorre-se a métodos numéricos para obter aproximações das soluções. O método de Euler, detalhado em \cite{butcher2016}, é um dos métodos mais simples e amplamente utilizados para a integração numérica de equações diferenciais ordinárias.
 
-\section{Resumo dos Efeitos da Resistência do Ar}
+No método de Euler, o tempo é discretizado em intervalos de tamanho $\Delta t$, e as variáveis do sistema são atualizadas iterativamente conforme as seguintes expressões:
+\begin{equation}
+    t_{i+1} = t_i + \Delta t
+    \label{eq:tempo_discreto}
+\end{equation}
+\begin{equation}
+    v_{i+1} = v_i + a_i \Delta t
+    \label{eq:vel_discreto}
+\end{equation}
+\begin{equation}
+    y_{i+1} = y_i + v_i \Delta t
+    \label{eq:pos_discreto}
+\end{equation}
+onde $a_i$ é a aceleração calculada no instante $t_i$, de acordo com o modelo físico adotado (sem resistência, resistência linear ou quadrática). O método de Euler é simples, porém sua precisão depende do tamanho do passo $\Delta t$ e pode ser limitada para problemas mais rígidos ou de longa duração \cite{butcher2016}.
 
-Batchelor afirma que “a força de resistência pode ser proporcional à velocidade ou ao quadrado da velocidade, dependendo do regime de escoamento” \cite[p.~246]{batchelor2000}. A inclusão desses termos (Eqs.~\ref{eq:linear} e \ref{eq:quadratica}) altera significativamente o comportamento do movimento, reduzindo a velocidade terminal e aumentando o tempo de queda. A análise desses efeitos é fundamental para aplicações práticas e experimentais.
 
+\section{Considerações Finais}
 
+A análise da queda livre, desde o modelo clássico sem resistência até os regimes com resistência linear e quadrática, é fundamental para a compreensão de fenômenos físicos e aplicações práticas. Experimentos históricos, como os de Galileu, estabeleceram os princípios básicos do movimento sob gravidade \cite{galilei1638}. Em situações reais, a resistência do ar deve ser considerada, sendo adequadamente modelada conforme o regime de velocidade e as propriedades do corpo e do fluido \cite{halliday2011,batchelor2000,tipler2009}.
 
-
-Por fim, vale destacar que, quando a solução analítica não é viável devido à complexidade do modelo ou à presença de forças adicionais, recorre-se a métodos numéricos. O método de Euler, por exemplo, é amplamente utilizado por sua simplicidade e eficiência na resolução de equações diferenciais ordinárias \cite[p.~7]{butcher2016}. O uso dessas técnicas permite simular cenários mais realistas, tornando possível a análise computacional de sistemas físicos complexos, como a queda livre com resistência do ar ou corpos de geometria não trivial.
+Quando as equações diferenciais do movimento não admitem solução analítica, métodos numéricos como o de Euler tornam-se essenciais para a simulação e análise quantitativa \cite{butcher2016}. O rigor na escolha do modelo e do método de solução é indispensável para garantir resultados confiáveis e cientificamente fundamentados.

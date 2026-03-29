@@ -1,7 +1,6 @@
 # Arquivo .gitignore para o projeto de modelagem de queda livre
 relatorioCefet/figuras/graficos/
-relatorioCefet/tabelas/input
-relatorioCefet/tabelas/output
+relatorioCefet/tabelas/
 src/dados/
 src/graficos/
 
