@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.19)  29 MAR 2026 11:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.19)  29 MAR 2026 11:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -53,17 +53,12 @@ Package babel Info: Configuration files are deprecated, as
 *
 (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/invalid\babel-brazil.tex)
-
-Package babel Warning: Name 'brazil' is deprecated.
-(babel)                Use 'brazilian' instead.
-(babel)                Reported on input line 4330.
-
-Package babel Info: Importing font and identification data for brazil
+) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex)
+Package babel Info: Importing font and identification data for brazilian
 (babel)             from babel-pt-BR.ini. Reported on input line 4330.
-(C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilian.ldf
+ (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilian.ldf
 Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
-Package babel Info: Hyphen rules for 'brazil' set to \l@portuguese
+Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
 (babel)             (\language56). Reported on input line 100.
 Package babel Info: Making " an active character on input line 132.
 )) (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
@@ -289,7 +284,7 @@ LaTeX Info: Redefining \cite on input line 618.
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count315
 ) (lista1.aux
-Package babel Info: 'brazil' activates 'portuges' shorthands.
+Package babel Info: 'brazilian' activates 'portuges' shorthands.
 (babel)             Reported on input line 6.
 )
 \openout1 = `lista1.aux'.
@@ -364,35 +359,31 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 [1
 
 {C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (enunciado/e1.tex) (respostas/r1.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1] (enunciado/e2.tex) (respostas/r2.tex) [2] (enunciado/e3.tex) (respostas/r3.tex) [3] (enunciado/e4.tex) (respostas/r4.tex) [4] (enunciado/e5.tex) (respostas/r5.tex) [5] (enunciado/e6.tex) (respostas/r6.tex) [6] (enunciado/e7.tex) (respostas/r7.tex) [7] (enunciado/e8.tex) (respostas/r8.tex) [8] (enunciado/e9.tex) (respostas/r9.tex) [9] (enunciado/e10.tex) (respostas/r10.tex [10]) [11] (enunciado/e11.tex) (respostas/r11.tex) [12] (enunciado/e12.tex) (respostas/r12.tex) [13] (enunciado/e13.tex) (respostas/r13.tex) [14] (enunciado/e14.tex) (respostas/r14.tex) [15] (enunciado/e15.tex) (respostas/r15.tex) [16] (enunciado/e16.tex) (respostas/r16.tex) [17] (enunciado/e17.tex) (respostas/r17.tex) [18] (enunciado/e18.tex) (respostas/r18.tex) [19] (enunciado/e19.tex) (respostas/r19.tex) [20] (enunciado/e20.tex) (respostas/r20.tex) [21] (enunciado/e21.tex) (respostas/r21.tex) [22] (enunciado/e22.tex) (respostas/r22.tex) [23] (enunciado/e23.tex) (respostas/r23.tex) [24] (lista1.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
-) [25] (lista1.aux)
+)) [1] (enunciado/e2.tex) (respostas/r2.tex) [2] (enunciado/e3.tex) (respostas/r3.tex) [3] (enunciado/e4.tex) (respostas/r4.tex [4]) [5] (enunciado/e5.tex) (respostas/r5.tex [6]) [7] (enunciado/e6.tex) (respostas/r6.tex [8]) [9] (enunciado/e7.tex) (respostas/r7.tex) [10] (enunciado/e8.tex) (respostas/r8.tex [11]) [12] (enunciado/e9.tex) (respostas/r9.tex [13] [14]) [15] (enunciado/e10.tex) (respostas/r10.tex [16]) [17] (enunciado/e11.tex) (respostas/r11.tex [18]) [19] (enunciado/e12.tex) (respostas/r12.tex [20]) [21] (enunciado/e13.tex) (respostas/r13.tex [22]) [23] (enunciado/e14.tex) (respostas/r14.tex) [24] (enunciado/e15.tex) (respostas/r15.tex [25]) [26] (enunciado/e16.tex) (respostas/r16.tex [27]) [28] (enunciado/e17.tex) (respostas/r17.tex [29]) [30] (enunciado/e18.tex) (respostas/r18.tex [31]) [32] (enunciado/e19.tex) (respostas/r19.tex) [33] (enunciado/e20.tex) (respostas/r20.tex [34]) [35] (enunciado/e21.tex) (respostas/r21.tex [36]) [37] (enunciado/e22.tex) (respostas/r22.tex) [38] (enunciado/e23.tex) (respostas/r23.tex) [39] (lista1.bbl) [40] (lista1.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 10868 strings out of 467867
- 204033 string characters out of 5418334
- 579630 words of memory out of 5000000
- 39432 multiletter control sequences out of 15000+600000
- 640728 words of font info for 66 fonts, out of 8000000 for 9000
+ 10914 strings out of 467867
+ 204833 string characters out of 5418334
+ 581615 words of memory out of 5000000
+ 39470 multiletter control sequences out of 15000+600000
+ 645759 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,10n,67p,634b,301s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on lista1.pdf (26 pages, 209429 bytes).
+ 66i,11n,67p,795b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on lista1.pdf (41 pages, 375219 bytes).
 PDF statistics:
- 424 PDF objects out of 1000 (max. 8388607)
+ 628 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

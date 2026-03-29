@@ -5,4 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Dym 2004]{PMMDym2004}
+\abntrefinfo{Dym}{DYM}{2004}
+{DYM, C.~L. (Ed.). \emph{Principles of Mathematical Modeling (Second Edition)}.
+  Second edition. Burlington: Academic Press, 2004.
+ISBN 978-0-12-226551-8. Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/B9780122265518500004}.}
+
 \end{thebibliography}
