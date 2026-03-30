@@ -8,34 +8,99 @@ Cada capítulo deve conter uma pequena introdução (tipicamente, um ou dois par
 
 Neste capítulo, são apresentados e analisados os resultados obtidos a partir das simulações computacionais do modelo de queda livre. São exibidos os principais gráficos gerados, bem como tabelas que sintetizam os dados numéricos relevantes para a avaliação do comportamento do sistema e da acurácia dos métodos utilizados. A seguir, são discutidos os resultados à luz dos objetivos propostos.
 
+
+
+
 \section{Apresentação dos Gráficos}
 \label{sec_graficos_resultados}
+
 
 Os gráficos a seguir ilustram a evolução das principais variáveis do sistema ao longo do tempo, bem como a comparação entre diferentes cenários simulados. Todos os arquivos de imagem foram gerados automaticamente e estão disponíveis na pasta \texttt{relatorioCefet/figuras/graficos}.
 
 
-% Quebra manual para evitar overfull hbox
 
 
+\section{Resultados para o Modelo de uma Partícula em Queda Livre}
+Foram realizados experimentos simulando a queda livre de uma partícula, variando o passo de tempo ($\Delta t$) para analisar o impacto na precisão dos resultados. Os gráficos a seguir apresentam, respectivamente, a posição, velocidade e aceleração em função do tempo para diferentes valores de $\Delta t$.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_particula/grafico_posicao_tempo_multidt}
+		\caption{Posição}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_particula/grafico_velocidade_tempo_multidt}
+		\caption{Velocidade}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_particula/grafico_aceleracao_tempo_multidt}
+		\caption{Aceleração}
+	\end{subfigure}
+	\caption{Resultados da simulação da queda livre de uma partícula para diferentes passos de tempo: (a) posição, (b) velocidade e (c) aceleração em função do tempo.}
+\end{figure}
 
+\section{Resultados para o Modelo Corpo Rígido com Resistência Linear}
+Para o corpo rígido com resistência linear (Lei de Stokes), os gráficos mostram a evolução das variáveis para diferentes passos de tempo.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/linear/grafico_posicao_tempo_linear}
+		\caption{Posição}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/linear/grafico_velocidade_tempo_linear}
+		\caption{Velocidade}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/linear/grafico_aceleracao_tempo_linear}
+		\caption{Aceleração}
+	\end{subfigure}
+	\caption{Resultados da simulação do corpo rígido com resistência linear: (a) posição, (b) velocidade e (c) aceleração em função do tempo.}
+\end{figure}
 
+\section{Resultados para o Modelo Corpo Rígido com Resistência Quadrática}
+Para o corpo rígido com resistência quadrática, os gráficos a seguir apresentam a posição, velocidade e aceleração em função do tempo para diferentes passos de tempo.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/quadratica/grafico_posicao_tempo_quadratica_multidt}
+		\caption{Posição}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/quadratica/grafico_velocidade_tempo_quadratica_multidt}
+		\caption{Velocidade}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{./figuras/graficos/queda_livre_corpo_rigido/quadratica/grafico_aceleracao_tempo_quadratica_multidt}
+		\caption{Aceleração}
+	\end{subfigure}
+	\caption{Resultados da simulação do corpo rígido com resistência quadrática: (a) posição, (b) velocidade e (c) aceleração em função do tempo.}
+\end{figure}
 
+\section{Resultados da Acurácia dos Métodos Numéricos}
+Por fim, a acurácia dos métodos numéricos foi avaliada para cada modelo, variando o passo de tempo. Os gráficos a seguir mostram o erro relativo em função de $\Delta t$ para cada caso e a comparação geral.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{./figuras/graficos/acuracia/acuracia_particula}
+        \caption{Partícula sem resistência do ar}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{./figuras/graficos/acuracia/acuracia_linear}
+        \caption{Corpo rígido com resistência linear}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
+        \includegraphics[width=\textwidth]{./figuras/graficos/acuracia/acuracia_quadratica}
+        \caption{Corpo rígido com resistência quadrática}
+    \end{subfigure}
+    \caption{Acurácia do método numérico para (a) partícula sem resistência do ar, (b) corpo rígido com resistência linear e (c) corpo rígido com resistência quadrática.}
+\end{figure}
 
-\section{Tabelas de Resultados}
-\label{sec_tabelas_resultados}
-
-As tabelas a seguir apresentam os dados numéricos extraídos das simulações, permitindo uma análise quantitativa dos resultados. Todas as tabelas foram geradas automaticamente e estão disponíveis na pasta \texttt{relatorioCefet/tabelas}.
-
-%\input{tabelas/acuracia_queda_livre.tex}
-%\input{tabelas/entrada_queda_livre.tex}
-%\input{tabelas/saida_queda_livre.tex}
-%\input{tabelas/saida_queda_livre_dt_0_01.tex}
-%\input{tabelas/saida_queda_livre_dt_0_1.tex}
-%\input{tabelas/saida_queda_livre_dt_0_5.tex}
-%\input{tabelas/saida_queda_livre_dt_1_0.tex}
-%\input{tabelas/saida_queda_livre_resistencia.tex}
-
-\section{Discussão}
-\label{sec_discussao_resultados}
-
-A seguir, discute-se os principais resultados observados, destacando as diferenças entre os cenários simulados, a influência do passo de tempo na precisão dos métodos numéricos e o impacto da resistência do ar no comportamento do sistema.
