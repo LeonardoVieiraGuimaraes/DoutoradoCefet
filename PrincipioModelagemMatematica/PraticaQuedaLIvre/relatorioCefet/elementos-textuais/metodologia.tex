@@ -14,7 +14,7 @@ O código-fonte completo está disponível publicamente em \cite{github_queda_li
 
 Os experimentos computacionais foram realizados em três etapas sequenciais, cada uma abordando um aspecto físico distinto do movimento:
     \begin{enumerate}
-        \item \textbf{Queda livre de partícula:} Simulação do movimento de uma partícula ideal em queda livre, desconsiderando qualquer tipo de resistência do ar. Para partículas pequenas, densas e em trajetórias de curta distância, a resistência do ar é desprezível em relação ao peso, conforme discutido em diversas fontes da literatura (por exemplo, Halliday, Resnick e Tipler). Por isso, este modelo é amplamente utilizado como referência para validação de métodos numéricos e comparação com a solução analítica clássica.
+        \item \textbf{Queda livre de partícula:} Simulação do movimento de uma partícula ideal em queda livre, desconsiderando qualquer tipo de resistência do ar. Para partículas pequenas, densas e em trajetórias de curta distância, a resistência do ar é desprezível em relação ao peso, conforme discutido em diversas fontes da literatura (por exemplo, Halliday, Resnick e Tipler)\cite{halliday2011,tipler2009}. Por isso, este modelo é amplamente utilizado como referência para validação de métodos numéricos e comparação com a solução analítica clássica.
         \item \textbf{Corpo rígido sem resistência do ar:} Análise do movimento considerando um corpo rígido, discutindo as diferenças conceituais e possíveis impactos na modelagem, ainda sem resistência do ar.
         \begin{enumerate}
         \item \textbf{Corpo rígido com resistência do ar linear:} Simulação do movimento de um corpo rígido considerando a presença de resistência do ar proporcional à velocidade (modelo linear, Lei de Stokes), permitindo avaliar o efeito desse fator sobre o movimento e a acurácia do método numérico.
@@ -58,10 +58,6 @@ O erro relativo foi utilizado como métrica principal para avaliar a precisão d
 \end{equation}
 onde $E$ representa o erro relativo, $v_{\text{num}}$ é o valor numérico obtido na simulação e $v_{\text{ana}}$ o valor analítico de referência.
 
-Essas fórmulas foram implementadas em funções Python para automatizar o cálculo da acurácia dos métodos numéricos. A análise foi realizada considerando a variação do erro relativo médio em função do passo de tempo ($\Delta t$), permitindo identificar a convergência e a precisão do método empregado. Foram gerados gráficos dos principais resultados, incluindo posição, velocidade, aceleração e erro relativo em função de $\Delta t$.
-
-Esses resultados permitiram visualizar o comportamento do sistema sob diferentes condições e validar os modelos computacionais empregados. A análise estatística envolveu a comparação entre as soluções numéricas (método de Euler) e as soluções analíticas para cada modelo físico, avaliando o impacto do passo de tempo na precisão dos resultados e possibilitando a análise comparativa entre os diferentes regimes de resistência.
-
 \textbf{Equações analíticas utilizadas para validação:}
 \begin{itemize}
     \item \textbf{Sem resistência do ar:}
@@ -83,5 +79,8 @@ Esses resultados permitiram visualizar o comportamento do sistema sob diferentes
 \end{itemize}
 Essas expressões foram implementadas computacionalmente para automatizar o cálculo do erro relativo entre as soluções numérica e analítica, garantindo uma avaliação quantitativa rigorosa da acurácia dos métodos utilizados.
 
+A metodologia adotada neste trabalho proporcionou uma estrutura robusta e reprodutível para a análise computacional da queda livre sob diferentes regimes físicos. A organização dos experimentos, a escolha criteriosa dos parâmetros e a utilização de métodos numéricos consagrados permitiram avaliar, de forma sistemática, a influência de fatores como resistência do ar e passo de tempo na precisão dos resultados. O detalhamento dos procedimentos e a disponibilização do código-fonte garantem transparência e facilitam a replicação dos experimentos por outros pesquisadores, fortalecendo o rigor científico do estudo.
 
+Essas fórmulas foram implementadas em funções Python para automatizar o cálculo da acurácia dos métodos numéricos. A análise foi realizada considerando a variação do erro relativo médio em função do passo de tempo ($\Delta t$), permitindo identificar a convergência e a precisão do método empregado. Foram gerados gráficos dos principais resultados, incluindo posição, velocidade, aceleração e erro relativo em função de $\Delta t$.
 
+Esses resultados permitiram visualizar o comportamento do sistema sob diferentes condições e validar os modelos computacionais empregados. A análise estatística envolveu a comparação entre as soluções numéricas (método de Euler) e as soluções analíticas para cada modelo físico, avaliando o impacto do passo de tempo na precisão dos resultados e possibilitando a análise comparativa entre os diferentes regimes de resistência.
