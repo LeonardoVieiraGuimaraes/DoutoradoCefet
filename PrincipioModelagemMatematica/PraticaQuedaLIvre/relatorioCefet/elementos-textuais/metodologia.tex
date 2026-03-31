@@ -37,20 +37,29 @@ Para cada simulação, foram analisados os resultados de posição, velocidade e
 
 Os experimentos computacionais foram organizados de acordo com o modelo físico analisado, utilizando parâmetros realistas para garantir a representatividade dos cenários e permitir comparações rigorosas entre os regimes de resistência do ar.
 
+Os valores adotados para cada cenário estão detalhados nas Tabelas~\ref{tab:parametros_queda_livre}, \ref{tab:parametros_linear} e \ref{tab:parametros_quadratica}, que apresentam, respectivamente, os parâmetros para a partícula sem resistência, para o corpo rígido com resistência linear e para o corpo rígido com resistência quadrática. Essas tabelas permitem rastreabilidade, comparação entre modelos e reprodutibilidade científica.
+
 \textbf{Parâmetros utilizados nos experimentos:}
 \begin{description}
     \item[Queda Livre de Partícula:] Altura inicial ($H$), velocidade inicial ($V$), aceleração da gravidade ($g$).\\
     \input{./tabelas/input/parametros_queda_livre.tex}
+    \label{tab:parametros_queda_livre}
     \item[Corpo Rígido com Resistência Linear (Lei de Stokes):] Parâmetros anteriores mais massa ($m$), viscosidade do ar ($\eta$) e raio da esfera ($r$). O coeficiente $c = 6\pi\eta r$ é fixo para cada experimento e representa a intensidade da força de arrasto proporcional à velocidade.\\
     \input{./tabelas/input/parametros_linear.tex}
+    \label{tab:parametros_linear}
     \item[Corpo Rígido com Resistência Quadrática:] Parâmetros anteriores mais coeficiente de arrasto ($C_d$), área frontal ($A$) e densidade do ar ($\rho$). O coeficiente $k = \frac{1}{2} \rho C_d A$ é fixo para cada experimento e representa a intensidade da força de arrasto proporcional ao quadrado da velocidade.\\
     \input{./tabelas/input/parametros_quadratica.tex}
+    \label{tab:parametros_quadratica}
 \end{description}
 
 \textit{Nota:} A notação $c$ (linear) e $k$ (quadrático) é utilizada para diferenciar claramente os regimes de resistência ao longo do texto, experimentos e arquivos de configuração, facilitando a comparação dos efeitos de cada modelo. Os valores adotados para cada cenário estão detalhados nas tabelas acima, o que garante rastreabilidade, comparação entre modelos e reprodutibilidade científica.
 
 \textbf{Parâmetros e análise de acurácia:}
-\input{./tabelas/input/parametros_acuracia.tex}
+\input{./tabelas/input/parametros_acuracia_log.tex}
+
+\noindent
+Os parâmetros utilizados para o estudo de acurácia, especialmente a lista de passos de tempo testados ($\Delta t$), estão sintetizados na Tabela~\ref{tab:parametros_acuracia_log}. Essa tabela permite avaliar quantitativamente a influência da discretização temporal na precisão dos métodos numéricos.
+\label{tab:parametros_acuracia_log}
 
 O erro relativo foi utilizado como métrica principal para avaliar a precisão dos métodos numéricos, sendo calculado por:
 \begin{equation}
